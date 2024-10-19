@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplicaciones Herrbri</title>
+    <title>Bienvenido a Herrbri Apps</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:ital,wght@300&family=Pacifico&family=Oleo+Script&display=swap'); /* Importa Anton, Open Sans, Pacifico y Oleo Script */
+
         html, body {
             height: 100%; /* Asegura que el fondo cubra toda la pantalla */
             margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Comienza desde la parte superior */
+            align-items: center; /* Centra horizontalmente todo el contenido */
         }
         body {
             background-color: #ccffcc; /* Color verdoso suave por si la imagen no se carga */
@@ -15,18 +21,152 @@
             background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
             background-position: center; /* Centra la imagen */
             background-repeat: no-repeat; /* Evita que la imagen se repita */
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif; /* Usa la fuente Roboto para el cuerpo principal */
             min-height: 100vh; /* Asegura que el cuerpo de la página ocupe al menos el 100% de la ventana */
         }
-        h1 {
-            color: #333333;
+        .box-container {
+            background-color: rgba(255, 255, 255, 0.01); /* Fondo casi completamente transparente */
+            padding: 40px; /* Espaciado interno más grande */
+            border-radius: 10px; /* Bordes redondeados */
             text-align: center;
-            padding-top: 50px;
+            width: 100%; /* Tamaño del contenedor */
+            max-width: 1000px; /* Limita el tamaño máximo */
+            margin-top: 20px; /* Espacio desde la parte superior */
+        }
+        h1 {
+            color: #ffffff; /* Texto blanco */
+            font-weight: 700; /* Usa el estilo bold de la fuente Roboto */
+            font-size: 3em; /* Aumenta el tamaño del texto */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Añade una sombra sutil al texto */
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo negro semitransparente */
+            padding: 10px 20px; /* Espacio alrededor del texto */
+            border-radius: 10px; /* Bordes redondeados */
+            margin-bottom: 20px; /* Más espacio entre el título y la presentación */
+            text-align: left; /* Alineación a la izquierda */
+        }
+        p {
+            color: #ffffff; /* Texto blanco */
+            font-weight: 300; /* Peso ligero para la frase de presentación */
+            font-size: 1.5em; /* Tamaño del texto del párrafo */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Sombra sutil para el texto */
+            background-color: rgba(0, 0, 0, 0.4); /* Fondo semitransparente para la frase */
+            padding: 10px 15px;
+            border-radius: 8px; /* Bordes redondeados */
+            max-width: 80%; /* Limita el ancho del párrafo */
+            margin-bottom: 60px; /* Ajusta el espacio entre la presentación y la frase de Henry Ford */
+        }
+        .quote {
+            font-family: 'Pacifico', cursive; /* Fuente distintiva para la frase de Henry Ford */
+            color: #ffffff; /* Texto blanco */
+            font-size: 1.8em; /* Tamaño del texto mayor */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Sombra sutil */
+            background-color: rgba(0, 0, 0, 0.4); /* Fondo translúcido */
+            padding: 10px 15px; /* Espaciado interno */
+            border-radius: 8px; /* Bordes redondeados */
+            text-align: left; /* Texto alineado a la izquierda */
+            max-width: 80%; /* Limita el ancho */
+            margin-bottom: 60px; /* Espacio entre la frase y el recuadro de producto */
+        }
+        .quote-author {
+            text-align: right; /* Autor alineado a la derecha */
+            margin-top: -20px; /* Para acercar más al texto */
+        }
+        .product-container {
+            background-color: #ffeb3b; /* Color amarillo para el recuadro */
+            padding: 40px; /* Aumenta el padding para el box */
+            border-radius: 10px;
+            display: flex; /* Flexbox para alinear logo y texto */
+            flex-direction: column; /* Alineación en columna */
+            align-items: flex-start; /* Alinea los elementos a la izquierda */
+        }
+        .footer-text {
+            font-size: 2.5em; /* Tamaño más grande para "Nuestro producto" */
+            font-weight: 700; /* Texto en negrita */
+            text-align: left; /* Alineación a la izquierda */
+            color: #000000; /* Color del texto */
+            margin-bottom: 20px; /* Espacio debajo de "Nuestro producto" */
+            font-family: 'Anton', sans-serif; /* Usa Anton para simular Cooper Black */
+        }
+        .product-container-content {
+            display: flex;
+            align-items: center; /* Alinea verticalmente al centro */
+            margin-bottom: 20px; /* Espacio entre el logo/título y la explicación */
+        }
+        .product-container img {
+            max-width: 150px; /* Tamaño del logo */
+            margin-right: 20px; /* Espacio entre el logo y el texto */
+        }
+        .product-container .product-title {
+            font-size: 2.5em; /* Tamaño del texto más grande */
+            font-weight: 700; /* Texto en negrita */
+            text-align: left; /* Alineación del texto a la izquierda */
+            color: #000000; /* Color del texto */
+            font-family: 'Anton', sans-serif; /* Usa Anton para simular Cooper Black */
+        }
+        .product-container a {
+            text-decoration: none; /* Sin subrayado en el enlace */
+        }
+        .product-description {
+            font-size: 1.2em; /* Tamaño del texto más pequeño */
+            font-family: 'Oleo Script', cursive; /* Usa Oleo Script para la explicación */
+            color: #000000; /* Color negro para la explicación */
+            text-align: left; /* Alineación a la izquierda */
+        }
+        .contact-container {
+            background-color: #000000; /* Fondo negro */
+            padding: 30px;
+            border-radius: 10px; /* Bordes redondeados */
+            text-align: center;
+            width: 100%; /* Tamaño del contenedor */
+            max-width: 800px; /* Limita el tamaño máximo */
+            margin-top: 30px; /* Añade espacio sobre el box de contacto */
+        }
+        .contact-link {
+            font-size: 1.5em; /* Tamaño del texto del enlace */
+            color: white; /* Color blanco para el enlace */
+            text-decoration: underline; /* Subrayado para indicar que es un enlace */
         }
     </style>
 </head>
 <body>
-    <h1>Bienvenido a Aplicaciones Herrbri</h1>
+    <div class="box-container">
+        <h1>Bienvenido a Aplicaciones HerrBri</h1>
+        <p>Empresa fundada en el año 2024 con la intención de mejorar la calidad de trabajo de los profesionales del transporte mediante el uso de aplicaciones para teléfonos móviles.</p>
+        
+        <!-- Frase de Henry Ford con fondo translúcido -->
+        <div class="quote">
+            "El verdadero progreso es el que pone la tecnología al alcance de todos."
+            <div class="quote-author">– Henry Ford</div>
+        </div>
+
+        <div class="product-container">
+            <!-- Frase "Nuestro producto" dentro del recuadro amarillo -->
+            <div class="footer-text">Nuestro producto</div>
+
+            <div class="product-container-content">
+                <!-- Imagen del logo con enlace a la Google Play Store -->
+                <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank">
+                    <img src="log volumtransport web.png" alt="Logo VolumTransport">
+                </a>
+                <!-- Título del producto -->
+                <div class="product-title">
+                    Cajas en el vehículo (VolumTransport)
+                </div>
+            </div>
+
+            <!-- Explicación debajo del logo y título -->
+            <div class="product-description">
+                Con esta aplicación sabrás cuántas cajas puedes cargar en tu vehículo antes de comenzar a trabajar, optimizando tu tiempo y evitando esfuerzos innecesarios.
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de contacto debajo del recuadro de producto con fondo negro -->
+    <div class="contact-container">
+        <a class="contact-link" href="mailto:aplicacionesherrbri.gloating506@passmail.net">Envíanos un correo</a>
+    </div>
+
 </body>
 </html>
+
 
