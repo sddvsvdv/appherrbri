@@ -24,7 +24,7 @@
             font-family: 'Roboto', sans-serif;
             min-height: 100vh;
             padding: 0 15px;
-            box-sizing: border-box; /* Asegura que el padding no rompa el diseño */
+            box-sizing: border-box;
         }
         .box-container {
             background-color: rgba(255, 255, 255, 0.01); /* Casi transparente */
@@ -34,7 +34,7 @@
             width: 100%;
             max-width: 1000px;
             margin-top: 20px;
-            box-sizing: border-box; /* Para que el padding y el ancho se respeten mejor */
+            box-sizing: border-box;
         }
         h1 {
             color: #ffffff;
@@ -46,7 +46,7 @@
             border-radius: 10px;
             margin-bottom: 20px;
             text-align: left;
-            width: 100%; /* Asegura que el título ocupe todo el ancho disponible */
+            width: 100%;
             box-sizing: border-box;
         }
         p {
@@ -57,7 +57,7 @@
             background-color: rgba(0, 0, 0, 0.4);
             padding: 10px 15px;
             border-radius: 8px;
-            max-width: 100%; /* Usa todo el ancho en móviles */
+            max-width: 100%;
             box-sizing: border-box;
             margin-bottom: 60px;
         }
@@ -70,13 +70,13 @@
             padding: 10px 15px;
             border-radius: 8px;
             text-align: left;
-            max-width: 100%; /* Asegura que la cita use todo el ancho */
+            max-width: 100%;
             box-sizing: border-box;
             margin-bottom: 60px;
         }
         .quote-author {
             text-align: right;
-            margin-top: -20px;
+            margin-top: 10px; /* Asegura que el nombre quede bien posicionado */
         }
         .product-container {
             background-color: #ffeb3b;
@@ -86,7 +86,7 @@
             flex-direction: column;
             align-items: flex-start;
             box-sizing: border-box;
-            width: 100%; /* Para que ocupe todo el ancho */
+            width: 100%;
         }
         .footer-text {
             font-size: 2.5em;
@@ -170,6 +170,10 @@
             }
             .footer-text, .product-description {
                 text-align: center;
+            }
+            .quote-author {
+                text-align: right;
+                margin-top: 5px; /* Ajusta el margen en móviles para mantener la distancia adecuada */
             }
         }
     </style>
