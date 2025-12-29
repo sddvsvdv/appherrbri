@@ -11,27 +11,29 @@
     <link rel="canonical" href="https://aplicacionesherrbri.com/">
     <meta name="robots" content="index,follow">
 
-    <!-- Open Graph (compartir en WhatsApp/Telegram/etc.) -->
+    <!-- Open Graph -->
     <meta property="og:title" content="Aplicaciones HerrBri">
     <meta property="og:description" content="Apps Android para profesionales del transporte. VolumTransport calcula cuántas cajas caben en un vehículo y optimiza la carga.">
     <meta property="og:url" content="https://aplicacionesherrbri.com/">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://aplicacionesherrbri.com/log%20volumtransport%20web.png">
 
-    <!-- Fuentes (más fiable que @import) -->
+    <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:ital,wght@300;400;700&family=Pacifico&family=Oleo+Script&display=swap" rel="stylesheet">
 
     <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
+        /* 🔒 Base robusta */
+        *, *::before, *::after {
+            box-sizing: border-box;
         }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             background-color: #ccffcc;
             background-image: url('DALL·E-2024-10-13-16.09.png');
@@ -41,18 +43,24 @@
             font-family: 'Open Sans', sans-serif;
             min-height: 100vh;
             padding: 0 15px;
-            box-sizing: border-box;
+            overflow-x: hidden;
         }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
         .box-container {
-            background-color: rgba(255, 255, 255, 0.01); /* Casi transparente */
+            background-color: rgba(255, 255, 255, 0.01);
             padding: 40px;
             border-radius: 10px;
             text-align: center;
             width: 100%;
             max-width: 1000px;
-            margin-top: 20px;
-            box-sizing: border-box;
+            margin: 20px auto 0;
         }
+
         h1 {
             color: #ffffff;
             font-weight: 700;
@@ -63,9 +71,8 @@
             border-radius: 10px;
             margin-bottom: 20px;
             text-align: left;
-            width: 100%;
-            box-sizing: border-box;
         }
+
         p {
             color: #ffffff;
             font-weight: 300;
@@ -74,10 +81,9 @@
             background-color: rgba(0, 0, 0, 0.4);
             padding: 10px 15px;
             border-radius: 8px;
-            max-width: 100%;
-            box-sizing: border-box;
             margin-bottom: 60px;
         }
+
         .quote {
             font-family: 'Pacifico', cursive;
             color: #ffffff;
@@ -87,24 +93,21 @@
             padding: 10px 15px;
             border-radius: 8px;
             text-align: left;
-            max-width: 100%;
-            box-sizing: border-box;
             margin-bottom: 60px;
         }
+
         .quote-author {
             text-align: right;
-            margin-top: 10px; /* Asegura que el nombre quede bien posicionado */
+            margin-top: 10px;
         }
+
         .product-container {
             background-color: #ffeb3b;
             padding: 40px;
             border-radius: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            box-sizing: border-box;
             width: 100%;
         }
+
         .footer-text {
             font-size: 2.5em;
             font-weight: 700;
@@ -112,28 +115,27 @@
             color: #000000;
             margin-bottom: 20px;
             font-family: 'Anton', sans-serif;
-            width: 100%;
-            box-sizing: border-box;
         }
+
         .product-container-content {
             display: flex;
             align-items: center;
             margin-bottom: 20px;
         }
+
         .product-container img {
             max-width: 150px;
             margin-right: 20px;
         }
-        .product-container .product-title {
+
+        .product-title {
             font-size: 2.5em;
             font-weight: 700;
-            text-align: left;
             color: #000000;
             font-family: 'Anton', sans-serif;
+            text-align: left;
         }
-        .product-container a {
-            text-decoration: none;
-        }
+
         .product-description {
             font-size: 1.2em;
             font-family: 'Oleo Script', cursive;
@@ -142,126 +144,87 @@
             margin-bottom: 16px;
         }
 
-        /* CTA botón */
-        .cta-wrap {
-            width: 100%;
-            margin-top: 8px;
-        }
         .cta-button {
             display: inline-block;
-            background: #000000;
-            color: #ffffff;
+            background: #000;
+            color: #fff;
             padding: 12px 18px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 700;
             font-size: 1.1em;
         }
-        .cta-button:focus,
-        .cta-button:hover {
-            outline: none;
-            filter: brightness(1.1);
-        }
 
         .contact-container {
-            background-color: #000000;
+            background-color: #000;
             padding: 30px;
             border-radius: 10px;
             text-align: center;
             width: 100%;
             max-width: 800px;
-            margin-top: 30px;
+            margin: 30px auto 0;
         }
+
         .contact-link {
             font-size: 1.5em;
             color: white;
             text-decoration: underline;
         }
 
-        /* Responsive */
-        @media only screen and (max-width: 768px) {
-            body {
-                padding: 0 20px; /* Ajusta el padding en móviles */
-            }
-            h1 {
-                font-size: 2.2em;
-            }
-            .box-container {
-                padding: 20px;
-            }
-            .product-container {
-                padding: 20px;
-            }
+        /* 📱 Móvil */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2em; }
+            p, .quote { font-size: 1.2em; margin-bottom: 30px; }
+            .box-container { padding: 20px; }
+            .product-container { padding: 20px; }
+
             .product-container-content {
                 flex-direction: column;
-                align-items: center;
                 text-align: center;
             }
+
             .product-container img {
+                max-width: 110px;
                 margin: 0 0 10px 0;
-                max-width: 120px;
             }
-            .product-title {
-                text-align: center;
-                font-size: 1.8em;
-            }
-            p, .quote {
-                font-size: 1.2em;
-                padding: 8px 10px;
-            }
-            .footer-text, .product-description, .cta-wrap {
-                text-align: center;
-                width: 100%;
-            }
-            .quote-author {
-                text-align: right;
-                margin-top: 5px; /* Ajusta el margen en móviles para mantener la distancia adecuada */
-            }
+
+            .footer-text { font-size: 1.9em; text-align: center; }
+            .product-title { font-size: 1.6em; text-align: center; }
+            .product-description { text-align: center; }
         }
     </style>
 </head>
+
 <body>
     <div class="box-container">
         <h1>Bienvenido a Aplicaciones HerrBri</h1>
         <p>Empresa fundada en el año 2024 con la intención de mejorar la calidad de trabajo de los profesionales del transporte mediante el uso de aplicaciones para teléfonos móviles.</p>
 
-        <!-- Frase con fondo translúcido -->
         <div class="quote">
             "El verdadero progreso es el que pone la tecnología al alcance de todos."
             <div class="quote-author">– Henry Ford</div>
         </div>
 
         <div class="product-container">
-            <!-- Frase "Nuestro producto" dentro del recuadro amarillo -->
             <div class="footer-text">Nuestro producto</div>
 
             <div class="product-container-content">
-                <!-- Imagen del logo con enlace a la Google Play Store -->
                 <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
                     <img src="log volumtransport web.png" alt="Logo VolumTransport">
                 </a>
-
-                <!-- Título del producto -->
-                <div class="product-title">
-                    Cajas en el vehículo (VolumTransport)
-                </div>
+                <div class="product-title">Cajas en el vehículo (VolumTransport)</div>
             </div>
 
-            <!-- Explicación debajo del logo y título -->
             <div class="product-description">
                 Con esta aplicación sabrás cuántas cajas puedes cargar en tu vehículo antes de comenzar a trabajar, optimizando tu tiempo y evitando esfuerzos innecesarios.
             </div>
 
-            <!-- CTA claro -->
-            <div class="cta-wrap">
-                <a class="cta-button" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
-                    Descargar VolumTransport en Google Play
-                </a>
-            </div>
+            <a class="cta-button" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
+                Descargar VolumTransport en Google Play
+            </a>
         </div>
     </div>
 
-    <!-- Sección de contacto -->
     <div class="contact-container">
         <a class="contact-link" href="mailto:aplicacionesherrbri.gloating506@passmail.net">Envíanos un correo</a>
     </div>
