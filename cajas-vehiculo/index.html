@@ -5,73 +5,167 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>App para calcular cuántas cajas caben en un vehículo (3D + AR) | VolumTransport</title>
-  <meta name="description" content="VolumTransport es una app Android para calcular cuántas cajas caben en un vehículo o espacio real. Muestra la colocación en 3D y permite medir con la cámara (AR). No es solo CBM." />
+  <meta name="description" content="VolumTransport es una app Android para calcular cuántas cajas caben en un vehículo o espacio real. Simulación 3D, medición AR y optimización de carga. No es solo CBM." />
   <link rel="canonical" href="https://aplicacionesherrbri.com/cajas-vehiculo/" />
   <meta name="robots" content="index,follow" />
 
   <style>
-    :root { --max: 920px; }
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; padding: 24px 16px; line-height: 1.5; }
-    .wrap { max-width: var(--max); margin: 0 auto; }
-    h1 { font-size: 1.9rem; margin: 0 0 10px; }
+    :root {
+      --max: 920px;
+      --green-bg: #eaf6ef;
+      --green-soft: #f3fbf6;
+      --green-border: #2e7d32;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 24px 16px;
+      line-height: 1.55;
+      background: var(--green-bg);
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+    }
+
+    h1 { font-size: 1.9rem; margin: 0 0 12px; }
+    h2 { margin-top: 26px; font-size: 1.35rem; }
+    h3 { margin-top: 18px; font-size: 1.05rem; }
+
     p { margin: 0 0 12px; }
-    .note { background: #f6f7f8; border-left: 4px solid #111; padding: 12px 12px; margin: 14px 0; }
     ul { margin: 10px 0 16px 18px; }
-    .cta { display: inline-block; background: #111; color: #fff; padding: 12px 14px; border-radius: 10px; text-decoration: none; font-weight: 700; }
-    .faq h2 { margin-top: 22px; font-size: 1.25rem; }
-    .faq h3 { margin: 14px 0 6px; font-size: 1.05rem; }
+
+    .note {
+      background: var(--green-soft);
+      border-left: 5px solid var(--green-border);
+      padding: 14px;
+      margin: 16px 0;
+      border-radius: 6px;
+    }
+
+    .seo-box {
+      background: #f8f9fa;
+      border: 1px dashed #bbb;
+      padding: 14px;
+      margin: 22px 0;
+      border-radius: 10px;
+    }
+
+    .cta {
+      display: inline-block;
+      background: #1b5e20;
+      color: #fff;
+      padding: 13px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 6px;
+    }
+
+    .cta:hover { filter: brightness(1.1); }
+
+    .compare {
+      background: var(--green-soft);
+      padding: 18px;
+      border-radius: 12px;
+      margin-top: 18px;
+    }
+
     .small { color: #444; font-size: .95rem; }
   </style>
 </head>
+
 <body>
   <main class="wrap">
+
     <h1>App para calcular cuántas cajas caben en un vehículo o espacio (Android)</h1>
 
     <p>
-      <strong>VolumTransport (Cajas en el vehículo)</strong> es una app Android para calcular cuántas cajas caben en un
-      vehículo o en cualquier espacio real, mostrando la <strong>colocación en 3D</strong> y permitiendo <strong>medir con la cámara (AR)</strong>.
+      <strong>VolumTransport (Cajas en el vehículo)</strong> es una app Android pensada para
+      <strong>calcular cuántas cajas caben en un vehículo o espacio real</strong>,
+      mostrando la <strong>colocación en 3D</strong> y permitiendo <strong>medir con la cámara (AR)</strong>.
     </p>
 
     <div class="note">
       <strong>Importante:</strong> esto <strong>no es</strong> una simple calculadora de volumen (CBM).
-      Aquí ves <strong>cómo se colocan</strong> las cajas y si <strong>realmente caben</strong> en furgonetas, coches, camiones,
-      vehículos mixtos o en el modo <strong>espacio universal</strong> (medidas libres).
+      Aquí ves <strong>cómo se colocan las cajas</strong> y si <strong>realmente caben</strong> en
+      furgonetas, coches, camiones, vehículos mixtos o en el modo
+      <strong>espacio universal</strong> (medidas libres).
     </div>
 
     <h2>Qué puedes hacer con VolumTransport</h2>
     <ul>
-      <li><strong>Simulación 3D</strong> de la carga: rota, revisa y comprueba el aprovechamiento del espacio.</li>
-      <li><strong>Medición AR</strong>: mide cajas o espacios con la cámara del móvil.</li>
+      <li><strong>Simulación 3D</strong> de la carga: rota y revisa el aprovechamiento del espacio.</li>
+      <li><strong>Medición AR</strong>: mide cajas o espacios directamente con la cámara del móvil.</li>
       <li>Planificar cargas para <strong>furgonetas, coches, camiones y vehículos mixtos</strong>.</li>
-      <li><strong>Modo “espacio universal”</strong>: trasteros, habitaciones, almacenes o cualquier hueco con medidas personalizadas.</li>
-      <li>Evitar viajes extra: calcula si cabe todo y cómo distribuirlo.</li>
+      <li><strong>Modo espacio universal</strong>: trasteros, habitaciones, almacenes o huecos personalizados.</li>
+      <li>Evita viajes extra: calcula si cabe todo y cómo distribuirlo antes de cargar.</li>
     </ul>
+
+    <div class="seo-box">
+      <strong>También se busca como:</strong>
+      <ul>
+        <li>calcular carga de una furgoneta</li>
+        <li>cuántas cajas caben en un vehículo</li>
+        <li>app para organizar cajas en 3D</li>
+        <li>bin packing 3D para vehículos</li>
+        <li>optimizar espacio en furgoneta o camión</li>
+        <li>medir cajas con el móvil</li>
+        <li>planificar carga de reparto</li>
+        <li>alternativa a calculadoras CBM</li>
+      </ul>
+    </div>
+
+    <h2>Ventajas frente a Easy Cargo y herramientas similares</h2>
+    <div class="compare">
+      <p>
+        Herramientas como <strong>Easy Cargo</strong> están pensadas principalmente para
+        <strong>uso en ordenador y entorno web</strong>, con un enfoque más técnico e industrial.
+      </p>
+      <ul>
+        <li><strong>VolumTransport está diseñada para móviles</strong>: úsala directamente en el almacén, en la calle o junto al vehículo.</li>
+        <li><strong>Medición con cámara (AR)</strong>, sin cintas métricas ni datos previos.</li>
+        <li><strong>Más accesible en precio</strong>, pensada para autónomos y pequeños profesionales.</li>
+        <li>Uso rápido e intuitivo, sin necesidad de ordenador ni formación técnica.</li>
+        <li>Ideal para reparto, mensajería, mudanzas y espacios pequeños.</li>
+      </ul>
+    </div>
 
     <p>
       <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
         Descargar VolumTransport en Google Play
       </a>
     </p>
-    <p class="small">Consejo: guarda esta página en favoritos para consultarla cuando prepares una carga.</p>
+
+    <p class="small">
+      Consejo: guarda esta página en favoritos para consultarla cuando prepares una carga real.
+    </p>
 
     <section class="faq">
       <h2>Preguntas frecuentes</h2>
 
       <h3>¿Sirve solo para furgonetas?</h3>
-      <p>No. Sirve para furgonetas, coches, camiones y vehículos mixtos. Además tiene un modo “espacio universal” para cualquier espacio con medidas libres.</p>
+      <p>No. Funciona con furgonetas, coches, camiones y vehículos mixtos.</p>
 
-      <h3>¿Es solo volumen (CBM) o coloca las cajas?</h3>
-      <p>No es solo CBM. La app calcula y muestra la <strong>colocación real en 3D</strong> para comprobar si caben de verdad.</p>
+      <h3>¿Es solo una calculadora de volumen (CBM)?</h3>
+      <p>No. Muestra la <strong>colocación real en 3D</strong> para comprobar si las cajas caben de verdad.</p>
 
       <h3>¿Puedo medir con el móvil?</h3>
-      <p>Sí. Incluye medición con la cámara mediante <strong>Realidad Aumentada (AR)</strong> para tomar medidas rápidamente.</p>
+      <p>Sí. Incluye medición mediante <strong>Realidad Aumentada (AR)</strong>.</p>
 
-      <h3>¿Vale para habitaciones, trasteros o almacenes?</h3>
-      <p>Sí. Usa el modo <strong>espacio universal</strong> y escribe las medidas del espacio como quieras.</p>
+      <h3>¿Vale para habitaciones o trasteros?</h3>
+      <p>Sí. Usa el modo <strong>espacio universal</strong> y define las medidas manualmente.</p>
 
-      <h3>¿Es gratis?</h3>
-      <p>La disponibilidad y opciones dependen de la versión publicada en Google Play. Entra desde el botón y verás el modelo exacto.</p>
+      <h3>¿Es gratuita?</h3>
+      <p>Depende de la versión disponible en Google Play. Consulta los detalles desde la tienda.</p>
     </section>
+
   </main>
 </body>
 </html>
