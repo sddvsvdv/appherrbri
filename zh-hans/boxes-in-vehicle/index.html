@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>计算车辆可装多少箱子的应用（3D + AR） | VolumTransport</title>
+  <meta name="description" content="VolumTransport 是一款 Android 应用，可用于计算车辆或真实空间中可以放置多少箱子。提供 3D 模拟、AR 测量和装载优化。不只是 CBM 计算。" />
+  <link rel="canonical" href="https://aplicacionesherrbri.com/zh-hans/boxes-in-vehicle/" />
+  <meta name="robots" content="index,follow" />
+
+  <style>
+    :root {
+      --max: 920px;
+      --green-bg: #eaf6ef;
+      --green-soft: #f3fbf6;
+      --green-border: #2e7d32;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 24px 16px;
+      line-height: 1.55;
+      background: var(--green-bg);
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+    }
+
+    h1 { font-size: 1.9rem; margin: 0 0 12px; }
+    h2 { margin-top: 26px; font-size: 1.35rem; }
+    h3 { margin-top: 18px; font-size: 1.05rem; }
+
+    p { margin: 0 0 12px; }
+    ul { margin: 10px 0 16px 18px; }
+
+    .note {
+      background: var(--green-soft);
+      border-left: 5px solid var(--green-border);
+      padding: 14px;
+      margin: 16px 0;
+      border-radius: 6px;
+    }
+
+    .seo-box {
+      background: #f8f9fa;
+      border: 1px dashed #bbb;
+      padding: 14px;
+      margin: 22px 0;
+      border-radius: 10px;
+    }
+
+    .cta {
+      display: inline-block;
+      background: #1b5e20;
+      color: #fff;
+      padding: 13px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 6px;
+    }
+
+    .cta:hover { filter: brightness(1.1); }
+
+    .compare {
+      background: var(--green-soft);
+      padding: 18px;
+      border-radius: 12px;
+      margin-top: 18px;
+    }
+
+    .small { color: #444; font-size: .95rem; }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+
+    <h1>计算车辆或真实空间可装多少箱子的应用（Android）</h1>
+
+    <p>
+      <strong>VolumTransport（车辆装箱）</strong> 是一款 Android 应用，专为
+      <strong>计算车辆或真实空间中可以放置多少箱子</strong>而设计，
+      可显示<strong>真实的 3D 摆放方式</strong>，并支持
+      <strong>使用手机摄像头进行测量（AR）</strong>。
+    </p>
+
+    <div class="note">
+      <strong>重要说明：</strong>这<strong>不是</strong>一个简单的体积（CBM）计算器。
+      你可以看到<strong>箱子的实际摆放方式</strong>以及
+      <strong>它们是否真的能放得下</strong>，
+      通过<strong>基于装箱算法（bin packing）的 3D 模拟</strong>实现。
+      适用于厢式货车、轿车、卡车、混合车型，或
+      <strong>通用空间模式</strong>（自定义尺寸）。
+    </div>
+
+    <h2>使用 VolumTransport 你可以做什么</h2>
+    <ul>
+      <li><strong>3D 装载模拟</strong>：旋转查看空间的实际利用情况。</li>
+      <li><strong>AR 测量</strong>：直接用手机测量箱子或空间。</li>
+      <li>为<strong>厢式货车、轿车、卡车和混合车型</strong>规划装载方案。</li>
+      <li><strong>通用空间模式</strong>：储藏室、房间、仓库或自定义空间。</li>
+      <li><strong>多次运输的均衡装载</strong>：当一次装不下时，帮助高效分配。</li>
+      <li>提前知道是否能装下，避免不必要的额外运输。</li>
+    </ul>
+
+    <p class="small">
+      除了装载计算外，VolumTransport 还提供面向运输和物流专业人士的高级功能。
+    </p>
+
+    <div class="seo-box">
+      <strong>有些用户会使用以下关键词来寻找此类解决方案：</strong>
+      <ul>
+        <li>计算货车装载能力</li>
+        <li>一辆车能装多少箱子</li>
+        <li>3D 装箱应用</li>
+        <li>车辆 3D 装箱算法</li>
+        <li>优化货车或卡车空间</li>
+        <li>用手机测量箱子</li>
+        <li>配送装载规划</li>
+        <li>CBM 计算器替代方案</li>
+        <li>司机、快递员和搬运服务应用</li>
+      </ul>
+    </div>
+
+    <h2>相比 Easy Cargo 等类似工具的优势</h2>
+    <div class="compare">
+      <p>
+        <strong>Easy Cargo</strong> 等工具以及其他
+        <strong>网页或桌面端装载规划软件</strong>
+        主要面向技术性或工业环境。
+      </p>
+      <ul>
+        <li><strong>VolumTransport 专为移动端设计</strong>：可直接在现场、车辆旁使用。</li>
+        <li><strong>基于摄像头的 AR 测量</strong>，无需卷尺。</li>
+        <li><strong>价格更亲民</strong>，适合个体经营者和小型企业。</li>
+        <li>操作快速直观，无需电脑或专业培训。</li>
+        <li>非常适合配送、快递、搬家以及小空间场景。</li>
+      </ul>
+    </div>
+
+    <p>
+      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
+        在 Google Play 下载 VolumTransport
+      </a>
+    </p>
+
+    <p class="small">
+      提示：在准备实际装载前，建议将此页面加入书签。
+    </p>
+
+    <section class="faq">
+      <h2>常见问题</h2>
+
+      <h3>只适用于厢式货车吗？</h3>
+      <p>不是。支持厢式货车、轿车、卡车以及混合车型。</p>
+
+      <h3>只是体积（CBM）计算器吗？</h3>
+      <p>不是。它显示<strong>真实的 3D 摆放方式</strong>，用于确认箱子是否真的能放下。</p>
+
+      <h3>可以用手机测量吗？</h3>
+      <p>可以。应用支持<strong>增强现实（AR）</strong>测量。</p>
+
+      <h3>可以用于房间或储藏空间吗？</h3>
+      <p>可以。使用<strong>通用空间模式</strong>并自定义尺寸。</p>
+
+      <h3>应用是免费的吗？</h3>
+      <p>取决于 Google Play 上提供的版本，请在商店中查看详情。</p>
+    </section>
+
+  </main>
+</body>
+</html>
