@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>একটি যানবাহনে কতগুলো বাক্স বসবে তা হিসাব করার অ্যাপ (3D + AR) | VolumTransport</title>
+  <meta name="description" content="VolumTransport হলো একটি Android অ্যাপ যা যানবাহন বা বাস্তব স্থানে কতগুলো বাক্স বসবে তা হিসাব করে। 3D লোড সিমুলেশন, ক্যামেরা দিয়ে AR মাপ এবং লোড অপ্টিমাইজেশন। এটি শুধু CBM নয়।" />
+  <link rel="canonical" href="https://aplicacionesherrbri.com/bn/boxes-fit-vehicle/" />
+  <meta name="robots" content="index,follow" />
+
+  <style>
+    :root {
+      --max: 920px;
+      --green-bg: #eaf6ef;
+      --green-soft: #f3fbf6;
+      --green-border: #2e7d32;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 24px 16px;
+      line-height: 1.55;
+      background: var(--green-bg);
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+    }
+
+    h1 { font-size: 1.9rem; margin: 0 0 12px; }
+    h2 { margin-top: 26px; font-size: 1.35rem; }
+    h3 { margin-top: 18px; font-size: 1.05rem; }
+
+    p { margin: 0 0 12px; }
+    ul { margin: 10px 0 16px 18px; }
+
+    .note {
+      background: var(--green-soft);
+      border-left: 5px solid var(--green-border);
+      padding: 14px;
+      margin: 16px 0;
+      border-radius: 6px;
+    }
+
+    .seo-box {
+      background: #f8f9fa;
+      border: 1px dashed #bbb;
+      padding: 14px;
+      margin: 22px 0;
+      border-radius: 10px;
+    }
+
+    .cta {
+      display: inline-block;
+      background: #1b5e20;
+      color: #fff;
+      padding: 13px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 6px;
+    }
+
+    .cta:hover { filter: brightness(1.1); }
+
+    .compare {
+      background: var(--green-soft);
+      padding: 18px;
+      border-radius: 12px;
+      margin-top: 18px;
+    }
+
+    .small { color: #444; font-size: .95rem; }
+  </style>
+
+  <!-- ✅ Structured data (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "VolumTransport (Boxes in the Vehicle)",
+    "operatingSystem": "Android",
+    "applicationCategory": "BusinessApplication",
+    "description": "Android অ্যাপ যা যানবাহন বা বাস্তব স্থানে কতগুলো বাক্স বসবে তা হিসাব করে, বাস্তব 3D প্লেসমেন্ট দেখায় এবং ক্যামেরা দিয়ে AR মাপ নিতে দেয়। এটি শুধু CBM নয়।",
+    "url": "https://aplicacionesherrbri.com/bn/boxes-fit-vehicle/",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
+  }
+  </script>
+</head>
+
+<body>
+  <main class="wrap">
+
+    <h1>একটি যানবাহন বা বাস্তব স্থানে কতগুলো বাক্স বসবে তা হিসাব করার অ্যাপ (Android)</h1>
+
+    <p>
+      <strong>VolumTransport (Boxes in the Vehicle)</strong> হলো একটি Android অ্যাপ যা
+      <strong>ভ্যান, গাড়ি বা যেকোনো বাস্তব স্থানে কতগুলো বাক্স বসবে</strong> তা হিসাব করে,
+      <strong>বাস্তব 3D প্লেসমেন্ট</strong> দেখায় এবং
+      <strong>মোবাইল ক্যামেরা দিয়ে AR মাপ নেওয়ার সুবিধা দেয়</strong>।
+    </p>
+
+    <div class="note">
+      <strong>গুরুত্বপূর্ণ:</strong> এটি <strong>শুধু</strong> ভলিউম বা CBM ক্যালকুলেটর নয়।
+      এখানে আপনি <strong>বাক্সগুলো বাস্তবে কীভাবে বসবে</strong> তা দেখতে পারবেন এবং
+      <strong>সত্যিই বসে কি না</strong> যাচাই করতে পারবেন।
+      এটি <strong>3D bin packing ভিত্তিক সিমুলেশন</strong> ব্যবহার করে, যা
+      ভ্যান, গাড়ি, ট্রাক, মিক্সড ভেহিকল অথবা
+      <strong>ইউনিভার্সাল স্পেস মোড</strong> (নিজের মতো মাপ)–এর জন্য উপযোগী।
+    </div>
+
+    <h2>VolumTransport দিয়ে আপনি যা করতে পারবেন</h2>
+    <ul>
+      <li><strong>3D লোড সিমুলেশন</strong>: ঘুরিয়ে দেখে স্পেস কতটা ব্যবহার হচ্ছে বুঝুন।</li>
+      <li><strong>AR মাপ</strong>: মোবাইল ক্যামেরা দিয়ে বাক্স বা জায়গা মাপুন।</li>
+      <li><strong>ভ্যান, গাড়ি, ট্রাক ও মিক্সড ভেহিকল</strong>–এর জন্য লোড পরিকল্পনা করুন।</li>
+      <li><strong>ইউনিভার্সাল স্পেস মোড</strong>: স্টোররুম, ঘর, গুদাম বা কাস্টম জায়গার জন্য।</li>
+      <li><strong>একাধিক ট্রিপে লোড ভাগ করা</strong>: সব না ঢুকলে ওভারলোড এড়াতে সাহায্য করে।</li>
+      <li>অপ্রয়োজনীয় অতিরিক্ত ট্রিপ এড়ান—আগেই দেখুন সব ঢুকবে কি না।</li>
+    </ul>
+
+    <p class="small">
+      লোড গণনার পাশাপাশি, VolumTransport পরিবহন ও লজিস্টিকস পেশাজীবীদের জন্য উন্নত সুবিধাও প্রদান করে।
+    </p>
+
+    <div class="seo-box">
+      <strong>অনেকে এই ধরনের সমাধান খোঁজেন যেমন:</strong>
+      <ul>
+        <li>ভ্যান লোড হিসাব করার অ্যাপ</li>
+        <li>গাড়িতে কতগুলো বাক্স বসবে</li>
+        <li>3D লোড পরিকল্পনা অ্যাপ</li>
+        <li>যানবাহনের জন্য 3D bin packing</li>
+        <li>ভ্যান বা ট্রাকের স্পেস অপ্টিমাইজ করা</li>
+        <li>মোবাইল দিয়ে বাক্স মাপা</li>
+        <li>ডেলিভারি লোড পরিকল্পনা</li>
+        <li>CBM ক্যালকুলেটরের বিকল্প</li>
+        <li>ড্রাইভার, কুরিয়ার ও মুভিং সার্ভিসের অ্যাপ</li>
+      </ul>
+    </div>
+
+    <h2>Easy Cargo ও অনুরূপ টুলের তুলনায় সুবিধা</h2>
+    <div class="compare">
+      <p>
+        <strong>Easy Cargo</strong>–এর মতো টুল সাধারণত
+        <strong>ডেস্কটপ বা ওয়েব ব্যবহারের জন্য</strong> তৈরি এবং তুলনামূলকভাবে বেশি টেকনিক্যাল।
+      </p>
+      <ul>
+        <li><strong>VolumTransport মোবাইল-ফার্স্ট</strong>: গাড়ির পাশেই দাঁড়িয়ে ব্যবহার করা যায়।</li>
+        <li><strong>AR মাপ ক্যামেরা দিয়ে</strong>: মেজারিং টেপ বা আগাম ডেটার দরকার নেই।</li>
+        <li><strong>সাশ্রয়ী</strong>: ছোট ব্যবসা ও স্বনিযুক্তদের জন্য উপযোগী।</li>
+        <li>সহজ ও দ্রুত ব্যবহার—কম্পিউটার বা প্রশিক্ষণ ছাড়াই।</li>
+        <li>ডেলিভারি, কুরিয়ার, মুভিং কাজ ও ছোট স্পেসের জন্য আদর্শ।</li>
+      </ul>
+    </div>
+
+    <p>
+      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
+        Google Play থেকে VolumTransport ডাউনলোড করুন
+      </a>
+    </p>
+
+    <p class="small">
+      পরামর্শ: বাস্তব লোড প্রস্তুতের সময় ব্যবহার করার জন্য এই পেজটি বুকমার্ক করে রাখুন।
+    </p>
+
+    <section class="faq">
+      <h2>প্রায় জিজ্ঞাসিত প্রশ্ন</h2>
+
+      <h3>এটি কি শুধু ভ্যানের জন্য?</h3>
+      <p>না। ভ্যান, গাড়ি, ট্রাক ও মিক্সড ভেহিকলে কাজ করে।</p>
+
+      <h3>এটি কি শুধু ভলিউম বা CBM ক্যালকুলেটর?</h3>
+      <p>না। <strong>বাস্তব 3D প্লেসমেন্ট</strong> দেখিয়ে যাচাই করে বাক্সগুলো সত্যিই বসবে কি না।</p>
+
+      <h3>আমি কি মোবাইল দিয়ে মাপ নিতে পারব?</h3>
+      <p>হ্যাঁ। <strong>Augmented Reality (AR)</strong> ব্যবহার করে মাপ নেওয়া যায়।</p>
+
+      <h3>ঘর বা স্টোররুমের জন্য ব্যবহার করা যাবে?</h3>
+      <p>হ্যাঁ। <strong>ইউনিভার্সাল স্পেস মোড</strong> ব্যবহার করে নিজের মতো মাপ সেট করতে পারবেন।</p>
+
+      <h3>অ্যাপটি কি ফ্রি?</h3>
+      <p>Google Play–এ কোন সংস্করণ পাওয়া যাচ্ছে তার উপর নির্ভর করে। বিস্তারিত স্টোরে দেখুন।</p>
+    </section>
+
+  </main>
+</body>
+</html>
