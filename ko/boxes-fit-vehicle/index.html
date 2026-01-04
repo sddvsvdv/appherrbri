@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>차량에 박스가 얼마나 들어가는지 계산하는 앱 (3D + AR) | VolumTransport</title>
+  <meta name="description" content="VolumTransport는 차량 또는 실제 공간에 몇 개의 박스가 들어가는지 계산하는 Android 앱입니다. 3D 적재 시뮬레이션, 카메라 AR 측정, 적재 최적화를 제공합니다. 단순 CBM 계산이 아닙니다." />
+  <link rel="canonical" href="https://aplicacionesherrbri.com/ko/boxes-fit-vehicle/" />
+  <meta name="robots" content="index,follow" />
+
+  <style>
+    :root {
+      --max: 920px;
+      --green-bg: #eaf6ef;
+      --green-soft: #f3fbf6;
+      --green-border: #2e7d32;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 24px 16px;
+      line-height: 1.55;
+      background: var(--green-bg);
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+    }
+
+    h1 { font-size: 1.9rem; margin: 0 0 12px; }
+    h2 { margin-top: 26px; font-size: 1.35rem; }
+    h3 { margin-top: 18px; font-size: 1.05rem; }
+
+    p { margin: 0 0 12px; }
+    ul { margin: 10px 0 16px 18px; }
+
+    .note {
+      background: var(--green-soft);
+      border-left: 5px solid var(--green-border);
+      padding: 14px;
+      margin: 16px 0;
+      border-radius: 6px;
+    }
+
+    .seo-box {
+      background: #f8f9fa;
+      border: 1px dashed #bbb;
+      padding: 14px;
+      margin: 22px 0;
+      border-radius: 10px;
+    }
+
+    .cta {
+      display: inline-block;
+      background: #1b5e20;
+      color: #fff;
+      padding: 13px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 6px;
+    }
+
+    .cta:hover { filter: brightness(1.1); }
+
+    .compare {
+      background: var(--green-soft);
+      padding: 18px;
+      border-radius: 12px;
+      margin-top: 18px;
+    }
+
+    .small { color: #444; font-size: .95rem; }
+  </style>
+
+  <!-- ✅ Structured data (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "VolumTransport (Boxes in the Vehicle)",
+    "operatingSystem": "Android",
+    "applicationCategory": "BusinessApplication",
+    "description": "차량(밴/승용차) 또는 실제 공간에 몇 개의 박스가 들어가는지 계산하고, 실제 3D 배치를 보여주며, 카메라로 AR 측정을 지원하는 Android 앱입니다. 단순 CBM 계산이 아닙니다.",
+    "url": "https://aplicacionesherrbri.com/ko/boxes-fit-vehicle/",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
+  }
+  </script>
+</head>
+
+<body>
+  <main class="wrap">
+
+    <h1>차량 또는 실제 공간에 박스가 얼마나 들어가는지 계산하는 앱 (Android)</h1>
+
+    <p>
+      <strong>VolumTransport (Boxes in the Vehicle)</strong>는
+      <strong>밴, 승용차 또는 실제 공간에 몇 개의 박스가 들어가는지</strong> 계산하도록 설계된 Android 앱입니다.
+      <strong>실제 3D 배치</strong>를 보여주고, <strong>휴대폰 카메라로 AR 측정</strong>도 할 수 있습니다.
+    </p>
+
+    <div class="note">
+      <strong>중요:</strong> 이 앱은 <strong>단순한</strong> 부피(CBM) 계산기가 아닙니다.
+      박스가 <strong>실제로 어떻게 배치되는지</strong> 확인하고,
+      <strong>정말로 들어가는지</strong>를 검증할 수 있습니다.
+      <strong>3D bin packing 기반 시뮬레이션</strong>을 사용하며,
+      밴/승용차/트럭/혼합 차량 또는
+      <strong>유니버설 공간 모드</strong>(사용자 정의 치수)에 맞게 설계되었습니다.
+    </div>
+
+    <h2>VolumTransport로 할 수 있는 것</h2>
+    <ul>
+      <li><strong>3D 적재 시뮬레이션</strong>: 회전하며 공간 활용을 확인합니다.</li>
+      <li><strong>AR 측정</strong>: 휴대폰 카메라로 박스나 공간을 직접 측정합니다.</li>
+      <li><strong>밴, 승용차, 트럭, 혼합 차량</strong>의 적재를 계획합니다.</li>
+      <li><strong>유니버설 공간 모드</strong>: 창고, 방, 보관함 등 임의 공간도 설정 가능합니다.</li>
+      <li><strong>여러 번 운행 시 적재 분배</strong>: 한 번에 다 안 들어가면 과적을 피하고 효율적으로 나누는 데 도움을 줍니다.</li>
+      <li>불필요한 추가 운행을 줄이기 위해 미리 “들어가는지 / 어떻게 싣는지”를 확인합니다.</li>
+    </ul>
+
+    <p class="small">
+      기본 적재 계산을 넘어, VolumTransport는 운송 및 물류 전문가를 위한 고급 기능도 제공합니다.
+    </p>
+
+    <div class="seo-box">
+      <strong>사용자들은 보통 다음과 같은 표현으로 이 유형의 솔루션을 찾습니다:</strong>
+      <ul>
+        <li>밴 적재 계산</li>
+        <li>차량에 박스가 몇 개 들어가나</li>
+        <li>박스 3D 적재 앱</li>
+        <li>차량 3D bin packing</li>
+        <li>밴/트럭 공간 최적화</li>
+        <li>휴대폰으로 박스 측정</li>
+        <li>배송 적재 계획</li>
+        <li>CBM 계산기 대안</li>
+        <li>운전자, 택배/퀵, 이사 서비스용 앱</li>
+      </ul>
+    </div>
+
+    <h2>Easy Cargo 및 유사 도구 대비 장점</h2>
+    <div class="compare">
+      <p>
+        <strong>Easy Cargo</strong> 같은 도구는 주로
+        <strong>데스크톱/웹 환경</strong>을 중심으로, 보다 기술적·산업적 용도에 초점이 맞춰져 있습니다.
+      </p>
+      <ul>
+        <li><strong>VolumTransport는 모바일 중심</strong>: 창고, 현장, 차량 옆에서 바로 사용 가능합니다.</li>
+        <li><strong>카메라 기반 AR 측정</strong>: 줄자나 사전 데이터 없이도 측정할 수 있습니다.</li>
+        <li><strong>더 합리적인 가격</strong>: 프리랜서와 소규모 사업자에게 적합합니다.</li>
+        <li>컴퓨터나 기술 교육 없이도 빠르고 직관적으로 사용할 수 있습니다.</li>
+        <li>배송, 택배/퀵, 이사 작업 및 작은 공간에 특히 적합합니다.</li>
+      </ul>
+    </div>
+
+    <p>
+      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
+        Google Play에서 VolumTransport 다운로드
+      </a>
+    </p>
+
+    <p class="small">
+      팁: 실제 적재를 준비할 때 참고할 수 있도록 이 페이지를 북마크해 두세요.
+    </p>
+
+    <section class="faq">
+      <h2>자주 묻는 질문</h2>
+
+      <h3>밴에서만 사용할 수 있나요?</h3>
+      <p>아니요. 밴, 승용차, 트럭, 혼합 차량에서 모두 사용할 수 있습니다.</p>
+
+      <h3>단순한 부피(CBM) 계산기인가요?</h3>
+      <p>아니요. <strong>실제 3D 배치</strong>를 보여주어 박스가 정말 들어가는지 확인할 수 있습니다.</p>
+
+      <h3>휴대폰으로 측정할 수 있나요?</h3>
+      <p>네. <strong>증강현실(AR)</strong> 측정을 지원합니다.</p>
+
+      <h3>방이나 보관 공간에도 사용할 수 있나요?</h3>
+      <p>네. <strong>유니버설 공간 모드</strong>에서 사용자 정의 치수를 설정하면 됩니다.</p>
+
+      <h3>무료인가요?</h3>
+      <p>Google Play에 제공되는 버전에 따라 다릅니다. 스토어에서 상세 정보를 확인하세요.</p>
+    </section>
+
+  </main>
+</body>
+</html>
