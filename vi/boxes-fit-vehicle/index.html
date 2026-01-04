@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Ứng dụng tính xem bao nhiêu thùng/hộp vừa trong xe (3D + AR) | VolumTransport</title>
+  <meta name="description" content="VolumTransport là ứng dụng Android giúp tính xem bao nhiêu thùng/hộp vừa trong xe hoặc không gian thực. Mô phỏng xếp hàng 3D, đo AR bằng camera và tối ưu tải. Không chỉ là CBM." />
+  <link rel="canonical" href="https://aplicacionesherrbri.com/vi/boxes-fit-vehicle/" />
+  <meta name="robots" content="index,follow" />
+
+  <style>
+    :root{
+      --max:920px;
+      --green-bg:#eaf6ef;
+      --green-soft:#f3fbf6;
+      --green-border:#2e7d32;
+    }
+
+    body{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      margin:0;
+      padding:24px 16px;
+      line-height:1.55;
+      background:var(--green-bg);
+    }
+
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      background:#ffffff;
+      padding:24px;
+      border-radius:14px;
+      box-shadow:0 8px 24px rgba(0,0,0,.06);
+    }
+
+    h1{ font-size:1.9rem; margin:0 0 12px; }
+    h2{ margin-top:26px; font-size:1.35rem; }
+    h3{ margin-top:18px; font-size:1.05rem; }
+
+    p{ margin:0 0 12px; }
+    ul{ margin:10px 0 16px 18px; }
+
+    .note{
+      background:var(--green-soft);
+      border-left:5px solid var(--green-border);
+      padding:14px;
+      margin:16px 0;
+      border-radius:6px;
+    }
+
+    .seo-box{
+      background:#f8f9fa;
+      border:1px dashed #bbb;
+      padding:14px;
+      margin:22px 0;
+      border-radius:10px;
+    }
+
+    .cta{
+      display:inline-block;
+      background:#1b5e20;
+      color:#fff;
+      padding:13px 18px;
+      border-radius:12px;
+      text-decoration:none;
+      font-weight:700;
+      margin-top:6px;
+    }
+
+    .cta:hover{ filter:brightness(1.1); }
+
+    .compare{
+      background:var(--green-soft);
+      padding:18px;
+      border-radius:12px;
+      margin-top:18px;
+    }
+
+    .small{ color:#444; font-size:.95rem; }
+  </style>
+
+  <!-- ✅ Structured data (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "VolumTransport",
+    "operatingSystem": "Android",
+    "applicationCategory": "BusinessApplication",
+    "description": "Ứng dụng Android giúp tính xem bao nhiêu thùng/hộp vừa trong xe (xe van, ô tô, xe tải) hoặc không gian thực, hiển thị cách xếp thật trong 3D và cho phép đo AR bằng camera. Không chỉ là CBM.",
+    "url": "https://aplicacionesherrbri.com/vi/boxes-fit-vehicle/",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
+  }
+  </script>
+</head>
+
+<body>
+  <main class="wrap">
+
+    <h1>Ứng dụng tính xem bao nhiêu thùng/hộp vừa trong xe hoặc không gian thực (Android)</h1>
+
+    <p>
+      <strong>VolumTransport</strong> là ứng dụng Android được thiết kế để
+      <strong>tính xem bao nhiêu thùng/hộp vừa trong xe van, ô tô, xe tải hoặc không gian thực</strong>,
+      hiển thị <strong>cách xếp thật trong 3D</strong> và cho phép bạn <strong>đo bằng camera điện thoại (AR)</strong>.
+    </p>
+
+    <div class="note">
+      <strong>Quan trọng:</strong> đây <strong>không</strong> chỉ là máy tính thể tích (CBM).
+      Bạn sẽ thấy <strong>cách các thùng/hộp được xếp thực tế</strong> và liệu chúng
+      <strong>có thật sự vừa hay không</strong>, nhờ <strong>mô phỏng 3D dựa trên kỹ thuật bin packing</strong>,
+      phù hợp cho xe van, ô tô, xe tải, xe hỗn hợp hoặc
+      <strong>chế độ không gian tuỳ chỉnh</strong> (tự nhập kích thước).
+    </div>
+
+    <h2>Bạn có thể làm gì với VolumTransport</h2>
+    <ul>
+      <li><strong>Mô phỏng xếp hàng 3D</strong>: xoay và xem mức độ tận dụng không gian.</li>
+      <li><strong>Đo AR</strong>: đo thùng/hộp hoặc không gian trực tiếp bằng camera điện thoại.</li>
+      <li>Lập kế hoạch tải cho <strong>xe van, ô tô, xe tải và xe hỗn hợp</strong>.</li>
+      <li><strong>Chế độ không gian tuỳ chỉnh</strong>: kho, phòng, nhà kho, hoặc không gian do bạn đặt.</li>
+      <li><strong>Cân bằng tải cho nhiều chuyến</strong>: nếu không vừa hết, giúp chia tải để tránh quá tải và các chuyến gần như trống.</li>
+      <li>Tránh chuyến đi thừa: kiểm tra trước xem có vừa hết và nên xếp như thế nào.</li>
+    </ul>
+
+    <p class="small">
+      Ngoài việc tính tải cơ bản, VolumTransport còn có các tính năng nâng cao dành cho người làm vận chuyển và logistics.
+    </p>
+
+    <div class="seo-box">
+      <strong>Mọi người thường tìm giải pháp này bằng các cụm từ như:</strong>
+      <ul>
+        <li>tính tải xe van</li>
+        <li>bao nhiêu thùng/hộp vừa trong xe</li>
+        <li>ứng dụng xếp thùng/hộp 3D</li>
+        <li>bin packing 3D cho xe</li>
+        <li>tối ưu không gian xe van hoặc xe tải</li>
+        <li>đo thùng/hộp bằng điện thoại</li>
+        <li>lập kế hoạch tải giao hàng</li>
+        <li>thay thế máy tính CBM</li>
+        <li>ứng dụng cho tài xế, shipper, chuyển nhà</li>
+      </ul>
+    </div>
+
+    <h2>Ưu điểm so với Easy Cargo và các công cụ tương tự</h2>
+    <div class="compare">
+      <p>
+        Các công cụ như <strong>Easy Cargo</strong> thường được thiết kế chủ yếu cho
+        <strong>máy tính để bàn và môi trường web</strong>, với thiên hướng kỹ thuật và công nghiệp hơn.
+      </p>
+      <ul>
+        <li><strong>VolumTransport tối ưu cho di động</strong>: dùng ngay tại kho, ngoài đường, hoặc cạnh xe.</li>
+        <li><strong>Đo AR bằng camera</strong>, không cần thước dây hay dữ liệu sẵn có.</li>
+        <li><strong>Giá dễ tiếp cận hơn</strong>, phù hợp cho cá nhân và doanh nghiệp nhỏ.</li>
+        <li>Dễ và nhanh, không cần máy tính hay đào tạo kỹ thuật.</li>
+        <li>Lý tưởng cho giao hàng, chuyển phát, chuyển nhà và không gian nhỏ.</li>
+      </ul>
+    </div>
+
+    <p>
+      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
+        Tải VolumTransport trên Google Play
+      </a>
+    </p>
+
+    <p class="small">
+      Mẹo: hãy đánh dấu trang này và dùng khi bạn chuẩn bị xếp hàng thực tế.
+    </p>
+
+    <section class="faq">
+      <h2>Câu hỏi thường gặp</h2>
+
+      <h3>Chỉ dùng cho xe van thôi à?</h3>
+      <p>Không. Ứng dụng hoạt động với xe van, ô tô, xe tải và xe hỗn hợp.</p>
+
+      <h3>Chỉ là máy tính thể tích (CBM) thôi sao?</h3>
+      <p>Không. Ứng dụng hiển thị <strong>cách xếp thật trong 3D</strong> để kiểm tra thùng/hộp có thật sự vừa hay không.</p>
+
+      <h3>Tôi có thể đo bằng điện thoại không?</h3>
+      <p>Có. Ứng dụng có tính năng đo bằng <strong>Thực tế tăng cường (AR)</strong>.</p>
+
+      <h3>Dùng cho phòng hoặc kho chứa được không?</h3>
+      <p>Có. Hãy dùng <strong>chế độ không gian tuỳ chỉnh</strong> và nhập kích thước mong muốn.</p>
+
+      <h3>Miễn phí không?</h3>
+      <p>Tùy vào phiên bản có trên Google Play. Hãy xem chi tiết trong cửa hàng.</p>
+    </section>
+
+  </main>
+</body>
+</html>
