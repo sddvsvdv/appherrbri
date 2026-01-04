@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="lo">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>ແອັບຄຳນວນວ່າມີກ່ອງໄດ້ຈັກກ່ອງໃນພາຫະນະ (3D + AR) | VolumTransport</title>
+  <meta name="description" content="VolumTransport ແມ່ນແອັບ Android ສໍາລັບຄຳນວນວ່າມີກ່ອງໄດ້ຈັກກ່ອງໃນພາຫະນະ ຫຼື ພື້ນທີ່ຈິງ. ຈໍາລອງການຈັດໂຫຼດ 3D, ວັດຂະໜາດດ້ວຍ AR ຜ່ານກ້ອງ, ແລະ ປັບປຸງການຈັດໂຫຼດ. ບໍ່ແມ່ນພຽງແຕ່ CBM." />
+  <link rel="canonical" href="https://aplicacionesherrbri.com/lo/boxes-fit-vehicle/" />
+  <meta name="robots" content="index,follow" />
+
+  <style>
+    :root {
+      --max: 920px;
+      --green-bg: #eaf6ef;
+      --green-soft: #f3fbf6;
+      --green-border: #2e7d32;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 24px 16px;
+      line-height: 1.55;
+      background: var(--green-bg);
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+    }
+
+    h1 { font-size: 1.9rem; margin: 0 0 12px; }
+    h2 { margin-top: 26px; font-size: 1.35rem; }
+    h3 { margin-top: 18px; font-size: 1.05rem; }
+
+    p { margin: 0 0 12px; }
+    ul { margin: 10px 0 16px 18px; }
+
+    .note {
+      background: var(--green-soft);
+      border-left: 5px solid var(--green-border);
+      padding: 14px;
+      margin: 16px 0;
+      border-radius: 6px;
+    }
+
+    .seo-box {
+      background: #f8f9fa;
+      border: 1px dashed #bbb;
+      padding: 14px;
+      margin: 22px 0;
+      border-radius: 10px;
+    }
+
+    .cta {
+      display: inline-block;
+      background: #1b5e20;
+      color: #fff;
+      padding: 13px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 6px;
+    }
+
+    .cta:hover { filter: brightness(1.1); }
+
+    .compare {
+      background: var(--green-soft);
+      padding: 18px;
+      border-radius: 12px;
+      margin-top: 18px;
+    }
+
+    .small { color: #444; font-size: .95rem; }
+  </style>
+
+  <!-- ✅ ຂໍ້ມູນໂຄງສ້າງ (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "VolumTransport (Boxes in the Vehicle)",
+    "operatingSystem": "Android",
+    "applicationCategory": "BusinessApplication",
+    "description": "ແອັບ Android ສໍາລັບຄຳນວນວ່າມີກ່ອງໄດ້ຈັກກ່ອງໃນລົດຕູ້, ລົດໃຫຍ່ ຫຼື ພື້ນທີ່ຈິງ, ສະແດງການຈັດວາງ 3D ທີ່ແທ້ຈິງ ແລະ ວັດຂະໜາດດ້ວຍ AR ຜ່ານກ້ອງ. ບໍ່ແມ່ນພຽງແຕ່ CBM.",
+    "url": "https://aplicacionesherrbri.com/lo/boxes-fit-vehicle/",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
+  }
+  </script>
+</head>
+
+<body>
+  <main class="wrap">
+
+    <h1>ແອັບຄຳນວນວ່າມີກ່ອງໄດ້ຈັກກ່ອງໃນພາຫະນະ ຫຼື ພື້ນທີ່ຈິງ (Android)</h1>
+
+    <p>
+      <strong>VolumTransport</strong> ແມ່ນແອັບ Android ທີ່ອອກແບບເພື່ອ
+      <strong>ຄຳນວນວ່າມີກ່ອງໄດ້ຈັກກ່ອງໃນລົດຕູ້, ລົດ, ຫຼື ພື້ນທີ່ຈິງ</strong>,
+      ພ້ອມສະແດງ <strong>ການຈັດວາງ 3D ທີ່ແທ້ຈິງ</strong> ແລະ ຊ່ວຍໃຫ້ທ່ານ
+      <strong>ວັດຂະໜາດດ້ວຍກ້ອງ (AR)</strong>.
+    </p>
+
+    <div class="note">
+      <strong>ສໍາຄັນ:</strong> ນີ້ <strong>ບໍ່ແມ່ນ</strong> ເຄື່ອງຄິດໄລ່ປະລິມານ (CBM) ທົ່ວໄປ.
+      ທ່ານສາມາດເຫັນ <strong>ວ່າກ່ອງຖືກຈັດວາງຈິງໆແນວໃດ</strong> ແລະ
+      <strong>ມັນເຂົ້າໄດ້ຈິງບໍ</strong> ໂດຍໃຊ້
+      <strong>ການຈໍາລອງ 3D ທີ່ອີງໃສ່ເທັກນິກ bin packing</strong>,
+      ເໝາະສໍາລັບລົດຕູ້, ລົດນັ່ງ, ລົດບັນທຸກ, ພາຫະນະປະສົມ ຫຼື
+      <strong>ໂໝດພື້ນທີ່ສາກົນ</strong> (ກຳນົດຂະໜາດເອງ).
+    </div>
+
+    <h2>ສິ່ງທີ່ທ່ານສາມາດເຮັດໄດ້ກັບ VolumTransport</h2>
+    <ul>
+      <li><strong>ຈໍາລອງການຈັດໂຫຼດ 3D</strong>: ປັບມຸມມອງ ແລະ ເຊັກການໃຊ້ພື້ນທີ່.</li>
+      <li><strong>ວັດຂະໜາດດ້ວຍ AR</strong>: ວັດກ່ອງ ຫຼື ພື້ນທີ່ໂດຍກົງຜ່ານກ້ອງ.</li>
+      <li>ວາງແຜນການບັນທຸກສໍາລັບ <strong>ລົດຕູ້, ລົດ, ລົດບັນທຸກ ແລະ ພາຫະນະປະສົມ</strong>.</li>
+      <li><strong>ໂໝດພື້ນທີ່ສາກົນ</strong>: ຫ້ອງ, ໂກດັງ, ຄັງ, ຫຼື ພື້ນທີ່ກຳນົດເອງ.</li>
+      <li><strong>ຖົງດຸ່ນດ່ຽງໃນຫຼາຍເທື່ອ</strong>: ຖ້າບໍ່ພໍ ຊ່ວຍແບ່ງໃຫ້ເໝາະສົມ.</li>
+      <li>ຫຼຸດການໄປ-ກັບທີ່ບໍ່ຈໍາເປັນ ໂດຍເຊັກກ່ອນຈັດໂຫຼດ.</li>
+    </ul>
+
+    <p class="small">
+      ນອກຈາກການຄຳນວນພື້ນຖານ, VolumTransport ຍັງມີຟັງຊັນຂັ້ນສູງສໍາລັບຜູ້ທໍາງານຂົນສົ່ງ ແລະ ໂລຈິສຕິກ.
+    </p>
+
+    <div class="seo-box">
+      <strong>ຜູ້ໃຊ້ມັກຊອກຫາວິທີແກ້ໄຂແບບນີ້ດ້ວຍຄໍາຄົ້ນຫາເຊັ່ນ:</strong>
+      <ul>
+        <li>ຄຳນວນການບັນທຸກລົດຕູ້</li>
+        <li>ມີກ່ອງໄດ້ຈັກກ່ອງໃນພາຫະນະ</li>
+        <li>ແອັບຈັດກ່ອງ 3D</li>
+        <li>bin packing 3D ສໍາລັບພາຫະນະ</li>
+        <li>ປັບປຸງພື້ນທີ່ລົດຕູ້ ຫຼື ລົດບັນທຸກ</li>
+        <li>ວັດກ່ອງດ້ວຍໂທລະສັບ</li>
+        <li>ວາງແຜນການບັນທຸກສໍາລັບການສົ່ງຂອງ</li>
+        <li>ທາງເລືອກແທນເຄື່ອງຄິດໄລ່ CBM</li>
+        <li>ແອັບສໍາລັບຄົນຂັບ, ພະນັກງານສົ່ງຂອງ ແລະ ບໍລິການຍ້າຍບ້ານ</li>
+      </ul>
+    </div>
+
+    <h2>ຂໍ້ດີເທົ່າກັບ Easy Cargo ແລະ ເຄື່ອງມືຄ້າຍຄື</h2>
+    <div class="compare">
+      <p>
+        ເຄື່ອງມືເຊັ່ນ <strong>Easy Cargo</strong> ສ່ວນໃຫຍ່ອອກແບບສໍາລັບ
+        <strong>ຄອມພິວເຕີ ແລະ ເວັບ</strong> ທີ່ເນັ້ນວຽກດ້ານເຕັກນິກ/ອຸດສາຫະກຳ.
+      </p>
+      <ul>
+        <li><strong>VolumTransport ເນັ້ນໃຊ້ໃນມືຖື</strong>: ໃຊ້ໄດ້ທັນທີຂ້າງພາຫະນະ.</li>
+        <li><strong>ວັດຂະໜາດດ້ວຍ AR ຜ່ານກ້ອງ</strong> ບໍ່ຕ້ອງໃຊ້ສາຍວັດ.</li>
+        <li><strong>ລາຄາເຂົ້າເຖິງງ່າຍກວ່າ</strong> ເໝາະສໍາລັບອາຊີບອິດສະລະ ແລະ ທຸລະກິດນ້ອຍ.</li>
+        <li>ໃຊ້ງ່າຍ ແລະ ໄວ ບໍ່ຈໍາເປັນຕ້ອງມີຄວາມຮູ້ເຕັກນິກ.</li>
+        <li>ເໝາະສໍາລັບການສົ່ງຂອງ, ບໍລິການຂົນສົ່ງ, ຍ້າຍບ້ານ ແລະ ພື້ນທີ່ນ້ອຍ.</li>
+      </ul>
+    </div>
+
+    <p>
+      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
+        ດາວໂຫຼດ VolumTransport ໃນ Google Play
+      </a>
+    </p>
+
+    <p class="small">
+      ແນະນໍາ: ບັນທຶກໜ້ານີ້ໄວ້ (bookmark) ເພື່ອໃຊ້ເວລາຈັດໂຫຼດຈິງ.
+    </p>
+
+    <section class="faq">
+      <h2>ຄໍາຖາມທີ່ພົບເລື້ອຍ</h2>
+
+      <h3>ໃຊ້ໄດ້ສະເພາະລົດຕູ້ບໍ?</h3>
+      <p>ບໍ່. ໃຊ້ໄດ້ກັບລົດຕູ້, ລົດນັ່ງ, ລົດບັນທຸກ ແລະ ພາຫະນະປະສົມ.</p>
+
+      <h3>ແມ່ນແຕ່ເຄື່ອງຄິດໄລ່ CBM ບໍ?</h3>
+      <p>ບໍ່. ມັນສະແດງ <strong>ການຈັດວາງ 3D ທີ່ແທ້ຈິງ</strong> ເພື່ອກວດວ່າເຂົ້າໄດ້ຈິງ.</p>
+
+      <h3>ສາມາດວັດຂະໜາດດ້ວຍໂທລະສັບໄດ້ບໍ?</h3>
+      <p>ໄດ້. ມີການວັດຂະໜາດດ້ວຍ <strong>AR (Augmented Reality)</strong>.</p>
+
+      <h3>ໃຊ້ກັບຫ້ອງ ຫຼື ບ່ອນເກັບຂອງໄດ້ບໍ?</h3>
+      <p>ໄດ້. ໃຊ້ <strong>ໂໝດພື້ນທີ່ສາກົນ</strong> ແລະ ກຳນົດຂະໜາດເອງ.</p>
+
+      <h3>ແອັບນີ້ໃຊ້ຟຣີບໍ?</h3>
+      <p>ຂຶ້ນກັບລຸ້ນທີ່ມີໃນ Google Play. ກະລຸນາເບິ່ງລາຍລະອຽດໃນຮ້ານ.</p>
+    </section>
+
+  </main>
+</body>
+</html>
