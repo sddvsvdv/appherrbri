@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>सवारी साधनमा कति बक्स/डिब्बा अट्छन् भनेर गणना गर्ने एप (3D + AR) | VolumTransport</title>
+  <meta name="description" content="VolumTransport एउटा Android एप हो जसले सवारी साधन वा वास्तविक ठाउँमा कति बक्स/डिब्बा अट्छन् भनेर गणना गर्छ। 3D लोडिङ सिमुलेसन, क्यामेराबाट AR मापन, र लोड अनुकूलन। केवल CBM मात्र होइन।" />
+  <link rel="canonical" href="https://aplicacionesherrbri.com/ne/boxes-fit-vehicle/" />
+  <meta name="robots" content="index,follow" />
+
+  <style>
+    :root {
+      --max: 920px;
+      --green-bg: #eaf6ef;
+      --green-soft: #f3fbf6;
+      --green-border: #2e7d32;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 24px 16px;
+      line-height: 1.55;
+      background: var(--green-bg);
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+    }
+
+    h1 { font-size: 1.9rem; margin: 0 0 12px; }
+    h2 { margin-top: 26px; font-size: 1.35rem; }
+    h3 { margin-top: 18px; font-size: 1.05rem; }
+
+    p { margin: 0 0 12px; }
+    ul { margin: 10px 0 16px 18px; }
+
+    .note {
+      background: var(--green-soft);
+      border-left: 5px solid var(--green-border);
+      padding: 14px;
+      margin: 16px 0;
+      border-radius: 6px;
+    }
+
+    .seo-box {
+      background: #f8f9fa;
+      border: 1px dashed #bbb;
+      padding: 14px;
+      margin: 22px 0;
+      border-radius: 10px;
+    }
+
+    .cta {
+      display: inline-block;
+      background: #1b5e20;
+      color: #fff;
+      padding: 13px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 6px;
+    }
+
+    .cta:hover { filter: brightness(1.1); }
+
+    .compare {
+      background: var(--green-soft);
+      padding: 18px;
+      border-radius: 12px;
+      margin-top: 18px;
+    }
+
+    .small { color: #444; font-size: .95rem; }
+  </style>
+
+  <!-- ✅ संरचित डेटा (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "VolumTransport",
+    "operatingSystem": "Android",
+    "applicationCategory": "BusinessApplication",
+    "description": "Android एप जसले भ्यान, कार वा वास्तविक ठाउँमा कति बक्स/डिब्बा अट्छन् भनेर गणना गर्छ, वास्तविक 3D राखाइ देखाउँछ र क्यामेराबाट AR मापन गर्न दिन्छ। केवल CBM मात्र होइन।",
+    "url": "https://aplicacionesherrbri.com/ne/boxes-fit-vehicle/",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
+  }
+  </script>
+</head>
+
+<body>
+  <main class="wrap">
+
+    <h1>सवारी साधन वा वास्तविक ठाउँमा कति बक्स/डिब्बा अट्छन् भनेर गणना गर्ने एप (Android)</h1>
+
+    <p>
+      <strong>VolumTransport</strong> एउटा Android एप हो जसले
+      <strong>भ्यान, कार वा कुनै पनि वास्तविक ठाउँमा कति बक्स/डिब्बा अट्छन्</strong> भनेर गणना गर्छ,
+      <strong>वास्तविक 3D राखाइ</strong> देखाउँछ र <strong>फोनको क्यामेराबाट (AR) मापन</strong> गर्न दिन्छ।
+    </p>
+
+    <div class="note">
+      <strong>महत्त्वपूर्ण:</strong> यो <strong>सरल</strong> भोल्युम (CBM) क्याल्कुलेटर <strong>होइन</strong>।
+      यहाँ तपाईंले <strong>बक्सहरू वास्तवमै कसरी राखिन्छन्</strong> भन्ने देख्न सक्नुहुन्छ र तिनीहरू
+      <strong>साँचिकै अट्छन् कि अट्दैनन्</strong> भन्ने जाँच्न सक्नुहुन्छ।
+      यो <strong>bin packing</strong> प्रविधिमा आधारित <strong>3D सिमुलेसन</strong> प्रयोग गर्छ,
+      र भ्यान, कार, ट्रक, मिश्रित सवारी साधन वा
+      <strong>युनिभर्सल स्पेस मोड</strong> (आफ्नै मापन) का लागि उपयुक्त छ।
+    </div>
+
+    <h2>VolumTransport बाट के गर्न सकिन्छ</h2>
+    <ul>
+      <li><strong>3D लोड सिमुलेसन</strong>: मोडेल घुमाएर ठाउँ कसरी प्रयोग भएको छ हेर्नुहोस्।</li>
+      <li><strong>AR मापन</strong>: फोनको क्यामेराबाट बक्स वा ठाउँ सिधै मापन गर्नुहोस्।</li>
+      <li><strong>भ्यान, कार, ट्रक र मिश्रित सवारी साधन</strong> का लागि लोड योजना बनाउनुहोस्।</li>
+      <li><strong>युनिभर्सल स्पेस मोड</strong>: स्टोररुम, कोठा, गोदाम वा आफूले चाहेको ठाउँ।</li>
+      <li><strong>धेरै पटकको यात्रामा लोड सन्तुलन</strong>: सबै अटेन भने, ओभरलोड र लगभग खाली यात्राबाट बच्न लोड बाँड्न मद्दत गर्छ।</li>
+      <li>अनावश्यक अतिरिक्त यात्रा टार्नुहोस्: पहिल्यै जाँच्नुहोस् सबै अट्छ कि अट्दैन, र कसरी राख्ने।</li>
+    </ul>
+
+    <p class="small">
+      आधारभूत लोड गणनाबाहेक, VolumTransport मा यातायात र लोजिस्टिक्स पेशेवरका लागि थप सुविधाहरू पनि छन्।
+    </p>
+
+    <div class="seo-box">
+      <strong>मानिसहरूले यस्ता समाधान खोज्दा प्रायः यस्ता शब्द/वाक्यांश प्रयोग गर्छन्:</strong>
+      <ul>
+        <li>भ्यानको लोड गणना</li>
+        <li>सवारी साधनमा कति बक्स अट्छ</li>
+        <li>3D मा बक्स राख्ने एप</li>
+        <li>सवारी साधनका लागि 3D bin packing</li>
+        <li>भ्यान वा ट्रकको ठाउँ अनुकूलन</li>
+        <li>फोनबाट बक्स मापन</li>
+        <li>डेलिभरी लोड योजना</li>
+        <li>CBM क्याल्कुलेटरको विकल्प</li>
+        <li>ड्राइभर, कुरियर र सर्ने सेवा (moving) का लागि एप</li>
+      </ul>
+    </div>
+
+    <h2>Easy Cargo र यस्तै उपकरणहरूभन्दा फाइदा</h2>
+    <div class="compare">
+      <p>
+        <strong>Easy Cargo</strong> जस्ता उपकरणहरू प्रायः
+        <strong>डेस्कटप/वेब</strong> का लागि बनाइएका हुन्छन् र अलि बढी प्राविधिक/औद्योगिक केन्द्रित हुन्छन्।
+      </p>
+      <ul>
+        <li><strong>VolumTransport मोबाइल-फर्स्ट</strong> हो: गोदाम, सडक वा सवारी नजिकै प्रयोग गर्नुहोस्।</li>
+        <li><strong>क्यामेराबाट AR मापन</strong>, मापन टेप वा पहिलेका डाटा बिना।</li>
+        <li><strong>अझ किफायती</strong>, फ्रीलान्सर र साना व्यवसायका लागि उपयुक्त।</li>
+        <li>छिटो र सजिलो प्रयोग, कम्प्युटर वा प्राविधिक तालिम आवश्यक छैन।</li>
+        <li>डेलिभरी, कुरियर सेवा, सर्ने काम र साना ठाउँहरूका लागि उपयुक्त।</li>
+      </ul>
+    </div>
+
+    <p>
+      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
+        Google Play मा VolumTransport डाउनलोड गर्नुहोस्
+      </a>
+    </p>
+
+    <p class="small">
+      सुझाव: यो पेज बुकमार्क गर्नुहोस् र वास्तविक लोड तयार गर्दा प्रयोग गर्नुहोस्।
+    </p>
+
+    <section class="faq">
+      <h2>बारम्बार सोधिने प्रश्नहरू</h2>
+
+      <h3>के यो केवल भ्यानका लागि मात्र हो?</h3>
+      <p>होइन। यो भ्यान, कार, ट्रक र मिश्रित सवारी साधनसँग पनि काम गर्छ।</p>
+
+      <h3>के यो केवल भोल्युम (CBM) क्याल्कुलेटर हो?</h3>
+      <p>होइन। यसले <strong>वास्तविक 3D राखाइ</strong> देखाउँछ ताकि बक्सहरू साँच्चै अट्छन् कि छैनन् भनेर पुष्टि गर्न सकियोस्।</p>
+
+      <h3>के म फोनबाट मापन गर्न सक्छु?</h3>
+      <p>हो। यसमा <strong>Augmented Reality (AR)</strong> मार्फत मापन सुविधा छ।</p>
+
+      <h3>के म यसलाई कोठा वा स्टोररुमका लागि प्रयोग गर्न सक्छु?</h3>
+      <p>हो। <strong>युनिभर्सल स्पेस मोड</strong> प्रयोग गरेर आफूले चाहेको मापन राख्न सक्नुहुन्छ।</p>
+
+      <h3>के यो निःशुल्क हो?</h3>
+      <p>यो Google Play मा उपलब्ध संस्करणमा निर्भर गर्छ। विवरणका लागि स्टोरमा हेर्नुहोस्।</p>
+    </section>
+
+  </main>
+</body>
+</html>
