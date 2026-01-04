@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>แอปคำนวณว่ากล่องกี่ใบใส่ในรถได้ (3D + AR) | VolumTransport</title>
+  <meta name="description" content="VolumTransport คือแอป Android สำหรับคำนวณว่ากล่องกี่ใบใส่ในรถหรือพื้นที่จริงได้ มีการจำลองการจัดเรียง 3D การวัดด้วย AR และการปรับโหลดให้เหมาะสม ไม่ใช่แค่ CBM อย่างเดียว" />
+  <link rel="canonical" href="https://aplicacionesherrbri.com/th/boxes-fit-vehicle/" />
+  <meta name="robots" content="index,follow" />
+
+  <style>
+    :root {
+      --max: 920px;
+      --green-bg: #eaf6ef;
+      --green-soft: #f3fbf6;
+      --green-border: #2e7d32;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 24px 16px;
+      line-height: 1.55;
+      background: var(--green-bg);
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+    }
+
+    h1 { font-size: 1.9rem; margin: 0 0 12px; }
+    h2 { margin-top: 26px; font-size: 1.35rem; }
+    h3 { margin-top: 18px; font-size: 1.05rem; }
+
+    p { margin: 0 0 12px; }
+    ul { margin: 10px 0 16px 18px; }
+
+    .note {
+      background: var(--green-soft);
+      border-left: 5px solid var(--green-border);
+      padding: 14px;
+      margin: 16px 0;
+      border-radius: 6px;
+    }
+
+    .seo-box {
+      background: #f8f9fa;
+      border: 1px dashed #bbb;
+      padding: 14px;
+      margin: 22px 0;
+      border-radius: 10px;
+    }
+
+    .cta {
+      display: inline-block;
+      background: #1b5e20;
+      color: #fff;
+      padding: 13px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 6px;
+    }
+
+    .cta:hover { filter: brightness(1.1); }
+
+    .compare {
+      background: var(--green-soft);
+      padding: 18px;
+      border-radius: 12px;
+      margin-top: 18px;
+    }
+
+    .small { color: #444; font-size: .95rem; }
+  </style>
+
+  <!-- ✅ Structured data (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "VolumTransport",
+    "operatingSystem": "Android",
+    "applicationCategory": "BusinessApplication",
+    "description": "แอป Android สำหรับคำนวณว่ากล่องกี่ใบใส่ในรถตู้ รถยนต์ หรือพื้นที่จริงได้ โดยแสดงการจัดวางแบบ 3D และวัดด้วยกล้อง (AR) ไม่ใช่แค่ CBM อย่างเดียว",
+    "url": "https://aplicacionesherrbri.com/th/boxes-fit-vehicle/",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
+  }
+  </script>
+</head>
+
+<body>
+  <main class="wrap">
+
+    <h1>แอปคำนวณว่ากล่องกี่ใบใส่ในรถหรือพื้นที่จริงได้ (Android)</h1>
+
+    <p>
+      <strong>VolumTransport</strong> คือแอป Android ที่ออกแบบมาเพื่อ
+      <strong>คำนวณว่ากล่องกี่ใบใส่ในรถตู้ รถยนต์ หรือพื้นที่จริงได้</strong>
+      โดยแสดง <strong>การจัดวางแบบ 3D</strong> และให้คุณ <strong>วัดด้วยกล้องมือถือ (AR)</strong>
+    </p>
+
+    <div class="note">
+      <strong>สำคัญ:</strong> นี่ <strong>ไม่ใช่</strong> แค่เครื่องคำนวณปริมาตร (CBM) แบบธรรมดา
+      คุณจะเห็น <strong>การจัดวางกล่องจริง</strong> และตรวจสอบได้ว่า
+      <strong>ใส่ได้จริงหรือไม่</strong> ด้วย <strong>การจำลอง 3D ที่อิงเทคนิค bin packing</strong>
+      เหมาะสำหรับรถตู้ รถยนต์ รถบรรทุก รถแบบผสม หรือ
+      <strong>โหมดพื้นที่อเนกประสงค์</strong> (กำหนดขนาดเอง)
+    </div>
+
+    <h2>คุณทำอะไรได้บ้างด้วย VolumTransport</h2>
+    <ul>
+      <li><strong>จำลองการจัดเรียง 3D</strong>: หมุนดูและตรวจสอบการใช้พื้นที่</li>
+      <li><strong>วัดด้วย AR</strong>: วัดกล่องหรือพื้นที่ได้โดยตรงด้วยกล้องมือถือ</li>
+      <li>วางแผนการบรรทุกสำหรับ <strong>รถตู้ รถยนต์ รถบรรทุก และรถแบบผสม</strong></li>
+      <li><strong>โหมดพื้นที่อเนกประสงค์</strong>: ห้องเก็บของ ห้องพัก โกดัง หรือพื้นที่กำหนดเอง</li>
+      <li><strong>กระจายโหลดหลายเที่ยว</strong>: ถ้าใส่ไม่หมด ช่วยแบ่งเพื่อเลี่ยงการบรรทุกเกินและเที่ยวที่เกือบว่าง</li>
+      <li>ลดเที่ยววิ่งซ้ำ: เช็กก่อนว่าทั้งหมดใส่ได้ไหมและควรจัดอย่างไร</li>
+    </ul>
+
+    <p class="small">
+      นอกเหนือจากการคำนวณการบรรทุกพื้นฐาน VolumTransport ยังมีฟังก์ชันขั้นสูงสำหรับงานขนส่งและโลจิสติกส์
+    </p>
+
+    <div class="seo-box">
+      <strong>ผู้คนมักค้นหาวิธีแก้ปัญหาแบบนี้ด้วยคำว่า:</strong>
+      <ul>
+        <li>คำนวณการบรรทุกในรถตู้</li>
+        <li>กล่องกี่ใบใส่ในรถได้</li>
+        <li>แอปจัดเรียงกล่องแบบ 3D</li>
+        <li>3D bin packing สำหรับรถ</li>
+        <li>เพิ่มประสิทธิภาพพื้นที่รถตู้หรือรถบรรทุก</li>
+        <li>วัดกล่องด้วยมือถือ</li>
+        <li>วางแผนการบรรทุกสำหรับงานส่งของ</li>
+        <li>ทางเลือกแทนเครื่องคำนวณ CBM</li>
+        <li>แอปสำหรับคนขับ รถส่งของ และงานย้ายบ้าน</li>
+      </ul>
+    </div>
+
+    <h2>ข้อดีเมื่อเทียบกับ Easy Cargo และเครื่องมือที่คล้ายกัน</h2>
+    <div class="compare">
+      <p>
+        เครื่องมืออย่าง <strong>Easy Cargo</strong> มักออกแบบมาเพื่อ
+        <strong>ใช้งานบนคอมพิวเตอร์และเว็บ</strong> โดยเน้นงานเชิงเทคนิคและอุตสาหกรรมมากกว่า
+      </p>
+      <ul>
+        <li><strong>VolumTransport ออกแบบมาเพื่อมือถือเป็นหลัก</strong>: ใช้ได้ทันทีในโกดัง หน้างาน หรือข้างรถ</li>
+        <li><strong>วัดด้วย AR ผ่านกล้อง</strong> ไม่ต้องใช้สายวัดหรือข้อมูลล่วงหน้า</li>
+        <li><strong>คุ้มค่ากว่า</strong> เหมาะสำหรับฟรีแลนซ์และผู้ประกอบการรายย่อย</li>
+        <li>ใช้งานเร็วและเข้าใจง่าย ไม่ต้องใช้คอมพิวเตอร์หรืออบรมเทคนิค</li>
+        <li>เหมาะกับงานส่งของ บริการรับส่ง งานย้ายบ้าน และพื้นที่ขนาดเล็ก</li>
+      </ul>
+    </div>
+
+    <p>
+      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
+        ดาวน์โหลด VolumTransport บน Google Play
+      </a>
+    </p>
+
+    <p class="small">
+      เคล็ดลับ: บันทึกหน้านี้ไว้ แล้วใช้ตอนเตรียมการบรรทุกจริง
+    </p>
+
+    <section class="faq">
+      <h2>คำถามที่พบบ่อย</h2>
+
+      <h3>ใช้ได้เฉพาะรถตู้ไหม?</h3>
+      <p>ไม่ใช่ ใช้ได้กับรถตู้ รถยนต์ รถบรรทุก และรถแบบผสม</p>
+
+      <h3>เป็นแค่เครื่องคำนวณปริมาตร (CBM) หรือเปล่า?</h3>
+      <p>ไม่ใช่ แอปจะแสดง <strong>การจัดวางแบบ 3D จริง</strong> เพื่อเช็กว่ากล่องใส่ได้จริงหรือไม่</p>
+
+      <h3>วัดด้วยมือถือได้ไหม?</h3>
+      <p>ได้ มีการวัดด้วย <strong>Augmented Reality (AR)</strong></p>
+
+      <h3>ใช้กับห้องหรือพื้นที่เก็บของได้ไหม?</h3>
+      <p>ได้ ใช้ <strong>โหมดพื้นที่อเนกประสงค์</strong> และกำหนดขนาดเองได้</p>
+
+      <h3>ฟรีไหม?</h3>
+      <p>ขึ้นอยู่กับเวอร์ชันที่มีใน Google Play โปรดดูรายละเอียดในหน้าร้านค้า</p>
+    </section>
+
+  </main>
+</body>
+</html>
