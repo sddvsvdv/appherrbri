@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Εφαρμογή για τον υπολογισμό του πόσα κουτιά χωράνε σε ένα όχημα (3D + AR) | VolumTransport</title>
+  <meta name="description" content="Το VolumTransport είναι μια εφαρμογή Android για τον υπολογισμό του πόσα κουτιά χωράνε σε ένα όχημα ή σε έναν πραγματικό χώρο. Προσομοίωση φόρτωσης σε 3D, μέτρηση με AR μέσω κάμερας και βελτιστοποίηση φορτίου. Όχι απλώς CBM." />
+  <link rel="canonical" href="https://aplicacionesherrbri.com/el/boxes-fit-vehicle/" />
+  <meta name="robots" content="index,follow" />
+
+  <style>
+    :root {
+      --max: 920px;
+      --green-bg: #eaf6ef;
+      --green-soft: #f3fbf6;
+      --green-border: #2e7d32;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 24px 16px;
+      line-height: 1.55;
+      background: var(--green-bg);
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+    }
+
+    h1 { font-size: 1.9rem; margin: 0 0 12px; }
+    h2 { margin-top: 26px; font-size: 1.35rem; }
+    h3 { margin-top: 18px; font-size: 1.05rem; }
+
+    p { margin: 0 0 12px; }
+    ul { margin: 10px 0 16px 18px; }
+
+    .note {
+      background: var(--green-soft);
+      border-left: 5px solid var(--green-border);
+      padding: 14px;
+      margin: 16px 0;
+      border-radius: 6px;
+    }
+
+    .seo-box {
+      background: #f8f9fa;
+      border: 1px dashed #bbb;
+      padding: 14px;
+      margin: 22px 0;
+      border-radius: 10px;
+    }
+
+    .cta {
+      display: inline-block;
+      background: #1b5e20;
+      color: #fff;
+      padding: 13px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 6px;
+    }
+
+    .cta:hover { filter: brightness(1.1); }
+
+    .compare {
+      background: var(--green-soft);
+      padding: 18px;
+      border-radius: 12px;
+      margin-top: 18px;
+    }
+
+    .small { color: #444; font-size: .95rem; }
+  </style>
+
+  <!-- ✅ Δομημένα δεδομένα (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "VolumTransport (Boxes in the Vehicle)",
+    "operatingSystem": "Android",
+    "applicationCategory": "BusinessApplication",
+    "description": "Εφαρμογή Android για τον υπολογισμό του πόσα κουτιά χωράνε σε φορτηγάκι, αυτοκίνητο ή πραγματικό χώρο, με απεικόνιση πραγματικής τοποθέτησης σε 3D και μέτρηση με AR μέσω κάμερας. Όχι απλώς CBM.",
+    "url": "https://aplicacionesherrbri.com/el/boxes-fit-vehicle/",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
+  }
+  </script>
+</head>
+
+<body>
+  <main class="wrap">
+
+    <h1>Εφαρμογή για τον υπολογισμό του πόσα κουτιά χωράνε σε ένα όχημα ή πραγματικό χώρο (Android)</h1>
+
+    <p>
+      <strong>VolumTransport</strong> είναι μια εφαρμογή Android σχεδιασμένη για
+      <strong>να υπολογίζει πόσα κουτιά χωράνε σε φορτηγάκι, αυτοκίνητο ή οποιονδήποτε πραγματικό χώρο</strong>,
+      προβάλλοντας την <strong>πραγματική τοποθέτηση σε 3D</strong> και επιτρέποντας
+      <strong>μέτρηση με την κάμερα του κινητού (AR)</strong>.
+    </p>
+
+    <div class="note">
+      <strong>Σημαντικό:</strong> αυτό <strong>δεν είναι</strong> ένας απλός υπολογιστής όγκου (CBM).
+      Μπορείτε να δείτε <strong>πώς τοποθετούνται πραγματικά τα κουτιά</strong> και
+      <strong>αν όντως χωράνε</strong>, χρησιμοποιώντας <strong>προσομοίωση 3D βασισμένη σε τεχνικές bin packing</strong>,
+      σχεδιασμένη για φορτηγάκια, αυτοκίνητα, φορτηγά, μικτά οχήματα ή
+      <strong>καθολική λειτουργία χώρου</strong> (προσαρμοσμένες διαστάσεις).
+    </div>
+
+    <h2>Τι μπορείτε να κάνετε με το VolumTransport</h2>
+    <ul>
+      <li><strong>Προσομοίωση φόρτωσης σε 3D</strong>: περιστρέψτε την προβολή και ελέγξτε τη χρήση του χώρου.</li>
+      <li><strong>Μέτρηση με AR</strong>: μετρήστε κουτιά ή χώρους απευθείας με την κάμερα του κινητού.</li>
+      <li>Σχεδιασμός φορτίων για <strong>φορτηγάκια, αυτοκίνητα, φορτηγά και μικτά οχήματα</strong>.</li>
+      <li><strong>Καθολική λειτουργία χώρου</strong>: αποθήκες, δωμάτια, υπόγεια ή προσαρμοσμένοι χώροι.</li>
+      <li><strong>Κατανομή φορτίου σε πολλαπλές διαδρομές</strong>: αν δεν χωράνε όλα, βοηθά στην αποφυγή υπερφόρτωσης και σχεδόν άδειων διαδρομών.</li>
+      <li>Αποφύγετε περιττές διαδρομές: ελέγξτε εκ των προτέρων αν όλα χωράνε και πώς να φορτώσετε.</li>
+    </ul>
+
+    <p class="small">
+      Πέρα από τον βασικό υπολογισμό φόρτωσης, το VolumTransport περιλαμβάνει προηγμένες λειτουργίες για επαγγελματίες μεταφορών και logistics.
+    </p>
+
+    <div class="seo-box">
+      <strong>Οι χρήστες συχνά αναζητούν αυτόν τον τύπο λύσης με όρους όπως:</strong>
+      <ul>
+        <li>υπολογισμός φόρτωσης φορτηγού</li>
+        <li>πόσα κουτιά χωράνε σε όχημα</li>
+        <li>εφαρμογή φόρτωσης κουτιών σε 3D</li>
+        <li>3D bin packing για οχήματα</li>
+        <li>βελτιστοποίηση χώρου σε φορτηγάκι ή φορτηγό</li>
+        <li>μέτρηση κουτιών με κινητό</li>
+        <li>σχεδιασμός φορτίου παράδοσης</li>
+        <li>εναλλακτική λύση σε υπολογιστές CBM</li>
+        <li>εφαρμογές για οδηγούς, ταχυμεταφορείς και μετακομίσεις</li>
+      </ul>
+    </div>
+
+    <h2>Πλεονεκτήματα έναντι του Easy Cargo και παρόμοιων εργαλείων</h2>
+    <div class="compare">
+      <p>
+        Εργαλεία όπως το <strong>Easy Cargo</strong> είναι κυρίως σχεδιασμένα για
+        <strong>υπολογιστές και web περιβάλλοντα</strong>, με πιο τεχνικό και βιομηχανικό προσανατολισμό.
+      </p>
+      <ul>
+        <li><strong>Το VolumTransport είναι σχεδιασμένο για κινητά</strong>: χρησιμοποιήστε το στην αποθήκη, στο δρόμο ή δίπλα στο όχημα.</li>
+        <li><strong>Μέτρηση με AR μέσω κάμερας</strong>, χωρίς μετροταινία και χωρίς προγενέστερα δεδομένα.</li>
+        <li><strong>Πιο προσιτό</strong>, σχεδιασμένο για ελεύθερους επαγγελματίες και μικρές επιχειρήσεις.</li>
+        <li>Γρήγορη και εύκολη χρήση, χωρίς υπολογιστή ή τεχνική εκπαίδευση.</li>
+        <li>Ιδανικό για διανομές, courier, μετακομίσεις και μικρούς χώρους.</li>
+      </ul>
+    </div>
+
+    <p>
+      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
+        Λήψη του VolumTransport στο Google Play
+      </a>
+    </p>
+
+    <p class="small">
+      Συμβουλή: αποθηκεύστε αυτή τη σελίδα στα αγαπημένα και χρησιμοποιήστε τη όταν προετοιμάζετε μια πραγματική φόρτωση.
+    </p>
+
+    <section class="faq">
+      <h2>Συχνές ερωτήσεις</h2>
+
+      <h3>Είναι μόνο για φορτηγάκια;</h3>
+      <p>Όχι. Λειτουργεί για φορτηγάκια, αυτοκίνητα, φορτηγά και μικτά οχήματα.</p>
+
+      <h3>Είναι απλώς ένας υπολογιστής όγκου (CBM);</h3>
+      <p>Όχι. Εμφανίζει την <strong>πραγματική τοποθέτηση σε 3D</strong> για να επιβεβαιώσετε αν τα κουτιά χωράνε.</p>
+
+      <h3>Μπορώ να μετρήσω με το κινητό μου;</h3>
+      <p>Ναι. Περιλαμβάνει μέτρηση με <strong>Επαυξημένη Πραγματικότητα (AR)</strong>.</p>
+
+      <h3>Μπορώ να το χρησιμοποιήσω για δωμάτια ή αποθηκευτικούς χώρους;</h3>
+      <p>Ναι. Χρησιμοποιήστε την <strong>καθολική λειτουργία χώρου</strong> και ορίστε προσαρμοσμένες διαστάσεις.</p>
+
+      <h3>Είναι δωρεάν;</h3>
+      <p>Εξαρτάται από την έκδοση που είναι διαθέσιμη στο Google Play. Δείτε τις λεπτομέρειες στο κατάστημα.</p>
+    </section>
+
+  </main>
+</body>
+</html>
