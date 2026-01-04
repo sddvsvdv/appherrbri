@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>車両に何箱入るか計算できるアプリ（3D + AR）| VolumTransport</title>
+  <meta name="description" content="VolumTransport は、車両や実際の空間に何箱入るかを計算できる Android アプリです。3D積載シミュレーション、カメラによるAR計測、積載最適化に対応。CBMだけではありません。" />
+  <link rel="canonical" href="https://aplicacionesherrbri.com/ja/boxes-fit-vehicle/" />
+  <meta name="robots" content="index,follow" />
+
+  <style>
+    :root {
+      --max: 920px;
+      --green-bg: #eaf6ef;
+      --green-soft: #f3fbf6;
+      --green-border: #2e7d32;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 24px 16px;
+      line-height: 1.55;
+      background: var(--green-bg);
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+    }
+
+    h1 { font-size: 1.9rem; margin: 0 0 12px; }
+    h2 { margin-top: 26px; font-size: 1.35rem; }
+    h3 { margin-top: 18px; font-size: 1.05rem; }
+
+    p { margin: 0 0 12px; }
+    ul { margin: 10px 0 16px 18px; }
+
+    .note {
+      background: var(--green-soft);
+      border-left: 5px solid var(--green-border);
+      padding: 14px;
+      margin: 16px 0;
+      border-radius: 6px;
+    }
+
+    .seo-box {
+      background: #f8f9fa;
+      border: 1px dashed #bbb;
+      padding: 14px;
+      margin: 22px 0;
+      border-radius: 10px;
+    }
+
+    .cta {
+      display: inline-block;
+      background: #1b5e20;
+      color: #fff;
+      padding: 13px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 6px;
+    }
+
+    .cta:hover { filter: brightness(1.1); }
+
+    .compare {
+      background: var(--green-soft);
+      padding: 18px;
+      border-radius: 12px;
+      margin-top: 18px;
+    }
+
+    .small { color: #444; font-size: .95rem; }
+  </style>
+
+  <!-- ✅ 構造化データ（Schema.org） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "VolumTransport (Boxes in the Vehicle)",
+    "operatingSystem": "Android",
+    "applicationCategory": "BusinessApplication",
+    "description": "バン、車、または実際の空間に何箱入るかを計算できる Android アプリ。実際の3D配置表示と、カメラによるAR計測に対応。CBMだけではありません。",
+    "url": "https://aplicacionesherrbri.com/ja/boxes-fit-vehicle/",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
+  }
+  </script>
+</head>
+
+<body>
+  <main class="wrap">
+
+    <h1>車両や実際の空間に何箱入るか計算できるアプリ（Android）</h1>
+
+    <p>
+      <strong>VolumTransport</strong> は、
+      <strong>バン・車・トラック、または実際の空間に何箱入るかを計算</strong>できる Android アプリです。
+      <strong>3Dで実際の配置</strong>を確認でき、さらに
+      <strong>スマホのカメラで計測（AR）</strong>も可能です。
+    </p>
+
+    <div class="note">
+      <strong>重要：</strong>これは単なる体積計算（CBM）では<strong>ありません</strong>。
+      <strong>箱が実際にどう配置されるか</strong>、そして<strong>本当に入るか</strong>を
+      <strong>bin packing（ビンパッキング）技術に基づく3Dシミュレーション</strong>で確認できます。
+      バン・車・トラック・混載車両、または
+      <strong>ユニバーサル空間モード</strong>（自由な寸法設定）に対応しています。
+    </div>
+
+    <h2>VolumTransport でできること</h2>
+    <ul>
+      <li><strong>3D積載シミュレーション</strong>：回転してスペースの使い方を確認。</li>
+      <li><strong>AR計測</strong>：カメラで箱や空間を直接計測。</li>
+      <li><strong>バン・車・トラック・混載車両</strong>の積載計画。</li>
+      <li><strong>ユニバーサル空間モード</strong>：倉庫、部屋、物置、自由なスペースに対応。</li>
+      <li><strong>複数回の運搬での荷物バランス</strong>：全部入らない場合の分割計画。</li>
+      <li>積む前に確認して、無駄な追加便を減らす。</li>
+    </ul>
+
+    <p class="small">
+      基本的な積載計算に加えて、VolumTransport は輸送・物流のプロ向けの機能も備えています。
+    </p>
+
+    <div class="seo-box">
+      <strong>このような解決策は、次のような言葉で検索されることがあります：</strong>
+      <ul>
+        <li>バンの積載量 計算</li>
+        <li>車に何箱入るか</li>
+        <li>3D 箱積み アプリ</li>
+        <li>車両向け 3D ビンパッキング</li>
+        <li>バンやトラックのスペース最適化</li>
+        <li>スマホで箱を計測</li>
+        <li>配送の積載計画</li>
+        <li>CBM計算ツールの代替</li>
+        <li>ドライバー・配達員・引越し向けアプリ</li>
+      </ul>
+    </div>
+
+    <h2>Easy Cargo などの類似ツールとの違い</h2>
+    <div class="compare">
+      <p>
+        <strong>Easy Cargo</strong> のようなツールは、主に
+        <strong>PCやWeb環境</strong>を前提とした、より技術的・工業的な用途向けです。
+      </p>
+      <ul>
+        <li><strong>VolumTransport はモバイル向け</strong>：倉庫や車両の横でそのまま使える。</li>
+        <li><strong>カメラによるAR計測</strong>：メジャー不要。</li>
+        <li><strong>より手頃な価格</strong>：個人事業主や小規模事業者向け。</li>
+        <li>直感的で素早く使える（PCや専門知識が不要）。</li>
+        <li>配送、宅配、引越し、小さなスペースに最適。</li>
+      </ul>
+    </div>
+
+    <p>
+      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
+        Google Play で VolumTransport をダウンロード
+      </a>
+    </p>
+
+    <p class="small">
+      ヒント：このページをブックマークして、実際の積み込み前に活用してください。
+    </p>
+
+    <section class="faq">
+      <h2>よくある質問</h2>
+
+      <h3>バン専用ですか？</h3>
+      <p>いいえ。バン、車、トラック、混載車両で利用できます。</p>
+
+      <h3>体積（CBM）の計算だけですか？</h3>
+      <p>いいえ。<strong>実際の3D配置</strong>を表示して、本当に入るか確認できます。</p>
+
+      <h3>スマホで計測できますか？</h3>
+      <p>はい。<strong>AR（拡張現実）</strong>による計測に対応しています。</p>
+
+      <h3>部屋や物置にも使えますか？</h3>
+      <p>はい。<strong>ユニバーサル空間モード</strong>で自由に寸法を設定できます。</p>
+
+      <h3>無料ですか？</h3>
+      <p>Google Play の提供形態によります。詳細はストアで確認してください。</p>
+    </section>
+
+  </main>
+</body>
+</html>
