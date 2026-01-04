@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>اپ برای محاسبه اینکه چند جعبه داخل یک وسیله نقلیه جا می‌شود (3D + AR) | VolumTransport</title>
+  <meta name="description" content="VolumTransport یک اپ اندروید برای محاسبه این است که چند جعبه در یک وسیله نقلیه یا فضای واقعی جا می‌شود. شبیه‌سازی بارگیری سه‌بعدی، اندازه‌گیری با واقعیت افزوده (AR) و بهینه‌سازی چیدمان. فقط CBM نیست." />
+  <link rel="canonical" href="https://aplicacionesherrbri.com/fa/boxes-fit-vehicle/" />
+  <meta name="robots" content="index,follow" />
+
+  <style>
+    :root {
+      --max: 920px;
+      --green-bg: #eaf6ef;
+      --green-soft: #f3fbf6;
+      --green-border: #2e7d32;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 24px 16px;
+      line-height: 1.55;
+      background: var(--green-bg);
+      text-align: right;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+    }
+
+    h1 { font-size: 1.9rem; margin: 0 0 12px; }
+    h2 { margin-top: 26px; font-size: 1.35rem; }
+    h3 { margin-top: 18px; font-size: 1.05rem; }
+
+    p { margin: 0 0 12px; }
+
+    /* RTL list spacing */
+    ul { margin: 10px 18px 16px 0; padding: 0 18px 0 0; }
+
+    .note {
+      background: var(--green-soft);
+      border-right: 5px solid var(--green-border);
+      border-left: 0;
+      padding: 14px;
+      margin: 16px 0;
+      border-radius: 6px;
+    }
+
+    .seo-box {
+      background: #f8f9fa;
+      border: 1px dashed #bbb;
+      padding: 14px;
+      margin: 22px 0;
+      border-radius: 10px;
+    }
+
+    .cta {
+      display: inline-block;
+      background: #1b5e20;
+      color: #fff;
+      padding: 13px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 6px;
+    }
+
+    .cta:hover { filter: brightness(1.1); }
+
+    .compare {
+      background: var(--green-soft);
+      padding: 18px;
+      border-radius: 12px;
+      margin-top: 18px;
+    }
+
+    .small { color: #444; font-size: .95rem; }
+  </style>
+
+  <!-- ✅ داده‌های ساختاریافته (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "VolumTransport",
+    "operatingSystem": "Android",
+    "applicationCategory": "BusinessApplication",
+    "description": "اپ اندروید برای محاسبه اینکه چند جعبه در یک ون، خودرو یا فضای واقعی جا می‌شود، با نمایش چیدمان واقعی سه‌بعدی و امکان اندازه‌گیری با واقعیت افزوده (AR) از طریق دوربین. فقط CBM نیست.",
+    "url": "https://aplicacionesherrbri.com/fa/boxes-fit-vehicle/",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
+  }
+  </script>
+</head>
+
+<body>
+  <main class="wrap">
+
+    <h1>اپ برای محاسبه اینکه چند جعبه داخل وسیله نقلیه یا فضای واقعی جا می‌شود (Android)</h1>
+
+    <p>
+      <strong>VolumTransport</strong> یک اپ اندروید است که برای
+      <strong>محاسبه اینکه چند جعبه داخل ون، خودرو یا هر فضای واقعی جا می‌شود</strong> طراحی شده،
+      <strong>چیدمان واقعی را به صورت سه‌بعدی</strong> نشان می‌دهد و امکان <strong>اندازه‌گیری با دوربین گوشی (AR)</strong> را فراهم می‌کند.
+    </p>
+
+    <div class="note">
+      <strong>مهم:</strong> این یک ماشین‌حساب ساده حجم (CBM) <strong>نیست</strong>.
+      شما می‌توانید <strong>چیدمان واقعی جعبه‌ها</strong> را ببینید و بررسی کنید که آیا
+      <strong>واقعاً جا می‌شوند</strong> یا نه، با استفاده از <strong>شبیه‌سازی سه‌بعدی مبتنی بر تکنیک‌های bin packing</strong>.
+      مناسب برای ون، خودرو، کامیون، خودروهای ترکیبی یا
+      <strong>حالت فضای عمومی</strong> (ابعاد سفارشی).
+    </div>
+
+    <h2>با VolumTransport چه کارهایی می‌توانید انجام دهید</h2>
+    <ul>
+      <li><strong>شبیه‌سازی بارگیری سه‌بعدی</strong>: مدل را بچرخانید و میزان استفاده از فضا را بررسی کنید.</li>
+      <li><strong>اندازه‌گیری با AR</strong>: جعبه‌ها یا فضا را مستقیماً با دوربین گوشی اندازه بگیرید.</li>
+      <li>برنامه‌ریزی بارگیری برای <strong>ون، خودرو، کامیون و خودروهای ترکیبی</strong>.</li>
+      <li><strong>حالت فضای عمومی</strong>: انباری، اتاق، انبار کالا یا هر فضای سفارشی.</li>
+      <li><strong>متعادل‌سازی بار در چند سفر</strong>: اگر همه چیز جا نشود، به توزیع بار کمک می‌کند تا از اضافه‌بار و سفرهای تقریباً خالی جلوگیری شود.</li>
+      <li>جلوگیری از سفرهای اضافی: از قبل بررسی کنید چه چیزی جا می‌شود و چطور باید چید.</li>
+    </ul>
+
+    <p class="small">
+      علاوه بر محاسبه بار، VolumTransport امکانات پیشرفته‌ای برای حرفه‌ای‌های حمل‌ونقل و لجستیک دارد.
+    </p>
+
+    <div class="seo-box">
+      <strong>افراد معمولاً با عبارت‌هایی مثل موارد زیر چنین راه‌حلی را جست‌وجو می‌کنند:</strong>
+      <ul>
+        <li>محاسبه بار ون</li>
+        <li>چند جعبه در خودرو جا می‌شود</li>
+        <li>اپ چیدمان جعبه‌ها به صورت سه‌بعدی</li>
+        <li>bin packing سه‌بعدی برای خودرو</li>
+        <li>بهینه‌سازی فضای ون یا کامیون</li>
+        <li>اندازه‌گیری جعبه‌ها با گوشی</li>
+        <li>برنامه‌ریزی بار برای تحویل</li>
+        <li>جایگزین ماشین‌حساب‌های CBM</li>
+        <li>اپ برای رانندگان، پیک‌ها و خدمات اسباب‌کشی</li>
+      </ul>
+    </div>
+
+    <h2>مزیت‌ها نسبت به Easy Cargo و ابزارهای مشابه</h2>
+    <div class="compare">
+      <p>
+        ابزارهایی مانند <strong>Easy Cargo</strong> عمدتاً برای
+        <strong>محیط‌های دسکتاپ و وب</strong> طراحی شده‌اند و رویکردی فنی‌تر و صنعتی‌تر دارند.
+      </p>
+      <ul>
+        <li><strong>VolumTransport برای موبایل طراحی شده</strong>: در انبار، کنار خودرو یا در محل کار استفاده کنید.</li>
+        <li><strong>اندازه‌گیری با دوربین و AR</strong> بدون متر و بدون داده‌های اولیه.</li>
+        <li><strong>مقرون‌به‌صرفه‌تر</strong> برای فریلنسرها و کسب‌وکارهای کوچک.</li>
+        <li>استفاده سریع و ساده، بدون نیاز به کامپیوتر یا آموزش فنی.</li>
+        <li>مناسب برای تحویل، پیک، اسباب‌کشی و فضاهای کوچک.</li>
+      </ul>
+    </div>
+
+    <p>
+      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
+        دانلود VolumTransport از Google Play
+      </a>
+    </p>
+
+    <p class="small">
+      نکته: این صفحه را بوکمارک کنید و هنگام آماده‌سازی بار واقعی از آن استفاده کنید.
+    </p>
+
+    <section class="faq">
+      <h2>سؤالات متداول</h2>
+
+      <h3>آیا فقط برای ون است؟</h3>
+      <p>خیر. با ون، خودرو، کامیون و خودروهای ترکیبی کار می‌کند.</p>
+
+      <h3>آیا فقط ماشین‌حساب حجم (CBM) است؟</h3>
+      <p>خیر. <strong>چیدمان واقعی سه‌بعدی</strong> را نشان می‌دهد تا مطمئن شوید جعبه‌ها واقعاً جا می‌شوند.</p>
+
+      <h3>آیا می‌توانم با گوشی اندازه‌گیری کنم؟</h3>
+      <p>بله. اندازه‌گیری با <strong>واقعیت افزوده (AR)</strong> را دارد.</p>
+
+      <h3>آیا برای اتاق یا انباری هم قابل استفاده است؟</h3>
+      <p>بله. از <strong>حالت فضای عمومی</strong> استفاده کنید و ابعاد دلخواه را وارد کنید.</p>
+
+      <h3>آیا رایگان است؟</h3>
+      <p>بستگی به نسخه‌ای دارد که در Google Play موجود است. جزئیات را در فروشگاه ببینید.</p>
+    </section>
+
+  </main>
+</body>
+</html>
