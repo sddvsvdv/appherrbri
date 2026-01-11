@@ -6,22 +6,120 @@
   <title>Under construction | VolumTransport Tutorial</title>
   <meta name="robots" content="noindex, nofollow" />
   <style>
-    :root { --max: 720px; }
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; }
-    .wrap { max-width: var(--max); margin: 0 auto; padding: 28px 18px; }
-    .card { border: 1px solid #e6e6e6; border-radius: 14px; padding: 18px; background: #fff; }
-    .logo{ width:72px; height:72px; object-fit:contain; display:block; margin:0 0 12px 0; }
-    h1 { font-size: 1.35rem; margin: 0 0 10px; }
-    p { line-height: 1.45; margin: 0; color: #333; }
+    :root{
+      --max: 820px;
+      --bg: #f6f7f8;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --brand: #2e7d32;
+      --brand-soft: #eaf6ef;
+    }
+
+    *{ box-sizing: border-box; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .wrap{
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 28px 16px;
+    }
+
+    .card{
+      width: 100%;
+      max-width: var(--max);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 26px 22px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+
+    .top{
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 10px;
+    }
+
+    .logo{
+      width: 84px;
+      height: 84px;
+      border-radius: 16px;
+      object-fit: contain;
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 8px;
+      flex: 0 0 auto;
+    }
+
+    .badge{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--brand-soft);
+      color: var(--brand);
+      border: 1px solid rgba(46,125,50,0.25);
+      font-size: 0.92rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      width: fit-content;
+    }
+
+    h1{
+      font-size: 1.6rem;
+      margin: 0;
+      line-height: 1.15;
+      letter-spacing: -0.2px;
+    }
+
+    p{
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 1.02rem;
+    }
+
+    .hint{
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--border);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 520px){
+      .top{ align-items: flex-start; }
+      .logo{ width: 72px; height: 72px; border-radius: 14px; }
+      h1{ font-size: 1.4rem; }
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="card">
-      <img class="logo" src="../../log%20volumtransport%20web.png" alt="VolumTransport logo">
-      <h1>🚧 Under construction</h1>
-      <p>This part of the VolumTransport tutorial is not ready yet. Please check again soon.</p>
-    </div>
+    <main class="card" role="main">
+      <div class="top">
+        <img class="logo" src="../../log%20volumtransport%20web.png" alt="VolumTransport logo">
+        <div>
+          <div class="badge">🚧 Under construction</div>
+          <h1>VolumTransport tutorial section</h1>
+          <p>This page is not ready yet. We’re working on it—please check again soon.</p>
+        </div>
+      </div>
+
+      <div class="hint">
+        If you came here from the app, go back and use the available sections.
+      </div>
+    </main>
   </div>
 </body>
 </html>
