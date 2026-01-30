@@ -3,24 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tutorial de VolumTransport — Presentación</title>
+  <title>Tutorial de VolumTransport</title>
   <meta name="robots" content="noindex,nofollow" />
   <style>
     :root{
-      --bg: #0f6a3a;          /* verde fondo */
+      --bg: #0f6a3a;
       --card: rgba(255,255,255,.92);
       --text: #0f172a;
-      --muted: rgba(15,23,42,.78);
       --border: rgba(15,23,42,.12);
-      --btn: #0b4e2a;
-      --btnText: #ffffff;
       --link: #0b4e2a;
     }
 
     *{ box-sizing: border-box; }
     body{
       margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       background: var(--bg);
       color: var(--text);
       line-height: 1.55;
@@ -35,116 +32,47 @@
     }
 
     .card{
-      width: min(920px, 100%);
+      width: min(900px, 100%);
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 18px;
       box-shadow: 0 10px 30px rgba(0,0,0,.18);
-      padding: 26px 22px;
-    }
-
-    header{
-      display:flex;
-      flex-wrap:wrap;
-      gap: 12px;
-      align-items: baseline;
-      justify-content: space-between;
-      margin-bottom: 10px;
+      padding: 28px 24px;
     }
 
     h1{
-      margin:0;
-      font-size: clamp(24px, 3.2vw, 34px);
+      margin: 0 0 16px;
+      font-size: clamp(26px, 3vw, 34px);
       letter-spacing: -0.02em;
     }
 
-    .pill{
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      font-size: 13px;
-      padding: 7px 10px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      color: var(--muted);
-      background: rgba(255,255,255,.55);
-    }
-
-    .pill b{ color: var(--text); }
-
-    .actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin: 14px 0 6px;
-    }
-
-    .btn{
-      display:inline-block;
-      text-decoration:none;
-      background: var(--btn);
-      color: var(--btnText);
-      padding: 10px 14px;
-      border-radius: 12px;
-      font-weight: 650;
-      font-size: 14px;
-      border: 1px solid rgba(0,0,0,.08);
-    }
-
-    .btn.secondary{
-      background: transparent;
-      color: var(--btn);
-      border: 1px solid rgba(11,78,42,.35);
-    }
-
-    section{
-      padding-top: 14px;
-      margin-top: 14px;
-      border-top: 1px solid var(--border);
-    }
-
     h2{
-      margin: 0 0 8px;
+      margin: 24px 0 8px;
       font-size: 18px;
-      letter-spacing: -0.01em;
     }
 
     p{
-      margin: 0 0 10px;
-      color: var(--text);
+      margin: 0 0 12px;
     }
 
     ul{
       margin: 8px 0 0 18px;
-      padding: 0;
     }
 
     li{
       margin: 6px 0;
     }
 
-    .note{
-      margin-top: 10px;
-      padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(11,78,42,.25);
-      background: rgba(11,78,42,.06);
-      color: rgba(15,23,42,.9);
+    hr{
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 28px 0 18px;
     }
 
-    .footer{
-      margin-top: 18px;
-      font-size: 13px;
-      color: rgba(15,23,42,.7);
-    }
-
-    a{ color: var(--link); }
-    code{
-      background: rgba(15,23,42,.06);
-      padding: 2px 6px;
-      border-radius: 8px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size: 0.95em;
+    a{
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 600;
     }
   </style>
 </head>
@@ -152,92 +80,89 @@
 <body>
   <main class="wrap">
     <article class="card">
-      <header>
-        <h1>Tutorial de VolumTransport</h1>
-        <div class="pill">Sección: <b>00 — Presentación</b></div>
-      </header>
 
-      <div class="actions">
-        <!-- Ajusta el href a la ruta real del sumario cuando la tengas -->
-        <a class="btn" href="../">Ir al sumario</a>
-        <a class="btn secondary" href="#ia">Uso con IA</a>
-        <a class="btn secondary" href="#filosofia">Filosofía</a>
-        <a class="btn secondary" href="#que-hace">Qué hace (y qué no)</a>
-      </div>
+      <h1>Tutorial de VolumTransport</h1>
 
-      <section>
-        <p>Este es el tutorial de la aplicación <b>VolumTransport</b>.</p>
-        <p>Su objetivo es ayudarte a entender cómo funciona la app, en qué situaciones tiene sentido usarla y qué puedes esperar realmente de ella.</p>
+      <p>Este es el tutorial de la aplicación <b>VolumTransport</b>.</p>
+      <p>
+        Su objetivo es ayudarte a entender cómo funciona la app, en qué situaciones tiene sentido usarla
+        y qué puedes esperar realmente de ella.
+      </p>
 
-        <p>Este tutorial no está pensado para posicionar en buscadores ni para vender nada.</p>
-        <p>Está pensado para el usuario que ya ha llegado a la aplicación y quiere usarla bien.</p>
-      </section>
+      <p>
+        Está pensado para el usuario que ya ha llegado a la aplicación y quiere usarla bien.
+      </p>
 
-      <section id="ia">
-        <h2>Uso del tutorial con inteligencias artificiales</h2>
-        <p>El contenido de este tutorial está preparado para que también pueda ser interpretado por inteligencias artificiales.</p>
+      <h2>Uso del tutorial con inteligencias artificiales</h2>
 
-        <p>
-          Si lo deseas, puedes copiar el enlace de inicio del tutorial, pegarlo en una IA y hacer cualquier pregunta relacionada con VolumTransport:
-          cómo funciona una opción concreta, para qué sirve un modo de cálculo, en qué casos usar la app o qué limitaciones tiene.
-        </p>
+      <p>
+        El contenido de este tutorial está preparado para que también pueda ser interpretado
+        por inteligencias artificiales.
+      </p>
 
-        <p>La IA responderá basándose en la información contenida en este tutorial.</p>
+      <p>
+        Si lo deseas, puedes copiar el enlace de inicio del tutorial, pegarlo en una IA
+        y hacer cualquier pregunta relacionada con VolumTransport:
+        cómo funciona una opción concreta, para qué sirve un modo de cálculo,
+        en qué casos usar la app o qué limitaciones tiene.
+      </p>
 
-        <div class="note">
-          Consejo práctico: si la IA no entiende algo, copia también el párrafo donde aparece esa opción y pégalo junto con tu pregunta.
-        </div>
-      </section>
+      <p>
+        La IA responderá basándose en la información contenida en este tutorial.
+      </p>
 
-      <section id="filosofia">
-        <h2>Origen y filosofía de la aplicación</h2>
-        <p>VolumTransport no ha sido creada por una empresa de software ni por un programador externo.</p>
-        <p>Ha sido desarrollada íntegramente por un profesional del transporte, a partir de problemas reales del día a día en el reparto y la carga de vehículos.</p>
+      <h2>Origen y filosofía de la aplicación</h2>
 
-        <p>Por ese motivo, la aplicación prioriza la utilidad práctica frente a soluciones complejas o teóricas.</p>
+      <p>
+        VolumTransport no ha sido creada por una empresa de software ni por un programador externo.
+      </p>
 
-        <p>
-          Si en algún momento tienes dudas, sugerencias o detectas algo que podría mejorarse, puedes enviar un correo electrónico.
-          Las respuestas se realizan siempre en el menor tiempo posible.
-        </p>
+      <p>
+        Ha sido desarrollada íntegramente por un profesional del transporte,
+        a partir de problemas reales del día a día en el reparto y la carga de vehículos.
+      </p>
 
-        <!-- Pon tu email real aquí -->
-        <p><b>Contacto:</b> <a href="mailto:TU_CORREO@DOMINIO.COM">TU_CORREO@DOMINIO.COM</a></p>
-      </section>
+      <p>
+        Por ese motivo, la aplicación prioriza la utilidad práctica
+        frente a soluciones complejas o teóricas.
+      </p>
 
-      <section id="que-hace">
-        <h2>Qué hace VolumTransport (y qué no hace)</h2>
-        <p>El objetivo principal de VolumTransport es <b>calcular si una carga entra o no</b> en un vehículo de transporte.</p>
+      <p>
+        Si en algún momento tienes dudas, sugerencias o detectas algo que podría mejorarse,
+        puedes enviar un correo electrónico y se responderá en el menor tiempo posible.
+      </p>
 
-        <p>
-          La aplicación utiliza un algoritmo que coloca los bultos siguiendo unas reglas lógicas de volumen, orientación y ocupación del espacio.
-          Ese cálculo sirve como referencia y ayuda para el profesional.
-        </p>
+      <h2>Qué hace VolumTransport (y qué no hace)</h2>
 
-        <p><b>Es importante dejar claro que:</b></p>
-        <ul>
-          <li>La aplicación no decide cómo debe cargarse un vehículo.</li>
-          <li>La aplicación no sustituye la experiencia del transportista.</li>
-          <li>La persona que realiza la carga es siempre la responsable final.</li>
-        </ul>
+      <p>
+        El objetivo principal de VolumTransport es <b>calcular si una carga entra o no</b>
+        en un vehículo de transporte.
+      </p>
 
-        <p>
-          Cada profesional puede colocar la mercancía de manera distinta según su criterio, su experiencia o las circunstancias del servicio.
-          VolumTransport actúa como una calculadora avanzada, no como una orden automática.
-        </p>
-      </section>
+      <p>
+        La aplicación utiliza un algoritmo que coloca los bultos siguiendo unas reglas lógicas
+        de volumen, orientación y ocupación del espacio.
+        Ese cálculo sirve como referencia y ayuda para el profesional.
+      </p>
 
-      <section id="estructura">
-        <h2>Estructura del tutorial</h2>
-        <p>
-          A continuación encontrarás el <b>sumario del tutorial</b>, donde se explican de forma clara y directa las distintas partes de la aplicación
-          y cómo utilizarlas en situaciones reales.
-        </p>
-      </section>
+      <p><b>Es importante dejar claro que:</b></p>
+      <ul>
+        <li>La aplicación no decide cómo debe cargarse un vehículo.</li>
+        <li>La aplicación no sustituye la experiencia del transportista.</li>
+        <li>La persona que realiza la carga es siempre la responsable final.</li>
+      </ul>
 
-      <div class="footer">
-        <span>Nota: esta página incluye <code>noindex,nofollow</code> para evitar indexación por buscadores.</span>
-      </div>
+      <p>
+        Cada profesional puede colocar la mercancía de manera distinta según su criterio,
+        su experiencia o las circunstancias del servicio.
+        VolumTransport actúa como una calculadora avanzada, no como una orden automática.
+      </p>
+
+      <hr>
+
+      <h2>Sumario</h2>
+      <p><a href="../01-main/">01 – Página principal</a></p>
+
     </article>
   </main>
 </body>
