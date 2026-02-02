@@ -55,11 +55,23 @@
     }
 
     h1{
-      margin: 0 0 20px;
-      font-size: clamp(28px, 3vw, 36px);
+      margin: 0 0 28px;
+      font-size: clamp(30px, 3vw, 38px);
       letter-spacing: -0.02em;
+      text-align: center;
+      position: relative;
     }
-
+    
+    h1::after{
+      content: "";
+      display: block;
+      width: 80px;
+      height: 4px;
+      margin: 14px auto 0;
+      background-color: var(--accent);
+      border-radius: 2px;
+    }
+    
     h2{
       margin: 32px 0 10px;
       font-size: 19px;
@@ -131,7 +143,7 @@
       padding: 10px 12px;
       border: 1px solid var(--border);
       border-radius: 12px;
-      background: #ffffffb8;
+      background: rgba(255,255,255,.82);
       color: var(--text);
       font-weight: 700;
     }
