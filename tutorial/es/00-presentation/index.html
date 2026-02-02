@@ -18,12 +18,13 @@
 
   <style>
     :root{
-      --bg: #e9f1ec;          /* fondo más discreto (verde muy suave) */
+      --bg: #d6e6de;          /* fondo un poco más verde (menos blanco) */
       --card: #f7fbf9;        /* tarjeta menos blanca (más cálida) */
       --text: #0f172a;
       --border: #cfe3d8;      /* borde verdoso suave */
       --link: #0b4e2a;
       --accent: #1f7a4a;      /* acento para títulos */
+      --muted: #4b5563;
     }
 
     *{ box-sizing: border-box; }
@@ -96,6 +97,24 @@
 
     .section{
       margin-bottom: 24px;
+    }
+
+    .info-pill{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      background: rgba(31,122,74,.06);
+      border-radius: 12px;
+      color: var(--muted);
+      margin: 6px 0 10px;
+    }
+
+    .info-icon{
+      width: 22px;
+      height: 22px;
+      flex: 0 0 22px;
     }
   </style>
 </head>
@@ -189,6 +208,31 @@
           Cada profesional puede colocar la mercancía de manera distinta según su criterio,
           su experiencia o las circunstancias del servicio.
           VolumTransport actúa como una calculadora avanzada, no como una orden automática.
+        </p>
+      </div>
+
+      <h2>Apuntes globales a toda la aplicación</h2>
+
+      <div class="section">
+        <div class="info-pill" aria-label="Icono de información">
+          <!-- Icono “i” dentro de un círculo (SVG) -->
+          <svg class="info-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M12 10.6v6.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M12 7.4h.01" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+          </svg>
+          <span>Ayuda disponible en cada ventana</span>
+        </div>
+
+        <p>
+          Cuando se diseñaba la aplicación se ha tenido en cuenta que es una herramienta difícil de entender
+          en los primeros pasos. Por eso se ha añadido una ayuda en cada ventana.
+        </p>
+
+        <p>
+          Esa ayuda está reflejada en el icono de información
+          (la <b>i</b> dentro de un círculo).
+          Explica lo que hay en cada ventana y para qué sirve, guiando al usuario para que no se quede atascado.
         </p>
       </div>
 
