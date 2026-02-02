@@ -18,11 +18,12 @@
 
   <style>
     :root{
-      --bg: #1f7a4a; /* verde más suave */
-      --card: rgba(255,255,255,.92);
+      --bg: #e9f1ec;          /* fondo más discreto (verde muy suave) */
+      --card: #f7fbf9;        /* tarjeta menos blanca (más cálida) */
       --text: #0f172a;
-      --border: rgba(15,23,42,.12);
+      --border: #cfe3d8;      /* borde verdoso suave */
       --link: #0b4e2a;
+      --accent: #1f7a4a;      /* acento para títulos */
     }
 
     *{ box-sizing: border-box; }
@@ -40,7 +41,7 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      padding: 32px 14px;
+      padding: 36px 14px;
     }
 
     .card{
@@ -48,19 +49,21 @@
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.18);
-      padding: 28px 24px;
+      box-shadow: 0 12px 34px rgba(0,0,0,.12);
+      padding: 32px 32px;
     }
 
     h1{
-      margin: 0 0 16px;
-      font-size: clamp(26px, 3vw, 34px);
+      margin: 0 0 20px;
+      font-size: clamp(28px, 3vw, 36px);
       letter-spacing: -0.02em;
     }
 
     h2{
-      margin: 24px 0 8px;
-      font-size: 18px;
+      margin: 32px 0 10px;
+      font-size: 19px;
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
     }
 
     p{
@@ -90,6 +93,10 @@
     a:hover{
       text-decoration: underline;
     }
+
+    .section{
+      margin-bottom: 24px;
+    }
   </style>
 </head>
 
@@ -99,84 +106,91 @@
 
       <h1>Tutorial de VolumTransport</h1>
 
-      <p>Este es el tutorial de la aplicación <b>VolumTransport</b>.</p>
-      <p>
-        Su objetivo es ayudarte a entender cómo funciona la app, en qué situaciones tiene sentido usarla
-        y qué puedes esperar realmente de ella.
-      </p>
-
-      <p>
-        Está pensado para el usuario que ya ha llegado a la aplicación y quiere usarla bien.
-      </p>
+      <div class="section">
+        <p>Este es el tutorial de la aplicación <b>VolumTransport</b>.</p>
+        <p>
+          Su objetivo es ayudarte a entender cómo funciona la app, en qué situaciones tiene sentido usarla
+          y qué puedes esperar realmente de ella.
+        </p>
+        <p>
+          Está pensado para el usuario que ya ha llegado a la aplicación y quiere usarla bien.
+        </p>
+      </div>
 
       <h2>Uso del tutorial con inteligencias artificiales</h2>
 
-      <p>
-        El contenido de este tutorial está preparado para que también pueda ser interpretado
-        por inteligencias artificiales.
-      </p>
+      <div class="section">
+        <p>
+          El contenido de este tutorial está preparado para que también pueda ser interpretado
+          por inteligencias artificiales.
+        </p>
 
-      <p>
-        Si lo deseas, puedes copiar el enlace de inicio del tutorial, pegarlo en una IA
-        y hacer cualquier pregunta relacionada con VolumTransport:
-        cómo funciona una opción concreta, para qué sirve un modo de cálculo,
-        en qué casos usar la app o qué limitaciones tiene.
-      </p>
+        <p>
+          Si lo deseas, puedes copiar el enlace de inicio del tutorial, pegarlo en una IA
+          y hacer cualquier pregunta relacionada con VolumTransport:
+          cómo funciona una opción concreta, para qué sirve un modo de cálculo,
+          en qué casos usar la app o qué limitaciones tiene.
+        </p>
 
-      <p>
-        La IA responderá basándose en la información contenida en este tutorial.
-      </p>
+        <p>
+          La IA responderá basándose en la información contenida en este tutorial.
+        </p>
+      </div>
 
       <h2>Origen y filosofía de la aplicación</h2>
 
-      <p>
-        VolumTransport no ha sido creada por una empresa de software ni por un programador externo.
-      </p>
+      <div class="section">
+        <p>
+          VolumTransport no ha sido creada por una empresa de software ni por un programador externo.
+        </p>
 
-      <p>
-        Ha sido desarrollada íntegramente por un profesional del transporte,
-        a partir de problemas reales del día a día en el reparto y la carga de vehículos.
-      </p>
+        <p>
+          Ha sido desarrollada íntegramente por un profesional del transporte,
+          a partir de problemas reales del día a día en el reparto y la carga de vehículos.
+        </p>
 
-      <p>
-        Por ese motivo, la aplicación prioriza la utilidad práctica
-        frente a soluciones complejas o teóricas.
-      </p>
+        <p>
+          Por ese motivo, la aplicación prioriza la utilidad práctica
+          frente a soluciones complejas o teóricas.
+        </p>
 
-      <p>
-        Si en algún momento tienes dudas, sugerencias o detectas algo que podría mejorarse,
-        puedes enviar un correo electrónico y se responderá en el menor tiempo posible.
-      </p>
+        <p>
+          Si en algún momento tienes dudas, sugerencias o detectas algo que podría mejorarse,
+          puedes enviar un correo electrónico y se responderá en el menor tiempo posible.
+        </p>
 
-      <p>
-        <a href="mailto:albherrbri@gmail.com">Enviar un mail: albherrbri@gmail.com</a>
-      </p>
+        <p>
+          <a href="mailto:albherrbri@gmail.com">Enviar un mail: albherrbri@gmail.com</a>
+        </p>
+      </div>
 
       <h2>Qué hace VolumTransport (y qué no hace)</h2>
 
-      <p>
-        El objetivo principal de VolumTransport es <b>calcular si una carga entra o no</b>
-        en un vehículo de transporte.
-      </p>
+      <div class="section">
+        <p>
+          El objetivo principal de VolumTransport es <b>calcular si una carga entra o no</b>
+          en un vehículo de transporte.
+        </p>
 
-      <p>
-        La aplicación utiliza un algoritmo que coloca los bultos siguiendo unas reglas lógicas
-        de volumen, orientación y ocupación del espacio.
-        Ese cálculo sirve como referencia y ayuda para el profesional.
-      </p>
+        <p>
+          La aplicación utiliza un algoritmo que coloca los bultos siguiendo unas reglas lógicas
+          de volumen, orientación y ocupación del espacio.
+          Ese cálculo sirve como referencia y ayuda para el profesional.
+        </p>
 
-      <p><b>Es importante dejar claro que:</b></p>
-      <ul>
-        <li>La aplicación no decide cómo debe cargarse un vehículo.</li>
-        <li>La aplicación no sustituye la experiencia del transportista.</li>
-        <li>La persona que realiza la carga es siempre la responsable final.</li>
-      </ul>
+        <p><b>Es importante dejar claro que:</b></p>
+        <ul>
+          <li>La aplicación no decide cómo debe cargarse un vehículo.</li>
+          <li>La aplicación no sustituye la experiencia del transportista.</li>
+          <li>La persona que realiza la carga es siempre la responsable final.</li>
+        </ul>
 
-      <p>
-        Cada profesional puede colocar la mercancía de manera distinta según su criterio,
-        su experiencia o las circunstancias del servicio.
-        VolumTransport actúa como una calculadora avanzada, no como una orden automática.
-      </p>
+        <p>
+          Cada profesional puede colocar la mercancía de manera distinta según su criterio,
+          su experiencia o las circunstancias del servicio.
+          VolumTransport actúa como una calculadora avanzada, no como una orden automática.
+        </p>
+      </div>
 
       <hr>
 
