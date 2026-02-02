@@ -18,12 +18,12 @@
 
   <style>
     :root{
-      --bg: #d6e6de;          /* fondo un poco más verde (menos blanco) */
-      --card: #f7fbf9;        /* tarjeta menos blanca (más cálida) */
+      --bg: #d6e6de;
+      --card: #f7fbf9;
       --text: #0f172a;
-      --border: #cfe3d8;      /* borde verdoso suave */
+      --border: #cfe3d8;
       --link: #0b4e2a;
-      --accent: #1f7a4a;      /* acento para títulos */
+      --accent: #1f7a4a;
       --muted: #4b5563;
     }
 
@@ -67,9 +67,7 @@
       padding-left: 10px;
     }
 
-    p{
-      margin: 0 0 12px;
-    }
+    p{ margin: 0 0 12px; }
 
     ul{
       margin: 8px 0 0 18px;
@@ -115,6 +113,41 @@
       width: 22px;
       height: 22px;
       flex: 0 0 22px;
+    }
+
+    /* Versiones: lista clicable bonita */
+    .versions{
+      margin: 10px 0 12px;
+      padding: 0;
+      list-style: none;
+    }
+    .versions li{
+      margin: 8px 0;
+    }
+    .version-link{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #ffffffb8;
+      color: var(--text);
+      font-weight: 700;
+    }
+    .version-link:hover{
+      text-decoration: none;
+      border-color: rgba(31,122,74,.45);
+      box-shadow: 0 6px 18px rgba(0,0,0,.07);
+    }
+    .badge{
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--accent);
+      border: 1px solid rgba(31,122,74,.35);
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(31,122,74,.06);
     }
   </style>
 </head>
@@ -215,7 +248,6 @@
 
       <div class="section">
         <div class="info-pill" aria-label="Icono de información">
-          <!-- Icono “i” dentro de un círculo (SVG) -->
           <svg class="info-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/>
             <path d="M12 10.6v6.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
@@ -233,6 +265,49 @@
           Esa ayuda está reflejada en el icono de información
           (la <b>i</b> dentro de un círculo).
           Explica lo que hay en cada ventana y para qué sirve, guiando al usuario para que no se quede atascado.
+        </p>
+      </div>
+
+      <h2>Versiones</h2>
+
+      <div class="section">
+        <p>Hay cuatro tipos de versiones de la aplicación:</p>
+
+        <ul class="versions">
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">01</span>
+              Semana gratis
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">02</span>
+              Gratis con anuncios
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">03</span>
+              Gratis sin anuncios
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">04</span>
+              Premium
+            </a>
+          </li>
+        </ul>
+
+        <p>
+          Todas ellas calculan la cantidad de cajas que entran en el vehículo, pero a medida que se va
+          necesitando más información o más características se pueden encontrar limitaciones según la versión.
+        </p>
+
+        <p>
+          Para poder comprar una versión se puede hacer desde la ventana de
+          <a href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">Subir de categoría</a>.
         </p>
       </div>
 
