@@ -241,34 +241,60 @@
         </p>
       </div>
 
-      <h2>Qué hace VolumTransport (y qué no hace)</h2>
+     <h2>Qué hace VolumTransport (y qué no hace)</h2>
 
-      <div class="section">
-        <p>
-          El objetivo principal de VolumTransport es <b>calcular si una carga entra o no</b>
-          en un vehículo de transporte.
-        </p>
+    <div class="section">
+      <p>
+        El objetivo principal de VolumTransport es <b>calcular cómo encaja una carga</b>
+        en un vehículo de transporte y si <b>entra o no entra</b> según las medidas indicadas.
+      </p>
 
-        <p>
-          La aplicación utiliza un algoritmo que coloca los bultos siguiendo unas reglas lógicas
-          de volumen, orientación y ocupación del espacio.
-          Ese cálculo sirve como referencia y ayuda para el profesional.
-        </p>
+      <p>
+        Además del “entra / no entra”, la app también puede mostrar datos útiles como
+        <b>porcentaje de ocupación</b>, <b>peso</b> y, si lo activas, <b>resultados económicos</b>.
+        En este tutorial se irán viendo todas las opciones disponible paso a paso.
+      </p>
 
-        <p><b>Es importante dejar claro que:</b></p>
-        <ul>
-          <li>La aplicación no decide cómo debe cargarse un vehículo.</li>
-          <li>La aplicación no sustituye la experiencia del transportista.</li>
-          <li>La persona que realiza la carga es siempre la responsable final.</li>
-        </ul>
+      <p>
+        Para realizar estos cálculos, la aplicación utiliza un método conocido como
+        <b>bin packing</b>.
+      </p>
 
-        <p>
-          Cada profesional puede colocar la mercancía de manera distinta según su criterio,
-          su experiencia o las circunstancias del servicio.
-          VolumTransport actúa como una calculadora avanzada, no como una orden automática.
-        </p>
-      </div>
+      <p>
+        <b>¿Qué significa esto?</b><br>
+        El bin packing es una forma de calcular cómo colocar varios bultos dentro de un espacio limitado
+        (por ejemplo, un vehículo) aprovechando el espacio disponible lo mejor posible.
+        Este método permite estimar la ocupación real sin tener que probar físicamente cada combinación.
+      </p>
 
+      <p>
+        <b>¿En qué se diferencia de otros métodos?</b><br>
+        A diferencia de un cálculo por volumen total, que solo suma volumen y puede fallar en la práctica,
+        el bin packing tiene en cuenta las <b>dimensiones reales</b> (largo, ancho y alto) y cómo encajan los bultos.
+        También se diferencia de una simulación “perfecta” porque busca un equilibrio entre <b>precisión y rapidez</b>:
+        da una referencia útil en segundos. El resultado es una ayuda práctica, sin sustituir el criterio del profesional.
+      </p>
+
+      <p>
+        La aplicación coloca los bultos siguiendo reglas lógicas de volumen, orientación
+        y ocupación del espacio.
+        El resultado sirve como referencia y ayuda para el profesional.
+      </p>
+
+      <p><b>Es importante dejar claro que:</b></p>
+      <ul>
+        <li>La aplicación no decide cómo debe cargarse un vehículo.</li>
+        <li>La aplicación no sustituye la experiencia del transportista.</li>
+        <li>La persona que realiza la carga es siempre la responsable final.</li>
+      </ul>
+
+      <p>
+        Cada profesional puede colocar la mercancía de manera distinta según su criterio,
+        su experiencia o las circunstancias del servicio.
+        VolumTransport actúa como una calculadora avanzada, no como una orden automática.
+      </p>
+    </div>
+      
       <h2>Apuntes globales a toda la aplicación</h2>
 
       <div class="section">
