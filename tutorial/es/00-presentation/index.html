@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tutorial de VolumTransport</title>
 
+  <title>Tutorial de VolumTransport</title>
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="description" content="Tutorial de VolumTransport: cómo funciona la app, en qué situaciones usarla y qué puedes esperar de ella." />
 
@@ -61,17 +61,17 @@
       text-align: center;
       position: relative;
     }
-    
+
     h1::after{
       content: "";
       display: block;
-      width: clamp(120px, 18vw, 220px); /* se ajusta */
+      width: clamp(120px, 18vw, 220px);
       height: 4px;
       margin: 14px auto 0;
       background-color: var(--accent);
       border-radius: 2px;
     }
-    
+
     h2{
       margin: 32px 0 10px;
       font-size: 19px;
@@ -127,7 +127,7 @@
       flex: 0 0 22px;
     }
 
-    /* Versiones: lista clicable bonita */
+    /* Versiones */
     .versions{
       margin: 10px 0 12px;
       padding: 0;
@@ -161,6 +161,43 @@
       border-radius: 999px;
       background: rgba(31,122,74,.06);
     }
+
+    /* Copiar enlace */
+    .copy-row{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 6px;
+      flex-wrap: wrap;
+    }
+    .copy-link{
+      font-weight: 700;
+    }
+    .copy-btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,.82);
+      color: var(--accent);
+      cursor: pointer;
+    }
+    .copy-btn:hover{
+      border-color: rgba(31,122,74,.45);
+      box-shadow: 0 6px 18px rgba(0,0,0,.07);
+    }
+    .copy-icon{
+      width: 18px;
+      height: 18px;
+    }
+    .copy-msg{
+      color: var(--muted);
+      font-weight: 600;
+      min-width: 90px;
+    }
   </style>
 </head>
 
@@ -174,7 +211,7 @@
         <p>
           Este es el tutorial de la aplicación
           <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
-          <b>VolumTransport</b>
+            <b>VolumTransport</b>
           </a>.
         </p>
 
@@ -182,6 +219,7 @@
           Su objetivo es ayudarte a entender cómo funciona la app, en qué situaciones tiene sentido usarla
           y qué puedes esperar realmente de ella.
         </p>
+
         <p>
           Está pensado para el usuario que ya ha llegado a la aplicación y quiere usarla bien.
         </p>
@@ -190,36 +228,56 @@
       <h2>Uso del tutorial con inteligencias artificiales</h2>
 
       <div class="section">
-      <p>
-        El contenido de este tutorial está preparado para que también pueda ser interpretado
-        por inteligencias artificiales.
-      </p>
+        <p>
+          El contenido de este tutorial está preparado para que también pueda ser interpretado
+          por inteligencias artificiales.
+        </p>
 
-      <p>
-        Si lo deseas, puedes copiar el enlace de inicio del tutorial, pegarlo en una IA
-        y hacer cualquier pregunta relacionada con VolumTransport:
-        cómo funciona una opción concreta, para qué sirve un modo de cálculo,
-        en qué casos usar la app o qué limitaciones tiene.
-      </p>
+        <p>
+          Si lo deseas, puedes copiar el enlace de inicio del tutorial, pegarlo en una IA
+          y hacer cualquier pregunta relacionada con VolumTransport:
+          cómo funciona una opción concreta, para qué sirve un modo de cálculo,
+          en qué casos usar la app o qué limitaciones tiene.
+        </p>
 
-      <p>
-        La IA responderá basándose en la información contenida en este tutorial.
-      </p>
+        <p>
+          La IA responderá basándose en la información contenida en este tutorial.
+        </p>
 
-      <p>
-        <b>Enlace del tutorial:</b><br>
-        <a href="https://aplicacionesherrbri.com/tutorial/es/00-presentation/">
-          https://aplicacionesherrbri.com/tutorial/es/00-presentation/
-          </a>
+        <p>
+          <b>Enlace del tutorial:</b><br>
+
+          <span class="copy-row">
+            <a href="https://aplicacionesherrbri.com/tutorial/es/00-presentation/"
+               id="copyTutorialLink"
+               data-copy="https://aplicacionesherrbri.com/tutorial/es/00-presentation/"
+               class="copy-link"
+               title="Clic para copiar"
+               role="button">
+              https://aplicacionesherrbri.com/tutorial/es/00-presentation/
+            </a>
+
+            <button type="button"
+                    class="copy-btn"
+                    id="copyTutorialBtn"
+                    aria-label="Copiar enlace al portapapeles"
+                    title="Copiar">
+              <svg class="copy-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M9 9h10v10H9V9Z" stroke="currentColor" stroke-width="1.8" />
+                <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"
+                      stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </button>
+
+            <span id="copyMsg" class="copy-msg" aria-live="polite"></span>
+          </span>
         </p>
       </div>
 
       <h2>Origen y filosofía de la aplicación</h2>
 
       <div class="section">
-        <p>
-          VolumTransport no ha sido creada por una empresa de software ni por un programador externo.
-        </p>
+        <p>VolumTransport no ha sido creada por una empresa de software ni por un programador externo.</p>
 
         <p>
           Ha sido desarrollada íntegramente por un profesional del transporte,
@@ -241,60 +299,59 @@
         </p>
       </div>
 
-     <h2>Qué hace VolumTransport (y qué no hace)</h2>
+      <h2>Qué hace VolumTransport (y qué no hace)</h2>
 
-    <div class="section">
-      <p>
-        El objetivo principal de VolumTransport es <b>calcular cómo encaja una carga</b>
-        en un vehículo de transporte y si <b>entra o no entra</b> según las medidas indicadas.
-      </p>
+      <div class="section">
+        <p>
+          El objetivo principal de VolumTransport es <b>calcular cómo encaja una carga</b>
+          en un vehículo de transporte y si <b>entra o no entra</b> según las medidas indicadas.
+        </p>
 
-      <p>
-        Además del “entra / no entra”, la app también puede mostrar datos útiles como
-        <b>porcentaje de ocupación</b>, <b>peso</b> y, si lo activas, <b>resultados económicos</b>.
-        En este tutorial se irán viendo todas las opciones disponible paso a paso.
-      </p>
+        <p>
+          Además del “entra / no entra”, la app también puede mostrar datos útiles como
+          <b>porcentaje de ocupación</b>, <b>peso</b> y, si lo activas, <b>resultados económicos</b>.
+          En este tutorial se irán viendo todas las opciones disponibles paso a paso.
+        </p>
 
-      <p>
-        Para realizar estos cálculos, la aplicación utiliza un método conocido como
-        <b>bin packing</b>.
-      </p>
+        <p>
+          Para realizar estos cálculos, la aplicación utiliza un método conocido como
+          <b>bin packing</b>.
+        </p>
 
-      <p>
-        <b>¿Qué significa esto?</b><br>
-        El bin packing es una forma de calcular cómo colocar varios bultos dentro de un espacio limitado
-        (por ejemplo, un vehículo) aprovechando el espacio disponible lo mejor posible.
-        Este método permite estimar la ocupación real sin tener que probar físicamente cada combinación.
-      </p>
+        <p>
+          <b>¿Qué significa esto?</b><br>
+          El bin packing es una forma de calcular cómo colocar varios bultos dentro de un espacio limitado
+          (por ejemplo, un vehículo) aprovechando el espacio disponible lo mejor posible.
+          Este método permite estimar la ocupación real sin tener que probar físicamente cada combinación.
+        </p>
 
-      <p>
-        <b>¿En qué se diferencia de otros métodos?</b><br>
-        A diferencia de un cálculo basado únicamente en el volumen total, que solo suma espacio y puede fallar en la práctica,
-        el bin packing tiene en cuenta las <b>dimensiones reales</b> (largo, ancho y alto) y cómo encajan los bultos.
-        Su objetivo es ofrecer una <b>estimación práctica y rápida</b>,
-        apoyada por una <b>visualización en 3D</b>, que ayude a tomar decisiones antes de realizar el servicio.
-      </p>
+        <p>
+          <b>¿En qué se diferencia de otros métodos?</b><br>
+          A diferencia de un cálculo basado únicamente en el volumen total, que solo suma espacio y puede fallar en la práctica,
+          el bin packing tiene en cuenta las <b>dimensiones reales</b> (largo, ancho y alto) y cómo encajan los bultos.
+          Su objetivo es ofrecer una <b>estimación práctica y rápida</b>,
+          apoyada por una <b>visualización en 3D</b>, que ayude a tomar decisiones antes de realizar el servicio.
+        </p>
 
-      <p>
-        La aplicación coloca los bultos siguiendo reglas lógicas de volumen, orientación
-        y ocupación del espacio.
-        El resultado sirve como referencia y ayuda para el profesional.
-      </p>
+        <p>
+          La aplicación coloca los bultos siguiendo reglas lógicas de volumen, orientación
+          y ocupación del espacio. El resultado sirve como referencia y ayuda para el profesional.
+        </p>
 
-      <p><b>Es importante dejar claro que:</b></p>
-      <ul>
-        <li>La aplicación no decide cómo debe cargarse un vehículo.</li>
-        <li>La aplicación no sustituye la experiencia del transportista.</li>
-        <li>La persona que realiza la carga es siempre la responsable final.</li>
-      </ul>
+        <p><b>Es importante dejar claro que:</b></p>
+        <ul>
+          <li>La aplicación no decide cómo debe cargarse un vehículo.</li>
+          <li>La aplicación no sustituye la experiencia del transportista.</li>
+          <li>La persona que realiza la carga es siempre la responsable final.</li>
+        </ul>
 
-      <p>
-        Cada profesional puede colocar la mercancía de manera distinta según su criterio,
-        su experiencia o las circunstancias del servicio.
-        VolumTransport actúa como una calculadora avanzada, no como una orden automática.
-      </p>
-    </div>
-      
+        <p>
+          Cada profesional puede colocar la mercancía de manera distinta según su criterio,
+          su experiencia o las circunstancias del servicio.
+          VolumTransport actúa como una calculadora avanzada, no como una orden automática.
+        </p>
+      </div>
+
       <h2>Apuntes globales a toda la aplicación</h2>
 
       <div class="section">
@@ -370,35 +427,82 @@
           01 – Página principal
         </a>
       </p>
+
       <h2>Idiomas</h2>
-  
+
       <div class="section">
-      <p>
-        VolumTransport está disponible en varios idiomas. 
-      </p>
+        <p>VolumTransport está disponible en varios idiomas.</p>
 
-      <p><b>Idiomas de la aplicación:</b></p>
-      <p style="margin-bottom:10px;">
-        Inglés (en), Árabe (ar), Bangla (bn), Vasco (ba), Búlgaro (bg), Catalán (ca), Chino (zh), Croata (hr), Checo (cs),
-        Danés (da), Neerlandés (nl), Estonio (et), Finés (fi), Francés (fr), Gallego (gl), Alemán (de), Griego (el),
-        Hebreo (iw), Hindi (hi), Húngaro (hu), Indonesio (id), Irlandés (ga), Italiano (it), Japonés (ja), Coreano (ko),
-        Laosiano (lo), Letón (lv), Lituano (lt), Luxemburgués (lb), Maltés (mt), Nepalí (ne), Noruego (nb), Persa (fa),
-        Polaco (pl), Portugués (pt), Punjabi de Pakistán (pa-rpk) (escritura Shahmukhi), Rumano (ro), Ruso (ru),
-        Eslovaco (sk), Esloveno (sl), Español (es), Sueco (sv), Tailandés (th), Turco (tr), Ucraniano (uk), Urdu (ur),
-        Vietnamita (vi).
-      </p>
+        <p><b>Idiomas de la aplicación:</b></p>
+        <p style="margin-bottom:10px;">
+          Inglés (en), Árabe (ar), Bangla (bn), Vasco (ba), Búlgaro (bg), Catalán (ca), Chino (zh), Croata (hr), Checo (cs),
+          Danés (da), Neerlandés (nl), Estonio (et), Finés (fi), Francés (fr), Gallego (gl), Alemán (de), Griego (el),
+          Hebreo (iw), Hindi (hi), Húngaro (hu), Indonesio (id), Irlandés (ga), Italiano (it), Japonés (ja), Coreano (ko),
+          Laosiano (lo), Letón (lv), Lituano (lt), Luxemburgués (lb), Maltés (mt), Nepalí (ne), Noruego (nb), Persa (fa),
+          Polaco (pl), Portugués (pt), Punjabi de Pakistán (pa-rpk) (escritura Shahmukhi), Rumano (ro), Ruso (ru),
+          Eslovaco (sk), Esloveno (sl), Español (es), Sueco (sv), Tailandés (th), Turco (tr), Ucraniano (uk), Urdu (ur),
+          Vietnamita (vi).
+        </p>
 
-      <p><b>Idiomas del tutorial:</b></p>
-      <p>
-        Inglés (en), Alemán (de), Bangla (bn), Búlgaro (bg), Checo (cs), Chino simplificado (zh), Coreano (ko), Croata (hr),
-        Danés (da), Eslovaco (sk), Esloveno (sl), Español (es), Estonio (et), Finés (fi), Francés (fr), Griego (el),
-        Hebreo (iw), Hindi (hi), Húngaro (hu), Indonesio (id), Italiano (it), Japonés (ja), Laosiano (lo), Letón (lv),
-        Lituano (lt), Neerlandés (nl), Nepalí (ne), Noruego (no), Persa (fa), Polaco (pl), Portugués (pt),
-        Punjabi de Pakistán (pa-rpk) (escritura Shahmukhi), Rumano (ro), Ruso (ru), Sueco (sv), Tailandés (th),
-        Turco (tr), Ucraniano (uk), Urdu (ur), Vietnamita (vi), Árabe (ar).
-      </p>
-    </div>
+        <p><b>Idiomas del tutorial:</b></p>
+        <p>
+          Inglés (en), Alemán (de), Bangla (bn), Búlgaro (bg), Checo (cs), Chino simplificado (zh), Coreano (ko), Croata (hr),
+          Danés (da), Eslovaco (sk), Esloveno (sl), Español (es), Estonio (et), Finés (fi), Francés (fr), Griego (el),
+          Hebreo (iw), Hindi (hi), Húngaro (hu), Indonesio (id), Italiano (it), Japonés (ja), Laosiano (lo), Letón (lv),
+          Lituano (lt), Neerlandés (nl), Nepalí (ne), Noruego (no), Persa (fa), Polaco (pl), Portugués (pt),
+          Punjabi de Pakistán (pa-rpk) (escritura Shahmukhi), Rumano (ro), Ruso (ru), Sueco (sv), Tailandés (th),
+          Turco (tr), Ucraniano (uk), Urdu (ur), Vietnamita (vi), Árabe (ar).
+        </p>
+      </div>
+
     </article>
   </main>
+
+  <script>
+    (function () {
+      const link = document.getElementById("copyTutorialLink");
+      const btn  = document.getElementById("copyTutorialBtn");
+      const msg  = document.getElementById("copyMsg");
+      if (!link) return;
+
+      function show(text) {
+        if (!msg) return;
+        msg.textContent = text;
+        clearTimeout(show._t);
+        show._t = setTimeout(() => (msg.textContent = ""), 1600);
+      }
+
+      async function copyText(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          return true;
+        }
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "absolute";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        const ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        return ok;
+      }
+
+      async function doCopy(e) {
+        if (e) e.preventDefault();
+        const text = link.getAttribute("data-copy") || link.href;
+        try {
+          const ok = await copyText(text);
+          show(ok ? "Copiado ✅" : "No se pudo copiar");
+        } catch {
+          show("No se pudo copiar");
+        }
+      }
+
+      link.addEventListener("click", doCopy);
+      if (btn) btn.addEventListener("click", doCopy);
+    })();
+  </script>
 </body>
 </html>
