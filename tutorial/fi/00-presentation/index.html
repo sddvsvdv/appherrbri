@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>VolumTransport-opas</title>
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="description" content="VolumTransport-opas: miten sovellus toimii, milloin sitä kannattaa käyttää ja mitä voit siltä oikeasti odottaa." />
+
+  <link rel="canonical" href="https://aplicacionesherrbri.com/tutorial/fi/00-presentation/" />
+
+  <meta property="og:title" content="VolumTransport-opas" />
+  <meta property="og:description" content="Miten VolumTransportia käytetään ja mitä voit odottaa sovellukselta." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aplicacionesherrbri.com/tutorial/fi/00-presentation/" />
+  <meta property="og:locale" content="fi_FI" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "VolumTransport",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Android",
+      "inLanguage": "fi",
+      "url": "https://aplicacionesherrbri.com/tutorial/fi/00-presentation/",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.herrbri.volumtransport",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Aplicaciones HerrBri"
+      }
+    }
+  </script>
+
+
+
+  <style>
+    :root{
+      --bg: #d6e6de;
+      --card: #f7fbf9;
+      --text: #0f172a;
+      --border: #cfe3d8;
+      --link: #0b4e2a;
+      --accent: #1f7a4a;
+      --muted: #4b5563;
+    }
+
+    *{ box-sizing: border-box; }
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .wrap{
+      min-height: 100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 36px 14px;
+    }
+
+    .card{
+      width: min(900px, 100%);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 12px 34px rgba(0,0,0,.12);
+      padding: 32px 32px;
+    }
+
+    h1{
+      margin: 0 0 28px;
+      font-size: clamp(30px, 3vw, 38px);
+      letter-spacing: -0.02em;
+      text-align: center;
+      position: relative;
+    }
+
+    h1::after{
+      content: "";
+      display: block;
+      width: clamp(120px, 18vw, 220px);
+      height: 4px;
+      margin: 14px auto 0;
+      background-color: var(--accent);
+      border-radius: 2px;
+    }
+
+    h2{
+      margin: 32px 0 10px;
+      font-size: 19px;
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+    }
+
+    p{ margin: 0 0 12px; }
+
+    ul{
+      margin: 8px 0 0 18px;
+    }
+
+    li{
+      margin: 6px 0;
+    }
+
+    hr{
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 28px 0 18px;
+    }
+
+    a{
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover{
+      text-decoration: underline;
+    }
+
+    .section{
+      margin-bottom: 24px;
+    }
+
+    .info-pill{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      background: rgba(31,122,74,.06);
+      border-radius: 12px;
+      color: var(--muted);
+      margin: 6px 0 10px;
+    }
+
+    .info-icon{
+      width: 22px;
+      height: 22px;
+      flex: 0 0 22px;
+    }
+
+    /* Versiones */
+    .versions{
+      margin: 10px 0 12px;
+      padding: 0;
+      list-style: none;
+    }
+    .versions li{
+      margin: 8px 0;
+    }
+    .version-link{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,.82);
+      color: var(--text);
+      font-weight: 700;
+    }
+    .version-link:hover{
+      text-decoration: none;
+      border-color: rgba(31,122,74,.45);
+      box-shadow: 0 6px 18px rgba(0,0,0,.07);
+    }
+    .badge{
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--accent);
+      border: 1px solid rgba(31,122,74,.35);
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(31,122,74,.06);
+    }
+
+    /* Copiar enlace */
+    .copy-row{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 6px;
+      flex-wrap: wrap;
+    }
+    .copy-link{
+      font-weight: 700;
+    }
+    .copy-btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,.82);
+      color: var(--accent);
+      cursor: pointer;
+    }
+    .copy-btn:hover{
+      border-color: rgba(31,122,74,.45);
+      box-shadow: 0 6px 18px rgba(0,0,0,.07);
+    }
+    .copy-icon{
+      width: 18px;
+      height: 18px;
+    }
+    .copy-msg{
+      color: var(--muted);
+      font-weight: 600;
+      min-width: 90px;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <article class="card">
+
+      <h1>VolumTransport-opas</h1>
+
+      <div class="section">
+        <p>
+          Tämä on sovelluksen
+          <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
+            <b>VolumTransport</b>
+          </a>
+          opas.
+        </p>
+
+        <p>
+          Tavoitteena on auttaa sinua ymmärtämään, miten sovellus toimii, missä tilanteissa sitä kannattaa käyttää
+          ja mitä voit siltä oikeasti odottaa.
+        </p>
+
+        <p>
+          Tämä on tarkoitettu käyttäjälle, joka on jo löytänyt sovelluksen ja haluaa käyttää sitä oikein.
+        </p>
+      </div>
+
+      <h2>Oppaan käyttö tekoälyn kanssa</h2>
+
+      <div class="section">
+        <p>
+          Tämän oppaan sisältö on valmisteltu niin, että sitä voivat tulkita myös
+          tekoälyjärjestelmät.
+        </p>
+
+        <p>
+          Halutessasi voit kopioida oppaan aloituslinkin, liittää sen tekoälyyn
+          ja esittää minkä tahansa VolumTransportiin liittyvän kysymyksen:
+          miten jokin tietty toiminto toimii, mihin laskentatila on tarkoitettu,
+          missä tapauksissa sovellusta kannattaa käyttää tai mitä rajoituksia sillä on.
+        </p>
+
+        <p>
+          Tekoäly vastaa tämän oppaan sisältämien tietojen perusteella.
+        </p>
+
+        <p>
+          <b>Oppaan linkki:</b><br>
+
+          <span class="copy-row">
+            <a href="https://aplicacionesherrbri.com/tutorial/fi/00-presentation/"
+               id="copyTutorialLink"
+               data-copy="https://aplicacionesherrbri.com/tutorial/fi/00-presentation/"
+               class="copy-link"
+               title="Napsauta kopioidaksesi"
+               role="button">
+              https://aplicacionesherrbri.com/tutorial/fi/00-presentation/
+            </a>
+
+            <button type="button"
+                    class="copy-btn"
+                    id="copyTutorialBtn"
+                    aria-label="Kopioi linkki leikepöydälle"
+                    title="Kopioi">
+              <svg class="copy-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M9 9h10v10H9V9Z" stroke="currentColor" stroke-width="1.8" />
+                <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"
+                      stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </button>
+
+            <span id="copyMsg" class="copy-msg" aria-live="polite"></span>
+          </span>
+        </p>
+      </div>
+
+      <h2>Sovelluksen tausta ja filosofia</h2>
+
+      <div class="section">
+        <p>VolumTransportia ei ole luonut ohjelmistoyritys eikä ulkopuolinen ohjelmoija.</p>
+
+        <p>
+          Sovelluksen on kehittänyt kokonaan kuljetusalan ammattilainen,
+          todellisten arjen ongelmien pohjalta jakelussa ja tavaran lastauksessa.
+          Koska Google Play -kaupassa ei ollut vastaavia työkaluja,
+          päätettiin tehdä käytännöllinen sovellus, joka keskittyy todellisiin tarpeisiin.
+        </p>
+
+        <p>
+          Siksi sovellus painottaa käytännön hyötyä
+          monimutkaisten tai teoreettisten ratkaisujen sijaan.
+        </p>
+
+        <p>
+          Jos sinulla on joskus kysymyksiä, ehdotuksia tai huomaat jotain parannettavaa,
+          voit lähettää sähköpostia ja saat vastauksen mahdollisimman pian.
+        </p>
+
+        <p>
+          <a href="mailto:albherrbri@gmail.com">Lähetä sähköpostia: albherrbri@gmail.com</a>
+        </p>
+      </div>
+
+      <h2>Mitä VolumTransport tekee (ja mitä se ei tee)</h2>
+
+      <div class="section">
+        <p>
+          VolumTransportin päätavoite on <b>laskea, miten kuorma mahtuu</b>
+          tiettyyn tilaan ja <b>mahtuuko se vai ei</b> annettujen mittojen perusteella.
+        </p>
+
+        <p>
+          “Mahtuu / ei mahdu” -tuloksen lisäksi sovellus voi näyttää hyödyllisiä tietoja, kuten
+          <b>täyttöasteen</b>, <b>painon</b> ja, jos otat sen käyttöön, <b>taloudelliset tulokset</b>.
+          Tässä oppaassa käydään kaikki käytettävissä olevat vaihtoehdot läpi vaihe vaiheelta.
+        </p>
+
+        <p>
+          Näitä laskelmia varten sovellus käyttää menetelmää, jota kutsutaan nimellä
+          <b>bin packing</b>.
+        </p>
+
+        <p>
+          <b>Mitä se tarkoittaa?</b><br>
+          Bin packing on tapa laskea, miten useita kollia sijoitetaan rajattuun tilaan
+          (esimerkiksi ajoneuvoon) hyödyntäen käytettävissä oleva tila mahdollisimman tehokkaasti.
+          Menetelmä mahdollistaa todellisen täyttöasteen arvioinnin ilman, että jokaista yhdistelmää tarvitsee testata fyysisesti.
+        </p>
+
+        <p>
+          <b>Miten se eroaa muista menetelmistä?</b><br>
+          Toisin kuin pelkkään kokonaisvolyymiin perustuva laskenta, joka vain summaa tilaa ja voi epäonnistua käytännössä,
+          bin packing ottaa huomioon <b>todelliset mitat</b> (pituus, leveys ja korkeus) ja sen, miten kollit todella sopivat.
+          Tavoitteena on tarjota <b>käytännöllinen ja nopea arvio</b>,
+          jota tukee <b>3D-visualisointi</b>, jotta päätöksiä voidaan tehdä ennen työn suorittamista.
+        </p>
+
+        <p>
+          Sovellus asettaa kollit loogisten sääntöjen mukaan: tilavuus, suuntaus
+          ja tilan käyttö. Tulos toimii viitteenä ja apuna ammattilaiselle.
+        </p>
+
+        <p><b>On tärkeää korostaa, että:</b></p>
+        <ul>
+          <li>Sovellus ei päätä, miten tila pitäisi järjestää.</li>
+          <li>Sovellus ei korvaa kuljettajan kokemusta.</li>
+          <li>Kuorman lastaava henkilö on aina lopullisesti vastuussa.</li>
+        </ul>
+
+        <p>
+          Jokainen ammattilainen voi sijoittaa tavaran eri tavalla oman harkintansa,
+          kokemuksensa tai työn olosuhteiden mukaan.
+          VolumTransport toimii edistyneenä laskurina, ei automaattisena käskynä.
+        </p>
+      </div>
+
+      <h2>Yleisiä huomioita koko sovelluksesta</h2>
+
+      <div class="section">
+        <div class="info-pill" aria-label="Tietokuvake">
+          <svg class="info-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M12 10.6v6.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M12 7.4h.01" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+          </svg>
+          <span>Ohje on saatavilla jokaisessa näkymässä</span>
+        </div>
+
+        <p>
+          Sovellusta suunniteltaessa otettiin huomioon, että ensimmäisissä vaiheissa sitä voi olla vaikea ymmärtää.
+          Siksi jokaiseen näkymään lisättiin ohje.
+        </p>
+
+        <p>
+          Ohje näkyy tietokuvakkeessa
+          (<b>i</b> ympyrän sisällä).
+          Se selittää, mitä kussakin näkymässä on ja mihin se on tarkoitettu, jotta käyttäjä ei jäisi jumiin.
+        </p>
+      </div>
+
+      <h2>Versiot</h2>
+
+      <div class="section">
+        <p>Sovelluksesta on neljä eri versiota:</p>
+
+        <ul class="versions">
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">01</span>
+              Viikko ilmaiseksi
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">02</span>
+              Ilmainen mainoksilla
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">03</span>
+              Ilmainen ilman mainoksia
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">04</span>
+              Premium
+            </a>
+          </li>
+        </ul>
+
+        <p>
+          Kaikki versiot laskevat, kuinka monta laatikkoa mahtuu ajoneuvoon, mutta kun tarvitset enemmän tietoa
+          tai enemmän ominaisuuksia, versioista riippuen voi tulla vastaan rajoituksia.
+        </p>
+
+        <p>
+          Version voi ostaa näkymästä
+          <a href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">Päivitä tasoa</a>.
+        </p>
+      </div>
+
+      <hr>
+
+      <h2>Sisällysluettelo</h2>
+      <p>
+        <a href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+          01 – Etusivu
+        </a>
+      </p>
+
+      <h2>Kielet</h2>
+
+      <div class="section">
+        <p>VolumTransport on saatavilla useilla kielillä.</p>
+
+        <p><b>Sovelluksen kielet:</b></p>
+        <p style="margin-bottom:10px;">
+          Englanti (en), Arabia (ar), Bangla (bn), Baskin kieli (ba), Bulgaria (bg), Katalaani (ca), Kiina (zh), Kroatia (hr),
+          Tšekki (cs), Tanska (da), Hollanti (nl), Viro (et), Suomi (fi), Ranska (fr), Galicia (gl), Saksa (de), Kreikka (el),
+          Heprea (iw), Hindi (hi), Unkari (hu), Indonesia (id), Iiri (ga), Italia (it), Japani (ja), Korea (ko),
+          Laon kieli (lo), Latvia (lv), Liettua (lt), Luxemburgi (lb), Malta (mt), Nepali (ne), Norja (nb), Persia (fa),
+          Puola (pl), Portugali (pt), Pandžabi (Pakistan) (pa-rpk) (Shahmukhi-kirjoitus), Romania (ro), Venäjä (ru),
+          Slovakia (sk), Slovenia (sl), Espanja (es), Ruotsi (sv), Thai (th), Turkki (tr), Ukraina (uk), Urdu (ur),
+          Vietnam (vi).
+        </p>
+
+        <p><b>Oppaan kielet:</b></p>
+        <p>
+          Englanti (en), Saksa (de), Bangla (bn), Bulgaria (bg), Tšekki (cs), Yksinkertaistettu kiina (zh), Korea (ko), Kroatia (hr),
+          Tanska (da), Slovakia (sk), Slovenia (sl), Espanja (es), Viro (et), Suomi (fi), Ranska (fr), Kreikka (el),
+          Heprea (iw), Hindi (hi), Unkari (hu), Indonesia (id), Italia (it), Japani (ja), Laon kieli (lo), Latvia (lv),
+          Liettua (lt), Hollanti (nl), Nepali (ne), Norja (no), Persia (fa), Puola (pl), Portugali (pt),
+          Pandžabi (Pakistan) (pa-rpk) (Shahmukhi-kirjoitus), Romania (ro), Venäjä (ru), Ruotsi (sv), Thai (th), Turkki (tr),
+          Ukraina (uk), Urdu (ur), Vietnam (vi), Arabia (ar).
+        </p>
+
+        <p>
+          Tämä opas on edelleen kehitteillä, mutta jos sinulla on kysymyksiä tai tarvitset tarkennusta,
+          voit lähettää sähköpostia osoitteeseen:
+        </p>
+
+        <p>
+          <a href="mailto:albherrbri@gmail.com">Lähetä sähköpostia: albherrbri@gmail.com</a>
+        </p>
+        
+      </div>
+
+    </article>
+  </main>
+
+  <script>
+    (function () {
+      const link = document.getElementById("copyTutorialLink");
+      const btn  = document.getElementById("copyTutorialBtn");
+      const msg  = document.getElementById("copyMsg");
+      if (!link) return;
+
+      function show(text) {
+        if (!msg) return;
+        msg.textContent = text;
+        clearTimeout(show._t);
+        show._t = setTimeout(() => (msg.textContent = ""), 1600);
+      }
+
+      async function copyText(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          return true;
+        }
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "absolute";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        const ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        return ok;
+      }
+
+      async function doCopy(e) {
+        if (e) e.preventDefault();
+        const text = link.getAttribute("data-copy") || link.href;
+        try {
+          const ok = await copyText(text);
+          show(ok ? "Kopioitu ✅" : "Kopiointi epäonnistui");
+        } catch {
+          show("Kopiointi epäonnistui");
+        }
+      }
+
+      link.addEventListener("click", doCopy);
+      if (btn) btn.addEventListener("click", doCopy);
+    })();
+  </script>
+</body>
+</html>
