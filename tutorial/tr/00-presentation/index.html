@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>VolumTransport Eğitimi</title>
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="description" content="VolumTransport eğitimi: uygulama nasıl çalışır, hangi durumlarda kullanılır ve gerçekten ne bekleyebilirsiniz." />
+
+  <link rel="canonical" href="https://aplicacionesherrbri.com/tutorial/tr/00-presentation/" />
+
+  <meta property="og:title" content="VolumTransport Eğitimi" />
+  <meta property="og:description" content="VolumTransport nasıl kullanılır ve uygulamadan ne bekleyebilirsiniz." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aplicacionesherrbri.com/tutorial/tr/00-presentation/" />
+  <meta property="og:locale" content="tr_TR" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "VolumTransport",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Android",
+      "inLanguage": "tr",
+      "url": "https://aplicacionesherrbri.com/tutorial/tr/00-presentation/",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.herrbri.volumtransport",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Aplicaciones HerrBri"
+      }
+    }
+  </script>
+
+
+
+  <style>
+    :root{
+      --bg: #d6e6de;
+      --card: #f7fbf9;
+      --text: #0f172a;
+      --border: #cfe3d8;
+      --link: #0b4e2a;
+      --accent: #1f7a4a;
+      --muted: #4b5563;
+    }
+
+    *{ box-sizing: border-box; }
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .wrap{
+      min-height: 100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 36px 14px;
+    }
+
+    .card{
+      width: min(900px, 100%);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 12px 34px rgba(0,0,0,.12);
+      padding: 32px 32px;
+    }
+
+    h1{
+      margin: 0 0 28px;
+      font-size: clamp(30px, 3vw, 38px);
+      letter-spacing: -0.02em;
+      text-align: center;
+      position: relative;
+    }
+
+    h1::after{
+      content: "";
+      display: block;
+      width: clamp(120px, 18vw, 220px);
+      height: 4px;
+      margin: 14px auto 0;
+      background-color: var(--accent);
+      border-radius: 2px;
+    }
+
+    h2{
+      margin: 32px 0 10px;
+      font-size: 19px;
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+    }
+
+    p{ margin: 0 0 12px; }
+
+    ul{
+      margin: 8px 0 0 18px;
+    }
+
+    li{
+      margin: 6px 0;
+    }
+
+    hr{
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 28px 0 18px;
+    }
+
+    a{
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover{
+      text-decoration: underline;
+    }
+
+    .section{
+      margin-bottom: 24px;
+    }
+
+    .info-pill{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      background: rgba(31,122,74,.06);
+      border-radius: 12px;
+      color: var(--muted);
+      margin: 6px 0 10px;
+    }
+
+    .info-icon{
+      width: 22px;
+      height: 22px;
+      flex: 0 0 22px;
+    }
+
+    /* Versiones */
+    .versions{
+      margin: 10px 0 12px;
+      padding: 0;
+      list-style: none;
+    }
+    .versions li{
+      margin: 8px 0;
+    }
+    .version-link{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,.82);
+      color: var(--text);
+      font-weight: 700;
+    }
+    .version-link:hover{
+      text-decoration: none;
+      border-color: rgba(31,122,74,.45);
+      box-shadow: 0 6px 18px rgba(0,0,0,.07);
+    }
+    .badge{
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--accent);
+      border: 1px solid rgba(31,122,74,.35);
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(31,122,74,.06);
+    }
+
+    /* Copiar enlace */
+    .copy-row{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 6px;
+      flex-wrap: wrap;
+    }
+    .copy-link{
+      font-weight: 700;
+    }
+    .copy-btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,.82);
+      color: var(--accent);
+      cursor: pointer;
+    }
+    .copy-btn:hover{
+      border-color: rgba(31,122,74,.45);
+      box-shadow: 0 6px 18px rgba(0,0,0,.07);
+    }
+    .copy-icon{
+      width: 18px;
+      height: 18px;
+    }
+    .copy-msg{
+      color: var(--muted);
+      font-weight: 600;
+      min-width: 90px;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <article class="card">
+
+      <h1>VolumTransport Eğitimi</h1>
+
+      <div class="section">
+        <p>
+          Bu, şu uygulamanın eğitimidir:
+          <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
+            <b>VolumTransport</b>
+          </a>.
+        </p>
+
+        <p>
+          Amacı, uygulamanın nasıl çalıştığını, hangi durumlarda kullanmanın mantıklı olduğunu
+          ve ondan gerçekten ne bekleyebileceğinizi anlamanıza yardımcı olmaktır.
+        </p>
+
+        <p>
+          Uygulamaya zaten ulaşmış ve onu doğru şekilde kullanmak isteyen kullanıcılar için hazırlanmıştır.
+        </p>
+      </div>
+
+      <h2>Yapay zekâ ile eğitimin kullanımı</h2>
+
+      <div class="section">
+        <p>
+          Bu eğitimin içeriği, yapay zekâlar tarafından da yorumlanabilecek şekilde hazırlanmıştır.
+        </p>
+
+        <p>
+          İsterseniz eğitimin başlangıç bağlantısını kopyalayıp bir yapay zekâya yapıştırabilir
+          ve VolumTransport ile ilgili herhangi bir soru sorabilirsiniz:
+          belirli bir seçeneğin nasıl çalıştığı, bir hesaplama modunun ne işe yaradığı,
+          hangi durumlarda uygulamayı kullanmanız gerektiği veya hangi sınırlamaları olduğu gibi.
+        </p>
+
+        <p>
+          Yapay zekâ, bu eğitimde yer alan bilgilere dayanarak yanıt verecektir.
+        </p>
+
+        <p>
+          <b>Eğitim bağlantısı:</b><br>
+
+          <span class="copy-row">
+            <a href="https://aplicacionesherrbri.com/tutorial/tr/00-presentation/"
+               id="copyTutorialLink"
+               data-copy="https://aplicacionesherrbri.com/tutorial/tr/00-presentation/"
+               class="copy-link"
+               title="Kopyalamak için tıklayın"
+               role="button">
+              https://aplicacionesherrbri.com/tutorial/tr/00-presentation/
+            </a>
+
+            <button type="button"
+                    class="copy-btn"
+                    id="copyTutorialBtn"
+                    aria-label="Bağlantıyı panoya kopyala"
+                    title="Kopyala">
+              <svg class="copy-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M9 9h10v10H9V9Z" stroke="currentColor" stroke-width="1.8" />
+                <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"
+                      stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </button>
+
+            <span id="copyMsg" class="copy-msg" aria-live="polite"></span>
+          </span>
+        </p>
+      </div>
+
+      <h2>Uygulamanın kökeni ve felsefesi</h2>
+
+      <div class="section">
+        <p>VolumTransport bir yazılım şirketi tarafından ya da dışarıdan bir programcı tarafından oluşturulmadı.</p>
+
+        <p>
+          Tamamen bir taşıma/lojistik profesyoneli tarafından,
+          dağıtım ve yükleme sırasında günlük hayatta karşılaşılan gerçek sorunlardan yola çıkarak geliştirilmiştir.
+          Google Play Store'da benzer araçların bulunmaması nedeniyle,
+          gerçek ihtiyaçlara odaklanan pratik bir uygulama oluşturulması tercih edilmiştir.
+        </p>
+
+        <p>
+          Bu nedenle uygulama, karmaşık ya da teorik çözümler yerine
+          pratik faydayı önceliklendirir.
+        </p>
+
+        <p>
+          Herhangi bir zamanda sorularınız olursa, önerileriniz varsa veya geliştirilebilecek bir şey fark ederseniz,
+          bir e-posta gönderebilirsiniz ve mümkün olan en kısa sürede yanıt verilecektir.
+        </p>
+
+        <p>
+          <a href="mailto:albherrbri@gmail.com">E-posta gönderin: albherrbri@gmail.com</a>
+        </p>
+      </div>
+
+      <h2>VolumTransport ne yapar (ve ne yapmaz)</h2>
+
+      <div class="section">
+        <p>
+          VolumTransport'un temel amacı, <b>bir yükün nasıl sığacağını hesaplamak</b>
+          belirli bir alan içinde ve girilen ölçülere göre <b>sığıp sığmadığını</b> belirlemektir.
+        </p>
+
+        <p>
+          “Sığar / sığmaz”ın yanında, uygulama ayrıca
+          <b>doluluk yüzdesi</b>, <b>ağırlık</b> ve etkinleştirirseniz <b>ekonomik sonuçlar</b> gibi yararlı verileri de gösterebilir.
+          Bu eğitimde mevcut tüm seçenekler adım adım ele alınacaktır.
+        </p>
+
+        <p>
+          Bu hesaplamaları yapmak için uygulama,
+          <b>bin packing</b> olarak bilinen bir yöntem kullanır.
+        </p>
+
+        <p>
+          <b>Bu ne anlama gelir?</b><br>
+          Bin packing, sınırlı bir alanın içine birden fazla paketi/koli yükünü nasıl yerleştireceğini hesaplama yöntemidir
+          (örneğin bir araç), mevcut alanı olabildiğince verimli kullanarak.
+          Bu yöntem, her kombinasyonu fiziksel olarak denemeden gerçek doluluk oranını tahmin etmeye yardımcı olur.
+        </p>
+
+        <p>
+          <b>Diğer yöntemlerden farkı nedir?</b><br>
+          Yalnızca toplam hacme dayanan ve sadece alanı toplayan, pratikte hata yapabilen bir hesaba kıyasla,
+          bin packing <b>gerçek ölçüleri</b> (uzunluk, genişlik ve yükseklik) ve yüklerin nasıl birbirine sığdığını dikkate alır.
+          Amacı <b>pratik ve hızlı bir tahmin</b> sunmaktır;
+          <b>3D görselleştirme</b> desteğiyle, hizmeti gerçekleştirmeden önce karar vermeye yardımcı olur.
+        </p>
+
+        <p>
+          Uygulama, yükleri hacim, yönlendirme
+          ve alan doluluğu gibi mantıklı kurallara göre yerleştirir. Sonuç, profesyonel için bir referans ve yardımcıdır.
+        </p>
+
+        <p><b>Şunu net belirtmek önemlidir:</b></p>
+        <ul>
+          <li>Uygulama alanın nasıl düzenlenmesi gerektiğine karar vermez.</li>
+          <li>Uygulama taşıyıcının deneyiminin yerine geçmez.</li>
+          <li>Yüklemeyi yapan kişi her zaman nihai sorumludur.</li>
+        </ul>
+
+        <p>
+          Her profesyonel, kendi kriterlerine,
+          deneyimine veya hizmetin koşullarına göre yükü farklı şekilde yerleştirebilir.
+          VolumTransport otomatik bir talimat değil, gelişmiş bir hesap makinesidir.
+        </p>
+      </div>
+
+      <h2>Tüm uygulama için genel notlar</h2>
+
+      <div class="section">
+        <div class="info-pill" aria-label="Bilgi simgesi">
+          <svg class="info-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M12 10.6v6.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M12 7.4h.01" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+          </svg>
+          <span>Her pencerede yardım mevcut</span>
+        </div>
+
+        <p>
+          Uygulama tasarlanırken, ilk adımlarda anlaşılması zor bir araç olabileceği dikkate alındı.
+          Bu yüzden her pencerede bir yardım bölümü eklendi.
+        </p>
+
+        <p>
+          Bu yardım, bilgi simgesinde gösterilir
+          (bir dairenin içinde <b>i</b>).
+          Her pencerede neler olduğunu ve ne işe yaradığını açıklar; kullanıcının takılıp kalmaması için rehberlik eder.
+        </p>
+      </div>
+
+      <h2>Sürümler</h2>
+
+      <div class="section">
+        <p>Uygulamanın dört tür sürümü vardır:</p>
+
+        <ul class="versions">
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">01</span>
+              1 hafta ücretsiz
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">02</span>
+              Reklamlı ücretsiz
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">03</span>
+              Reklamsız ücretsiz
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">04</span>
+              Premium
+            </a>
+          </li>
+        </ul>
+
+        <p>
+          Tüm sürümler araca kaç kutu sığacağını hesaplar, ancak zamanla
+          daha fazla bilgiye veya daha fazla özelliğe ihtiyaç duydukça sürüme göre bazı sınırlamalar olabilir.
+        </p>
+
+        <p>
+          Bir sürüm satın almak için
+          <a href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">Kategori yükselt</a>
+          penceresinden işlem yapılabilir.
+        </p>
+      </div>
+
+      <hr>
+
+      <h2>Özet</h2>
+      <p>
+        <a href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+          01 – Ana sayfa
+        </a>
+      </p>
+
+      <h2>Diller</h2>
+
+      <div class="section">
+        <p>VolumTransport çeşitli dillerde kullanılabilir.</p>
+
+        <p><b>Uygulama dilleri:</b></p>
+        <p style="margin-bottom:10px;">
+          İngilizce (en), Arapça (ar), Bangla (bn), Baskça (ba), Bulgarca (bg), Katalanca (ca), Çince (zh), Hırvatça (hr), Çekçe (cs),
+          Danca (da), Hollandaca (nl), Estonca (et), Fince (fi), Fransızca (fr), Galiçyaca (gl), Almanca (de), Yunanca (el),
+          İbranice (iw), Hintçe (hi), Macarca (hu), Endonezce (id), İrlandaca (ga), İtalyanca (it), Japonca (ja), Korece (ko),
+          Laosça (lo), Letonca (lv), Litvanca (lt), Lüksemburgca (lb), Maltaca (mt), Nepalce (ne), Norveççe (nb), Farsça (fa),
+          Lehçe (pl), Portekizce (pt), Pakistan Pencapçası (pa-rpk) (Şahmukhi yazısı), Romence (ro), Rusça (ru),
+          Slovakça (sk), Slovence (sl), İspanyolca (es), İsveççe (sv), Tayca (th), Türkçe (tr), Ukraynaca (uk), Urduca (ur),
+          Vietnamca (vi).
+        </p>
+
+        <p><b>Eğitim dilleri:</b></p>
+        <p>
+          İngilizce (en), Almanca (de), Bangla (bn), Bulgarca (bg), Çekçe (cs), Basitleştirilmiş Çince (zh), Korece (ko), Hırvatça (hr),
+          Danca (da), Slovakça (sk), Slovence (sl), İspanyolca (es), Estonca (et), Fince (fi), Fransızca (fr), Yunanca (el),
+          İbranice (iw), Hintçe (hi), Macarca (hu), Endonezce (id), İtalyanca (it), Japonca (ja), Laosça (lo), Letonca (lv),
+          Litvanca (lt), Hollandaca (nl), Nepalce (ne), Norveççe (no), Farsça (fa), Lehçe (pl), Portekizce (pt),
+          Pakistan Pencapçası (pa-rpk) (Şahmukhi yazısı), Romence (ro), Rusça (ru), İsveççe (sv), Tayca (th),
+          Türkçe (tr), Ukraynaca (uk), Urduca (ur), Vietnamca (vi), Arapça (ar).
+        </p>
+        <p>
+          Bu eğitim hâlâ geliştirme aşamasındadır, ancak her türlü soru veya açıklama için şu adrese e-posta gönderebilirsiniz:
+        </p>
+
+        <p>
+          <a href="mailto:albherrbri@gmail.com">E-posta gönderin: albherrbri@gmail.com</a>
+        </p>
+        
+      </div>
+
+    </article>
+  </main>
+
+  <script>
+    (function () {
+      const link = document.getElementById("copyTutorialLink");
+      const btn  = document.getElementById("copyTutorialBtn");
+      const msg  = document.getElementById("copyMsg");
+      if (!link) return;
+
+      function show(text) {
+        if (!msg) return;
+        msg.textContent = text;
+        clearTimeout(show._t);
+        show._t = setTimeout(() => (msg.textContent = ""), 1600);
+      }
+
+      async function copyText(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          return true;
+        }
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "absolute";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        const ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        return ok;
+      }
+
+      async function doCopy(e) {
+        if (e) e.preventDefault();
+        const text = link.getAttribute("data-copy") || link.href;
+        try {
+          const ok = await copyText(text);
+          show(ok ? "Kopyalandı ✅" : "Kopyalanamadı");
+        } catch {
+          show("Kopyalanamadı");
+        }
+      }
+
+      link.addEventListener("click", doCopy);
+      if (btn) btn.addEventListener("click", doCopy);
+    })();
+  </script>
+</body>
+</html>
