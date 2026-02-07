@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="lo">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>ຄູ່ມື VolumTransport</title>
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="description" content="ຄູ່ມື VolumTransport: ແອັບເຮັດວຽກແນວໃດ, ໃຊ້ໃນສະຖານະການໃດ, ແລະສິ່ງທີ່ທ່ານສາມາດຄາດຫວັງໄດ້ຈາກມັນ." />
+
+  <link rel="canonical" href="https://aplicacionesherrbri.com/tutorial/lo/00-presentation/" />
+
+  <meta property="og:title" content="ຄູ່ມື VolumTransport" />
+  <meta property="og:description" content="ວິທີໃຊ້ VolumTransport ແລະສິ່ງທີ່ທ່ານສາມາດຄາດຫວັງໄດ້ຈາກແອັບ." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aplicacionesherrbri.com/tutorial/lo/00-presentation/" />
+  <meta property="og:locale" content="lo_LA" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "VolumTransport",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Android",
+      "inLanguage": "lo",
+      "url": "https://aplicacionesherrbri.com/tutorial/lo/00-presentation/",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.herrbri.volumtransport",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Aplicaciones HerrBri"
+      }
+    }
+  </script>
+
+
+
+  <style>
+    :root{
+      --bg: #d6e6de;
+      --card: #f7fbf9;
+      --text: #0f172a;
+      --border: #cfe3d8;
+      --link: #0b4e2a;
+      --accent: #1f7a4a;
+      --muted: #4b5563;
+    }
+
+    *{ box-sizing: border-box; }
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .wrap{
+      min-height: 100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 36px 14px;
+    }
+
+    .card{
+      width: min(900px, 100%);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 12px 34px rgba(0,0,0,.12);
+      padding: 32px 32px;
+    }
+
+    h1{
+      margin: 0 0 28px;
+      font-size: clamp(30px, 3vw, 38px);
+      letter-spacing: -0.02em;
+      text-align: center;
+      position: relative;
+    }
+
+    h1::after{
+      content: "";
+      display: block;
+      width: clamp(120px, 18vw, 220px);
+      height: 4px;
+      margin: 14px auto 0;
+      background-color: var(--accent);
+      border-radius: 2px;
+    }
+
+    h2{
+      margin: 32px 0 10px;
+      font-size: 19px;
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+    }
+
+    p{ margin: 0 0 12px; }
+
+    ul{
+      margin: 8px 0 0 18px;
+    }
+
+    li{
+      margin: 6px 0;
+    }
+
+    hr{
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 28px 0 18px;
+    }
+
+    a{
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover{
+      text-decoration: underline;
+    }
+
+    .section{
+      margin-bottom: 24px;
+    }
+
+    .info-pill{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      background: rgba(31,122,74,.06);
+      border-radius: 12px;
+      color: var(--muted);
+      margin: 6px 0 10px;
+    }
+
+    .info-icon{
+      width: 22px;
+      height: 22px;
+      flex: 0 0 22px;
+    }
+
+    /* Versiones */
+    .versions{
+      margin: 10px 0 12px;
+      padding: 0;
+      list-style: none;
+    }
+    .versions li{
+      margin: 8px 0;
+    }
+    .version-link{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,.82);
+      color: var(--text);
+      font-weight: 700;
+    }
+    .version-link:hover{
+      text-decoration: none;
+      border-color: rgba(31,122,74,.45);
+      box-shadow: 0 6px 18px rgba(0,0,0,.07);
+    }
+    .badge{
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--accent);
+      border: 1px solid rgba(31,122,74,.35);
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(31,122,74,.06);
+    }
+
+    /* Copiar enlace */
+    .copy-row{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 6px;
+      flex-wrap: wrap;
+    }
+    .copy-link{
+      font-weight: 700;
+    }
+    .copy-btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,.82);
+      color: var(--accent);
+      cursor: pointer;
+    }
+    .copy-btn:hover{
+      border-color: rgba(31,122,74,.45);
+      box-shadow: 0 6px 18px rgba(0,0,0,.07);
+    }
+    .copy-icon{
+      width: 18px;
+      height: 18px;
+    }
+    .copy-msg{
+      color: var(--muted);
+      font-weight: 600;
+      min-width: 90px;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <article class="card">
+
+      <h1>ຄູ່ມື VolumTransport</h1>
+
+      <div class="section">
+        <p>
+          ນີ້ແມ່ນຄູ່ມືສຳລັບແອັບ
+          <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
+            <b>VolumTransport</b>
+          </a>.
+        </p>
+
+        <p>
+          ເປົ້າໝາຍຂອງມັນແມ່ນຊ່ວຍໃຫ້ທ່ານເຂົ້າໃຈວ່າແອັບເຮັດວຽກແນວໃດ, ໃຊ້ໃນສະຖານະການໃດຈຶ່ງເໝາະສົມ
+          ແລະທ່ານສາມາດຄາດຫວັງໄດ້ຈາກມັນແທ້ໆແນວໃດ.
+        </p>
+
+        <p>
+          ຄູ່ມືນີ້ຖືກອອກແບບສຳລັບຜູ້ໃຊ້ທີ່ເຂົ້າມາໃນແອັບແລ້ວ ແລະຕ້ອງການໃຊ້ໃຫ້ຖືກວິທີ.
+        </p>
+      </div>
+
+      <h2>ໃຊ້ຄູ່ມືນີ້ກັບ AI (ປັນຍາປະດິດ)</h2>
+
+      <div class="section">
+        <p>
+          ເນື້ອໃນຂອງຄູ່ມືນີ້ຖືກຈັດເຕັມໃຫ້ສາມາດຖືກອ່ານ ແລະເຂົ້າໃຈໄດ້ໂດຍ AI.
+        </p>
+
+        <p>
+          ຖ້າທ່ານຕ້ອງການ, ທ່ານສາມາດຄັດລອກລິ້ງເລີ່ມຕົ້ນຂອງຄູ່ມື, ວາງລົງໃນ AI
+          ແລະຖາມຄຳຖາມໃດໆທີ່ກ່ຽວກັບ VolumTransport:
+          ວ່າຕົວເລືອກໜຶ່ງເຮັດວຽກແນວໃດ, ໂໝດການຄຳນວນໃຊ້ເພື່ອຫຍັງ,
+          ໃນກໍລະນີໃດຄວນໃຊ້ແອັບ ຫຼືມັນມີຂໍ້ຈຳກັດຫຍັງ.
+        </p>
+
+        <p>
+          AI ຈະຕອບອີງຕາມຂໍ້ມູນທີ່ມີຢູ່ໃນຄູ່ມືນີ້.
+        </p>
+
+        <p>
+          <b>ລິ້ງຄູ່ມື:</b><br>
+
+          <span class="copy-row">
+            <a href="https://aplicacionesherrbri.com/tutorial/lo/00-presentation/"
+               id="copyTutorialLink"
+               data-copy="https://aplicacionesherrbri.com/tutorial/lo/00-presentation/"
+               class="copy-link"
+               title="ກົດເພື່ອຄັດລອກ"
+               role="button">
+              https://aplicacionesherrbri.com/tutorial/lo/00-presentation/
+            </a>
+
+            <button type="button"
+                    class="copy-btn"
+                    id="copyTutorialBtn"
+                    aria-label="ຄັດລອກລິ້ງໄປຄລິບບອດ"
+                    title="ຄັດລອກ">
+              <svg class="copy-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M9 9h10v10H9V9Z" stroke="currentColor" stroke-width="1.8" />
+                <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"
+                      stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </button>
+
+            <span id="copyMsg" class="copy-msg" aria-live="polite"></span>
+          </span>
+        </p>
+      </div>
+
+      <h2>ຕົ້ນກຳເນີດ ແລະ ປັດຊະຍາຂອງແອັບ</h2>
+
+      <div class="section">
+        <p>VolumTransport ບໍ່ໄດ້ຖືກສ້າງໂດຍບໍລິສັດຊອບແວ ຫຼື ນັກພັດທະນາພາຍນອກ.</p>
+
+        <p>
+          ມັນໄດ້ຖືກພັດທະນາທັງໝົດໂດຍຜູ້ເປັນມືອາຊີບດ້ານການຂົນສົ່ງ,
+          ອີງຈາກບັນຫາຈິງໆທີ່ພົບໃນວຽກປະຈຳວັນຂອງການຈັດສົ່ງ ແລະການໂຫຼດສິນຄ້າ.
+          ເນື່ອງຈາກບໍ່ມີເຄື່ອງມືຄ້າຍຄືກັນໃນ Google Play Store,
+          ຈຶ່ງເລືອກສ້າງແອັບທີ່ໃຊ້ງານໄດ້ຈິງ ແລະມຸ່ງເນັ້ນຄວາມຕ້ອງການຈິງ.
+        </p>
+
+        <p>
+          ດັ່ງນັ້ນ, ແອັບນີ້ຈຶ່ງໃຫ້ຄວາມສຳຄັນກັບຄວາມເປັນປະໂຫຍດໃນທາງປະຕິບັດ
+          ຫຼາຍກວ່າວິທີແກ້ໄຂທີ່ສັບຊ້ອນ ຫຼື ທິດສະດີ.
+        </p>
+
+        <p>
+          ຖ້າທ່ານມີຂໍ້ສົງໄສ, ຄຳແນະນຳ ຫຼື ພົບສິ່ງໃດທີ່ຄວນປັບປຸງ,
+          ທ່ານສາມາດສົ່ງອີເມວ ແລະຈະໄດ້ຮັບການຕອບກັບໃນເວລາທີ່ໄວທີ່ສຸດ.
+        </p>
+
+        <p>
+          <a href="mailto:albherrbri@gmail.com">ສົ່ງອີເມວ: albherrbri@gmail.com</a>
+        </p>
+      </div>
+
+      <h2>VolumTransport ເຮັດຫຍັງ (ແລະບໍ່ເຮັດຫຍັງ)</h2>
+
+      <div class="section">
+        <p>
+          ເປົ້າໝາຍຫຼັກຂອງ VolumTransport ແມ່ນ <b>ຄຳນວນວ່າການໂຫຼດຈະເຂົ້າກັບພື້ນທີ່ແນວໃດ</b>
+          ແລະຈະ <b>ເຂົ້າ ຫຼື ບໍ່ເຂົ້າ</b> ຕາມຂະໜາດທີ່ໃສ່.
+        </p>
+
+        <p>
+          ນອກຈາກ “ເຂົ້າ / ບໍ່ເຂົ້າ”, ແອັບຍັງສາມາດສະແດງຂໍ້ມູນທີ່ເປັນປະໂຫຍດເຊັ່ນ
+          <b>ເປີເຊັນການໃຊ້ພື້ນທີ່</b>, <b>ນ້ຳໜັກ</b> ແລະ (ຖ້າເປີດໃຊ້) <b>ຜົນທາງເສດຖະກິດ</b>.
+          ໃນຄູ່ມືນີ້ຈະອະທິບາຍທຸກຕົວເລືອກແບບຂັ້ນຕອນ.
+        </p>
+
+        <p>
+          ເພື່ອເຮັດການຄຳນວນເຫຼົ່ານີ້, ແອັບໃຊ້ວິທີທີ່ຮູ້ຈັກກັນວ່າ
+          <b>bin packing</b>.
+        </p>
+
+        <p>
+          <b>ມັນໝາຍຄວາມວ່າຫຍັງ?</b><br>
+          bin packing ແມ່ນວິທີຄຳນວນວ່າຈະວາງຫຼາຍໆຫີບ/ພັດສະດຸໃນພື້ນທີ່ຈຳກັດແນວໃດ
+          (ເຊັ່ນ ພາຫະນະ) ໃຫ້ໃຊ້ພື້ນທີ່ໄດ້ດີທີ່ສຸດ.
+          ວິທີນີ້ຊ່ວຍໃຫ້ປະເມີນການໃຊ້ພື້ນທີ່ຈິງໄດ້ ໂດຍບໍ່ຕ້ອງລອງທຸກການຈັດວາງແບບຈິງ.
+        </p>
+
+        <p>
+          <b>ມັນແຕກຕ່າງຈາກວິທີອື່ນແນວໃດ?</b><br>
+          ບໍ່ເຫມືອນການຄຳນວນທີ່ອີງພຽງແຕ່ປະລິມານລວມ (ບວກປະລິມານຢ່າງດຽວ ແລະອາດຜິດໃນການໃຊ້ງານຈິງ),
+          bin packing ຈະຄຳນຶງເຖິງ <b>ຂະໜາດຈິງ</b> (ຍາວ, ກວ້າງ, ສູງ) ແລະການເຂົ້າກັນຂອງພັດສະດຸ.
+          ເປົ້າໝາຍຄືການໃຫ້ <b>ການປະເມີນທີ່ໃຊ້ງານໄດ້ຈິງ ແລະໄວ</b>,
+          ພ້ອມກັບ <b>ການສະແດງຜົນ 3D</b> ເພື່ອຊ່ວຍຕັດສິນໃຈກ່ອນເຮັດວຽກ.
+        </p>
+
+        <p>
+          ແອັບຈັດວາງພັດສະດຸຕາມກົດລະບຽບທີ່ມີເຫດຜົນກ່ຽວກັບປະລິມານ, ທິດທາງ
+          ແລະການໃຊ້ພື້ນທີ່. ຜົນລັບເປັນແນວທາງອ້າງອີງ ແລະຊ່ວຍເຫຼືອຜູ້ເຮັດວຽກ.
+        </p>
+
+        <p><b>ສິ່ງທີ່ຕ້ອງຊີ້ແຈງໃຫ້ຊັດເຈນ:</b></p>
+        <ul>
+          <li>ແອັບບໍ່ໄດ້ຕັດສິນໃຈວ່າຄວນຈັດພື້ນທີ່ແນວໃດ.</li>
+          <li>ແອັບບໍ່ແທນທີ່ປະສົບການຂອງຄົນຂົນສົ່ງ.</li>
+          <li>ຄົນທີ່ໂຫຼດສິນຄ້າແມ່ນຜູ້ຮັບຜິດຊອບສຸດທ້າຍສະເໝີ.</li>
+        </ul>
+
+        <p>
+          ຜູ້ເຮັດວຽກແຕ່ລະຄົນສາມາດຈັດວາງສິນຄ້າແຕກຕ່າງກັນຕາມດຸລະພິນິດ,
+          ປະສົບການ ຫຼື ສະຖານະການຂອງວຽກ.
+          VolumTransport ເປັນເຄື່ອງຄິດໄລ່ຂັ້ນສູງ, ບໍ່ແມ່ນຄຳສັ່ງອັດຕະໂນມັດ.
+        </p>
+      </div>
+
+      <h2>ໝາຍເຫດທົ່ວໄປສຳລັບທັງແອັບ</h2>
+
+      <div class="section">
+        <div class="info-pill" aria-label="ໄອຄອນຂໍ້ມູນ">
+          <svg class="info-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M12 10.6v6.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M12 7.4h.01" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+          </svg>
+          <span>ມີຄວາມຊ່ວຍເຫຼືອໃນແຕ່ລະໜ້າ</span>
+        </div>
+
+        <p>
+          ໃນຕອນອອກແບບແອັບ ໄດ້ຄຳນຶງວ່າເປັນເຄື່ອງມືທີ່ອາດຈະເຂົ້າໃຈຍາກໃນຂັ້ນຕົ້ນ.
+          ດັ່ງນັ້ນຈຶ່ງເພີ່ມຄວາມຊ່ວຍເຫຼືອໃນແຕ່ລະໜ້າ.
+        </p>
+
+        <p>
+          ຄວາມຊ່ວຍເຫຼືອນັ້ນຖືກສະແດງຜ່ານໄອຄອນຂໍ້ມູນ
+          (ຕົວ <b>i</b> ຢູ່ໃນວົງມົນ).
+          ມັນອະທິບາຍວ່າໃນແຕ່ລະໜ້າມີຫຍັງ ແລະໃຊ້ເພື່ອຫຍັງ, ຊ່ວຍນຳທາງຜູ້ໃຊ້ບໍ່ໃຫ້ຕິດຂັດ.
+        </p>
+      </div>
+
+      <h2>ເວີຊັນ</h2>
+
+      <div class="section">
+        <p>ມີ 4 ປະເພດເວີຊັນຂອງແອັບ:</p>
+
+        <ul class="versions">
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">01</span>
+              ຟຣີ 1 ອາທິດ
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">02</span>
+              ຟຣີມີໂຄສະນາ
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">03</span>
+              ຟຣີບໍ່ມີໂຄສະນາ
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">04</span>
+              ພຣີເມຍມ
+            </a>
+          </li>
+        </ul>
+
+        <p>
+          ທຸກເວີຊັນຈະຄຳນວນຈຳນວນກ່ອງທີ່ເຂົ້າໃນພາຫະນະ, ແຕ່ເມື່ອຕ້ອງການຂໍ້ມູນເພີ່ມ
+          ຫຼືຟັງຊັນຫຼາຍຂຶ້ນ ອາດຈະມີຂໍ້ຈຳກັດຕາມເວີຊັນ.
+        </p>
+
+        <p>
+          ເພື່ອຊື້ເວີຊັນ ສາມາດເຮັດໄດ້ຈາກໜ້າ
+          <a href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">ອັບເກຣດປະເພດ</a>.
+        </p>
+      </div>
+
+      <hr>
+
+      <h2>ສາລະບານ</h2>
+      <p>
+        <a href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+          01 – ໜ້າຫຼັກ
+        </a>
+      </p>
+
+      <h2>ພາສາ</h2>
+
+      <div class="section">
+        <p>VolumTransport ມີໃຫ້ໃນຫຼາຍພາສາ.</p>
+
+        <p><b>ພາສາຂອງແອັບ:</b></p>
+        <p style="margin-bottom:10px;">
+          ອັງກິດ (en), ອາຣັບ (ar), ບັງກະລາ (bn), ບາສກ໌ (ba), ບຸນກາຣີ (bg), ກາຕາລັນ (ca), ຈີນ (zh), ໂຄຣເອເຊຍ (hr), ເຊັກ (cs),
+          ເດັນມາກ (da), ໂຮນລັງ (nl), ເອສໂຕເນຍ (et), ຟິນແລນ (fi), ຝຣັ່ງ (fr), ກາລິເຊຍ (gl), ເຢຍລະມັນ (de), ກຣີກ (el),
+          ເຮັບຣູ (iw), ຮິນດີ (hi), ຮັງກາຣີ (hu), ອິນໂດເນເຊຍ (id), ໄອແລນ (ga), ອິຕາລີ (it), ຍີ່ປຸ່ນ (ja), ເກົາຫຼີ (ko),
+          ລາວ (lo), ລັດເວຍ (lv), ລິທົວເນຍ (lt), ລັກແຊມເບີກ (lb), ມອນຕາ (mt), ເນປານ (ne), ນໍເວ (nb), ເປີເຊຍ (fa),
+          ໂປແລນ (pl), ປອກຕຸຍການ (pt), ປັນຈາບີ ປາກີສະຖານ (pa-rpk) (ອັກສອນ Shahmukhi), ໂຣມາເນຍ (ro), ຣັດເຊຍ (ru),
+          ສະໂລວາກີ (sk), ສະໂລເວເນຍ (sl), ສະເປນ (es), ສະວີເດນ (sv), ໄທ (th), ຕວກກີ (tr), ອູແກຣນ (uk), ອູດູ (ur),
+          ຫວຽດນາມ (vi).
+        </p>
+
+        <p><b>ພາສາຂອງຄູ່ມື:</b></p>
+        <p>
+          ອັງກິດ (en), ເຢຍລະມັນ (de), ບັງກະລາ (bn), ບຸນກາຣີ (bg), ເຊັກ (cs), ຈີນຕົວຫຍໍ້ (zh), ເກົາຫຼີ (ko), ໂຄຣເອເຊຍ (hr),
+          ເດັນມາກ (da), ສະໂລວາກີ (sk), ສະໂລເວເນຍ (sl), ສະເປນ (es), ເອສໂຕເນຍ (et), ຟິນແລນ (fi), ຝຣັ່ງ (fr), ກຣີກ (el),
+          ເຮັບຣູ (iw), ຮິນດີ (hi), ຮັງກາຣີ (hu), ອິນໂດເນເຊຍ (id), ອິຕາລີ (it), ຍີ່ປຸ່ນ (ja), ລາວ (lo), ລັດເວຍ (lv),
+          ລິທົວເນຍ (lt), ໂຮນລັງ (nl), ເນປານ (ne), ນໍເວ (no), ເປີເຊຍ (fa), ໂປແລນ (pl), ປອກຕຸຍການ (pt),
+          ປັນຈາບີ ປາກີສະຖານ (pa-rpk) (ອັກສອນ Shahmukhi), ໂຣມາເນຍ (ro), ຣັດເຊຍ (ru), ສະວີເດນ (sv), ໄທ (th),
+          ຕວກກີ (tr), ອູແກຣນ (uk), ອູດູ (ur), ຫວຽດນາມ (vi), ອາຣັບ (ar).
+        </p>
+        <p>
+          ຄູ່ມືນີ້ຍັງຢູ່ໃນຂັ້ນພັດທະນາ, ແຕ່ຖ້າມີຄຳຖາມ ຫຼື ຕ້ອງການອະທິບາຍເພີ່ມ ສາມາດສົ່ງອີເມວຫາ:
+        </p>
+
+        <p>
+          <a href="mailto:albherrbri@gmail.com">ສົ່ງອີເມວ: albherrbri@gmail.com</a>
+        </p>
+        
+      </div>
+
+    </article>
+  </main>
+
+  <script>
+    (function () {
+      const link = document.getElementById("copyTutorialLink");
+      const btn  = document.getElementById("copyTutorialBtn");
+      const msg  = document.getElementById("copyMsg");
+      if (!link) return;
+
+      function show(text) {
+        if (!msg) return;
+        msg.textContent = text;
+        clearTimeout(show._t);
+        show._t = setTimeout(() => (msg.textContent = ""), 1600);
+      }
+
+      async function copyText(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          return true;
+        }
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "absolute";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        const ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        return ok;
+      }
+
+      async function doCopy(e) {
+        if (e) e.preventDefault();
+        const text = link.getAttribute("data-copy") || link.href;
+        try {
+          const ok = await copyText(text);
+          show(ok ? "ຄັດລອກແລ້ວ ✅" : "ຄັດລອກບໍ່ໄດ້");
+        } catch {
+          show("ຄັດລອກບໍ່ໄດ້");
+        }
+      }
+
+      link.addEventListener("click", doCopy);
+      if (btn) btn.addEventListener("click", doCopy);
+    })();
+  </script>
+</body>
+</html>
