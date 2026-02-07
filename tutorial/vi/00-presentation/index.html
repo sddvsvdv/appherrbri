@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Hướng dẫn VolumTransport</title>
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="description" content="Hướng dẫn VolumTransport: ứng dụng hoạt động như thế nào, nên dùng trong những tình huống nào và bạn thực sự có thể kỳ vọng điều gì." />
+
+  <link rel="canonical" href="https://aplicacionesherrbri.com/tutorial/vi/00-presentation/" />
+
+  <meta property="og:title" content="Hướng dẫn VolumTransport" />
+  <meta property="og:description" content="Cách dùng VolumTransport và bạn có thể kỳ vọng gì từ ứng dụng." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aplicacionesherrbri.com/tutorial/vi/00-presentation/" />
+  <meta property="og:locale" content="vi_VN" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "VolumTransport",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Android",
+      "inLanguage": "vi",
+      "url": "https://aplicacionesherrbri.com/tutorial/vi/00-presentation/",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.herrbri.volumtransport",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Aplicaciones HerrBri"
+      }
+    }
+  </script>
+
+
+
+  <style>
+    :root{
+      --bg: #d6e6de;
+      --card: #f7fbf9;
+      --text: #0f172a;
+      --border: #cfe3d8;
+      --link: #0b4e2a;
+      --accent: #1f7a4a;
+      --muted: #4b5563;
+    }
+
+    *{ box-sizing: border-box; }
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .wrap{
+      min-height: 100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 36px 14px;
+    }
+
+    .card{
+      width: min(900px, 100%);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 12px 34px rgba(0,0,0,.12);
+      padding: 32px 32px;
+    }
+
+    h1{
+      margin: 0 0 28px;
+      font-size: clamp(30px, 3vw, 38px);
+      letter-spacing: -0.02em;
+      text-align: center;
+      position: relative;
+    }
+
+    h1::after{
+      content: "";
+      display: block;
+      width: clamp(120px, 18vw, 220px);
+      height: 4px;
+      margin: 14px auto 0;
+      background-color: var(--accent);
+      border-radius: 2px;
+    }
+
+    h2{
+      margin: 32px 0 10px;
+      font-size: 19px;
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+    }
+
+    p{ margin: 0 0 12px; }
+
+    ul{
+      margin: 8px 0 0 18px;
+    }
+
+    li{
+      margin: 6px 0;
+    }
+
+    hr{
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 28px 0 18px;
+    }
+
+    a{
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover{
+      text-decoration: underline;
+    }
+
+    .section{
+      margin-bottom: 24px;
+    }
+
+    .info-pill{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      background: rgba(31,122,74,.06);
+      border-radius: 12px;
+      color: var(--muted);
+      margin: 6px 0 10px;
+    }
+
+    .info-icon{
+      width: 22px;
+      height: 22px;
+      flex: 0 0 22px;
+    }
+
+    /* Versiones */
+    .versions{
+      margin: 10px 0 12px;
+      padding: 0;
+      list-style: none;
+    }
+    .versions li{
+      margin: 8px 0;
+    }
+    .version-link{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,.82);
+      color: var(--text);
+      font-weight: 700;
+    }
+    .version-link:hover{
+      text-decoration: none;
+      border-color: rgba(31,122,74,.45);
+      box-shadow: 0 6px 18px rgba(0,0,0,.07);
+    }
+    .badge{
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--accent);
+      border: 1px solid rgba(31,122,74,.35);
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(31,122,74,.06);
+    }
+
+    /* Copiar enlace */
+    .copy-row{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 6px;
+      flex-wrap: wrap;
+    }
+    .copy-link{
+      font-weight: 700;
+    }
+    .copy-btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,.82);
+      color: var(--accent);
+      cursor: pointer;
+    }
+    .copy-btn:hover{
+      border-color: rgba(31,122,74,.45);
+      box-shadow: 0 6px 18px rgba(0,0,0,.07);
+    }
+    .copy-icon{
+      width: 18px;
+      height: 18px;
+    }
+    .copy-msg{
+      color: var(--muted);
+      font-weight: 600;
+      min-width: 90px;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <article class="card">
+
+      <h1>Hướng dẫn VolumTransport</h1>
+
+      <div class="section">
+        <p>
+          Đây là hướng dẫn cho ứng dụng
+          <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
+            <b>VolumTransport</b>
+          </a>.
+        </p>
+
+        <p>
+          Mục tiêu của hướng dẫn này là giúp bạn hiểu ứng dụng hoạt động như thế nào, trong những tình huống nào nên dùng
+          và bạn thực sự có thể kỳ vọng điều gì từ ứng dụng.
+        </p>
+
+        <p>
+          Hướng dẫn này dành cho người dùng đã vào ứng dụng và muốn sử dụng đúng cách.
+        </p>
+      </div>
+
+      <h2>Sử dụng hướng dẫn với trí tuệ nhân tạo</h2>
+
+      <div class="section">
+        <p>
+          Nội dung của hướng dẫn này được chuẩn bị để cũng có thể được diễn giải
+          bởi trí tuệ nhân tạo.
+        </p>
+
+        <p>
+          Nếu bạn muốn, bạn có thể sao chép liên kết bắt đầu của hướng dẫn, dán vào một AI
+          và đặt bất kỳ câu hỏi nào liên quan đến VolumTransport:
+          một tùy chọn cụ thể hoạt động như thế nào, một chế độ tính toán dùng để làm gì,
+          trong trường hợp nào nên dùng ứng dụng hoặc ứng dụng có những giới hạn nào.
+        </p>
+
+        <p>
+          AI sẽ trả lời dựa trên thông tin có trong hướng dẫn này.
+        </p>
+
+        <p>
+          <b>Liên kết hướng dẫn:</b><br>
+
+          <span class="copy-row">
+            <a href="https://aplicacionesherrbri.com/tutorial/vi/00-presentation/"
+               id="copyTutorialLink"
+               data-copy="https://aplicacionesherrbri.com/tutorial/vi/00-presentation/"
+               class="copy-link"
+               title="Nhấp để sao chép"
+               role="button">
+              https://aplicacionesherrbri.com/tutorial/vi/00-presentation/
+            </a>
+
+            <button type="button"
+                    class="copy-btn"
+                    id="copyTutorialBtn"
+                    aria-label="Sao chép liên kết vào bộ nhớ tạm"
+                    title="Sao chép">
+              <svg class="copy-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M9 9h10v10H9V9Z" stroke="currentColor" stroke-width="1.8" />
+                <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"
+                      stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </button>
+
+            <span id="copyMsg" class="copy-msg" aria-live="polite"></span>
+          </span>
+        </p>
+      </div>
+
+      <h2>Nguồn gốc và triết lý của ứng dụng</h2>
+
+      <div class="section">
+        <p>VolumTransport không được tạo ra bởi một công ty phần mềm hay một lập trình viên bên ngoài.</p>
+
+        <p>
+          Ứng dụng được phát triển hoàn toàn bởi một chuyên gia vận tải,
+          dựa trên những vấn đề thực tế hằng ngày trong công việc giao nhận và xếp hàng.
+          Khi không có các công cụ tương tự trên Google Play Store,
+          người phát triển đã quyết định tạo ra một ứng dụng thực tế, tập trung vào nhu cầu thật.
+        </p>
+
+        <p>
+          Vì vậy, ứng dụng ưu tiên tính hữu ích thực tế
+          hơn là các giải pháp phức tạp hoặc mang tính lý thuyết.
+        </p>
+
+        <p>
+          Nếu có lúc bạn có thắc mắc, gợi ý hoặc phát hiện điều gì có thể cải thiện,
+          bạn có thể gửi email và sẽ được phản hồi sớm nhất có thể.
+        </p>
+
+        <p>
+          <a href="mailto:albherrbri@gmail.com">Gửi email: albherrbri@gmail.com</a>
+        </p>
+      </div>
+
+      <h2>VolumTransport làm gì (và không làm gì)</h2>
+
+      <div class="section">
+        <p>
+          Mục tiêu chính của VolumTransport là <b>tính toán cách một lô hàng vừa khít</b>
+          trong một không gian nhất định và <b>có vừa hay không</b> theo các kích thước đã nhập.
+        </p>
+
+        <p>
+          Ngoài “vừa / không vừa”, ứng dụng cũng có thể hiển thị dữ liệu hữu ích như
+          <b>tỷ lệ lấp đầy</b>, <b>khối lượng</b> và nếu bạn bật, <b>kết quả kinh tế</b>.
+          Trong hướng dẫn này, tất cả các tùy chọn sẵn có sẽ được xem từng bước.
+        </p>
+
+        <p>
+          Để thực hiện các tính toán này, ứng dụng sử dụng một phương pháp được gọi là
+          <b>bin packing</b>.
+        </p>
+
+        <p>
+          <b>Điều đó có nghĩa là gì?</b><br>
+          Bin packing là một cách tính toán cách sắp xếp nhiều kiện hàng trong một không gian giới hạn
+          (ví dụ như một phương tiện) sao cho tận dụng không gian sẵn có tốt nhất.
+          Phương pháp này cho phép ước lượng mức độ chiếm chỗ thực tế mà không cần thử vật lý từng tổ hợp.
+        </p>
+
+        <p>
+          <b>Nó khác gì so với các phương pháp khác?</b><br>
+          Khác với cách tính chỉ dựa trên tổng thể tích, chỉ cộng không gian và có thể sai trong thực tế,
+          bin packing xét đến <b>kích thước thực</b> (dài, rộng, cao) và cách các kiện hàng khớp với nhau.
+          Mục tiêu là đưa ra <b>ước lượng thực tế và nhanh</b>,
+          được hỗ trợ bởi <b>hình dung 3D</b>, giúp ra quyết định trước khi thực hiện dịch vụ.
+        </p>
+
+        <p>
+          Ứng dụng đặt các kiện hàng theo các quy tắc logic về thể tích, hướng đặt
+          và mức độ chiếm chỗ. Kết quả đóng vai trò tham khảo và hỗ trợ cho người làm nghề.
+        </p>
+
+        <p><b>Cần làm rõ rằng:</b></p>
+        <ul>
+          <li>Ứng dụng không quyết định cách phải sắp xếp không gian.</li>
+          <li>Ứng dụng không thay thế kinh nghiệm của người vận chuyển.</li>
+          <li>Người thực hiện việc xếp hàng luôn là người chịu trách nhiệm cuối cùng.</li>
+        </ul>
+
+        <p>
+          Mỗi chuyên gia có thể sắp xếp hàng hóa theo cách khác nhau tùy theo tiêu chí,
+          kinh nghiệm hoặc hoàn cảnh của dịch vụ.
+          VolumTransport hoạt động như một máy tính nâng cao, không phải một mệnh lệnh tự động.
+        </p>
+      </div>
+
+      <h2>Ghi chú chung cho toàn bộ ứng dụng</h2>
+
+      <div class="section">
+        <div class="info-pill" aria-label="Biểu tượng thông tin">
+          <svg class="info-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M12 10.6v6.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M12 7.4h.01" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+          </svg>
+          <span>Có trợ giúp trong mỗi màn hình</span>
+        </div>
+
+        <p>
+          Khi thiết kế ứng dụng, đã tính đến việc đây là một công cụ khó hiểu
+          ở những bước đầu. Vì vậy, đã thêm phần trợ giúp trong mỗi màn hình.
+        </p>
+
+        <p>
+          Phần trợ giúp đó được thể hiện bằng biểu tượng thông tin
+          (chữ <b>i</b> trong một vòng tròn).
+          Nó giải thích mỗi màn hình có gì và dùng để làm gì, hướng dẫn người dùng để không bị mắc kẹt.
+        </p>
+      </div>
+
+      <h2>Phiên bản</h2>
+
+      <div class="section">
+        <p>Có bốn loại phiên bản của ứng dụng:</p>
+
+        <ul class="versions">
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">01</span>
+              Miễn phí một tuần
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">02</span>
+              Miễn phí có quảng cáo
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">03</span>
+              Miễn phí không quảng cáo
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">04</span>
+              Premium
+            </a>
+          </li>
+        </ul>
+
+        <p>
+          Tất cả đều tính số lượng thùng có thể vừa trong xe, nhưng khi
+          cần nhiều thông tin hơn hoặc nhiều tính năng hơn, có thể sẽ gặp giới hạn tùy theo phiên bản.
+        </p>
+
+        <p>
+          Để mua một phiên bản, bạn có thể thực hiện từ màn hình
+          <a href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">Nâng cấp hạng</a>.
+        </p>
+      </div>
+
+      <hr>
+
+      <h2>Tóm tắt</h2>
+      <p>
+        <a href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+          01 – Trang chính
+        </a>
+      </p>
+
+      <h2>Ngôn ngữ</h2>
+
+      <div class="section">
+        <p>VolumTransport có sẵn bằng nhiều ngôn ngữ.</p>
+
+        <p><b>Ngôn ngữ của ứng dụng:</b></p>
+        <p style="margin-bottom:10px;">
+          Tiếng Anh (en), Tiếng Ả Rập (ar), Bangla (bn), Tiếng Basque (ba), Tiếng Bulgaria (bg), Tiếng Catalan (ca), Tiếng Trung (zh), Tiếng Croatia (hr), Tiếng Séc (cs),
+          Tiếng Đan Mạch (da), Tiếng Hà Lan (nl), Tiếng Estonia (et), Tiếng Phần Lan (fi), Tiếng Pháp (fr), Tiếng Galicia (gl), Tiếng Đức (de), Tiếng Hy Lạp (el),
+          Tiếng Do Thái (iw), Tiếng Hindi (hi), Tiếng Hungary (hu), Tiếng Indonesia (id), Tiếng Ireland (ga), Tiếng Ý (it), Tiếng Nhật (ja), Tiếng Hàn (ko),
+          Tiếng Lào (lo), Tiếng Latvia (lv), Tiếng Lithuania (lt), Tiếng Luxembourg (lb), Tiếng Malta (mt), Tiếng Nepal (ne), Tiếng Na Uy (nb), Tiếng Ba Tư (fa),
+          Tiếng Ba Lan (pl), Tiếng Bồ Đào Nha (pt), Punjabi (Pakistan) (pa-rpk) (chữ Shahmukhi), Tiếng Romania (ro), Tiếng Nga (ru),
+          Tiếng Slovakia (sk), Tiếng Slovenia (sl), Tiếng Tây Ban Nha (es), Tiếng Thụy Điển (sv), Tiếng Thái (th), Tiếng Thổ Nhĩ Kỳ (tr), Tiếng Ukraine (uk), Tiếng Urdu (ur),
+          Tiếng Việt (vi).
+        </p>
+
+        <p><b>Ngôn ngữ của hướng dẫn:</b></p>
+        <p>
+          Tiếng Anh (en), Tiếng Đức (de), Bangla (bn), Tiếng Bulgaria (bg), Tiếng Séc (cs), Tiếng Trung giản thể (zh), Tiếng Hàn (ko), Tiếng Croatia (hr),
+          Tiếng Đan Mạch (da), Tiếng Slovakia (sk), Tiếng Slovenia (sl), Tiếng Tây Ban Nha (es), Tiếng Estonia (et), Tiếng Phần Lan (fi), Tiếng Pháp (fr), Tiếng Hy Lạp (el),
+          Tiếng Do Thái (iw), Tiếng Hindi (hi), Tiếng Hungary (hu), Tiếng Indonesia (id), Tiếng Ý (it), Tiếng Nhật (ja), Tiếng Lào (lo), Tiếng Latvia (lv),
+          Tiếng Lithuania (lt), Tiếng Hà Lan (nl), Tiếng Nepal (ne), Tiếng Na Uy (no), Tiếng Ba Tư (fa), Tiếng Ba Lan (pl), Tiếng Bồ Đào Nha (pt),
+          Punjabi (Pakistan) (pa-rpk) (chữ Shahmukhi), Tiếng Romania (ro), Tiếng Nga (ru), Tiếng Thụy Điển (sv), Tiếng Thái (th),
+          Tiếng Thổ Nhĩ Kỳ (tr), Tiếng Ukraine (uk), Tiếng Urdu (ur), Tiếng Việt (vi), Tiếng Ả Rập (ar).
+        </p>
+        <p>
+          Hướng dẫn này vẫn đang được phát triển, nhưng mọi thắc mắc hoặc cần làm rõ bạn có thể gửi email tới:
+        </p>
+
+        <p>
+          <a href="mailto:albherrbri@gmail.com">Gửi email: albherrbri@gmail.com</a>
+        </p>
+        
+      </div>
+
+    </article>
+  </main>
+
+  <script>
+    (function () {
+      const link = document.getElementById("copyTutorialLink");
+      const btn  = document.getElementById("copyTutorialBtn");
+      const msg  = document.getElementById("copyMsg");
+      if (!link) return;
+
+      function show(text) {
+        if (!msg) return;
+        msg.textContent = text;
+        clearTimeout(show._t);
+        show._t = setTimeout(() => (msg.textContent = ""), 1600);
+      }
+
+      async function copyText(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          return true;
+        }
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "absolute";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        const ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        return ok;
+      }
+
+      async function doCopy(e) {
+        if (e) e.preventDefault();
+        const text = link.getAttribute("data-copy") || link.href;
+        try {
+          const ok = await copyText(text);
+          show(ok ? "Đã sao chép ✅" : "Không thể sao chép");
+        } catch {
+          show("Không thể sao chép");
+        }
+      }
+
+      link.addEventListener("click", doCopy);
+      if (btn) btn.addEventListener("click", doCopy);
+    })();
+  </script>
+</body>
+</html>
