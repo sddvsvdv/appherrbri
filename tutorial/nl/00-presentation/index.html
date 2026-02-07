@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>VolumTransport-handleiding</title>
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="description" content="VolumTransport-handleiding: hoe de app werkt, in welke situaties je hem gebruikt en wat je ervan kunt verwachten." />
+
+  <link rel="canonical" href="https://aplicacionesherrbri.com/tutorial/nl/00-presentation/" />
+
+  <meta property="og:title" content="VolumTransport-handleiding" />
+  <meta property="og:description" content="Hoe je VolumTransport gebruikt en wat je van de app kunt verwachten." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aplicacionesherrbri.com/tutorial/nl/00-presentation/" />
+  <meta property="og:locale" content="nl_NL" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "VolumTransport",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Android",
+      "inLanguage": "nl",
+      "url": "https://aplicacionesherrbri.com/tutorial/nl/00-presentation/",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.herrbri.volumtransport",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Aplicaciones HerrBri"
+      }
+    }
+  </script>
+
+
+
+  <style>
+    :root{
+      --bg: #d6e6de;
+      --card: #f7fbf9;
+      --text: #0f172a;
+      --border: #cfe3d8;
+      --link: #0b4e2a;
+      --accent: #1f7a4a;
+      --muted: #4b5563;
+    }
+
+    *{ box-sizing: border-box; }
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .wrap{
+      min-height: 100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 36px 14px;
+    }
+
+    .card{
+      width: min(900px, 100%);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 12px 34px rgba(0,0,0,.12);
+      padding: 32px 32px;
+    }
+
+    h1{
+      margin: 0 0 28px;
+      font-size: clamp(30px, 3vw, 38px);
+      letter-spacing: -0.02em;
+      text-align: center;
+      position: relative;
+    }
+
+    h1::after{
+      content: "";
+      display: block;
+      width: clamp(120px, 18vw, 220px);
+      height: 4px;
+      margin: 14px auto 0;
+      background-color: var(--accent);
+      border-radius: 2px;
+    }
+
+    h2{
+      margin: 32px 0 10px;
+      font-size: 19px;
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+    }
+
+    p{ margin: 0 0 12px; }
+
+    ul{
+      margin: 8px 0 0 18px;
+    }
+
+    li{
+      margin: 6px 0;
+    }
+
+    hr{
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 28px 0 18px;
+    }
+
+    a{
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover{
+      text-decoration: underline;
+    }
+
+    .section{
+      margin-bottom: 24px;
+    }
+
+    .info-pill{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      background: rgba(31,122,74,.06);
+      border-radius: 12px;
+      color: var(--muted);
+      margin: 6px 0 10px;
+    }
+
+    .info-icon{
+      width: 22px;
+      height: 22px;
+      flex: 0 0 22px;
+    }
+
+    /* Versiones */
+    .versions{
+      margin: 10px 0 12px;
+      padding: 0;
+      list-style: none;
+    }
+    .versions li{
+      margin: 8px 0;
+    }
+    .version-link{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,.82);
+      color: var(--text);
+      font-weight: 700;
+    }
+    .version-link:hover{
+      text-decoration: none;
+      border-color: rgba(31,122,74,.45);
+      box-shadow: 0 6px 18px rgba(0,0,0,.07);
+    }
+    .badge{
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--accent);
+      border: 1px solid rgba(31,122,74,.35);
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(31,122,74,.06);
+    }
+
+    /* Copiar enlace */
+    .copy-row{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 6px;
+      flex-wrap: wrap;
+    }
+    .copy-link{
+      font-weight: 700;
+    }
+    .copy-btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,.82);
+      color: var(--accent);
+      cursor: pointer;
+    }
+    .copy-btn:hover{
+      border-color: rgba(31,122,74,.45);
+      box-shadow: 0 6px 18px rgba(0,0,0,.07);
+    }
+    .copy-icon{
+      width: 18px;
+      height: 18px;
+    }
+    .copy-msg{
+      color: var(--muted);
+      font-weight: 600;
+      min-width: 90px;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <article class="card">
+
+      <h1>VolumTransport-handleiding</h1>
+
+      <div class="section">
+        <p>
+          Dit is de handleiding van de app
+          <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
+            <b>VolumTransport</b>
+          </a>.
+        </p>
+
+        <p>
+          Het doel is je te helpen begrijpen hoe de app werkt, in welke situaties het zinvol is om hem te gebruiken
+          en wat je er echt van kunt verwachten.
+        </p>
+
+        <p>
+          Hij is bedoeld voor gebruikers die de app al hebben gevonden en hem goed willen gebruiken.
+        </p>
+      </div>
+
+      <h2>De handleiding gebruiken met kunstmatige intelligentie</h2>
+
+      <div class="section">
+        <p>
+          De inhoud van deze handleiding is zo opgesteld dat deze ook kan worden geïnterpreteerd
+          door kunstmatige intelligentie.
+        </p>
+
+        <p>
+          Als je wilt, kun je de startlink van de handleiding kopiëren, die in een AI plakken
+          en elke vraag stellen die te maken heeft met VolumTransport:
+          hoe een specifieke optie werkt, waar een rekenmodus voor dient,
+          in welke gevallen je de app gebruikt of welke beperkingen er zijn.
+        </p>
+
+        <p>
+          De AI zal antwoorden op basis van de informatie in deze handleiding.
+        </p>
+
+        <p>
+          <b>Link naar de handleiding:</b><br>
+
+          <span class="copy-row">
+            <a href="https://aplicacionesherrbri.com/tutorial/nl/00-presentation/"
+               id="copyTutorialLink"
+               data-copy="https://aplicacionesherrbri.com/tutorial/nl/00-presentation/"
+               class="copy-link"
+               title="Klik om te kopiëren"
+               role="button">
+              https://aplicacionesherrbri.com/tutorial/nl/00-presentation/
+            </a>
+
+            <button type="button"
+                    class="copy-btn"
+                    id="copyTutorialBtn"
+                    aria-label="Link naar het klembord kopiëren"
+                    title="Kopiëren">
+              <svg class="copy-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M9 9h10v10H9V9Z" stroke="currentColor" stroke-width="1.8" />
+                <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"
+                      stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </button>
+
+            <span id="copyMsg" class="copy-msg" aria-live="polite"></span>
+          </span>
+        </p>
+      </div>
+
+      <h2>Oorsprong en filosofie van de app</h2>
+
+      <div class="section">
+        <p>VolumTransport is niet gemaakt door een softwarebedrijf of door een externe programmeur.</p>
+
+        <p>
+          De app is volledig ontwikkeld door een professional uit de transportsector,
+          op basis van echte, dagelijkse problemen bij bezorging en het laden van goederen.
+          Omdat vergelijkbare tools ontbraken in de Google Play Store,
+          is gekozen voor een praktische app, gericht op echte behoeften.
+        </p>
+
+        <p>
+          Daarom geeft de app prioriteit aan praktische bruikbaarheid
+          boven complexe of theoretische oplossingen.
+        </p>
+
+        <p>
+          Als je op enig moment vragen of suggesties hebt, of iets opmerkt dat verbeterd kan worden,
+          kun je een e-mail sturen en je krijgt zo snel mogelijk antwoord.
+        </p>
+
+        <p>
+          <a href="mailto:albherrbri@gmail.com">Stuur een e-mail: albherrbri@gmail.com</a>
+        </p>
+      </div>
+
+      <h2>Wat VolumTransport doet (en wat het niet doet)</h2>
+
+      <div class="section">
+        <p>
+          Het belangrijkste doel van VolumTransport is <b>te berekenen hoe een lading past</b>
+          in een bepaalde ruimte en of het <b>wel of niet past</b> op basis van de opgegeven afmetingen.
+        </p>
+
+        <p>
+          Naast “past / past niet” kan de app ook nuttige gegevens tonen zoals
+          <b>bezettingspercentage</b>, <b>gewicht</b> en, als je het inschakelt, <b>economische resultaten</b>.
+          In deze handleiding worden alle beschikbare opties stap voor stap uitgelegd.
+        </p>
+
+        <p>
+          Voor deze berekeningen gebruikt de app een methode die bekend staat als
+          <b>bin packing</b>.
+        </p>
+
+        <p>
+          <b>Wat betekent dit?</b><br>
+          Bin packing is een manier om te berekenen hoe je meerdere pakketten binnen een beperkte ruimte plaatst
+          (bijvoorbeeld een voertuig), waarbij je de beschikbare ruimte zo goed mogelijk benut.
+          Met deze methode kun je de werkelijke bezetting inschatten zonder elke combinatie fysiek te hoeven proberen.
+        </p>
+
+        <p>
+          <b>Waarin verschilt dit van andere methoden?</b><br>
+          In tegenstelling tot een berekening die alleen gebaseerd is op het totale volume, waarbij je enkel ruimte optelt en die in de praktijk kan falen,
+          houdt bin packing rekening met de <b>werkelijke afmetingen</b> (lengte, breedte en hoogte) en hoe de pakketten in elkaar passen.
+          Het doel is een <b>praktische en snelle schatting</b> te bieden,
+          ondersteund door een <b>3D-visualisatie</b>, die helpt om beslissingen te nemen vóór het uitvoeren van de dienst.
+        </p>
+
+        <p>
+          De app plaatst de pakketten volgens logische regels voor volume, oriëntatie
+          en ruimtebezetting. Het resultaat dient als referentie en hulpmiddel voor de professional.
+        </p>
+
+        <p><b>Het is belangrijk om duidelijk te maken dat:</b></p>
+        <ul>
+          <li>De app bepaalt niet hoe de ruimte moet worden ingedeeld.</li>
+          <li>De app vervangt de ervaring van de transporteur niet.</li>
+          <li>De persoon die de lading laadt, blijft altijd eindverantwoordelijk.</li>
+        </ul>
+
+        <p>
+          Elke professional kan de goederen op een andere manier plaatsen, afhankelijk van zijn/haar criteria,
+          ervaring of de omstandigheden van de dienst.
+          VolumTransport werkt als een geavanceerde rekenmachine, niet als een automatische opdracht.
+        </p>
+      </div>
+
+      <h2>Algemene aandachtspunten voor de hele app</h2>
+
+      <div class="section">
+        <div class="info-pill" aria-label="Informatiepictogram">
+          <svg class="info-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M12 10.6v6.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M12 7.4h.01" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+          </svg>
+          <span>Hulp beschikbaar in elk venster</span>
+        </div>
+
+        <p>
+          Bij het ontwerpen van de app is er rekening mee gehouden dat het een tool is die in de eerste stappen
+          moeilijk te begrijpen kan zijn. Daarom is er in elk venster hulp toegevoegd.
+        </p>
+
+        <p>
+          Die hulp wordt weergegeven via het informatiepictogram
+          (de <b>i</b> in een cirkel).
+          Het legt uit wat er in elk venster staat en waar het voor dient, zodat de gebruiker niet vastloopt.
+        </p>
+      </div>
+
+      <h2>Versies</h2>
+
+      <div class="section">
+        <p>Er zijn vier soorten versies van de app:</p>
+
+        <ul class="versions">
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">01</span>
+              Gratis week
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">02</span>
+              Gratis met advertenties
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">03</span>
+              Gratis zonder advertenties
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">04</span>
+              Premium
+            </a>
+          </li>
+        </ul>
+
+        <p>
+          Ze berekenen allemaal hoeveel dozen er in het voertuig passen, maar naarmate je
+          meer informatie of meer functies nodig hebt, kunnen er beperkingen zijn afhankelijk van de versie.
+        </p>
+
+        <p>
+          Om een versie te kopen, kun je dat doen via het venster
+          <a href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">Upgrade categorie</a>.
+        </p>
+      </div>
+
+      <hr>
+
+      <h2>Overzicht</h2>
+      <p>
+        <a href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+          01 – Hoofdpagina
+        </a>
+      </p>
+
+      <h2>Talen</h2>
+
+      <div class="section">
+        <p>VolumTransport is beschikbaar in meerdere talen.</p>
+
+        <p><b>App-talen:</b></p>
+        <p style="margin-bottom:10px;">
+          Engels (en), Arabisch (ar), Bangla (bn), Baskisch (ba), Bulgaars (bg), Catalaans (ca), Chinees (zh), Kroatisch (hr), Tsjechisch (cs),
+          Deens (da), Nederlands (nl), Ests (et), Fins (fi), Frans (fr), Galicisch (gl), Duits (de), Grieks (el),
+          Hebreeuws (iw), Hindi (hi), Hongaars (hu), Indonesisch (id), Iers (ga), Italiaans (it), Japans (ja), Koreaans (ko),
+          Laotiaans (lo), Lets (lv), Litouws (lt), Luxemburgs (lb), Maltees (mt), Nepalees (ne), Noors (nb), Perzisch (fa),
+          Pools (pl), Portugees (pt), Punjabi uit Pakistan (pa-rpk) (Shahmukhi-schrift), Roemeens (ro), Russisch (ru),
+          Slowaaks (sk), Sloveens (sl), Spaans (es), Zweeds (sv), Thais (th), Turks (tr), Oekraïens (uk), Urdu (ur),
+          Vietnamees (vi).
+        </p>
+
+        <p><b>Talen van de handleiding:</b></p>
+        <p>
+          Engels (en), Duits (de), Bangla (bn), Bulgaars (bg), Tsjechisch (cs), Vereenvoudigd Chinees (zh), Koreaans (ko), Kroatisch (hr),
+          Deens (da), Slowaaks (sk), Sloveens (sl), Spaans (es), Ests (et), Fins (fi), Frans (fr), Grieks (el),
+          Hebreeuws (iw), Hindi (hi), Hongaars (hu), Indonesisch (id), Italiaans (it), Japans (ja), Laotiaans (lo), Lets (lv),
+          Litouws (lt), Nederlands (nl), Nepalees (ne), Noors (no), Perzisch (fa), Pools (pl), Portugees (pt),
+          Punjabi uit Pakistan (pa-rpk) (Shahmukhi-schrift), Roemeens (ro), Russisch (ru), Zweeds (sv), Thais (th),
+          Turks (tr), Oekraïens (uk), Urdu (ur), Vietnamees (vi), Arabisch (ar).
+        </p>
+        <p>
+          Deze handleiding is nog in ontwikkeling, maar vragen of verduidelijkingen kun je altijd sturen via e-mail naar:
+        </p>
+
+        <p>
+          <a href="mailto:albherrbri@gmail.com">Stuur een e-mail: albherrbri@gmail.com</a>
+        </p>
+        
+      </div>
+
+    </article>
+  </main>
+
+  <script>
+    (function () {
+      const link = document.getElementById("copyTutorialLink");
+      const btn  = document.getElementById("copyTutorialBtn");
+      const msg  = document.getElementById("copyMsg");
+      if (!link) return;
+
+      function show(text) {
+        if (!msg) return;
+        msg.textContent = text;
+        clearTimeout(show._t);
+        show._t = setTimeout(() => (msg.textContent = ""), 1600);
+      }
+
+      async function copyText(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          return true;
+        }
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "absolute";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        const ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        return ok;
+      }
+
+      async function doCopy(e) {
+        if (e) e.preventDefault();
+        const text = link.getAttribute("data-copy") || link.href;
+        try {
+          const ok = await copyText(text);
+          show(ok ? "Gekopieerd ✅" : "Kopiëren mislukt");
+        } catch {
+          show("Kopiëren mislukt");
+        }
+      }
+
+      link.addEventListener("click", doCopy);
+      if (btn) btn.addEventListener("click", doCopy);
+    })();
+  </script>
+</body>
+</html>
