@@ -1,244 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/es/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/de/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/bn/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/bg/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/cs/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/zh-hans/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/ko/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/hr/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/da/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/sk/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/sl/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/et/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/fi/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/fr/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/el/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/he/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/hi/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/hu/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/id/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/it/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/ja/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/lo/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/lv/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/lt/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/nl/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/ne/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/no/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/fa/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/pl/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/pt/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/pa-pk/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/ro/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/ru/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/sv/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/th/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/tr/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/uk/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/ur/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://aplicacionesherrbri.com/tutorial/vi/00-presentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/es/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/de/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/bn/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/bg/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/cs/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/zh-hans/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/ko/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/hr/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/da/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/sk/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/sl/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/et/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/fi/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/fr/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/el/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/he/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/hi/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/hu/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/id/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/it/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/ja/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/lo/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/lv/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/lt/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/nl/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/ne/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/no/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/fa/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/pl/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/pt/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/pa-pk/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/ro/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/ru/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/sv/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/th/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/tr/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/uk/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/ur/00-presentation/</loc></url>
+  <url><loc>https://aplicacionesherrbri.com/tutorial/vi/00-presentation/</loc></url>
 
 </urlset>
