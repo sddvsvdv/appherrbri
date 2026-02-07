@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Учебник VolumTransport</title>
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="description" content="Учебник VolumTransport: как работает приложение, в каких ситуациях его использовать и чего от него реально ожидать." />
+
+  <link rel="canonical" href="https://aplicacionesherrbri.com/tutorial/ru/00-presentation/" />
+
+  <meta property="og:title" content="Учебник VolumTransport" />
+  <meta property="og:description" content="Как пользоваться VolumTransport и чего можно ожидать от приложения." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aplicacionesherrbri.com/tutorial/ru/00-presentation/" />
+  <meta property="og:locale" content="ru_RU" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "VolumTransport",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Android",
+      "inLanguage": "ru",
+      "url": "https://aplicacionesherrbri.com/tutorial/ru/00-presentation/",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.herrbri.volumtransport",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Aplicaciones HerrBri"
+      }
+    }
+  </script>
+
+
+
+  <style>
+    :root{
+      --bg: #d6e6de;
+      --card: #f7fbf9;
+      --text: #0f172a;
+      --border: #cfe3d8;
+      --link: #0b4e2a;
+      --accent: #1f7a4a;
+      --muted: #4b5563;
+    }
+
+    *{ box-sizing: border-box; }
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .wrap{
+      min-height: 100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 36px 14px;
+    }
+
+    .card{
+      width: min(900px, 100%);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 12px 34px rgba(0,0,0,.12);
+      padding: 32px 32px;
+    }
+
+    h1{
+      margin: 0 0 28px;
+      font-size: clamp(30px, 3vw, 38px);
+      letter-spacing: -0.02em;
+      text-align: center;
+      position: relative;
+    }
+
+    h1::after{
+      content: "";
+      display: block;
+      width: clamp(120px, 18vw, 220px);
+      height: 4px;
+      margin: 14px auto 0;
+      background-color: var(--accent);
+      border-radius: 2px;
+    }
+
+    h2{
+      margin: 32px 0 10px;
+      font-size: 19px;
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+    }
+
+    p{ margin: 0 0 12px; }
+
+    ul{
+      margin: 8px 0 0 18px;
+    }
+
+    li{
+      margin: 6px 0;
+    }
+
+    hr{
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 28px 0 18px;
+    }
+
+    a{
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover{
+      text-decoration: underline;
+    }
+
+    .section{
+      margin-bottom: 24px;
+    }
+
+    .info-pill{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      background: rgba(31,122,74,.06);
+      border-radius: 12px;
+      color: var(--muted);
+      margin: 6px 0 10px;
+    }
+
+    .info-icon{
+      width: 22px;
+      height: 22px;
+      flex: 0 0 22px;
+    }
+
+    /* Versiones */
+    .versions{
+      margin: 10px 0 12px;
+      padding: 0;
+      list-style: none;
+    }
+    .versions li{
+      margin: 8px 0;
+    }
+    .version-link{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,.82);
+      color: var(--text);
+      font-weight: 700;
+    }
+    .version-link:hover{
+      text-decoration: none;
+      border-color: rgba(31,122,74,.45);
+      box-shadow: 0 6px 18px rgba(0,0,0,.07);
+    }
+    .badge{
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--accent);
+      border: 1px solid rgba(31,122,74,.35);
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(31,122,74,.06);
+    }
+
+    /* Copiar enlace */
+    .copy-row{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 6px;
+      flex-wrap: wrap;
+    }
+    .copy-link{
+      font-weight: 700;
+    }
+    .copy-btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,.82);
+      color: var(--accent);
+      cursor: pointer;
+    }
+    .copy-btn:hover{
+      border-color: rgba(31,122,74,.45);
+      box-shadow: 0 6px 18px rgba(0,0,0,.07);
+    }
+    .copy-icon{
+      width: 18px;
+      height: 18px;
+    }
+    .copy-msg{
+      color: var(--muted);
+      font-weight: 600;
+      min-width: 90px;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <article class="card">
+
+      <h1>Учебник VolumTransport</h1>
+
+      <div class="section">
+        <p>
+          Это учебник по приложению
+          <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
+            <b>VolumTransport</b>
+          </a>.
+        </p>
+
+        <p>
+          Его цель — помочь вам понять, как работает приложение, в каких ситуациях имеет смысл им пользоваться
+          и чего вы можете реально от него ожидать.
+        </p>
+
+        <p>
+          Он предназначен для пользователя, который уже открыл приложение и хочет пользоваться им правильно.
+        </p>
+      </div>
+
+      <h2>Использование учебника с искусственным интеллектом</h2>
+
+      <div class="section">
+        <p>
+          Содержимое этого учебника подготовлено так, чтобы его также мог интерпретировать
+          искусственный интеллект.
+        </p>
+
+        <p>
+          Если хотите, вы можете скопировать стартовую ссылку учебника, вставить её в ИИ
+          и задать любой вопрос, связанный с VolumTransport:
+          как работает конкретная опция, для чего нужен режим расчёта,
+          в каких случаях использовать приложение или какие у него ограничения.
+        </p>
+
+        <p>
+          ИИ ответит, опираясь на информацию, содержащуюся в этом учебнике.
+        </p>
+
+        <p>
+          <b>Ссылка на учебник:</b><br>
+
+          <span class="copy-row">
+            <a href="https://aplicacionesherrbri.com/tutorial/ru/00-presentation/"
+               id="copyTutorialLink"
+               data-copy="https://aplicacionesherrbri.com/tutorial/ru/00-presentation/"
+               class="copy-link"
+               title="Нажмите, чтобы скопировать"
+               role="button">
+              https://aplicacionesherrbri.com/tutorial/ru/00-presentation/
+            </a>
+
+            <button type="button"
+                    class="copy-btn"
+                    id="copyTutorialBtn"
+                    aria-label="Скопировать ссылку в буфер обмена"
+                    title="Скопировать">
+              <svg class="copy-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M9 9h10v10H9V9Z" stroke="currentColor" stroke-width="1.8" />
+                <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"
+                      stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </button>
+
+            <span id="copyMsg" class="copy-msg" aria-live="polite"></span>
+          </span>
+        </p>
+      </div>
+
+      <h2>Происхождение и философия приложения</h2>
+
+      <div class="section">
+        <p>VolumTransport не было создано компанией-разработчиком ПО или внешним программистом.</p>
+
+        <p>
+          Оно полностью разработано профессионалом в сфере транспорта,
+          на основе реальных повседневных проблем при доставке и погрузке грузов.
+          При отсутствии подобных инструментов в Google Play Store
+          было решено создать практичное приложение, ориентированное на реальные потребности.
+        </p>
+
+        <p>
+          Поэтому приложение ставит практическую пользу
+          выше сложных или теоретических решений.
+        </p>
+
+        <p>
+          Если у вас появятся вопросы, предложения или вы заметите что-то, что можно улучшить,
+          вы можете написать на электронную почту, и вам ответят в кратчайшие сроки.
+        </p>
+
+        <p>
+          <a href="mailto:albherrbri@gmail.com">Отправить письмо: albherrbri@gmail.com</a>
+        </p>
+      </div>
+
+      <h2>Что делает VolumTransport (и чего не делает)</h2>
+
+      <div class="section">
+        <p>
+          Основная цель VolumTransport — <b>рассчитать, как размещается груз</b>
+          в заданном пространстве и <b>помещается он или нет</b> по указанным размерам.
+        </p>
+
+        <p>
+          Помимо «помещается / не помещается» приложение также может показывать полезные данные, такие как
+          <b>процент заполнения</b>, <b>вес</b> и, если вы включите, <b>экономические результаты</b>.
+          В этом учебнике все доступные опции будут показаны шаг за шагом.
+        </p>
+
+        <p>
+          Для выполнения этих расчётов приложение использует метод, известный как
+          <b>bin packing</b>.
+        </p>
+
+        <p>
+          <b>Что это значит?</b><br>
+          Bin packing — это способ расчёта того, как разместить несколько мест в ограниченном пространстве
+          (например, в автомобиле), максимально эффективно используя доступное место.
+          Этот метод позволяет оценить реальную загрузку без необходимости физически проверять каждую комбинацию.
+        </p>
+
+        <p>
+          <b>Чем он отличается от других методов?</b><br>
+          В отличие от расчёта, основанного только на общем объёме, который лишь суммирует пространство и может подвести на практике,
+          bin packing учитывает <b>реальные размеры</b> (длину, ширину и высоту) и то, как места «стыкуются» между собой.
+          Его цель — дать <b>практичную и быструю оценку</b>,
+          подкреплённую <b>3D-визуализацией</b>, чтобы помочь принять решение до выполнения работы.
+        </p>
+
+        <p>
+          Приложение размещает места по логическим правилам объёма, ориентации
+          и заполнения пространства. Результат служит ориентиром и помощником для специалиста.
+        </p>
+
+        <p><b>Важно ясно обозначить, что:</b></p>
+        <ul>
+          <li>Приложение не решает, как именно следует организовать пространство.</li>
+          <li>Приложение не заменяет опыт перевозчика.</li>
+          <li>Человек, выполняющий погрузку, всегда несёт конечную ответственность.</li>
+        </ul>
+
+        <p>
+          Каждый специалист может укладывать груз по-разному, исходя из своего подхода,
+          опыта или условий работы.
+          VolumTransport — это продвинутый калькулятор, а не автоматическая команда.
+        </p>
+      </div>
+
+      <h2>Общие заметки по всему приложению</h2>
+
+      <div class="section">
+        <div class="info-pill" aria-label="Значок информации">
+          <svg class="info-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M12 10.6v6.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M12 7.4h.01" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+          </svg>
+          <span>Справка доступна в каждом окне</span>
+        </div>
+
+        <p>
+          При проектировании приложения учитывалось, что в первые шаги этот инструмент
+          может быть трудно понять. Поэтому в каждом окне добавлена справка.
+        </p>
+
+        <p>
+          Эта справка обозначена значком информации
+          ( <b>i</b> внутри круга ).
+          Она объясняет, что находится в каждом окне и для чего это нужно, направляя пользователя, чтобы он не застрял.
+        </p>
+      </div>
+
+      <h2>Версии</h2>
+
+      <div class="section">
+        <p>Существует четыре типа версий приложения:</p>
+
+        <ul class="versions">
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">01</span>
+              Неделя бесплатно
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">02</span>
+              Бесплатно с рекламой
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">03</span>
+              Бесплатно без рекламы
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">04</span>
+              Premium
+            </a>
+          </li>
+        </ul>
+
+        <p>
+          Все они рассчитывают, сколько коробок помещается в транспортное средство, но по мере того как
+          требуется больше информации или функций, могут появляться ограничения в зависимости от версии.
+        </p>
+
+        <p>
+          Чтобы купить версию, это можно сделать в окне
+          <a href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">Повысить категорию</a>.
+        </p>
+      </div>
+
+      <hr>
+
+      <h2>Содержание</h2>
+      <p>
+        <a href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+          01 – Главная страница
+        </a>
+      </p>
+
+      <h2>Языки</h2>
+
+      <div class="section">
+        <p>VolumTransport доступен на нескольких языках.</p>
+
+        <p><b>Языки приложения:</b></p>
+        <p style="margin-bottom:10px;">
+          Английский (en), Арабский (ar), Бангла (bn), Баскский (ba), Болгарский (bg), Каталанский (ca), Китайский (zh), Хорватский (hr), Чешский (cs),
+          Датский (da), Нидерландский (nl), Эстонский (et), Финский (fi), Французский (fr), Галисийский (gl), Немецкий (de), Греческий (el),
+          Иврит (iw), Хинди (hi), Венгерский (hu), Индонезийский (id), Ирландский (ga), Итальянский (it), Японский (ja), Корейский (ko),
+          Лаосский (lo), Латышский (lv), Литовский (lt), Люксембургский (lb), Мальтийский (mt), Непальский (ne), Норвежский (nb), Персидский (fa),
+          Польский (pl), Португальский (pt), Панджаби (Пакистан) (pa-rpk) (письмо шахмухи), Румынский (ro), Русский (ru),
+          Словацкий (sk), Словенский (sl), Испанский (es), Шведский (sv), Тайский (th), Турецкий (tr), Украинский (uk), Урду (ur),
+          Вьетнамский (vi).
+        </p>
+
+        <p><b>Языки учебника:</b></p>
+        <p>
+          Английский (en), Немецкий (de), Бангла (bn), Болгарский (bg), Чешский (cs), Упрощённый китайский (zh), Корейский (ko), Хорватский (hr),
+          Датский (da), Словацкий (sk), Словенский (sl), Испанский (es), Эстонский (et), Финский (fi), Французский (fr), Греческий (el),
+          Иврит (iw), Хинди (hi), Венгерский (hu), Индонезийский (id), Итальянский (it), Японский (ja), Лаосский (lo), Латышский (lv),
+          Литовский (lt), Нидерландский (nl), Непальский (ne), Норвежский (no), Персидский (fa), Польский (pl), Португальский (pt),
+          Панджаби (Пакистан) (pa-rpk) (письмо шахмухи), Румынский (ro), Русский (ru), Шведский (sv), Тайский (th),
+          Турецкий (tr), Украинский (uk), Урду (ur), Вьетнамский (vi), Арабский (ar).
+        </p>
+        <p>
+          Этот учебник всё ещё находится в разработке, но любые вопросы или уточнения вы можете решить, отправив письмо на:
+        </p>
+
+        <p>
+          <a href="mailto:albherrbri@gmail.com">Отправить письмо: albherrbri@gmail.com</a>
+        </p>
+        
+      </div>
+
+    </article>
+  </main>
+
+  <script>
+    (function () {
+      const link = document.getElementById("copyTutorialLink");
+      const btn  = document.getElementById("copyTutorialBtn");
+      const msg  = document.getElementById("copyMsg");
+      if (!link) return;
+
+      function show(text) {
+        if (!msg) return;
+        msg.textContent = text;
+        clearTimeout(show._t);
+        show._t = setTimeout(() => (msg.textContent = ""), 1600);
+      }
+
+      async function copyText(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          return true;
+        }
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "absolute";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        const ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        return ok;
+      }
+
+      async function doCopy(e) {
+        if (e) e.preventDefault();
+        const text = link.getAttribute("data-copy") || link.href;
+        try {
+          const ok = await copyText(text);
+          show(ok ? "Скопировано ✅" : "Не удалось скопировать");
+        } catch {
+          show("Не удалось скопировать");
+        }
+      }
+
+      link.addEventListener("click", doCopy);
+      if (btn) btn.addEventListener("click", doCopy);
+    })();
+  </script>
+</body>
+</html>
