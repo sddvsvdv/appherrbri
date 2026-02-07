@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="hr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Vodič za VolumTransport</title>
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="description" content="Vodič za VolumTransport: kako aplikacija radi, u kojim situacijama je koristiti i što realno možeš očekivati od nje." />
+
+  <link rel="canonical" href="https://aplicacionesherrbri.com/tutorial/hr/00-presentation/" />
+
+  <meta property="og:title" content="Vodič za VolumTransport" />
+  <meta property="og:description" content="Kako koristiti VolumTransport i što možeš očekivati od aplikacije." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aplicacionesherrbri.com/tutorial/hr/00-presentation/" />
+  <meta property="og:locale" content="hr_HR" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "VolumTransport",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Android",
+      "inLanguage": "hr",
+      "url": "https://aplicacionesherrbri.com/tutorial/hr/00-presentation/",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.herrbri.volumtransport",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Aplicaciones HerrBri"
+      }
+    }
+  </script>
+
+
+
+  <style>
+    :root{
+      --bg: #d6e6de;
+      --card: #f7fbf9;
+      --text: #0f172a;
+      --border: #cfe3d8;
+      --link: #0b4e2a;
+      --accent: #1f7a4a;
+      --muted: #4b5563;
+    }
+
+    *{ box-sizing: border-box; }
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .wrap{
+      min-height: 100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 36px 14px;
+    }
+
+    .card{
+      width: min(900px, 100%);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 12px 34px rgba(0,0,0,.12);
+      padding: 32px 32px;
+    }
+
+    h1{
+      margin: 0 0 28px;
+      font-size: clamp(30px, 3vw, 38px);
+      letter-spacing: -0.02em;
+      text-align: center;
+      position: relative;
+    }
+
+    h1::after{
+      content: "";
+      display: block;
+      width: clamp(120px, 18vw, 220px);
+      height: 4px;
+      margin: 14px auto 0;
+      background-color: var(--accent);
+      border-radius: 2px;
+    }
+
+    h2{
+      margin: 32px 0 10px;
+      font-size: 19px;
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+    }
+
+    p{ margin: 0 0 12px; }
+
+    ul{
+      margin: 8px 0 0 18px;
+    }
+
+    li{
+      margin: 6px 0;
+    }
+
+    hr{
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 28px 0 18px;
+    }
+
+    a{
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover{
+      text-decoration: underline;
+    }
+
+    .section{
+      margin-bottom: 24px;
+    }
+
+    .info-pill{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      background: rgba(31,122,74,.06);
+      border-radius: 12px;
+      color: var(--muted);
+      margin: 6px 0 10px;
+    }
+
+    .info-icon{
+      width: 22px;
+      height: 22px;
+      flex: 0 0 22px;
+    }
+
+    /* Versiones */
+    .versions{
+      margin: 10px 0 12px;
+      padding: 0;
+      list-style: none;
+    }
+    .versions li{
+      margin: 8px 0;
+    }
+    .version-link{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,.82);
+      color: var(--text);
+      font-weight: 700;
+    }
+    .version-link:hover{
+      text-decoration: none;
+      border-color: rgba(31,122,74,.45);
+      box-shadow: 0 6px 18px rgba(0,0,0,.07);
+    }
+    .badge{
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--accent);
+      border: 1px solid rgba(31,122,74,.35);
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(31,122,74,.06);
+    }
+
+    /* Copiar enlace */
+    .copy-row{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 6px;
+      flex-wrap: wrap;
+    }
+    .copy-link{
+      font-weight: 700;
+    }
+    .copy-btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,.82);
+      color: var(--accent);
+      cursor: pointer;
+    }
+    .copy-btn:hover{
+      border-color: rgba(31,122,74,.45);
+      box-shadow: 0 6px 18px rgba(0,0,0,.07);
+    }
+    .copy-icon{
+      width: 18px;
+      height: 18px;
+    }
+    .copy-msg{
+      color: var(--muted);
+      font-weight: 600;
+      min-width: 90px;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <article class="card">
+
+      <h1>Vodič za VolumTransport</h1>
+
+      <div class="section">
+        <p>
+          Ovo je vodič za aplikaciju
+          <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
+            <b>VolumTransport</b>
+          </a>.
+        </p>
+
+        <p>
+          Cilj mu je pomoći ti razumjeti kako aplikacija radi, u kojim situacijama ima smisla koristiti je
+          i što realno možeš očekivati od nje.
+        </p>
+
+        <p>
+          Namijenjen je korisnicima koji su već došli do aplikacije i žele je koristiti ispravno.
+        </p>
+      </div>
+
+      <h2>Korištenje vodiča s umjetnom inteligencijom</h2>
+
+      <div class="section">
+        <p>
+          Sadržaj ovog vodiča pripremljen je tako da ga mogu tumačiti i sustavi
+          umjetne inteligencije.
+        </p>
+
+        <p>
+          Ako želiš, možeš kopirati početnu poveznicu vodiča, zalijepiti je u AI
+          i postaviti bilo koje pitanje vezano uz VolumTransport:
+          kako radi određena opcija, čemu služi neki način izračuna,
+          u kojim slučajevima koristiti aplikaciju ili koja su joj ograničenja.
+        </p>
+
+        <p>
+          AI će odgovoriti na temelju informacija sadržanih u ovom vodiču.
+        </p>
+
+        <p>
+          <b>Poveznica vodiča:</b><br>
+
+          <span class="copy-row">
+            <a href="https://aplicacionesherrbri.com/tutorial/hr/00-presentation/"
+               id="copyTutorialLink"
+               data-copy="https://aplicacionesherrbri.com/tutorial/hr/00-presentation/"
+               class="copy-link"
+               title="Klikni za kopiranje"
+               role="button">
+              https://aplicacionesherrbri.com/tutorial/hr/00-presentation/
+            </a>
+
+            <button type="button"
+                    class="copy-btn"
+                    id="copyTutorialBtn"
+                    aria-label="Kopiraj poveznicu u međuspremnik"
+                    title="Kopiraj">
+              <svg class="copy-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M9 9h10v10H9V9Z" stroke="currentColor" stroke-width="1.8" />
+                <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"
+                      stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </button>
+
+            <span id="copyMsg" class="copy-msg" aria-live="polite"></span>
+          </span>
+        </p>
+      </div>
+
+      <h2>Podrijetlo i filozofija aplikacije</h2>
+
+      <div class="section">
+        <p>VolumTransport nije razvila softverska tvrtka niti vanjski programer.</p>
+
+        <p>
+          Aplikaciju je u potpunosti razvio profesionalac iz transporta,
+          na temelju stvarnih svakodnevnih problema u dostavi i utovaru robe.
+          Zbog nedostatka sličnih alata na Google Play Storeu,
+          odlučeno je napraviti praktičnu aplikaciju usmjerenu na stvarne potrebe.
+        </p>
+
+        <p>
+          Zato aplikacija daje prednost praktičnoj korisnosti
+          u odnosu na složena ili teoretska rješenja.
+        </p>
+
+        <p>
+          Ako u bilo kojem trenutku imaš pitanja, prijedloge ili primijetiš nešto što se može poboljšati,
+          možeš poslati e-mail i dobit ćeš odgovor u najkraćem mogućem roku.
+        </p>
+
+        <p>
+          <a href="mailto:albherrbri@gmail.com">Pošalji e-mail: albherrbri@gmail.com</a>
+        </p>
+      </div>
+
+      <h2>Što VolumTransport radi (a što ne radi)</h2>
+
+      <div class="section">
+        <p>
+          Glavni cilj VolumTransporta je <b>izračunati kako se teret uklapa</b>
+          u određeni prostor i ulazi li <b>ulazi ili ne ulazi</b> prema navedenim dimenzijama.
+        </p>
+
+        <p>
+          Osim „ulazi / ne ulazi“, aplikacija može prikazati i korisne podatke poput
+          <b>postotka popunjenosti</b>, <b>težine</b> i, ako uključiš, <b>ekonomskih rezultata</b>.
+          U ovom vodiču sve će se opcije prikazivati korak po korak.
+        </p>
+
+        <p>
+          Za ove izračune aplikacija koristi metodu poznatu kao
+          <b>bin packing</b>.
+        </p>
+
+        <p>
+          <b>Što to znači?</b><br>
+          Bin packing je način izračuna kako smjestiti više paketa u ograničen prostor
+          (npr. vozilo) tako da se raspoloživi prostor iskoristi što bolje.
+          Ova metoda omogućuje procjenu stvarne popunjenosti bez fizičkog isprobavanja svake kombinacije.
+        </p>
+
+        <p>
+          <b>Po čemu se razlikuje od drugih metoda?</b><br>
+          Za razliku od izračuna temeljenog samo na ukupnom volumenu, koji samo zbraja prostor i u praksi može podbaciti,
+          bin packing uzima u obzir <b>stvarne dimenzije</b> (dužinu, širinu i visinu) i kako se paketi stvarno uklapaju.
+          Cilj mu je pružiti <b>praktičnu i brzu procjenu</b>,
+          uz <b>3D vizualizaciju</b> koja pomaže u donošenju odluka prije obavljanja usluge.
+        </p>
+
+        <p>
+          Aplikacija postavlja pakete slijedeći logična pravila volumena, orijentacije
+          i iskorištenosti prostora. Rezultat služi kao referenca i pomoć profesionalcu.
+        </p>
+
+        <p><b>Važno je jasno naglasiti da:</b></p>
+        <ul>
+          <li>Aplikacija ne odlučuje kako treba organizirati prostor.</li>
+          <li>Aplikacija ne zamjenjuje iskustvo prijevoznika.</li>
+          <li>Osoba koja obavlja utovar uvijek je konačno odgovorna.</li>
+        </ul>
+
+        <p>
+          Svaki profesionalac može složiti robu drugačije prema svojem kriteriju,
+          iskustvu ili okolnostima usluge.
+          VolumTransport je napredni kalkulator, a ne automatska naredba.
+        </p>
+      </div>
+
+      <h2>Opće napomene za cijelu aplikaciju</h2>
+
+      <div class="section">
+        <div class="info-pill" aria-label="Ikona informacija">
+          <svg class="info-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M12 10.6v6.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M12 7.4h.01" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+          </svg>
+          <span>Pomoć je dostupna na svakom zaslonu</span>
+        </div>
+
+        <p>
+          Pri dizajnu aplikacije uzeto je u obzir da je u prvim koracima može biti teško razumjeti.
+          Zato je dodana pomoć na svakom zaslonu.
+        </p>
+
+        <p>
+          Ta je pomoć označena ikonom informacija
+          (<b>i</b> unutar kruga).
+          Objašnjava što se nalazi na svakom zaslonu i čemu služi, vodeći korisnika da ne zapne.
+        </p>
+      </div>
+
+      <h2>Verzije</h2>
+
+      <div class="section">
+        <p>Postoje četiri vrste verzija aplikacije:</p>
+
+        <ul class="versions">
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">01</span>
+              Tjedan besplatno
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">02</span>
+              Besplatno s oglasima
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">03</span>
+              Besplatno bez oglasa
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">04</span>
+              Premium
+            </a>
+          </li>
+        </ul>
+
+        <p>
+          Sve verzije izračunavaju koliko kutija stane u vozilo, ali kako ti bude trebalo više informacija
+          ili više značajki, mogu se pojaviti ograničenja ovisno o verziji.
+        </p>
+
+        <p>
+          Verziju možeš kupiti u izborniku
+          <a href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">Nadogradi kategoriju</a>.
+        </p>
+      </div>
+
+      <hr>
+
+      <h2>Sažetak</h2>
+      <p>
+        <a href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+          01 – Glavna stranica
+        </a>
+      </p>
+
+      <h2>Jezici</h2>
+
+      <div class="section">
+        <p>VolumTransport je dostupan na više jezika.</p>
+
+        <p><b>Jezici aplikacije:</b></p>
+        <p style="margin-bottom:10px;">
+          Engleski (en), Arapski (ar), Bangla (bn), Baskijski (ba), Bugarski (bg), Katalonski (ca), Kineski (zh),
+          Hrvatski (hr), Češki (cs), Danski (da), Nizozemski (nl), Estonski (et), Finski (fi), Francuski (fr),
+          Galješki (gl), Njemački (de), Grčki (el), Hebrejski (iw), Hindski (hi), Mađarski (hu), Indonezijski (id),
+          Irski (ga), Talijanski (it), Japanski (ja), Korejski (ko), Laoski (lo), Latvijski (lv), Litavski (lt),
+          Luksemburški (lb), Malteški (mt), Nepalski (ne), Norveški (nb), Perzijski (fa), Poljski (pl),
+          Portugalski (pt), Pandžapski (Pakistan) (pa-rpk) (pismo Shahmukhi), Rumunjski (ro), Ruski (ru),
+          Slovački (sk), Slovenski (sl), Španjolski (es), Švedski (sv), Tajlandski (th), Turski (tr),
+          Ukrajinski (uk), Urdu (ur), Vijetnamski (vi).
+        </p>
+
+        <p><b>Jezici vodiča:</b></p>
+        <p>
+          Engleski (en), Njemački (de), Bangla (bn), Bugarski (bg), Češki (cs), Pojednostavljeni kineski (zh),
+          Korejski (ko), Hrvatski (hr), Danski (da), Slovački (sk), Slovenski (sl), Španjolski (es), Estonski (et),
+          Finski (fi), Francuski (fr), Grčki (el), Hebrejski (iw), Hindski (hi), Mađarski (hu), Indonezijski (id),
+          Talijanski (it), Japanski (ja), Laoski (lo), Latvijski (lv), Litavski (lt), Nizozemski (nl), Nepalski (ne),
+          Norveški (no), Perzijski (fa), Poljski (pl), Portugalski (pt),
+          Pandžapski (Pakistan) (pa-rpk) (pismo Shahmukhi), Rumunjski (ro), Ruski (ru), Švedski (sv),
+          Tajlandski (th), Turski (tr), Ukrajinski (uk), Urdu (ur), Vijetnamski (vi), Arapski (ar).
+        </p>
+        <p>
+          Ovaj vodič je još uvijek u razvoju, ali sva pitanja ili pojašnjenja možeš riješiti slanjem e-maila na:
+        </p>
+
+        <p>
+          <a href="mailto:albherrbri@gmail.com">Pošalji e-mail: albherrbri@gmail.com</a>
+        </p>
+        
+      </div>
+
+    </article>
+  </main>
+
+  <script>
+    (function () {
+      const link = document.getElementById("copyTutorialLink");
+      const btn  = document.getElementById("copyTutorialBtn");
+      const msg  = document.getElementById("copyMsg");
+      if (!link) return;
+
+      function show(text) {
+        if (!msg) return;
+        msg.textContent = text;
+        clearTimeout(show._t);
+        show._t = setTimeout(() => (msg.textContent = ""), 1600);
+      }
+
+      async function copyText(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          return true;
+        }
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "absolute";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        const ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        return ok;
+      }
+
+      async function doCopy(e) {
+        if (e) e.preventDefault();
+        const text = link.getAttribute("data-copy") || link.href;
+        try {
+          const ok = await copyText(text);
+          show(ok ? "Kopirano ✅" : "Nije moguće kopirati");
+        } catch {
+          show("Nije moguće kopirati");
+        }
+      }
+
+      link.addEventListener("click", doCopy);
+      if (btn) btn.addEventListener("click", doCopy);
+    })();
+  </script>
+</body>
+</html>
