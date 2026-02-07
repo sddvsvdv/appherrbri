@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>VolumTransport チュートリアル</title>
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="description" content="VolumTransport チュートリアル：アプリの仕組み、どんな場面で使うべきか、そして実際に何が期待できるかを説明します。" />
+
+  <link rel="canonical" href="https://aplicacionesherrbri.com/tutorial/ja/00-presentation/" />
+
+  <meta property="og:title" content="VolumTransport チュートリアル" />
+  <meta property="og:description" content="VolumTransport の使い方と、アプリに期待できること。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aplicacionesherrbri.com/tutorial/ja/00-presentation/" />
+  <meta property="og:locale" content="ja_JP" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "VolumTransport",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Android",
+      "inLanguage": "ja",
+      "url": "https://aplicacionesherrbri.com/tutorial/ja/00-presentation/",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.herrbri.volumtransport",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Aplicaciones HerrBri"
+      }
+    }
+  </script>
+
+
+
+  <style>
+    :root{
+      --bg: #d6e6de;
+      --card: #f7fbf9;
+      --text: #0f172a;
+      --border: #cfe3d8;
+      --link: #0b4e2a;
+      --accent: #1f7a4a;
+      --muted: #4b5563;
+    }
+
+    *{ box-sizing: border-box; }
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .wrap{
+      min-height: 100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 36px 14px;
+    }
+
+    .card{
+      width: min(900px, 100%);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 12px 34px rgba(0,0,0,.12);
+      padding: 32px 32px;
+    }
+
+    h1{
+      margin: 0 0 28px;
+      font-size: clamp(30px, 3vw, 38px);
+      letter-spacing: -0.02em;
+      text-align: center;
+      position: relative;
+    }
+
+    h1::after{
+      content: "";
+      display: block;
+      width: clamp(120px, 18vw, 220px);
+      height: 4px;
+      margin: 14px auto 0;
+      background-color: var(--accent);
+      border-radius: 2px;
+    }
+
+    h2{
+      margin: 32px 0 10px;
+      font-size: 19px;
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+    }
+
+    p{ margin: 0 0 12px; }
+
+    ul{
+      margin: 8px 0 0 18px;
+    }
+
+    li{
+      margin: 6px 0;
+    }
+
+    hr{
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 28px 0 18px;
+    }
+
+    a{
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover{
+      text-decoration: underline;
+    }
+
+    .section{
+      margin-bottom: 24px;
+    }
+
+    .info-pill{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      background: rgba(31,122,74,.06);
+      border-radius: 12px;
+      color: var(--muted);
+      margin: 6px 0 10px;
+    }
+
+    .info-icon{
+      width: 22px;
+      height: 22px;
+      flex: 0 0 22px;
+    }
+
+    /* Versiones */
+    .versions{
+      margin: 10px 0 12px;
+      padding: 0;
+      list-style: none;
+    }
+    .versions li{
+      margin: 8px 0;
+    }
+    .version-link{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,.82);
+      color: var(--text);
+      font-weight: 700;
+    }
+    .version-link:hover{
+      text-decoration: none;
+      border-color: rgba(31,122,74,.45);
+      box-shadow: 0 6px 18px rgba(0,0,0,.07);
+    }
+    .badge{
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--accent);
+      border: 1px solid rgba(31,122,74,.35);
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(31,122,74,.06);
+    }
+
+    /* Copiar enlace */
+    .copy-row{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 6px;
+      flex-wrap: wrap;
+    }
+    .copy-link{
+      font-weight: 700;
+    }
+    .copy-btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,.82);
+      color: var(--accent);
+      cursor: pointer;
+    }
+    .copy-btn:hover{
+      border-color: rgba(31,122,74,.45);
+      box-shadow: 0 6px 18px rgba(0,0,0,.07);
+    }
+    .copy-icon{
+      width: 18px;
+      height: 18px;
+    }
+    .copy-msg{
+      color: var(--muted);
+      font-weight: 600;
+      min-width: 90px;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <article class="card">
+
+      <h1>VolumTransport チュートリアル</h1>
+
+      <div class="section">
+        <p>
+          これはアプリ
+          <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
+            <b>VolumTransport</b>
+          </a>
+          のチュートリアルです。
+        </p>
+
+        <p>
+          このチュートリアルの目的は、アプリの仕組み、どんな場面で使うとよいか、
+          そして実際に何が期待できるかを理解できるようにすることです。
+        </p>
+
+        <p>
+          すでにアプリを利用し始めていて、正しく使いたいユーザー向けに作られています。
+        </p>
+      </div>
+
+      <h2>AI（人工知能）でチュートリアルを活用する</h2>
+
+      <div class="section">
+        <p>
+          このチュートリアルの内容は、AI（人工知能）でも解釈できるように準備されています。
+        </p>
+
+        <p>
+          もしよければ、チュートリアルの開始リンクをコピーしてAIに貼り付け、
+          VolumTransport に関する質問を自由にしてください：
+          特定のオプションの動作、計算モードの目的、
+          どんな場合にアプリを使うべきか、または制限事項など。
+        </p>
+
+        <p>
+          AIは、このチュートリアルに含まれる情報に基づいて回答します。
+        </p>
+
+        <p>
+          <b>チュートリアルのリンク：</b><br>
+
+          <span class="copy-row">
+            <a href="https://aplicacionesherrbri.com/tutorial/ja/00-presentation/"
+               id="copyTutorialLink"
+               data-copy="https://aplicacionesherrbri.com/tutorial/ja/00-presentation/"
+               class="copy-link"
+               title="クリックしてコピー"
+               role="button">
+              https://aplicacionesherrbri.com/tutorial/ja/00-presentation/
+            </a>
+
+            <button type="button"
+                    class="copy-btn"
+                    id="copyTutorialBtn"
+                    aria-label="リンクをクリップボードにコピー"
+                    title="コピー">
+              <svg class="copy-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M9 9h10v10H9V9Z" stroke="currentColor" stroke-width="1.8" />
+                <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"
+                      stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </button>
+
+            <span id="copyMsg" class="copy-msg" aria-live="polite"></span>
+          </span>
+        </p>
+      </div>
+
+      <h2>アプリの成り立ちと理念</h2>
+
+      <div class="section">
+        <p>VolumTransport は、ソフトウェア企業や外部プログラマーによって作られたものではありません。</p>
+
+        <p>
+          配送と積み込みの現場で日々起きる現実の問題を出発点に、
+          輸送のプロフェッショナルがすべて開発しました。
+          Google Play ストアに同様のツールが見当たらなかったため、
+          実際のニーズに焦点を当てた実用的なアプリを作ることにしました。
+        </p>
+
+        <p>
+          そのため、このアプリは複雑で理論的な解決策よりも、
+          実用性を優先しています。
+        </p>
+
+        <p>
+          もし疑問や提案があったり、改善できそうな点に気付いた場合は、
+          メールを送ってください。できるだけ早く返信します。
+        </p>
+
+        <p>
+          <a href="mailto:albherrbri@gmail.com">メールを送る：albherrbri@gmail.com</a>
+        </p>
+      </div>
+
+      <h2>VolumTransport ができること（できないこと）</h2>
+
+      <div class="section">
+        <p>
+          VolumTransport の主な目的は、<b>荷物が特定のスペースにどう収まるか</b>を計算し、
+          入力した寸法に基づいて <b>入るか入らないか</b> を判定することです。
+        </p>
+
+        <p>
+          「入る／入らない」だけでなく、必要に応じて
+          <b>占有率</b>、<b>重量</b>、そして有効化すれば <b>経済結果</b> などの有用な情報も表示できます。
+          このチュートリアルでは、利用できるすべてのオプションを順に説明します。
+        </p>
+
+        <p>
+          これらの計算のために、アプリは
+          <b>bin packing（ビン・パッキング）</b> と呼ばれる方法を使用します。
+        </p>
+
+        <p>
+          <b>これはどういう意味ですか？</b><br>
+          bin packing は、限られたスペース（例：車両）の中に複数の荷物を
+          できるだけ効率よく配置する方法を計算する手法です。
+          物理的にすべての組み合わせを試さなくても、実際の占有を推定できます。
+        </p>
+
+        <p>
+          <b>他の方法と何が違うのですか？</b><br>
+          総体積だけに基づく計算（単に体積を足し合わせるだけ）とは異なり、
+          bin packing は <b>実際の寸法</b>（長さ・幅・高さ）と、荷物同士の噛み合わせを考慮します。
+          目的は、<b>実用的で素早い推定</b>を提供し、
+          <b>3D可視化</b> によって、作業前の判断を助けることです。
+        </p>
+
+        <p>
+          アプリは、体積・向き・スペース占有の論理的なルールに基づいて荷物を配置します。
+          結果は、プロにとっての参考・補助として機能します。
+        </p>
+
+        <p><b>次の点は重要です：</b></p>
+        <ul>
+          <li>アプリがスペースの整理方法を決めるわけではありません。</li>
+          <li>アプリは運送者の経験を置き換えるものではありません。</li>
+          <li>最終責任は、実際に積み込む人にあります。</li>
+        </ul>
+
+        <p>
+          各プロは、自分の判断や経験、作業状況に応じて異なる方法で貨物を配置できます。
+          VolumTransport は高度な計算ツールであり、自動命令ではありません。
+        </p>
+      </div>
+
+      <h2>アプリ全体に関する共通メモ</h2>
+
+      <div class="section">
+        <div class="info-pill" aria-label="情報アイコン">
+          <svg class="info-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M12 10.6v6.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M12 7.4h.01" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+          </svg>
+          <span>各画面にヘルプがあります</span>
+        </div>
+
+        <p>
+          アプリ設計時に、最初は理解が難しいツールになり得ることを考慮しました。
+          そのため、各画面にヘルプを追加しています。
+        </p>
+
+        <p>
+          ヘルプは情報アイコン
+          （丸の中の <b>i</b>）で表示されます。
+          各画面に何があるのか、何のためのものかを説明し、ユーザーが行き詰まらないように案内します。
+        </p>
+      </div>
+
+      <h2>バージョン</h2>
+
+      <div class="section">
+        <p>アプリには4種類のバージョンがあります：</p>
+
+        <ul class="versions">
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">01</span>
+              1週間無料
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">02</span>
+              広告あり無料
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">03</span>
+              広告なし無料
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">04</span>
+              プレミアム
+            </a>
+          </li>
+        </ul>
+
+        <p>
+          どのバージョンでも車両に入る箱の数を計算できますが、より多くの情報や機能が必要になると、
+          バージョンによって制限がある場合があります。
+        </p>
+
+        <p>
+          バージョン購入は
+          <a href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">カテゴリをアップグレード</a>
+          画面から行えます。
+        </p>
+      </div>
+
+      <hr>
+
+      <h2>目次</h2>
+      <p>
+        <a href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+          01 – トップページ
+        </a>
+      </p>
+
+      <h2>言語</h2>
+
+      <div class="section">
+        <p>VolumTransport は複数の言語に対応しています。</p>
+
+        <p><b>アプリの言語：</b></p>
+        <p style="margin-bottom:10px;">
+          英語 (en)、アラビア語 (ar)、バングラ語 (bn)、バスク語 (ba)、ブルガリア語 (bg)、カタロニア語 (ca)、中国語 (zh)、クロアチア語 (hr)、チェコ語 (cs)、
+          デンマーク語 (da)、オランダ語 (nl)、エストニア語 (et)、フィンランド語 (fi)、フランス語 (fr)、ガリシア語 (gl)、ドイツ語 (de)、ギリシャ語 (el)、
+          ヘブライ語 (iw)、ヒンディー語 (hi)、ハンガリー語 (hu)、インドネシア語 (id)、アイルランド語 (ga)、イタリア語 (it)、日本語 (ja)、韓国語 (ko)、
+          ラオ語 (lo)、ラトビア語 (lv)、リトアニア語 (lt)、ルクセンブルク語 (lb)、マルタ語 (mt)、ネパール語 (ne)、ノルウェー語 (nb)、ペルシャ語 (fa)、
+          ポーランド語 (pl)、ポルトガル語 (pt)、パキスタンのパンジャブ語 (pa-rpk)（シャームキー文字）、ルーマニア語 (ro)、ロシア語 (ru)、
+          スロバキア語 (sk)、スロベニア語 (sl)、スペイン語 (es)、スウェーデン語 (sv)、タイ語 (th)、トルコ語 (tr)、ウクライナ語 (uk)、ウルドゥー語 (ur)、
+          ベトナム語 (vi)。
+        </p>
+
+        <p><b>チュートリアルの言語：</b></p>
+        <p>
+          英語 (en)、ドイツ語 (de)、バングラ語 (bn)、ブルガリア語 (bg)、チェコ語 (cs)、簡体字中国語 (zh)、韓国語 (ko)、クロアチア語 (hr)、
+          デンマーク語 (da)、スロバキア語 (sk)、スロベニア語 (sl)、スペイン語 (es)、エストニア語 (et)、フィンランド語 (fi)、フランス語 (fr)、ギリシャ語 (el)、
+          ヘブライ語 (iw)、ヒンディー語 (hi)、ハンガリー語 (hu)、インドネシア語 (id)、イタリア語 (it)、日本語 (ja)、ラオ語 (lo)、ラトビア語 (lv)、
+          リトアニア語 (lt)、オランダ語 (nl)、ネパール語 (ne)、ノルウェー語 (no)、ペルシャ語 (fa)、ポーランド語 (pl)、ポルトガル語 (pt)、
+          パキスタンのパンジャブ語 (pa-rpk)（シャームキー文字）、ルーマニア語 (ro)、ロシア語 (ru)、スウェーデン語 (sv)、タイ語 (th)、
+          トルコ語 (tr)、ウクライナ語 (uk)、ウルドゥー語 (ur)、ベトナム語 (vi)、アラビア語 (ar)。
+        </p>
+        <p>
+          このチュートリアルはまだ開発中ですが、質問や不明点があれば、以下へメールでお問い合わせください：
+        </p>
+
+        <p>
+          <a href="mailto:albherrbri@gmail.com">メールを送る：albherrbri@gmail.com</a>
+        </p>
+        
+      </div>
+
+    </article>
+  </main>
+
+  <script>
+    (function () {
+      const link = document.getElementById("copyTutorialLink");
+      const btn  = document.getElementById("copyTutorialBtn");
+      const msg  = document.getElementById("copyMsg");
+      if (!link) return;
+
+      function show(text) {
+        if (!msg) return;
+        msg.textContent = text;
+        clearTimeout(show._t);
+        show._t = setTimeout(() => (msg.textContent = ""), 1600);
+      }
+
+      async function copyText(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          return true;
+        }
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "absolute";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        const ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        return ok;
+      }
+
+      async function doCopy(e) {
+        if (e) e.preventDefault();
+        const text = link.getAttribute("data-copy") || link.href;
+        try {
+          const ok = await copyText(text);
+          show(ok ? "コピーしました ✅" : "コピーできませんでした");
+        } catch {
+          show("コピーできませんでした");
+        }
+      }
+
+      link.addEventListener("click", doCopy);
+      if (btn) btn.addEventListener("click", doCopy);
+    })();
+  </script>
+</body>
+</html>
