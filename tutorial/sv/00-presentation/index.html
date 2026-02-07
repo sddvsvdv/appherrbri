@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>VolumTransport-guide</title>
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="description" content="VolumTransport-guide: hur appen fungerar, i vilka situationer du bör använda den och vad du faktiskt kan förvänta dig." />
+
+  <link rel="canonical" href="https://aplicacionesherrbri.com/tutorial/sv/00-presentation/" />
+
+  <meta property="og:title" content="VolumTransport-guide" />
+  <meta property="og:description" content="Så använder du VolumTransport och vad du kan förvänta dig av appen." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aplicacionesherrbri.com/tutorial/sv/00-presentation/" />
+  <meta property="og:locale" content="sv_SE" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "VolumTransport",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Android",
+      "inLanguage": "sv",
+      "url": "https://aplicacionesherrbri.com/tutorial/sv/00-presentation/",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.herrbri.volumtransport",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Aplicaciones HerrBri"
+      }
+    }
+  </script>
+
+
+
+  <style>
+    :root{
+      --bg: #d6e6de;
+      --card: #f7fbf9;
+      --text: #0f172a;
+      --border: #cfe3d8;
+      --link: #0b4e2a;
+      --accent: #1f7a4a;
+      --muted: #4b5563;
+    }
+
+    *{ box-sizing: border-box; }
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .wrap{
+      min-height: 100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 36px 14px;
+    }
+
+    .card{
+      width: min(900px, 100%);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 12px 34px rgba(0,0,0,.12);
+      padding: 32px 32px;
+    }
+
+    h1{
+      margin: 0 0 28px;
+      font-size: clamp(30px, 3vw, 38px);
+      letter-spacing: -0.02em;
+      text-align: center;
+      position: relative;
+    }
+
+    h1::after{
+      content: "";
+      display: block;
+      width: clamp(120px, 18vw, 220px);
+      height: 4px;
+      margin: 14px auto 0;
+      background-color: var(--accent);
+      border-radius: 2px;
+    }
+
+    h2{
+      margin: 32px 0 10px;
+      font-size: 19px;
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+    }
+
+    p{ margin: 0 0 12px; }
+
+    ul{
+      margin: 8px 0 0 18px;
+    }
+
+    li{
+      margin: 6px 0;
+    }
+
+    hr{
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 28px 0 18px;
+    }
+
+    a{
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover{
+      text-decoration: underline;
+    }
+
+    .section{
+      margin-bottom: 24px;
+    }
+
+    .info-pill{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      background: rgba(31,122,74,.06);
+      border-radius: 12px;
+      color: var(--muted);
+      margin: 6px 0 10px;
+    }
+
+    .info-icon{
+      width: 22px;
+      height: 22px;
+      flex: 0 0 22px;
+    }
+
+    /* Versiones */
+    .versions{
+      margin: 10px 0 12px;
+      padding: 0;
+      list-style: none;
+    }
+    .versions li{
+      margin: 8px 0;
+    }
+    .version-link{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,.82);
+      color: var(--text);
+      font-weight: 700;
+    }
+    .version-link:hover{
+      text-decoration: none;
+      border-color: rgba(31,122,74,.45);
+      box-shadow: 0 6px 18px rgba(0,0,0,.07);
+    }
+    .badge{
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--accent);
+      border: 1px solid rgba(31,122,74,.35);
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(31,122,74,.06);
+    }
+
+    /* Copiar enlace */
+    .copy-row{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 6px;
+      flex-wrap: wrap;
+    }
+    .copy-link{
+      font-weight: 700;
+    }
+    .copy-btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,.82);
+      color: var(--accent);
+      cursor: pointer;
+    }
+    .copy-btn:hover{
+      border-color: rgba(31,122,74,.45);
+      box-shadow: 0 6px 18px rgba(0,0,0,.07);
+    }
+    .copy-icon{
+      width: 18px;
+      height: 18px;
+    }
+    .copy-msg{
+      color: var(--muted);
+      font-weight: 600;
+      min-width: 90px;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <article class="card">
+
+      <h1>VolumTransport-guide</h1>
+
+      <div class="section">
+        <p>
+          Det här är guiden för appen
+          <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
+            <b>VolumTransport</b>
+          </a>.
+        </p>
+
+        <p>
+          Målet är att hjälpa dig att förstå hur appen fungerar, i vilka situationer det är rimligt att använda den
+          och vad du faktiskt kan förvänta dig av den.
+        </p>
+
+        <p>
+          Den är tänkt för användaren som redan har hittat till appen och vill använda den på rätt sätt.
+        </p>
+      </div>
+
+      <h2>Använd guiden med artificiell intelligens</h2>
+
+      <div class="section">
+        <p>
+          Innehållet i den här guiden är förberett så att det även kan tolkas
+          av artificiell intelligens.
+        </p>
+
+        <p>
+          Om du vill kan du kopiera startlänken till guiden, klistra in den i en AI
+          och ställa vilken fråga som helst om VolumTransport:
+          hur ett visst alternativ fungerar, vad ett beräkningsläge är till för,
+          i vilka fall du ska använda appen eller vilka begränsningar den har.
+        </p>
+
+        <p>
+          AI:n svarar utifrån informationen som finns i den här guiden.
+        </p>
+
+        <p>
+          <b>Länk till guiden:</b><br>
+
+          <span class="copy-row">
+            <a href="https://aplicacionesherrbri.com/tutorial/sv/00-presentation/"
+               id="copyTutorialLink"
+               data-copy="https://aplicacionesherrbri.com/tutorial/sv/00-presentation/"
+               class="copy-link"
+               title="Klicka för att kopiera"
+               role="button">
+              https://aplicacionesherrbri.com/tutorial/sv/00-presentation/
+            </a>
+
+            <button type="button"
+                    class="copy-btn"
+                    id="copyTutorialBtn"
+                    aria-label="Kopiera länken till urklipp"
+                    title="Kopiera">
+              <svg class="copy-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M9 9h10v10H9V9Z" stroke="currentColor" stroke-width="1.8" />
+                <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"
+                      stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </button>
+
+            <span id="copyMsg" class="copy-msg" aria-live="polite"></span>
+          </span>
+        </p>
+      </div>
+
+      <h2>Appens ursprung och filosofi</h2>
+
+      <div class="section">
+        <p>VolumTransport har inte skapats av ett mjukvaruföretag eller en extern programmerare.</p>
+
+        <p>
+          Den har utvecklats helt och hållet av en transportproffs,
+          utifrån verkliga vardagsproblem i leverans och lastning av gods.
+          Eftersom liknande verktyg saknades i Google Play Store
+          valde man att skapa en praktisk app, fokuserad på verkliga behov.
+        </p>
+
+        <p>
+          Därför prioriterar appen praktisk nytta
+          framför komplexa eller teoretiska lösningar.
+        </p>
+
+        <p>
+          Om du någon gång har frågor, förslag eller upptäcker något som kan förbättras,
+          kan du skicka ett e-postmeddelande så svarar vi så snabbt som möjligt.
+        </p>
+
+        <p>
+          <a href="mailto:albherrbri@gmail.com">Skicka e-post: albherrbri@gmail.com</a>
+        </p>
+      </div>
+
+      <h2>Vad VolumTransport gör (och inte gör)</h2>
+
+      <div class="section">
+        <p>
+          Huvudsyftet med VolumTransport är att <b>beräkna hur en last får plats</b>
+          i ett visst utrymme och om den <b>får plats eller inte</b> utifrån de angivna måtten.
+        </p>
+
+        <p>
+          Utöver ”får plats / får inte plats” kan appen också visa nyttiga data som
+          <b>beläggningsgrad</b>, <b>vikt</b> och, om du aktiverar det, <b>ekonomiska resultat</b>.
+          I den här guiden går vi igenom alla tillgängliga alternativ steg för steg.
+        </p>
+
+        <p>
+          För att göra dessa beräkningar använder appen en metod som kallas
+          <b>bin packing</b>.
+        </p>
+
+        <p>
+          <b>Vad betyder det?</b><br>
+          Bin packing är ett sätt att beräkna hur man placerar flera kollin i ett begränsat utrymme
+          (till exempel ett fordon) för att utnyttja utrymmet så effektivt som möjligt.
+          Metoden gör det möjligt att uppskatta den verkliga beläggningen utan att fysiskt testa varje kombination.
+        </p>
+
+        <p>
+          <b>Hur skiljer det sig från andra metoder?</b><br>
+          Till skillnad från en beräkning som bara baseras på totalvolymen, som bara summerar utrymme och kan misslyckas i praktiken,
+          tar bin packing hänsyn till de <b>faktiska måtten</b> (längd, bredd och höjd) och hur kollin passar ihop.
+          Målet är att ge en <b>praktisk och snabb uppskattning</b>,
+          stödd av en <b>3D-visualisering</b>, som hjälper dig att fatta beslut innan uppdraget utförs.
+        </p>
+
+        <p>
+          Appen placerar kollin enligt logiska regler för volym, orientering
+          och utrymmesutnyttjande. Resultatet fungerar som en referens och ett stöd för yrkespersonen.
+        </p>
+
+        <p><b>Det är viktigt att vara tydlig med att:</b></p>
+        <ul>
+          <li>Appen bestämmer inte hur utrymmet ska organiseras.</li>
+          <li>Appen ersätter inte transportörens erfarenhet.</li>
+          <li>Personen som lastar är alltid slutligt ansvarig.</li>
+        </ul>
+
+        <p>
+          Varje yrkesperson kan lasta godset på olika sätt utifrån sitt omdöme,
+          sin erfarenhet eller uppdragets förutsättningar.
+          VolumTransport fungerar som en avancerad kalkylator, inte som en automatisk order.
+        </p>
+      </div>
+
+      <h2>Allmänna anteckningar för hela appen</h2>
+
+      <div class="section">
+        <div class="info-pill" aria-label="Informationsikon">
+          <svg class="info-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M12 10.6v6.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M12 7.4h.01" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+          </svg>
+          <span>Hjälp finns i varje vy</span>
+        </div>
+
+        <p>
+          När appen utformades tog man hänsyn till att det är ett verktyg som kan vara svårt att förstå
+          i början. Därför har hjälp lagts till i varje vy.
+        </p>
+
+        <p>
+          Den hjälpen visas via informationsikonen
+          (ett <b>i</b> i en cirkel).
+          Den förklarar vad som finns i varje vy och vad det är till för, och guidar användaren så att man inte fastnar.
+        </p>
+      </div>
+
+      <h2>Versioner</h2>
+
+      <div class="section">
+        <p>Det finns fyra typer av versioner av appen:</p>
+
+        <ul class="versions">
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">01</span>
+              En vecka gratis
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">02</span>
+              Gratis med annonser
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">03</span>
+              Gratis utan annonser
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">04</span>
+              Premium
+            </a>
+          </li>
+        </ul>
+
+        <p>
+          Alla beräknar hur många lådor som får plats i fordonet, men i takt med att du
+          behöver mer information eller fler funktioner kan det finnas begränsningar beroende på version.
+        </p>
+
+        <p>
+          För att köpa en version kan du göra det från vyn
+          <a href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">Uppgradera kategori</a>.
+        </p>
+      </div>
+
+      <hr>
+
+      <h2>Sammanfattning</h2>
+      <p>
+        <a href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+          01 – Startsida
+        </a>
+      </p>
+
+      <h2>Språk</h2>
+
+      <div class="section">
+        <p>VolumTransport finns tillgänglig på flera språk.</p>
+
+        <p><b>Appens språk:</b></p>
+        <p style="margin-bottom:10px;">
+          Engelska (en), Arabiska (ar), Bangla (bn), Baskiska (ba), Bulgariska (bg), Katalanska (ca), Kinesiska (zh), Kroatiska (hr), Tjeckiska (cs),
+          Danska (da), Nederländska (nl), Estniska (et), Finska (fi), Franska (fr), Galiciska (gl), Tyska (de), Grekiska (el),
+          Hebreiska (iw), Hindi (hi), Ungerska (hu), Indonesiska (id), Iriska (ga), Italienska (it), Japanska (ja), Koreanska (ko),
+          Laotiska (lo), Lettiska (lv), Litauiska (lt), Luxemburgiska (lb), Maltesiska (mt), Nepalesiska (ne), Norska (nb), Persiska (fa),
+          Polska (pl), Portugisiska (pt), Punjabi (Pakistan) (pa-rpk) (Shahmukhi-skrift), Rumänska (ro), Ryska (ru),
+          Slovakiska (sk), Slovenska (sl), Spanska (es), Svenska (sv), Thailändska (th), Turkiska (tr), Ukrainska (uk), Urdu (ur),
+          Vietnamesiska (vi).
+        </p>
+
+        <p><b>Guidens språk:</b></p>
+        <p>
+          Engelska (en), Tyska (de), Bangla (bn), Bulgariska (bg), Tjeckiska (cs), Förenklad kinesiska (zh), Koreanska (ko), Kroatiska (hr),
+          Danska (da), Slovakiska (sk), Slovenska (sl), Spanska (es), Estniska (et), Finska (fi), Franska (fr), Grekiska (el),
+          Hebreiska (iw), Hindi (hi), Ungerska (hu), Indonesiska (id), Italienska (it), Japanska (ja), Laotiska (lo), Lettiska (lv),
+          Litauiska (lt), Nederländska (nl), Nepalesiska (ne), Norska (no), Persiska (fa), Polska (pl), Portugisiska (pt),
+          Punjabi (Pakistan) (pa-rpk) (Shahmukhi-skrift), Rumänska (ro), Ryska (ru), Svenska (sv), Thailändska (th),
+          Turkiska (tr), Ukrainska (uk), Urdu (ur), Vietnamesiska (vi), Arabiska (ar).
+        </p>
+        <p>
+          Den här guiden är fortfarande under utveckling, men alla frågor eller förtydliganden kan du få genom att skicka e-post till:
+        </p>
+
+        <p>
+          <a href="mailto:albherrbri@gmail.com">Skicka e-post: albherrbri@gmail.com</a>
+        </p>
+        
+      </div>
+
+    </article>
+  </main>
+
+  <script>
+    (function () {
+      const link = document.getElementById("copyTutorialLink");
+      const btn  = document.getElementById("copyTutorialBtn");
+      const msg  = document.getElementById("copyMsg");
+      if (!link) return;
+
+      function show(text) {
+        if (!msg) return;
+        msg.textContent = text;
+        clearTimeout(show._t);
+        show._t = setTimeout(() => (msg.textContent = ""), 1600);
+      }
+
+      async function copyText(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          return true;
+        }
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "absolute";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        const ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        return ok;
+      }
+
+      async function doCopy(e) {
+        if (e) e.preventDefault();
+        const text = link.getAttribute("data-copy") || link.href;
+        try {
+          const ok = await copyText(text);
+          show(ok ? "Kopierat ✅" : "Det gick inte att kopiera");
+        } catch {
+          show("Det gick inte att kopiera");
+        }
+      }
+
+      link.addEventListener("click", doCopy);
+      if (btn) btn.addEventListener("click", doCopy);
+    })();
+  </script>
+</body>
+</html>
