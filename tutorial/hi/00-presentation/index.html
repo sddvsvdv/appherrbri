@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>VolumTransport ट्यूटोरियल</title>
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="description" content="VolumTransport ट्यूटोरियल: ऐप कैसे काम करती है, किन परिस्थितियों में इसका उपयोग करना उचित है, और आप इससे वास्तव में क्या उम्मीद कर सकते हैं।" />
+
+  <link rel="canonical" href="https://aplicacionesherrbri.com/tutorial/hi/00-presentation/" />
+
+  <meta property="og:title" content="VolumTransport ट्यूटोरियल" />
+  <meta property="og:description" content="VolumTransport का उपयोग कैसे करें और ऐप से क्या उम्मीद कर सकते हैं।" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aplicacionesherrbri.com/tutorial/hi/00-presentation/" />
+  <meta property="og:locale" content="hi_IN" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "VolumTransport",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Android",
+      "inLanguage": "hi",
+      "url": "https://aplicacionesherrbri.com/tutorial/hi/00-presentation/",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.herrbri.volumtransport",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Aplicaciones HerrBri"
+      }
+    }
+  </script>
+
+
+
+  <style>
+    :root{
+      --bg: #d6e6de;
+      --card: #f7fbf9;
+      --text: #0f172a;
+      --border: #cfe3d8;
+      --link: #0b4e2a;
+      --accent: #1f7a4a;
+      --muted: #4b5563;
+    }
+
+    *{ box-sizing: border-box; }
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .wrap{
+      min-height: 100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 36px 14px;
+    }
+
+    .card{
+      width: min(900px, 100%);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 12px 34px rgba(0,0,0,.12);
+      padding: 32px 32px;
+    }
+
+    h1{
+      margin: 0 0 28px;
+      font-size: clamp(30px, 3vw, 38px);
+      letter-spacing: -0.02em;
+      text-align: center;
+      position: relative;
+    }
+
+    h1::after{
+      content: "";
+      display: block;
+      width: clamp(120px, 18vw, 220px);
+      height: 4px;
+      margin: 14px auto 0;
+      background-color: var(--accent);
+      border-radius: 2px;
+    }
+
+    h2{
+      margin: 32px 0 10px;
+      font-size: 19px;
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+    }
+
+    p{ margin: 0 0 12px; }
+
+    ul{
+      margin: 8px 0 0 18px;
+    }
+
+    li{
+      margin: 6px 0;
+    }
+
+    hr{
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 28px 0 18px;
+    }
+
+    a{
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover{
+      text-decoration: underline;
+    }
+
+    .section{
+      margin-bottom: 24px;
+    }
+
+    .info-pill{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      background: rgba(31,122,74,.06);
+      border-radius: 12px;
+      color: var(--muted);
+      margin: 6px 0 10px;
+    }
+
+    .info-icon{
+      width: 22px;
+      height: 22px;
+      flex: 0 0 22px;
+    }
+
+    /* Versiones */
+    .versions{
+      margin: 10px 0 12px;
+      padding: 0;
+      list-style: none;
+    }
+    .versions li{
+      margin: 8px 0;
+    }
+    .version-link{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,.82);
+      color: var(--text);
+      font-weight: 700;
+    }
+    .version-link:hover{
+      text-decoration: none;
+      border-color: rgba(31,122,74,.45);
+      box-shadow: 0 6px 18px rgba(0,0,0,.07);
+    }
+    .badge{
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--accent);
+      border: 1px solid rgba(31,122,74,.35);
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(31,122,74,.06);
+    }
+
+    /* Copiar enlace */
+    .copy-row{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 6px;
+      flex-wrap: wrap;
+    }
+    .copy-link{
+      font-weight: 700;
+    }
+    .copy-btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,.82);
+      color: var(--accent);
+      cursor: pointer;
+    }
+    .copy-btn:hover{
+      border-color: rgba(31,122,74,.45);
+      box-shadow: 0 6px 18px rgba(0,0,0,.07);
+    }
+    .copy-icon{
+      width: 18px;
+      height: 18px;
+    }
+    .copy-msg{
+      color: var(--muted);
+      font-weight: 600;
+      min-width: 90px;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <article class="card">
+
+      <h1>VolumTransport ट्यूटोरियल</h1>
+
+      <div class="section">
+        <p>
+          यह एप्लिकेशन
+          <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
+            <b>VolumTransport</b>
+          </a>
+          का ट्यूटोरियल है।
+        </p>
+
+        <p>
+          इसका उद्देश्य आपको यह समझने में मदद करना है कि ऐप कैसे काम करती है, किन परिस्थितियों में इसका उपयोग करना सही है
+          और आप इससे वास्तव में क्या उम्मीद कर सकते हैं।
+        </p>
+
+        <p>
+          यह उन उपयोगकर्ताओं के लिए है जो पहले से ऐप में हैं और इसे सही तरीके से इस्तेमाल करना चाहते हैं।
+        </p>
+      </div>
+
+      <h2>कृत्रिम बुद्धिमत्ता के साथ ट्यूटोरियल का उपयोग</h2>
+
+      <div class="section">
+        <p>
+          इस ट्यूटोरियल की सामग्री इस तरह तैयार की गई है कि इसे
+          कृत्रिम बुद्धिमत्ता भी समझ और व्याख्या कर सके।
+        </p>
+
+        <p>
+          अगर आप चाहें, तो आप ट्यूटोरियल के शुरुआती लिंक को कॉपी कर सकते हैं, उसे किसी AI में पेस्ट कर सकते हैं
+          और VolumTransport से जुड़ा कोई भी सवाल पूछ सकते हैं:
+          कोई विशेष विकल्प कैसे काम करता है, कोई गणना मोड किस काम आता है,
+          किन मामलों में ऐप का उपयोग करना चाहिए या इसकी क्या सीमाएँ हैं।
+        </p>
+
+        <p>
+          AI इस ट्यूटोरियल में दी गई जानकारी के आधार पर जवाब देगा।
+        </p>
+
+        <p>
+          <b>ट्यूटोरियल लिंक:</b><br>
+
+          <span class="copy-row">
+            <a href="https://aplicacionesherrbri.com/tutorial/hi/00-presentation/"
+               id="copyTutorialLink"
+               data-copy="https://aplicacionesherrbri.com/tutorial/hi/00-presentation/"
+               class="copy-link"
+               title="कॉपी करने के लिए क्लिक करें"
+               role="button">
+              https://aplicacionesherrbri.com/tutorial/hi/00-presentation/
+            </a>
+
+            <button type="button"
+                    class="copy-btn"
+                    id="copyTutorialBtn"
+                    aria-label="लिंक को क्लिपबोर्ड में कॉपी करें"
+                    title="कॉपी करें">
+              <svg class="copy-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M9 9h10v10H9V9Z" stroke="currentColor" stroke-width="1.8" />
+                <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"
+                      stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </button>
+
+            <span id="copyMsg" class="copy-msg" aria-live="polite"></span>
+          </span>
+        </p>
+      </div>
+
+      <h2>ऐप की उत्पत्ति और दर्शन</h2>
+
+      <div class="section">
+        <p>VolumTransport किसी सॉफ्टवेयर कंपनी या बाहरी प्रोग्रामर द्वारा नहीं बनाई गई है।</p>
+
+        <p>
+          इसे पूरी तरह से एक परिवहन पेशेवर ने विकसित किया है,
+          जो डिलीवरी और माल लोडिंग के दैनिक वास्तविक समस्याओं से प्रेरित है।
+          Google Play Store पर समान टूल्स की कमी के कारण,
+          एक व्यावहारिक ऐप बनाने का फैसला किया गया, जो वास्तविक जरूरतों पर केंद्रित हो।
+        </p>
+
+        <p>
+          इसी वजह से, ऐप जटिल या सैद्धांतिक समाधानों की बजाय
+          व्यावहारिक उपयोगिता को प्राथमिकता देती है।
+        </p>
+
+        <p>
+          अगर कभी आपके पास सवाल, सुझाव हों या आप कुछ ऐसा देखें जिसे बेहतर किया जा सकता है,
+          तो आप ईमेल भेज सकते हैं और यथासंभव जल्दी जवाब दिया जाएगा।
+        </p>
+
+        <p>
+          <a href="mailto:albherrbri@gmail.com">ईमेल भेजें: albherrbri@gmail.com</a>
+        </p>
+      </div>
+
+      <h2>VolumTransport क्या करती है (और क्या नहीं करती)</h2>
+
+      <div class="section">
+        <p>
+          VolumTransport का मुख्य उद्देश्य <b>यह गणना करना है कि लोड कैसे फिट होता है</b>
+          किसी निर्धारित स्थान में, और दिए गए माप के अनुसार <b>फिट होता है या नहीं</b>।
+        </p>
+
+        <p>
+          “फिट / नहीं फिट” के अलावा, ऐप उपयोगी डेटा भी दिखा सकती है जैसे
+          <b>ऑक्यूपेंसी प्रतिशत</b>, <b>वजन</b> और, यदि आप सक्रिय करें, <b>आर्थिक परिणाम</b>।
+          इस ट्यूटोरियल में सभी उपलब्ध विकल्प चरण-दर-चरण दिखाए जाएंगे।
+        </p>
+
+        <p>
+          इन गणनाओं के लिए, ऐप एक विधि का उपयोग करती है जिसे
+          <b>bin packing</b> कहा जाता है।
+        </p>
+
+        <p>
+          <b>इसका क्या मतलब है?</b><br>
+          Bin packing एक तरीका है यह गणना करने का कि कई पैकेज/बॉक्स को सीमित जगह में कैसे रखा जाए
+          (उदाहरण के लिए, एक वाहन) ताकि उपलब्ध जगह का सर्वोत्तम उपयोग हो सके।
+          यह विधि वास्तविक ऑक्यूपेंसी का अनुमान लगाने देती है, बिना हर संयोजन को शारीरिक रूप से आजमाए।
+        </p>
+
+        <p>
+          <b>यह अन्य तरीकों से कैसे अलग है?</b><br>
+          केवल कुल वॉल्यूम पर आधारित गणना के विपरीत, जो सिर्फ जगह जोड़ती है और व्यवहार में विफल हो सकती है,
+          bin packing <b>वास्तविक आयामों</b> (लंबाई, चौड़ाई और ऊँचाई) और बॉक्स कैसे फिट होते हैं, इसे ध्यान में रखता है।
+          इसका लक्ष्य एक <b>व्यावहारिक और तेज़ अनुमान</b> देना है,
+          जिसे <b>3D विज़ुअलाइज़ेशन</b> के साथ सपोर्ट किया जाता है, ताकि सेवा से पहले निर्णय लेने में मदद मिले।
+        </p>
+
+        <p>
+          ऐप बॉक्स/पैकेज को वॉल्यूम, ओरिएंटेशन
+          और स्पेस ऑक्यूपेंसी के तार्किक नियमों के अनुसार रखती है। परिणाम पेशेवर के लिए एक संदर्भ और सहायता के रूप में काम करता है।
+        </p>
+
+        <p><b>यह स्पष्ट करना महत्वपूर्ण है कि:</b></p>
+        <ul>
+          <li>ऐप यह तय नहीं करती कि स्पेस को कैसे व्यवस्थित किया जाना चाहिए।</li>
+          <li>ऐप परिवहनकर्ता के अनुभव की जगह नहीं लेती।</li>
+          <li>लोड करने वाला व्यक्ति हमेशा अंतिम जिम्मेदार होता है।</li>
+        </ul>
+
+        <p>
+          हर पेशेवर अपने निर्णय,
+          अनुभव या सेवा की परिस्थितियों के अनुसार माल अलग तरीके से रख सकता है।
+          VolumTransport एक उन्नत कैलकुलेटर की तरह काम करती है, कोई स्वचालित आदेश नहीं।
+        </p>
+      </div>
+
+      <h2>पूरी ऐप के लिए सामान्य नोट्स</h2>
+
+      <div class="section">
+        <div class="info-pill" aria-label="जानकारी आइकन">
+          <svg class="info-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M12 10.6v6.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M12 7.4h.01" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+          </svg>
+          <span>हर स्क्रीन पर सहायता उपलब्ध है</span>
+        </div>
+
+        <p>
+          ऐप डिजाइन करते समय यह ध्यान रखा गया कि शुरुआती चरणों में इसे समझना मुश्किल हो सकता है।
+          इसलिए हर स्क्रीन में सहायता जोड़ी गई है।
+        </p>
+
+        <p>
+          यह सहायता सूचना आइकन से दिखाई देती है
+          (एक सर्कल के अंदर <b>i</b>).
+          यह बताती है कि हर स्क्रीन में क्या है और किस काम आता है, ताकि उपयोगकर्ता अटक न जाए।
+        </p>
+      </div>
+
+      <h2>संस्करण</h2>
+
+      <div class="section">
+        <p>ऐप के चार प्रकार के संस्करण हैं:</p>
+
+        <ul class="versions">
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">01</span>
+              एक हफ्ता मुफ्त
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">02</span>
+              विज्ञापनों के साथ मुफ्त
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">03</span>
+              बिना विज्ञापन के मुफ्त
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">04</span>
+              Premium
+            </a>
+          </li>
+        </ul>
+
+        <p>
+          सभी संस्करण यह गणना करते हैं कि वाहन में कितने बॉक्स फिट होते हैं, लेकिन जैसे-जैसे आपको अधिक जानकारी
+          या अधिक फीचर्स की जरूरत होती है, संस्करण के अनुसार सीमाएँ हो सकती हैं।
+        </p>
+
+        <p>
+          कोई संस्करण खरीदने के लिए आप स्क्रीन
+          <a href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">श्रेणी अपग्रेड करें</a>
+          से कर सकते हैं।
+        </p>
+      </div>
+
+      <hr>
+
+      <h2>सारांश</h2>
+      <p>
+        <a href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+          01 – मुख्य पृष्ठ
+        </a>
+      </p>
+
+      <h2>भाषाएँ</h2>
+
+      <div class="section">
+        <p>VolumTransport कई भाषाओं में उपलब्ध है।</p>
+
+        <p><b>ऐप की भाषाएँ:</b></p>
+        <p style="margin-bottom:10px;">
+          अंग्रेज़ी (en), अरबी (ar), बांग्ला (bn), बास्क (ba), बल्गेरियाई (bg), कातालान (ca), चीनी (zh), क्रोएशियाई (hr), चेक (cs),
+          डैनिश (da), डच (nl), एस्टोनियाई (et), फ़िनिश (fi), फ़्रेंच (fr), गैलिशियन (gl), जर्मन (de), ग्रीक (el),
+          हिब्रू (iw), हिंदी (hi), हंगेरियन (hu), इंडोनेशियाई (id), आयरिश (ga), इटालियन (it), जापानी (ja), कोरियाई (ko),
+          लाओ (lo), लातवियाई (lv), लिथुआनियाई (lt), लक्ज़मबर्गिश (lb), माल्टीज़ (mt), नेपाली (ne), नॉर्वेजियन (nb), फ़ारसी (fa),
+          पोलिश (pl), पुर्तगाली (pt), पाकिस्तानी पंजाबी (pa-rpk) (शाहमुखी लिपि), रोमानियाई (ro), रूसी (ru),
+          स्लोवाक (sk), स्लोवेनियाई (sl), स्पेनिश (es), स्वीडिश (sv), थाई (th), तुर्की (tr), यूक्रेनी (uk), उर्दू (ur),
+          वियतनामी (vi)।
+        </p>
+
+        <p><b>ट्यूटोरियल की भाषाएँ:</b></p>
+        <p>
+          अंग्रेज़ी (en), जर्मन (de), बांग्ला (bn), बल्गेरियाई (bg), चेक (cs), सरल चीनी (zh), कोरियाई (ko), क्रोएशियाई (hr),
+          डैनिश (da), स्लोवाक (sk), स्लोवेनियाई (sl), स्पेनिश (es), एस्टोनियाई (et), फ़िनिश (fi), फ़्रेंच (fr), ग्रीक (el),
+          हिब्रू (iw), हिंदी (hi), हंगेरियन (hu), इंडोनेशियाई (id), इटालियन (it), जापानी (ja), लाओ (lo), लातवियाई (lv),
+          लिथुआनियाई (lt), डच (nl), नेपाली (ne), नॉर्वेजियन (no), फ़ारसी (fa), पोलिश (pl), पुर्तगाली (pt),
+          पाकिस्तानी पंजाबी (pa-rpk) (शाहमुखी लिपि), रोमानियाई (ro), रूसी (ru), स्वीडिश (sv), थाई (th),
+          तुर्की (tr), यूक्रेनी (uk), उर्दू (ur), वियतनामी (vi), अरबी (ar)।
+        </p>
+        <p>
+          यह ट्यूटोरियल अभी विकास में है, लेकिन कोई भी सवाल या स्पष्टीकरण आप ईमेल भेजकर पूछ सकते हैं:
+        </p>
+
+        <p>
+          <a href="mailto:albherrbri@gmail.com">ईमेल भेजें: albherrbri@gmail.com</a>
+        </p>
+        
+      </div>
+
+    </article>
+  </main>
+
+  <script>
+    (function () {
+      const link = document.getElementById("copyTutorialLink");
+      const btn  = document.getElementById("copyTutorialBtn");
+      const msg  = document.getElementById("copyMsg");
+      if (!link) return;
+
+      function show(text) {
+        if (!msg) return;
+        msg.textContent = text;
+        clearTimeout(show._t);
+        show._t = setTimeout(() => (msg.textContent = ""), 1600);
+      }
+
+      async function copyText(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          return true;
+        }
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "absolute";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        const ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        return ok;
+      }
+
+      async function doCopy(e) {
+        if (e) e.preventDefault();
+        const text = link.getAttribute("data-copy") || link.href;
+        try {
+          const ok = await copyText(text);
+          show(ok ? "कॉपी हो गया ✅" : "कॉपी नहीं हो सका");
+        } catch {
+          show("कॉपी नहीं हो सका");
+        }
+      }
+
+      link.addEventListener("click", doCopy);
+      if (btn) btn.addEventListener("click", doCopy);
+    })();
+  </script>
+</body>
+</html>
