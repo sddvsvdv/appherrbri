@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Tutorial VolumTransport</title>
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="description" content="Tutorial VolumTransport: cum funcționează aplicația, în ce situații merită să o folosești și la ce te poți aștepta de la ea." />
+
+  <link rel="canonical" href="https://aplicacionesherrbri.com/tutorial/ro/00-presentation/" />
+
+  <meta property="og:title" content="Tutorial VolumTransport" />
+  <meta property="og:description" content="Cum să folosești VolumTransport și la ce te poți aștepta de la aplicație." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aplicacionesherrbri.com/tutorial/ro/00-presentation/" />
+  <meta property="og:locale" content="ro_RO" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "VolumTransport",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Android",
+      "inLanguage": "ro",
+      "url": "https://aplicacionesherrbri.com/tutorial/ro/00-presentation/",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.herrbri.volumtransport",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Aplicaciones HerrBri"
+      }
+    }
+  </script>
+
+
+
+  <style>
+    :root{
+      --bg: #d6e6de;
+      --card: #f7fbf9;
+      --text: #0f172a;
+      --border: #cfe3d8;
+      --link: #0b4e2a;
+      --accent: #1f7a4a;
+      --muted: #4b5563;
+    }
+
+    *{ box-sizing: border-box; }
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .wrap{
+      min-height: 100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 36px 14px;
+    }
+
+    .card{
+      width: min(900px, 100%);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 12px 34px rgba(0,0,0,.12);
+      padding: 32px 32px;
+    }
+
+    h1{
+      margin: 0 0 28px;
+      font-size: clamp(30px, 3vw, 38px);
+      letter-spacing: -0.02em;
+      text-align: center;
+      position: relative;
+    }
+
+    h1::after{
+      content: "";
+      display: block;
+      width: clamp(120px, 18vw, 220px);
+      height: 4px;
+      margin: 14px auto 0;
+      background-color: var(--accent);
+      border-radius: 2px;
+    }
+
+    h2{
+      margin: 32px 0 10px;
+      font-size: 19px;
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+    }
+
+    p{ margin: 0 0 12px; }
+
+    ul{
+      margin: 8px 0 0 18px;
+    }
+
+    li{
+      margin: 6px 0;
+    }
+
+    hr{
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 28px 0 18px;
+    }
+
+    a{
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover{
+      text-decoration: underline;
+    }
+
+    .section{
+      margin-bottom: 24px;
+    }
+
+    .info-pill{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      background: rgba(31,122,74,.06);
+      border-radius: 12px;
+      color: var(--muted);
+      margin: 6px 0 10px;
+    }
+
+    .info-icon{
+      width: 22px;
+      height: 22px;
+      flex: 0 0 22px;
+    }
+
+    /* Versiones */
+    .versions{
+      margin: 10px 0 12px;
+      padding: 0;
+      list-style: none;
+    }
+    .versions li{
+      margin: 8px 0;
+    }
+    .version-link{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,.82);
+      color: var(--text);
+      font-weight: 700;
+    }
+    .version-link:hover{
+      text-decoration: none;
+      border-color: rgba(31,122,74,.45);
+      box-shadow: 0 6px 18px rgba(0,0,0,.07);
+    }
+    .badge{
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--accent);
+      border: 1px solid rgba(31,122,74,.35);
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(31,122,74,.06);
+    }
+
+    /* Copiar enlace */
+    .copy-row{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 6px;
+      flex-wrap: wrap;
+    }
+    .copy-link{
+      font-weight: 700;
+    }
+    .copy-btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,.82);
+      color: var(--accent);
+      cursor: pointer;
+    }
+    .copy-btn:hover{
+      border-color: rgba(31,122,74,.45);
+      box-shadow: 0 6px 18px rgba(0,0,0,.07);
+    }
+    .copy-icon{
+      width: 18px;
+      height: 18px;
+    }
+    .copy-msg{
+      color: var(--muted);
+      font-weight: 600;
+      min-width: 90px;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <article class="card">
+
+      <h1>Tutorial VolumTransport</h1>
+
+      <div class="section">
+        <p>
+          Acesta este tutorialul aplicației
+          <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
+            <b>VolumTransport</b>
+          </a>.
+        </p>
+
+        <p>
+          Scopul lui este să te ajute să înțelegi cum funcționează aplicația, în ce situații are sens să o folosești
+          și la ce te poți aștepta cu adevărat de la ea.
+        </p>
+
+        <p>
+          Este destinat utilizatorului care a ajuns deja la aplicație și vrea să o folosească bine.
+        </p>
+      </div>
+
+      <h2>Folosirea tutorialului cu inteligențe artificiale</h2>
+
+      <div class="section">
+        <p>
+          Conținutul acestui tutorial este pregătit astfel încât să poată fi interpretat
+          și de inteligențe artificiale.
+        </p>
+
+        <p>
+          Dacă dorești, poți copia linkul de început al tutorialului, să îl lipești într-o IA
+          și să pui orice întrebare legată de VolumTransport:
+          cum funcționează o opțiune anume, la ce folosește un mod de calcul,
+          în ce cazuri să folosești aplicația sau ce limitări are.
+        </p>
+
+        <p>
+          IA va răspunde pe baza informațiilor conținute în acest tutorial.
+        </p>
+
+        <p>
+          <b>Linkul tutorialului:</b><br>
+
+          <span class="copy-row">
+            <a href="https://aplicacionesherrbri.com/tutorial/ro/00-presentation/"
+               id="copyTutorialLink"
+               data-copy="https://aplicacionesherrbri.com/tutorial/ro/00-presentation/"
+               class="copy-link"
+               title="Click pentru a copia"
+               role="button">
+              https://aplicacionesherrbri.com/tutorial/ro/00-presentation/
+            </a>
+
+            <button type="button"
+                    class="copy-btn"
+                    id="copyTutorialBtn"
+                    aria-label="Copiază linkul în clipboard"
+                    title="Copiază">
+              <svg class="copy-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M9 9h10v10H9V9Z" stroke="currentColor" stroke-width="1.8" />
+                <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"
+                      stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </button>
+
+            <span id="copyMsg" class="copy-msg" aria-live="polite"></span>
+          </span>
+        </p>
+      </div>
+
+      <h2>Originea și filosofia aplicației</h2>
+
+      <div class="section">
+        <p>VolumTransport nu a fost creată de o companie de software și nici de un programator extern.</p>
+
+        <p>
+          A fost dezvoltată integral de un profesionist din transport,
+          pornind de la probleme reale, de zi cu zi, din livrare și încărcarea mărfurilor.
+          În lipsa unor instrumente similare în Google Play Store,
+          s-a optat pentru crearea unei aplicații practice, axată pe nevoi reale.
+        </p>
+
+        <p>
+          Din acest motiv, aplicația prioritizează utilitatea practică
+          în fața soluțiilor complexe sau teoretice.
+        </p>
+
+        <p>
+          Dacă la un moment dat ai întrebări, sugestii sau observi ceva ce ar putea fi îmbunătățit,
+          poți trimite un e-mail și vei primi răspuns în cel mai scurt timp posibil.
+        </p>
+
+        <p>
+          <a href="mailto:albherrbri@gmail.com">Trimite un e-mail: albherrbri@gmail.com</a>
+        </p>
+      </div>
+
+      <h2>Ce face VolumTransport (și ce nu face)</h2>
+
+      <div class="section">
+        <p>
+          Obiectivul principal al VolumTransport este <b>să calculeze cum se potrivește o încărcătură</b>
+          într-un spațiu determinat și dacă <b>încape sau nu încape</b> în funcție de dimensiunile introduse.
+        </p>
+
+        <p>
+          Pe lângă „încape / nu încape”, aplicația poate afișa și date utile precum
+          <b>procentul de ocupare</b>, <b>greutatea</b> și, dacă activezi, <b>rezultate economice</b>.
+          În acest tutorial vor fi prezentate toate opțiunile disponibile pas cu pas.
+        </p>
+
+        <p>
+          Pentru a realiza aceste calcule, aplicația folosește o metodă cunoscută ca
+          <b>bin packing</b>.
+        </p>
+
+        <p>
+          <b>Ce înseamnă asta?</b><br>
+          Bin packing este o modalitate de a calcula cum să așezi mai multe colete într-un spațiu limitat
+          (de exemplu, un vehicul), folosind cât mai bine spațiul disponibil.
+          Această metodă permite estimarea ocupării reale fără a fi nevoie să testezi fizic fiecare combinație.
+        </p>
+
+        <p>
+          <b>Cu ce diferă de alte metode?</b><br>
+          Spre deosebire de un calcul bazat doar pe volumul total, care doar însumează spațiul și poate da greș în practică,
+          bin packing ia în considerare <b>dimensiunile reale</b> (lungime, lățime și înălțime) și modul în care coletele se potrivesc între ele.
+          Scopul este să ofere o <b>estimare practică și rapidă</b>,
+          susținută de o <b>vizualizare 3D</b>, care să ajute la luarea deciziilor înainte de efectuarea serviciului.
+        </p>
+
+        <p>
+          Aplicația așază coletele urmând reguli logice de volum, orientare
+          și ocupare a spațiului. Rezultatul servește ca reper și ajutor pentru profesionist.
+        </p>
+
+        <p><b>Este important de clarificat că:</b></p>
+        <ul>
+          <li>Aplicația nu decide cum trebuie organizat spațiul.</li>
+          <li>Aplicația nu înlocuiește experiența transportatorului.</li>
+          <li>Persoana care face încărcarea este întotdeauna responsabilul final.</li>
+        </ul>
+
+        <p>
+          Fiecare profesionist poate așeza marfa diferit, în funcție de criteriile sale,
+          de experiență sau de circumstanțele serviciului.
+          VolumTransport acționează ca un calculator avansat, nu ca un ordin automat.
+        </p>
+      </div>
+
+      <h2>Note generale pentru întreaga aplicație</h2>
+
+      <div class="section">
+        <div class="info-pill" aria-label="Pictogramă de informații">
+          <svg class="info-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M12 10.6v6.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M12 7.4h.01" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+          </svg>
+          <span>Ajutor disponibil în fiecare fereastră</span>
+        </div>
+
+        <p>
+          La proiectarea aplicației s-a avut în vedere că este un instrument dificil de înțeles
+          la început. De aceea a fost adăugat ajutor în fiecare fereastră.
+        </p>
+
+        <p>
+          Acest ajutor este reflectat în pictograma de informații
+          (<b>i</b> într-un cerc).
+          Explică ce se află în fiecare fereastră și la ce folosește, ghidând utilizatorul pentru a nu rămâne blocat.
+        </p>
+      </div>
+
+      <h2>Versiuni</h2>
+
+      <div class="section">
+        <p>Există patru tipuri de versiuni ale aplicației:</p>
+
+        <ul class="versions">
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">01</span>
+              O săptămână gratis
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">02</span>
+              Gratuit cu reclame
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">03</span>
+              Gratuit fără reclame
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">04</span>
+              Premium
+            </a>
+          </li>
+        </ul>
+
+        <p>
+          Toate calculează câte cutii încap în vehicul, însă pe măsură ce
+          ai nevoie de mai multe informații sau de mai multe funcții, pot exista limitări în funcție de versiune.
+        </p>
+
+        <p>
+          Pentru a cumpăra o versiune, se poate face din fereastra
+          <a href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">Trecere la o categorie superioară</a>.
+        </p>
+      </div>
+
+      <hr>
+
+      <h2>Sumar</h2>
+      <p>
+        <a href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+          01 – Pagina principală
+        </a>
+      </p>
+
+      <h2>Limbi</h2>
+
+      <div class="section">
+        <p>VolumTransport este disponibil în mai multe limbi.</p>
+
+        <p><b>Limbi ale aplicației:</b></p>
+        <p style="margin-bottom:10px;">
+          Engleză (en), Arabă (ar), Bangla (bn), Bască (ba), Bulgară (bg), Catalană (ca), Chineză (zh), Croată (hr), Cehă (cs),
+          Daneză (da), Neerlandeză (nl), Estonă (et), Finlandeză (fi), Franceză (fr), Galițiană (gl), Germană (de), Greacă (el),
+          Ebraică (iw), Hindi (hi), Maghiară (hu), Indoneziană (id), Irlandeză (ga), Italiană (it), Japoneză (ja), Coreeană (ko),
+          Laosiană (lo), Letonă (lv), Lituaniană (lt), Luxemburgheză (lb), Malteză (mt), Nepaleză (ne), Norvegiană (nb), Persană (fa),
+          Poloneză (pl), Portugheză (pt), Punjabi din Pakistan (pa-rpk) (scriere Shahmukhi), Română (ro), Rusă (ru),
+          Slovacă (sk), Slovenă (sl), Spaniolă (es), Suedeză (sv), Thailandeză (th), Turcă (tr), Ucraineană (uk), Urdu (ur),
+          Vietnameză (vi).
+        </p>
+
+        <p><b>Limbi ale tutorialului:</b></p>
+        <p>
+          Engleză (en), Germană (de), Bangla (bn), Bulgară (bg), Cehă (cs), Chineză simplificată (zh), Coreeană (ko), Croată (hr),
+          Daneză (da), Slovacă (sk), Slovenă (sl), Spaniolă (es), Estonă (et), Finlandeză (fi), Franceză (fr), Greacă (el),
+          Ebraică (iw), Hindi (hi), Maghiară (hu), Indoneziană (id), Italiană (it), Japoneză (ja), Laosiană (lo), Letonă (lv),
+          Lituaniană (lt), Neerlandeză (nl), Nepaleză (ne), Norvegiană (no), Persană (fa), Poloneză (pl), Portugheză (pt),
+          Punjabi din Pakistan (pa-rpk) (scriere Shahmukhi), Română (ro), Rusă (ru), Suedeză (sv), Thailandeză (th),
+          Turcă (tr), Ucraineană (uk), Urdu (ur), Vietnameză (vi), Arabă (ar).
+        </p>
+        <p>
+          Acest tutorial este încă în dezvoltare, dar orice întrebare sau clarificare poate fi rezolvată trimițând un e-mail la:
+        </p>
+
+        <p>
+          <a href="mailto:albherrbri@gmail.com">Trimite un e-mail: albherrbri@gmail.com</a>
+        </p>
+        
+      </div>
+
+    </article>
+  </main>
+
+  <script>
+    (function () {
+      const link = document.getElementById("copyTutorialLink");
+      const btn  = document.getElementById("copyTutorialBtn");
+      const msg  = document.getElementById("copyMsg");
+      if (!link) return;
+
+      function show(text) {
+        if (!msg) return;
+        msg.textContent = text;
+        clearTimeout(show._t);
+        show._t = setTimeout(() => (msg.textContent = ""), 1600);
+      }
+
+      async function copyText(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          return true;
+        }
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "absolute";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        const ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        return ok;
+      }
+
+      async function doCopy(e) {
+        if (e) e.preventDefault();
+        const text = link.getAttribute("data-copy") || link.href;
+        try {
+          const ok = await copyText(text);
+          show(ok ? "Copiat ✅" : "Nu s-a putut copia");
+        } catch {
+          show("Nu s-a putut copia");
+        }
+      }
+
+      link.addEventListener("click", doCopy);
+      if (btn) btn.addEventListener("click", doCopy);
+    })();
+  </script>
+</body>
+</html>
