@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="lt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>VolumTransport pamoka</title>
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="description" content="VolumTransport pamoka: kaip veikia programėlė, kokiose situacijose ją naudoti ir ko iš jos tikėtis." />
+
+  <link rel="canonical" href="https://aplicacionesherrbri.com/tutorial/lt/00-presentation/" />
+
+  <meta property="og:title" content="VolumTransport pamoka" />
+  <meta property="og:description" content="Kaip naudotis VolumTransport ir ko galite tikėtis iš programėlės." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aplicacionesherrbri.com/tutorial/lt/00-presentation/" />
+  <meta property="og:locale" content="lt_LT" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "VolumTransport",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Android",
+      "inLanguage": "lt",
+      "url": "https://aplicacionesherrbri.com/tutorial/lt/00-presentation/",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.herrbri.volumtransport",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Aplicaciones HerrBri"
+      }
+    }
+  </script>
+
+  <style>
+    :root{
+      --bg: #d6e6de;
+      --card: #f7fbf9;
+      --text: #0f172a;
+      --border: #cfe3d8;
+      --link: #0b4e2a;
+      --accent: #1f7a4a;
+      --muted: #4b5563;
+    }
+
+    *{ box-sizing: border-box; }
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .wrap{
+      min-height: 100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 36px 14px;
+    }
+
+    .card{
+      width: min(900px, 100%);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 12px 34px rgba(0,0,0,.12);
+      padding: 32px 32px;
+    }
+
+    h1{
+      margin: 0 0 28px;
+      font-size: clamp(30px, 3vw, 38px);
+      letter-spacing: -0.02em;
+      text-align: center;
+      position: relative;
+    }
+
+    h1::after{
+      content: "";
+      display: block;
+      width: clamp(120px, 18vw, 220px);
+      height: 4px;
+      margin: 14px auto 0;
+      background-color: var(--accent);
+      border-radius: 2px;
+    }
+
+    h2{
+      margin: 32px 0 10px;
+      font-size: 19px;
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+    }
+
+    p{ margin: 0 0 12px; }
+
+    ul{
+      margin: 8px 0 0 18px;
+    }
+
+    li{
+      margin: 6px 0;
+    }
+
+    hr{
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 28px 0 18px;
+    }
+
+    a{
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover{
+      text-decoration: underline;
+    }
+
+    .section{
+      margin-bottom: 24px;
+    }
+
+    .info-pill{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      background: rgba(31,122,74,.06);
+      border-radius: 12px;
+      color: var(--muted);
+      margin: 6px 0 10px;
+    }
+
+    .info-icon{
+      width: 22px;
+      height: 22px;
+      flex: 0 0 22px;
+    }
+
+    .versions{
+      margin: 10px 0 12px;
+      padding: 0;
+      list-style: none;
+    }
+    .versions li{
+      margin: 8px 0;
+    }
+    .version-link{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,.82);
+      color: var(--text);
+      font-weight: 700;
+    }
+    .version-link:hover{
+      text-decoration: none;
+      border-color: rgba(31,122,74,.45);
+      box-shadow: 0 6px 18px rgba(0,0,0,.07);
+    }
+    .badge{
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--accent);
+      border: 1px solid rgba(31,122,74,.35);
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(31,122,74,.06);
+    }
+
+    .copy-row{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 6px;
+      flex-wrap: wrap;
+    }
+    .copy-link{
+      font-weight: 700;
+    }
+    .copy-btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,.82);
+      color: var(--accent);
+      cursor: pointer;
+    }
+    .copy-btn:hover{
+      border-color: rgba(31,122,74,.45);
+      box-shadow: 0 6px 18px rgba(0,0,0,.07);
+    }
+    .copy-icon{
+      width: 18px;
+      height: 18px;
+    }
+    .copy-msg{
+      color: var(--muted);
+      font-weight: 600;
+      min-width: 90px;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <article class="card">
+
+      <h1>VolumTransport pamoka</h1>
+
+      <div class="section">
+        <p>
+          Tai yra programėlės
+          <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
+            <b>VolumTransport</b>
+          </a>
+          pamoka.
+        </p>
+
+        <p>
+          Jos tikslas – padėti suprasti, kaip veikia programėlė, kokiose situacijose ją verta naudoti
+          ir ko iš jos iš tikrųjų galima tikėtis.
+        </p>
+
+        <p>
+          Ji skirta naudotojams, kurie jau pasiekė programėlę ir nori ja tinkamai naudotis.
+        </p>
+      </div>
+
+      <h2>Pamokos naudojimas su dirbtiniu intelektu</h2>
+
+      <div class="section">
+        <p>
+          Šios pamokos turinys parengtas taip, kad jį galėtų interpretuoti ir dirbtinio intelekto sistemos.
+        </p>
+
+        <p>
+          Jei norite, galite nukopijuoti pamokos pradžios nuorodą, įklijuoti ją į DI
+          ir užduoti bet kokį su VolumTransport susijusį klausimą:
+          kaip veikia konkreti funkcija, kam skirtas tam tikras skaičiavimo režimas,
+          kada naudoti programėlę ar kokie jos apribojimai.
+        </p>
+
+        <p>
+          DI atsakys remdamasis šioje pamokoje pateikta informacija.
+        </p>
+
+        <p>
+          <b>Pamokos nuoroda:</b><br>
+
+          <span class="copy-row">
+            <a href="https://aplicacionesherrbri.com/tutorial/lt/00-presentation/"
+               id="copyTutorialLink"
+               data-copy="https://aplicacionesherrbri.com/tutorial/lt/00-presentation/"
+               class="copy-link"
+               title="Spustelėkite, kad nukopijuotumėte"
+               role="button">
+              https://aplicacionesherrbri.com/tutorial/lt/00-presentation/
+            </a>
+
+            <button type="button"
+                    class="copy-btn"
+                    id="copyTutorialBtn"
+                    aria-label="Kopijuoti nuorodą į iškarpinę"
+                    title="Kopijuoti">
+              <svg class="copy-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M9 9h10v10H9V9Z" stroke="currentColor" stroke-width="1.8" />
+                <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"
+                      stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </button>
+
+            <span id="copyMsg" class="copy-msg" aria-live="polite"></span>
+          </span>
+        </p>
+      </div>
+
+      <h2>Programėlės kilmė ir filosofija</h2>
+
+      <div class="section">
+        <p>VolumTransport nebuvo sukurta programinės įrangos įmonės ar išorinio programuotojo.</p>
+
+        <p>
+          Ji buvo sukurta profesionalaus transporto darbuotojo,
+          remiantis realiomis kasdienėmis problemomis, susijusiomis su prekių pakrovimu ir pristatymu.
+          Kadangi Google Play Store nebuvo panašių įrankių,
+          buvo nuspręsta sukurti praktišką programėlę, orientuotą į realius poreikius.
+        </p>
+
+        <p>
+          Dėl šios priežasties programėlė teikia pirmenybę praktiniam naudingumui,
+          o ne sudėtingiems ar teoriniams sprendimams.
+        </p>
+
+        <p>
+          Jei bet kuriuo metu turite klausimų, pasiūlymų ar pastebite, ką būtų galima patobulinti,
+          galite parašyti el. laišką ir atsakymas bus pateiktas kuo greičiau.
+        </p>
+
+        <p>
+          <a href="mailto:albherrbri@gmail.com">Siųsti el. laišką: albherrbri@gmail.com</a>
+        </p>
+      </div>
+
+      <h2>Ką VolumTransport daro (ir ko nedaro)</h2>
+
+      <div class="section">
+        <p>
+          Pagrindinis VolumTransport tikslas – <b>apskaičiuoti, kaip krovinys telpa</b>
+          konkrečioje erdvėje ir ar jis <b>telpa ar netelpa</b> pagal nurodytus matmenis.
+        </p>
+
+        <p>
+          Be „telpa / netelpa“, programėlė taip pat gali rodyti naudingus duomenis, tokius kaip
+          <b>užimtumo procentas</b>, <b>svoris</b> ir, jei įjungta, <b>ekonominiai rezultatai</b>.
+          Šioje pamokoje visos galimos parinktys bus nagrinėjamos žingsnis po žingsnio.
+        </p>
+
+        <p>
+          Šiems skaičiavimams atlikti programėlė naudoja metodą, vadinamą
+          <b>bin packing</b>.
+        </p>
+
+        <p>
+          <b>Ką tai reiškia?</b><br>
+          Bin packing – tai būdas apskaičiuoti, kaip išdėstyti kelis krovinius ribotoje erdvėje
+          (pavyzdžiui, transporto priemonėje), kuo efektyviau išnaudojant turimą vietą.
+          Šis metodas leidžia įvertinti realų užimtumą nebandant fiziškai visų kombinacijų.
+        </p>
+
+        <p>
+          <b>Kuo jis skiriasi nuo kitų metodų?</b><br>
+          Skirtingai nei skaičiavimas, pagrįstas tik bendru tūriu, kuris gali būti netikslus praktikoje,
+          bin packing atsižvelgia į <b>tikruosius matmenis</b> (ilgį, plotį ir aukštį) ir tai, kaip kroviniai dera tarpusavyje.
+          Jo tikslas – pateikti <b>greitą ir praktišką įvertinimą</b>,
+          paremtą <b>3D vizualizacija</b>, kuris padėtų priimti sprendimus prieš atliekant paslaugą.
+        </p>
+
+        <p>
+          Programėlė išdėsto krovinius pagal logiškas tūrio, orientacijos
+          ir erdvės užimtumo taisykles. Gautas rezultatas tarnauja kaip orientacinė pagalba profesionalui.
+        </p>
+
+        <p><b>Svarbu aiškiai pabrėžti, kad:</b></p>
+        <ul>
+          <li>Programėlė nenusprendžia, kaip turi būti organizuojama erdvė.</li>
+          <li>Programėlė nepakeičia transporto specialisto patirties.</li>
+          <li>Asmuo, atliekantis pakrovimą, visada yra galutinis atsakingas asmuo.</li>
+        </ul>
+
+        <p>
+          Kiekvienas profesionalas gali išdėstyti prekes skirtingai pagal savo kriterijus,
+          patirtį ar paslaugos aplinkybes.
+          VolumTransport veikia kaip pažangi skaičiuoklė, o ne kaip automatinis nurodymas.
+        </p>
+      </div>
+
+      <h2>Bendros pastabos visai programėlei</h2>
+
+      <div class="section">
+        <div class="info-pill" aria-label="Informacijos piktograma">
+          <svg class="info-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M12 10.6v6.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M12 7.4h.01" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+          </svg>
+          <span>Pagalba pasiekiama kiekviename lange</span>
+        </div>
+
+        <p>
+          Kuriant programėlę buvo atsižvelgta į tai, kad pirmieji žingsniai gali būti sudėtingi.
+          Todėl kiekviename lange buvo pridėta pagalba.
+        </p>
+
+        <p>
+          Ši pagalba pažymėta informacijos piktograma
+          ( <b>i</b> raidė apskritime ).
+          Ji paaiškina, kas rodoma kiekviename lange ir kam tai skirta,
+          padėdama naudotojui neužstrigti.
+        </p>
+      </div>
+
+      <h2>Versijos</h2>
+
+      <div class="section">
+        <p>Yra keturios programėlės versijos:</p>
+
+        <ul class="versions">
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">01</span>
+              Nemokama savaitė
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">02</span>
+              Nemokama su reklama
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">03</span>
+              Nemokama be reklamos
+            </a>
+          </li>
+          <li>
+            <a class="version-link" href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+              <span class="badge">04</span>
+              Premium
+            </a>
+          </li>
+        </ul>
+
+        <p>
+          Visos jos apskaičiuoja, kiek dėžių telpa transporto priemonėje, tačiau
+          priklausomai nuo poreikio daugiau informacijos ar funkcijų,
+          gali atsirasti apribojimų pagal versiją.
+        </p>
+
+        <p>
+          Versiją galima įsigyti lange
+          <a href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">Pakelti kategoriją</a>.
+        </p>
+      </div>
+
+      <hr>
+
+      <h2>Santrauka</h2>
+      <p>
+        <a href="https://aplicacionesherrbri.com/boxes-fit-vehicle/under-construccion/index.html">
+          01 – Pagrindinis puslapis
+        </a>
+      </p>
+
+      <h2>Kalbos</h2>
+
+      <div class="section">
+        <p>VolumTransport galima naudoti keliomis kalbomis.</p>
+
+        <p><b>Programėlės kalbos:</b></p>
+        <p style="margin-bottom:10px;">
+          Anglų (en), Arabų (ar), Bangla (bn), Baskų (ba), Bulgarų (bg), Katalonų (ca), Kinų (zh), Kroatų (hr), Čekų (cs),
+          Danų (da), Olandų (nl), Estų (et), Suomių (fi), Prancūzų (fr), Galisų (gl), Vokiečių (de), Graikų (el),
+          Hebrajų (iw), Hindi (hi), Vengrų (hu), Indoneziečių (id), Airių (ga), Italų (it), Japonų (ja), Korėjiečių (ko),
+          Laoso (lo), Latvių (lv), Lietuvių (lt), Liuksemburgiečių (lb), Maltiečių (mt), Nepalų (ne), Norvegų (nb), Persų (fa),
+          Lenkų (pl), Portugalų (pt), Pakistano pandžabų (pa-rpk) (šahmukhi raštas), Rumunų (ro), Rusų (ru),
+          Slovakų (sk), Slovėnų (sl), Ispanų (es), Švedų (sv), Tajų (th), Turkų (tr), Ukrainiečių (uk), Urdu (ur),
+          Vietnamiečių (vi).
+        </p>
+
+        <p><b>Pamokos kalbos:</b></p>
+        <p>
+          Anglų (en), Vokiečių (de), Bangla (bn), Bulgarų (bg), Čekų (cs), Supaprastinta kinų (zh), Korėjiečių (ko), Kroatų (hr),
+          Danų (da), Slovakų (sk), Slovėnų (sl), Ispanų (es), Estų (et), Suomių (fi), Prancūzų (fr), Graikų (el),
+          Hebrajų (iw), Hindi (hi), Vengrų (hu), Indoneziečių (id), Italų (it), Japonų (ja), Laoso (lo), Latvių (lv),
+          Lietuvių (lt), Olandų (nl), Nepalų (ne), Norvegų (no), Persų (fa), Lenkų (pl), Portugalų (pt),
+          Pakistano pandžabų (pa-rpk) (šahmukhi raštas), Rumunų (ro), Rusų (ru), Švedų (sv), Tajų (th),
+          Turkų (tr), Ukrainiečių (uk), Urdu (ur), Vietnamiečių (vi), Arabų (ar).
+        </p>
+        <p>
+          Ši pamoka dar kuriama, tačiau bet kokius klausimus ar paaiškinimus galite gauti parašę el. laišką:
+        </p>
+
+        <p>
+          <a href="mailto:albherrbri@gmail.com">Siųsti el. laišką: albherrbri@gmail.com</a>
+        </p>
+        
+      </div>
+
+    </article>
+  </main>
+
+  <script>
+    (function () {
+      const link = document.getElementById("copyTutorialLink");
+      const btn  = document.getElementById("copyTutorialBtn");
+      const msg  = document.getElementById("copyMsg");
+      if (!link) return;
+
+      function show(text) {
+        if (!msg) return;
+        msg.textContent = text;
+        clearTimeout(show._t);
+        show._t = setTimeout(() => (msg.textContent = ""), 1600);
+      }
+
+      async function copyText(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          return true;
+        }
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "absolute";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        const ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        return ok;
+      }
+
+      async function doCopy(e) {
+        if (e) e.preventDefault();
+        const text = link.getAttribute("data-copy") || link.href;
+        try {
+          const ok = await copyText(text);
+          show(ok ? "Nukopijuota ✅" : "Nepavyko nukopijuoti");
+        } catch {
+          show("Nepavyko nukopijuoti");
+        }
+      }
+
+      link.addEventListener("click", doCopy);
+      if (btn) btn.addEventListener("click", doCopy);
+    })();
+  </script>
+</body>
+</html>
