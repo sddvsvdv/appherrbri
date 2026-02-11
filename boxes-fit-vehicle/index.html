@@ -123,6 +123,69 @@
       margin-top: 18px;
     }
 
+    .langbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      padding:14px 16px;
+      background:#f3fbf6;
+      border-radius:14px;
+      border:1px solid rgba(46,125,50,.2);
+      margin-bottom:18px;
+    }
+
+    .lang-title{
+      font-weight:700;
+      color:#1b5e20;
+      margin-right:12px;
+    }
+
+    .lang-main{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .lang-main a{
+      text-decoration:none;
+      font-weight:600;
+      color:#1b5e20;
+      padding:6px 10px;
+      border-radius:8px;
+      transition:.2s ease;
+    }
+
+    .lang-main a:hover{
+      background:#e0f2e9;
+    }
+
+    .lang-active{
+      background:#1b5e20;
+      color:#fff;
+      padding:6px 12px;
+      border-radius:8px;
+      font-weight:700;
+    }
+
+    .lang-right select{
+      padding:8px 12px;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.2);
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    .lang-left{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:10px 12px;
+    }
+
+
+
     .small { color: #444; font-size: .95rem; }
   </style>
 
@@ -144,64 +207,62 @@
 <body>
   <main class="wrap">
 
-     <!-- ✅ Language switcher -->
     <nav class="langbar" aria-label="Language selector">
-      <div class="langbar-left">
-        <span class="langlabel">Language:</span>
-        <span class="langlinks">
-          <span class="current">English</span> ·
-          <a href="https://aplicacionesherrbri.com/es/boxes-fit-vehicle/" hreflang="es">Español</a> ·
-          <a href="https://aplicacionesherrbri.com/fr/boxes-fit-vehicle/" hreflang="fr">Français</a> ·
-          <a href="https://aplicacionesherrbri.com/de/boxes-fit-vehicle/" hreflang="de">Deutsch</a> ·
-          <a href="https://aplicacionesherrbri.com/pt/boxes-fit-vehicle/" hreflang="pt">Português</a> ·
-          <a href="https://aplicacionesherrbri.com/zh-hans/boxes-fit-vehicle/" hreflang="zh-Hans">中文（简体）</a>
-        </span>
+      <div class="lang-left">
+        <span class="lang-title">🌍 Language</span>
+
+        <div class="lang-main">
+          <span class="lang-active">English</span>
+          <a href="/es/boxes-fit-vehicle/" hreflang="es">Español</a>
+          <a href="/fr/boxes-fit-vehicle/" hreflang="fr">Français</a>
+          <a href="/de/boxes-fit-vehicle/" hreflang="de">Deutsch</a>
+          <a href="/pt/boxes-fit-vehicle/" hreflang="pt">Português</a>
+          <a href="/zh-hans/boxes-fit-vehicle/" hreflang="zh-Hans">中文</a>
+        </div>
       </div>
 
-      <div class="langselect">
-        <label for="lang" class="small" style="margin:0;">More:</label>
-        <select id="lang" onchange="if(this.value) window.location.href=this.value;">
-          <option value="">Select…</option>
-
-          <!-- Keep the same page paths, only change the language folder -->
-          <option value="https://aplicacionesherrbri.com/bg/boxes-fit-vehicle/">Български (bg)</option>
-          <option value="https://aplicacionesherrbri.com/bn/boxes-fit-vehicle/">বাংলা (bn)</option>
-          <option value="https://aplicacionesherrbri.com/cs/boxes-fit-vehicle/">Čeština (cs)</option>
-          <option value="https://aplicacionesherrbri.com/ko/boxes-fit-vehicle/">한국어 (ko)</option>
-          <option value="https://aplicacionesherrbri.com/hr/boxes-fit-vehicle/">Hrvatski (hr)</option>
-          <option value="https://aplicacionesherrbri.com/sk/boxes-fit-vehicle/">Slovenčina (sk)</option>
-          <option value="https://aplicacionesherrbri.com/sl/boxes-fit-vehicle/">Slovenščina (sl)</option>
-          <option value="https://aplicacionesherrbri.com/et/boxes-fit-vehicle/">Eesti (et)</option>
-          <option value="https://aplicacionesherrbri.com/da/boxes-fit-vehicle/">Dansk (da)</option>
-          <option value="https://aplicacionesherrbri.com/fi/boxes-fit-vehicle/">Suomi (fi)</option>
-          <option value="https://aplicacionesherrbri.com/el/boxes-fit-vehicle/">Ελληνικά (el)</option>
-          <option value="https://aplicacionesherrbri.com/he/boxes-fit-vehicle/">עברית (he)</option>
-          <option value="https://aplicacionesherrbri.com/hi/boxes-fit-vehicle/">हिन्दी (hi)</option>
-          <option value="https://aplicacionesherrbri.com/hu/boxes-fit-vehicle/">Magyar (hu)</option>
-          <option value="https://aplicacionesherrbri.com/id/boxes-fit-vehicle/">Bahasa Indonesia (id)</option>
-          <option value="https://aplicacionesherrbri.com/it/boxes-fit-vehicle/">Italiano (it)</option>
-          <option value="https://aplicacionesherrbri.com/ja/boxes-fit-vehicle/">日本語 (ja)</option>
-          <option value="https://aplicacionesherrbri.com/lo/boxes-fit-vehicle/">ລາວ (lo)</option>
-          <option value="https://aplicacionesherrbri.com/lv/boxes-fit-vehicle/">Latviešu (lv)</option>
-          <option value="https://aplicacionesherrbri.com/lt/boxes-fit-vehicle/">Lietuvių (lt)</option>
-          <option value="https://aplicacionesherrbri.com/nl/boxes-fit-vehicle/">Nederlands (nl)</option>
-          <option value="https://aplicacionesherrbri.com/ne/boxes-fit-vehicle/">नेपाली (ne)</option>
-          <option value="https://aplicacionesherrbri.com/no/boxes-fit-vehicle/">Norsk (no)</option>
-          <option value="https://aplicacionesherrbri.com/fa/boxes-fit-vehicle/">فارسی (fa)</option>
-          <option value="https://aplicacionesherrbri.com/pl/boxes-fit-vehicle/">Polski (pl)</option>
-          <option value="https://aplicacionesherrbri.com/pa-pk/boxes-fit-vehicle/">ਪੰਜਾਬੀ (pa-PK)</option>
-          <option value="https://aplicacionesherrbri.com/ro/boxes-fit-vehicle/">Română (ro)</option>
-          <option value="https://aplicacionesherrbri.com/ru/boxes-fit-vehicle/">Русский (ru)</option>
-          <option value="https://aplicacionesherrbri.com/sv/boxes-fit-vehicle/">Svenska (sv)</option>
-          <option value="https://aplicacionesherrbri.com/th/boxes-fit-vehicle/">ไทย (th)</option>
-          <option value="https://aplicacionesherrbri.com/tr/boxes-fit-vehicle/">Türkçe (tr)</option>
-          <option value="https://aplicacionesherrbri.com/uk/boxes-fit-vehicle/">Українська (uk)</option>
-          <option value="https://aplicacionesherrbri.com/ur/boxes-fit-vehicle/">اردو (ur)</option>
-          <option value="https://aplicacionesherrbri.com/vi/boxes-fit-vehicle/">Tiếng Việt (vi)</option>
-          <option value="https://aplicacionesherrbri.com/ar/boxes-fit-vehicle/">العربية (ar)</option>
+      <div class="lang-right">
+        <select onchange="if(this.value) window.location.href=this.value;">
+          <option value="">More languages…</option>
+          <option value="/bg/boxes-fit-vehicle/">Български</option>
+          <option value="/bn/boxes-fit-vehicle/">বাংলা</option>
+          <option value="/cs/boxes-fit-vehicle/">Čeština</option>
+          <option value="/ko/boxes-fit-vehicle/">한국어</option>
+          <option value="/hr/boxes-fit-vehicle/">Hrvatski</option>
+          <option value="/sk/boxes-fit-vehicle/">Slovenčina</option>
+          <option value="/sl/boxes-fit-vehicle/">Slovenščina</option>
+          <option value="/et/boxes-fit-vehicle/">Eesti</option>
+          <option value="/da/boxes-fit-vehicle/">Dansk</option>
+          <option value="/fi/boxes-fit-vehicle/">Suomi</option>
+          <option value="/el/boxes-fit-vehicle/">Ελληνικά</option>
+          <option value="/he/boxes-fit-vehicle/">עברית</option>
+          <option value="/hi/boxes-fit-vehicle/">हिन्दी</option>
+          <option value="/hu/boxes-fit-vehicle/">Magyar</option>
+          <option value="/id/boxes-fit-vehicle/">Bahasa Indonesia</option>
+          <option value="/it/boxes-fit-vehicle/">Italiano</option>
+          <option value="/ja/boxes-fit-vehicle/">日本語</option>
+          <option value="/lo/boxes-fit-vehicle/">ລາວ</option>
+          <option value="/lv/boxes-fit-vehicle/">Latviešu</option>
+          <option value="/lt/boxes-fit-vehicle/">Lietuvių</option>
+          <option value="/nl/boxes-fit-vehicle/">Nederlands</option>
+          <option value="/ne/boxes-fit-vehicle/">नेपाली</option>
+          <option value="/no/boxes-fit-vehicle/">Norsk</option>
+          <option value="/fa/boxes-fit-vehicle/">فارسی</option>
+          <option value="/pl/boxes-fit-vehicle/">Polski</option>
+          <option value="/pa-pk/boxes-fit-vehicle/">ਪੰਜਾਬੀ</option>
+          <option value="/ro/boxes-fit-vehicle/">Română</option>
+          <option value="/ru/boxes-fit-vehicle/">Русский</option>
+          <option value="/sv/boxes-fit-vehicle/">Svenska</option>
+          <option value="/th/boxes-fit-vehicle/">ไทย</option>
+          <option value="/tr/boxes-fit-vehicle/">Türkçe</option>
+          <option value="/uk/boxes-fit-vehicle/">Українська</option>
+          <option value="/ur/boxes-fit-vehicle/">اردو</option>
+          <option value="/vi/boxes-fit-vehicle/">Tiếng Việt</option>
+          <option value="/ar/boxes-fit-vehicle/">العربية</option>
         </select>
       </div>
     </nav>
+
 
     <h1>App to calculate how many boxes fit in a vehicle or real space (Android)</h1>
 
