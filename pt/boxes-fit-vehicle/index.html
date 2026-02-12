@@ -122,6 +122,68 @@
       margin-top: 18px;
     }
 
+    .langbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      padding:14px 16px;
+      background:#f3fbf6;
+      border-radius:14px;
+      border:1px solid rgba(46,125,50,.2);
+      margin-bottom:18px;
+    }
+
+    .lang-title{
+      font-weight:700;
+      color:#1b5e20;
+      margin-right:12px;
+    }
+
+    .lang-main{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .lang-main a{
+      text-decoration:none;
+      font-weight:600;
+      color:#1b5e20;
+      padding:6px 10px;
+      border-radius:8px;
+      transition:.2s ease;
+    }
+
+    .lang-main a:hover{
+      background:#e0f2e9;
+    }
+
+    .lang-active{
+      background:#1b5e20;
+      color:#fff;
+      padding:6px 12px;
+      border-radius:8px;
+      font-weight:700;
+    }
+
+    .lang-right select{
+      padding:8px 12px;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.2);
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    .lang-left{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:10px 12px;
+    }
+
+
     .small { color: #444; font-size: .95rem; }
   </style>
 
@@ -142,6 +204,62 @@
 
 <body>
   <main class="wrap">
+
+    <nav class="langbar" aria-label="Language selector">
+      <div class="lang-left">
+        <span class="lang-title">🌍 Language</span>
+
+        <div class="lang-main">
+          <a href="/boxes-fit-vehicle/" hreflang="en">English</a>
+          <a href="/es/boxes-fit-vehicle/" hreflang="es">Español</a>
+          <a href="/fr/boxes-fit-vehicle/" hreflang="fr">Français</a>
+          <a href="/de/boxes-fit-vehicle/" hreflang="de">Deutsch</a>
+          <span class="lang-active">Português</span>
+          <a href="/zh-hans/boxes-fit-vehicle/" hreflang="zh-Hans">中文</a>
+        </div>
+      </div>
+
+      <div class="lang-right">
+        <select onchange="if(this.value) window.location.href=this.value;">
+          <option value="">More languages…</option>
+          <option value="/bg/boxes-fit-vehicle/">Български</option>
+          <option value="/bn/boxes-fit-vehicle/">বাংলা</option>
+          <option value="/cs/boxes-fit-vehicle/">Čeština</option>
+          <option value="/ko/boxes-fit-vehicle/">한국어</option>
+          <option value="/hr/boxes-fit-vehicle/">Hrvatski</option>
+          <option value="/sk/boxes-fit-vehicle/">Slovenčina</option>
+          <option value="/sl/boxes-fit-vehicle/">Slovenščina</option>
+          <option value="/et/boxes-fit-vehicle/">Eesti</option>
+          <option value="/da/boxes-fit-vehicle/">Dansk</option>
+          <option value="/fi/boxes-fit-vehicle/">Suomi</option>
+          <option value="/el/boxes-fit-vehicle/">Ελληνικά</option>
+          <option value="/he/boxes-fit-vehicle/">עברית</option>
+          <option value="/hi/boxes-fit-vehicle/">हिन्दी</option>
+          <option value="/hu/boxes-fit-vehicle/">Magyar</option>
+          <option value="/id/boxes-fit-vehicle/">Bahasa Indonesia</option>
+          <option value="/it/boxes-fit-vehicle/">Italiano</option>
+          <option value="/ja/boxes-fit-vehicle/">日本語</option>
+          <option value="/lo/boxes-fit-vehicle/">ລາວ</option>
+          <option value="/lv/boxes-fit-vehicle/">Latviešu</option>
+          <option value="/lt/boxes-fit-vehicle/">Lietuvių</option>
+          <option value="/nl/boxes-fit-vehicle/">Nederlands</option>
+          <option value="/ne/boxes-fit-vehicle/">नेपाली</option>
+          <option value="/no/boxes-fit-vehicle/">Norsk</option>
+          <option value="/fa/boxes-fit-vehicle/">فارسی</option>
+          <option value="/pl/boxes-fit-vehicle/">Polski</option>
+          <option value="/pa-pk/boxes-fit-vehicle/">ਪੰਜਾਬੀ</option>
+          <option value="/ro/boxes-fit-vehicle/">Română</option>
+          <option value="/ru/boxes-fit-vehicle/">Русский</option>
+          <option value="/sv/boxes-fit-vehicle/">Svenska</option>
+          <option value="/th/boxes-fit-vehicle/">ไทย</option>
+          <option value="/tr/boxes-fit-vehicle/">Türkçe</option>
+          <option value="/uk/boxes-fit-vehicle/">Українська</option>
+          <option value="/ur/boxes-fit-vehicle/">اردو</option>
+          <option value="/vi/boxes-fit-vehicle/">Tiếng Việt</option>
+          <option value="/ar/boxes-fit-vehicle/">العربية</option>
+        </select>
+      </div>
+    </nav>
 
     <h1>App para calcular quantas caixas cabem num veículo ou num espaço real (Android)</h1>
 
@@ -214,35 +332,52 @@
     </p>
 
     <section class="faq">
-      <h2>Perguntas frequentes</h2>
+        <h2>Perguntas frequentes</h2>
 
-      <h3>Como calcular quantas caixas cabem num camião?</h3>
-      <p>
-      Com o VolumTransport, pode calcular quantas caixas um camião consegue transportar ao introduzir os dados do veículo e as dimensões da mercadoria.
-      Basta inserir as medidas e tocar em calcular: a aplicação mostra quantas caixas cabem e outros dados relevantes para planear a carga.
-      </p>
+        <h3>Como calcular quantas caixas cabem num camião?</h3>
+        <p>
+        Com o VolumTransport, pode calcular quantas caixas um camião pode transportar introduzindo os dados do veículo e as dimensões das mercadorias.
+        Basta inserir as medidas e tocar em calcular: a aplicação mostra quantas caixas cabem e outros dados relevantes para planear a carga.
+        </p>
 
-      <h3>Qual é a melhor forma de empilhar caixas dentro de um veículo ou de um espaço?</h3>
-      <p>
-      Com o VolumTransport, após realizar o cálculo, a aplicação mostra o número total de caixas e lista as suas posições.
-      Também fornece uma <strong>visualização 3D das caixas já colocadas</strong>, ajudando a orientar a empilhagem correta e a ordem de carregamento
-      dentro do veículo ou do espaço disponível.
-      </p>
+        <h3>Qual é a melhor forma de empilhar caixas dentro de um veículo ou de um espaço?</h3>
+        <p>
+        Com o VolumTransport, após efetuar o cálculo, a aplicação mostra o número total de caixas e indica as suas posições.
+        Também fornece uma <strong>visualização 3D das caixas já colocadas</strong>, ajudando a orientar a empilhagem correta e a ordem de carregamento
+        dentro do veículo ou do espaço disponível.
+        </p>
 
-      <h3>Serve apenas para carrinhas?</h3>
-      <p>Não. Funciona com carrinhas, carros, camiões e veículos mistos.</p>
+        <h3>É apenas para carrinhas?</h3>
+        <p>Não. Funciona com carrinhas, carros, camiões e veículos mistos.</p>
 
-      <h3>É apenas uma calculadora de volume (CBM)?</h3>
-      <p>Não. Mostra a <strong>colocação real em 3D</strong> para confirmar se as caixas cabem mesmo.</p>
+        <h3>É compatível com um carro particular?</h3>
+        <p>
+        Sim. O VolumTransport também pode ser utilizado com carros particulares.
+        Ao introduzir as dimensões da bagageira e as medidas dos objetos a transportar,
+        a aplicação calcula se cabem.
+        Também permite simular configurações como <strong>bancos traseiros rebatidos</strong> para aproveitar espaço adicional.
+        </p>
+    
+        <h3>Sou um utilizador particular. Esta ferramenta pode ser útil para mim?</h3>
+        <p>
+        <strong>Sim.</strong> O VolumTransport também pode ser utilizado por utilizadores particulares.
+        Basta configurar o <strong>veículo ou espaço</strong> que pretende utilizar (por exemplo, a bagageira de um carro, uma <strong>arrecadação</strong>,
+        um quarto ou qualquer outro espaço) e introduzir as dimensões dos objetos.
+        A aplicação ajuda a verificar se <strong>móveis, eletrodomésticos, caixas ou objetos grandes</strong> realmente cabem antes de os transportar ou armazenar,
+        mostrando a sua colocação em 3D.
+        </p>
 
-      <h3>Posso medir com o telemóvel?</h3>
-      <p>Sim. Inclui medição por <strong>Realidade Aumentada (AR)</strong>.</p>
+        <h3>É apenas um calculador de volume (CBM)?</h3>
+        <p>Não. Mostra a <strong>colocação real em 3D</strong> para verificar se as caixas realmente cabem.</p>
 
-      <h3>Serve para divisões ou arrecadações?</h3>
-      <p>Sim. Use o <strong>modo de espaço universal</strong> e defina dimensões personalizadas.</p>
+        <h3>Posso medir com o telemóvel?</h3>
+        <p>Sim. Inclui medição com <strong>Realidade Aumentada (AR)</strong>.</p>
 
-      <h3>É grátis?</h3>
-      <p>Depende da versão disponível no Google Play. Consulte os detalhes na loja.</p>
+        <h3>Posso utilizá-lo para divisões ou espaços de armazenamento?</h3>
+        <p>Sim. Utilize o <strong>modo de espaço universal</strong> e defina dimensões personalizadas.</p>
+
+        <h3>É gratuito?</h3>
+        <p>Depende da versão disponível no Google Play. Consulte os detalhes na loja.</p>
     </section>
 
   </main>
