@@ -114,10 +114,19 @@
       margin-bottom:20px;
     }
 
-    .product-container img{
+    .product-container img.app-icon{
       max-width:150px;
       margin-right:20px;
     }
+
+    .google-play-badge{
+      height: 96px;
+      width: auto;
+      max-width: 320px;
+      display: block;
+      margin: 18px auto 0;
+    }
+
 
     .product-title{
       font-size:2.5em;
@@ -161,7 +170,7 @@
       text-decoration:underline;
     }
 
-    @media (max-width: 768px){
+   @media (max-width: 768px){
       .box-container{ padding: 20px; }
       .product-container{ padding: 20px; }
 
@@ -172,14 +181,23 @@
         flex-direction: column;
         text-align: center;
       }
-      .product-container img{
+
+      /* ✅ Solo el icono (no el badge) */
+      .product-container img.app-icon{
         max-width:110px;
         margin: 0 0 10px 0;
       }
+
       .footer-text{ font-size:1.9em; text-align:center; }
       .product-title{ font-size:1.6em; text-align:center; }
       .product-description{ text-align:center; }
+
+      .google-play-badge{
+        height: 84px;
+        max-width: 280px;
+      }
     }
+
   </style>
 </head>
 
@@ -209,28 +227,30 @@
         <div class="quote-author">– Henry Ford</div>
       </div>
 
-      <div class="product-container">
-        <div class="footer-text">Nuestro producto</div>
+      </div>
 
-        <div class="product-container-content">
-          <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
-            <img src="log volumtransport web.png" alt="Logo VolumTransport">
-          </a>
-          <div class="product-title">Cajas en el vehículo (VolumTransport)</div>
-        </div>
+    <div class="product-container">
+      <div class="footer-text">Nuestro producto</div>
 
-        <div class="product-description">
-          Con esta aplicación sabrás cuántas cajas puedes cargar en tu vehículo antes de comenzar a trabajar, optimizando tu tiempo y evitando esfuerzos innecesarios.
-        </div>
+      <div class="product-container-content">
+        <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
+          <img class="app-icon" src="log volumtransport web.png" alt="Logo VolumTransport">
+        </a>
+        <div class="product-title">Cajas en el vehículo (VolumTransport)</div>
+      </div>
 
-       <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
-      <img
-        src="GetItOnGooglePlay_Badge_Web_color_Spanish.png"
-        alt="Descargar en Google Play"
-        style="height:78px; width:auto; margin-top:10px; display:inline-block;">
+      <div class="product-description">
+        Con esta aplicación sabrás cuántas cajas puedes cargar en tu vehículo antes de comenzar a trabajar,
+        optimizando tu tiempo y evitando esfuerzos innecesarios.
+      </div>
+
+      <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
+        <img class="google-play-badge"
+             src="GetItOnGooglePlay_Badge_Web_color_Spanish.png"
+             alt="Descargar en Google Play">
       </a>
 
-      </div>
+    </div>
     </div>
 
     <div class="contact-container">
@@ -252,6 +272,7 @@
   </div>
 </body>
 </html>
+
 
 
 
