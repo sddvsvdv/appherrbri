@@ -182,6 +182,48 @@
       align-items:center;
       gap:10px 12px;
     }
+    .shots{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:16px;
+      margin:12px 0 6px;
+      align-items:start;
+    }
+
+    .shots figure{
+      margin:0;
+      background:#fff;
+      border-radius:12px;
+      padding:10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    }
+
+    .shots img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .shots figcaption{
+      margin-top:8px;
+    }
+
+    @media (max-width: 720px){
+      .shots{ grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 900px){
+      .shots{
+        justify-items: center;
+      }
+      .shots figure{
+        max-width: 280px;
+        width: 100%;
+      }
+    }
+
 
 
     .small { color: #444; font-size: .95rem; }
@@ -273,6 +315,12 @@
       <strong>måle med telefonens kamera (AR)</strong>.
     </p>
 
+    <p class="small">
+      Udviklet af <strong><a href="https://aplicacionesherrbri.com/" target="_blank" rel="noopener noreferrer">AplicacionesHerrbri</a></strong>,
+      et uafhængigt studie, der er specialiseret i praktiske værktøjer til transport- og logistikprofessionelle.
+    </p>
+
+
     <div class="note">
       <strong>Vigtigt:</strong> dette er <strong>ikke</strong> en simpel volumenberegner (CBM).
       Du kan se <strong>hvordan kasserne faktisk placeres</strong>, og om de
@@ -325,11 +373,43 @@
       </ul>
     </div>
 
-    <p>
-      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
-        Download VolumTransport på Google Play
+    <h2>App-skærmbilleder</h2>
+
+    <div class="shots">
+      <figure>
+        <img src="/assets/screens/da-presentacion-web.png"
+             alt="VolumTransport hovedskærm"
+             loading="lazy">
+        <figcaption class="small">
+          Hovedskærm: hurtig adgang til beregninger, lastbalancering og Augmented Reality.
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="/assets/screens/da-3d-web.png"
+             alt="3D-visualisering af last i VolumTransport"
+             loading="lazy">
+        <figcaption class="small">
+          Resultat: reel 3D-placering for at kontrollere, om alt virkelig passer.
+        </figcaption>
+      </figure>
+    </div>
+
+
+    <p class="small" style="margin-bottom:6px;">
+      Hent den på:
+    </p>
+
+    <p style="margin-top:10px;">
+      <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
+         target="_blank"
+         rel="noopener noreferrer">
+        <img src="/assets/screens/Badge-Danish-web.png"
+             alt="Hent den på Google Play"
+             style="height:60px; max-width:100%; border-radius:8px;">
       </a>
     </p>
+
 
     <p class="small">
       Tip: gem denne side som bogmærke og brug den, når du forbereder en rigtig last.
@@ -385,6 +465,23 @@
       <h3>Er den gratis?</h3>
       <p>Det afhænger af den version, der er tilgængelig på Google Play. Se detaljer i butikken.</p>
     </section>
+
+    <hr style="margin:28px 0; border:none; border-top:1px solid #ddd;">
+
+    <p class="small">
+      Sidst opdateret: 14. februar 2026.
+    </p>
+
+    <p class="small">
+      <a href="https://aplicacionesherrbri.com/"
+         target="_blank"
+         rel="noopener noreferrer">AplicacionesHerrbri</a>
+  ·
+      <a href="https://aplicacionesherrbri.com/privacy_policy.html"
+         target="_blank"
+         rel="noopener noreferrer">Privatlivspolitik</a>
+    </p>
+
 
 </main>
 </body>
