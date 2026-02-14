@@ -214,7 +214,15 @@
       .shots{ grid-template-columns: 1fr; }
     }
 
-
+    @media (min-width: 900px){
+      .shots{
+        justify-items: center;
+      }
+      .shots figure{
+        max-width: 320px;
+        width: 100%;
+      }
+    }
 
     .small { color: #444; font-size: .95rem; }
   </style>
