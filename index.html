@@ -120,12 +120,13 @@
     }
 
     .google-play-badge{
-      height: 96px;
+      height: 84px;        /* o 78/90, como quieras */
       width: auto;
-      max-width: 320px;
+      max-width: 100%;     /* ✅ clave: nunca supera el contenedor */
       display: block;
       margin: 18px auto 0;
     }
+
 
 
     .product-title{
@@ -168,7 +169,12 @@
       font-size:1.5em;
       color:white;
       text-decoration:underline;
+      display: inline-block;
+      max-width: 100%;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
+
 
    @media (max-width: 768px){
       .box-container{ padding: 20px; }
@@ -194,8 +200,10 @@
 
       .google-play-badge{
         height: 84px;
-        max-width: 280px;
+        width: auto;
+        max-width: 100%;
       }
+
     }
 
   </style>
@@ -272,6 +280,7 @@
   </div>
 </body>
 </html>
+
 
 
 
