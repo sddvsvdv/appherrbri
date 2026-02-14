@@ -184,6 +184,49 @@
       gap:10px 12px;
     }
 
+    .shots{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:16px;
+      margin:12px 0 6px;
+      align-items:start;
+    }
+
+    .shots figure{
+      margin:0;
+      background:#fff;
+      border-radius:12px;
+      padding:10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    }
+
+    .shots img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .shots figcaption{
+      margin-top:8px;
+    }
+
+    @media (max-width: 720px){
+      .shots{ grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 900px){
+      .shots{
+        justify-items: center;
+      }
+      .shots figure{
+        max-width: 280px;
+        width: 100%;
+      }
+    }
+
+
 
 
     .small { color: #444; font-size: .95rem; }
@@ -329,6 +372,29 @@
       </ul>
     </div>
 
+    <h2>App screenshots</h2>
+
+    <div class="shots">
+      <figure>
+        <img src="/assets/screens/en-presentacion-web.png"
+             alt="VolumTransport main screen"
+             loading="lazy">
+        <figcaption class="small">
+          Main screen: quick access to calculations, load balancing, and augmented reality.
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="/assets/screens/en-3d-web.png"
+             alt="3D load visualization in VolumTransport"
+             loading="lazy">
+        <figcaption class="small">
+          Result: real 3D placement to verify whether everything truly fits.
+        </figcaption>
+      </figure>
+    </div>
+
+
     <p class="small" style="margin-bottom:6px;">
       Get it on:
     </p>
@@ -396,6 +462,22 @@
     <h3>Is it free?</h3>
     <p>It depends on the version available on Google Play. Check the store for details.</p>
 </section>
+
+    <hr style="margin:28px 0; border:none; border-top:1px solid #ddd;">
+
+    <p class="small">
+      Last updated: February 14, 2026.
+    </p>
+
+    <p class="small">
+      <a href="https://aplicacionesherrbri.com/"
+         target="_blank"
+         rel="noopener noreferrer">AplicacionesHerrbri</a>
+  ·
+      <a href="https://aplicacionesherrbri.com/privacy_policy.html"
+         target="_blank"
+         rel="noopener noreferrer">Política de privacidad</a>
+    </p>
 
 
   </main>
