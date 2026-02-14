@@ -182,6 +182,38 @@
       align-items:center;
       gap:10px 12px;
     }
+    .shots{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:16px;
+      margin:12px 0 6px;
+      align-items:start;
+    }
+
+    .shots figure{
+      margin:0;
+      background:#fff;
+      border-radius:12px;
+      padding:10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    }
+
+    .shots img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .shots figcaption{
+      margin-top:8px;
+    }
+
+    @media (max-width: 720px){
+      .shots{ grid-template-columns: 1fr; }
+    }
+
 
 
     .small { color: #444; font-size: .95rem; }
@@ -329,6 +361,25 @@
       </ul>
     </div>
 
+    <h2>Capturas reales de la app</h2>
+
+    <div class="shots">
+      <figure>
+        <img src="/assets/screens/es-presentacion-web.png"
+             alt="Pantalla principal de VolumTransport"
+             loading="lazy">
+        <figcaption class="small">Pantalla principal: acceso rápido a cálculo, equilibrio de cargas y AR.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="/assets/screens/es-3d-web.png"
+             alt="Visualización 3D de la carga en VolumTransport"
+             loading="lazy">
+        <figcaption class="small">Resultado: colocación real en 3D para comprobar si cabe de verdad.</figcaption>
+      </figure>
+    </div>
+
+
     <p class="small" style="margin-bottom:6px;">
       Consíguela en:
     </p>
@@ -338,7 +389,7 @@
          target="_blank"
          rel="noopener">
         <img src="/GetItOnGooglePlay_Badge_Web_color_Spanish.png"
-             alt="Disponible en Google Play"
+             alt="Descargar en Google Play"
              style="height:60px; max-width:100%; border-radius:8px;">
       </a>
     </p>
