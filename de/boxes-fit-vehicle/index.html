@@ -183,6 +183,48 @@
       gap:10px 12px;
     }
 
+    .shots{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:16px;
+      margin:12px 0 6px;
+      align-items:start;
+    }
+
+    .shots figure{
+      margin:0;
+      background:#fff;
+      border-radius:12px;
+      padding:10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    }
+
+    .shots img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .shots figcaption{
+      margin-top:8px;
+    }
+
+    @media (max-width: 720px){
+      .shots{ grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 900px){
+      .shots{
+        justify-items: center;
+      }
+      .shots figure{
+        max-width: 280px;
+        width: 100%;
+      }
+    }
+
 
     .small { color: #444; font-size: .95rem; }
   </style>
@@ -272,6 +314,11 @@
       <strong>Maße direkt mit der Smartphone-Kamera (AR)</strong> zu erfassen.
     </p>
 
+    <p class="small">
+      Entwickelt von <strong><a href="https://aplicacionesherrbri.com/" target="_blank" rel="noopener noreferrer">AplicacionesHerrbri</a></strong>,
+      einem unabhängigen Studio, das sich auf praktische Werkzeuge für Fachkräfte im Transport- und Logistikbereich spezialisiert hat.
+    </p>
+
     <div class="note">
       <strong>Wichtig:</strong> Dies ist <strong>keine</strong> einfache Volumen- oder CBM-Rechner-App.
       Sie sehen <strong>die tatsächliche Platzierung der Kisten</strong> und ob sie
@@ -324,9 +371,40 @@
       </ul>
     </div>
 
-    <p>
-      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
-        VolumTransport bei Google Play herunterladen
+    <h2>App-Screenshots</h2>
+
+    <div class="shots">
+      <figure>
+        <img src="/assets/screens/de-presentacion-web.png"
+             alt="Hauptbildschirm von VolumTransport"
+             loading="lazy">
+        <figcaption class="small">
+          Hauptbildschirm: schneller Zugriff auf Berechnungen, Lastenausgleich und erweiterte Realität.
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="/assets/screens/de-3d-web.png"
+             alt="3D-Ladevisualisierung in VolumTransport"
+             loading="lazy">
+        <figcaption class="small">
+          Ergebnis: reale 3D-Platzierung zur Überprüfung, ob alles tatsächlich hineinpasst.
+        </figcaption>
+      </figure>
+    </div>
+
+
+    <p class="small" style="margin-bottom:6px;">
+      Erhältlich bei:
+    </p>
+
+    <p style="margin-top:10px;">
+      <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
+         target="_blank"
+         rel="noopener noreferrer">
+        <img src="/assets/screens/Badge-German-web.png"
+             alt="Jetzt bei Google Play"
+             style="height:60px; max-width:100%; border-radius:8px;">
       </a>
     </p>
 
@@ -383,6 +461,23 @@
     <h3>Ist die App kostenlos?</h3>
     <p>Das hängt von der Version bei Google Play ab. Details finden Sie im Store.</p>
 </section>
+
+    <hr style="margin:28px 0; border:none; border-top:1px solid #ddd;">
+
+    <p class="small">
+      Letzte Aktualisierung: 15. Februar 2026.
+    </p>
+
+    <p class="small">
+      <a href="https://aplicacionesherrbri.com/"
+         target="_blank"
+         rel="noopener noreferrer">AplicacionesHerrbri</a>
+  ·
+      <a href="https://aplicacionesherrbri.com/privacy_policy.html"
+         target="_blank"
+         rel="noopener noreferrer">Datenschutzerklärung</a>
+    </p>
+
 
   </main>
 </body>
