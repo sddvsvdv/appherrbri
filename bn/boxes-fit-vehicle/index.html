@@ -122,6 +122,109 @@
       margin-top: 18px;
     }
 
+    .langbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      padding:14px 16px;
+      background:#f3fbf6;
+      border-radius:14px;
+      border:1px solid rgba(46,125,50,.2);
+      margin-bottom:18px;
+    }
+
+    .lang-title{
+      font-weight:700;
+      color:#1b5e20;
+      margin-right:12px;
+    }
+
+    .lang-main{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .lang-main a{
+      text-decoration:none;
+      font-weight:600;
+      color:#1b5e20;
+      padding:6px 10px;
+      border-radius:8px;
+      transition:.2s ease;
+    }
+
+    .lang-main a:hover{
+      background:#e0f2e9;
+    }
+
+    .lang-active{
+      background:#1b5e20;
+      color:#fff;
+      padding:6px 12px;
+      border-radius:8px;
+      font-weight:700;
+    }
+
+    .lang-right select{
+      padding:8px 12px;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.2);
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    .lang-left{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:10px 12px;
+    }
+
+    .shots{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:16px;
+      margin:12px 0 6px;
+      align-items:start;
+    }
+
+    .shots figure{
+      margin:0;
+      background:#fff;
+      border-radius:12px;
+      padding:10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    }
+
+    .shots img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .shots figcaption{
+      margin-top:8px;
+    }
+
+    @media (max-width: 720px){
+      .shots{ grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 900px){
+      .shots{
+        justify-items: center;
+      }
+      .shots figure{
+        max-width: 280px;
+        width: 100%;
+      }
+    }
+
     .small { color: #444; font-size: .95rem; }
   </style>
 
@@ -143,6 +246,62 @@
 <body>
   <main class="wrap">
 
+    <nav class="langbar" aria-label="ভাষা নির্বাচন">
+      <div class="lang-left">
+        <span class="lang-title">🌍 ভাষা</span>
+
+        <div class="lang-main">
+          <a href="/boxes-fit-vehicle/" hreflang="en">English</a>
+          <a href="/es/boxes-fit-vehicle/" hreflang="es">Español</a>
+          <a href="/fr/boxes-fit-vehicle/" hreflang="fr">Français</a>
+          <a href="/de/boxes-fit-vehicle/" hreflang="de">Deutsch</a>
+          <span class="lang-active">বাংলা</span>
+          <a href="/zh-hans/boxes-fit-vehicle/" hreflang="zh-Hans">中文</a>
+        </div>
+      </div>
+      
+      <div class="lang-right">
+        <select onchange="if(this.value) window.location.href=this.value;">
+          <option value="">আরও ভাষা…</option>
+          <option value="/bg/boxes-fit-vehicle/">Български</option>
+          <option value="/cs/boxes-fit-vehicle/">Čeština</option>
+          <option value="/ko/boxes-fit-vehicle/">한국어</option>
+          <option value="/hr/boxes-fit-vehicle/">Hrvatski</option>
+          <option value="/sk/boxes-fit-vehicle/">Slovenčina</option>
+          <option value="/sl/boxes-fit-vehicle/">Slovenščina</option>
+          <option value="/et/boxes-fit-vehicle/">Eesti</option>
+          <option value="/da/boxes-fit-vehicle/">Dansk</option>
+          <option value="/fi/boxes-fit-vehicle/">Suomi</option>
+          <option value="/el/boxes-fit-vehicle/">Ελληνικά</option>
+          <option value="/he/boxes-fit-vehicle/">עברית</option>
+          <option value="/hi/boxes-fit-vehicle/">हिन्दी</option>
+          <option value="/hu/boxes-fit-vehicle/">Magyar</option>
+          <option value="/id/boxes-fit-vehicle/">Bahasa Indonesia</option>
+          <option value="/it/boxes-fit-vehicle/">Italiano</option>
+          <option value="/ja/boxes-fit-vehicle/">日本語</option>
+          <option value="/lo/boxes-fit-vehicle/">ລາວ</option>
+          <option value="/lv/boxes-fit-vehicle/">Latviešu</option>
+          <option value="/lt/boxes-fit-vehicle/">Lietuvių</option>
+          <option value="/nl/boxes-fit-vehicle/">Nederlands</option>
+          <option value="/ne/boxes-fit-vehicle/">नेपाली</option>
+          <option value="/no/boxes-fit-vehicle/">Norsk</option>
+          <option value="/fa/boxes-fit-vehicle/">فارسی</option>
+          <option value="/pl/boxes-fit-vehicle/">Polski</option>
+          <option value="/pt/boxes-fit-vehicle/">Português</option>
+          <option value="/pa-pk/boxes-fit-vehicle/">ਪੰਜਾਬੀ</option>
+          <option value="/ro/boxes-fit-vehicle/">Română</option>
+          <option value="/ru/boxes-fit-vehicle/">Русский</option>
+          <option value="/sv/boxes-fit-vehicle/">Svenska</option>
+          <option value="/th/boxes-fit-vehicle/">ไทย</option>
+          <option value="/tr/boxes-fit-vehicle/">Türkçe</option>
+          <option value="/uk/boxes-fit-vehicle/">Українська</option>
+          <option value="/ur/boxes-fit-vehicle/">اردو</option>
+          <option value="/vi/boxes-fit-vehicle/">Tiếng Việt</option>
+          <option value="/ar/boxes-fit-vehicle/">العربية</option>
+        </select>
+      </div>
+    </nav>
+
     <h1>একটি যানবাহন বা বাস্তব স্থানে কতগুলো বাক্স বসবে তা হিসাব করার অ্যাপ (Android)</h1>
 
     <p>
@@ -150,6 +309,11 @@
       <strong>ভ্যান, গাড়ি বা যেকোনো বাস্তব স্থানে কতগুলো বাক্স বসবে</strong> তা হিসাব করে,
       <strong>বাস্তব 3D প্লেসমেন্ট</strong> দেখায় এবং
       <strong>মোবাইল ক্যামেরা দিয়ে AR মাপ নেওয়ার সুবিধা দেয়</strong>।
+    </p>
+
+    <p class="small">
+      উন্নয়ন করেছে <strong><a href="https://aplicacionesherrbri.com/" target="_blank" rel="noopener noreferrer">AplicacionesHerrbri</a></strong>,
+      পরিবহন ও লজিস্টিকস পেশাজীবীদের জন্য ব্যবহারিক সরঞ্জামে বিশেষায়িত একটি স্বতন্ত্র স্টুডিও।
     </p>
 
     <div class="note">
@@ -205,11 +369,43 @@
       </ul>
     </div>
 
-    <p>
-      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
-        Google Play থেকে VolumTransport ডাউনলোড করুন
+    <h2>অ্যাপের স্ক্রিনশট</h2>
+
+    <div class="shots">
+      <figure>
+        <img src="/assets/screens/bn-presentacion-web.png"
+             alt="VolumTransport-এর প্রধান স্ক্রিন"
+             loading="lazy">
+        <figcaption class="small">
+          প্রধান স্ক্রিন: গণনা, লোড ব্যালান্সিং এবং অগমেন্টেড রিয়েলিটি-তে দ্রুত প্রবেশাধিকার।
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="/assets/screens/bn-3d-web.png"
+             alt="VolumTransport-এ 3D লোড ভিজ্যুয়ালাইজেশন"
+             loading="lazy">
+        <figcaption class="small">
+          ফলাফল: বাস্তব 3D বিন্যাস, যাতে যাচাই করা যায় সবকিছু সত্যিই ফিট করে কিনা।
+        </figcaption>
+      </figure>
+    </div>
+
+
+    <p class="small" style="margin-bottom:6px;">
+      এখান থেকে ডাউনলোড করুন:
+    </p>
+
+    <p style="margin-top:10px;">
+      <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
+         target="_blank"
+         rel="noopener noreferrer">
+        <img src="/assets/screens/Badge-Bengali-web.png"
+             alt="Google Play থেকে ডাউনলোড করুন"
+             style="height:60px; max-width:100%; border-radius:8px;">
       </a>
     </p>
+
 
     <p class="small">
       পরামর্শ: বাস্তব লোড প্রস্তুতের সময় ব্যবহার করার জন্য এই পেজটি বুকমার্ক করে রাখুন।
@@ -248,6 +444,23 @@
       <h3>অ্যাপটি কি ফ্রি?</h3>
       <p>Google Play–এ কোন সংস্করণ পাওয়া যাচ্ছে তার উপর নির্ভর করে। বিস্তারিত স্টোরে দেখুন।</p>
     </section>
+
+    <hr style="margin:28px 0; border:none; border-top:1px solid #ddd;">
+
+    <p class="small">
+      সর্বশেষ আপডেট: 16 ফেব্রুয়ারি 2026।
+    </p>
+
+    <p class="small">
+      <a href="https://aplicacionesherrbri.com/"
+         target="_blank"
+         rel="noopener noreferrer">AplicacionesHerrbri</a>
+  ·
+      <a href="https://aplicacionesherrbri.com/privacy_policy.html"
+         target="_blank"
+         rel="noopener noreferrer">গোপনীয়তা নীতি</a>
+    </p>
+
 
   </main>
 </body>
