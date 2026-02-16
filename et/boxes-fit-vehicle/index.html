@@ -183,6 +183,48 @@
       gap:10px 12px;
     }
 
+    .shots{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:16px;
+      margin:12px 0 6px;
+      align-items:start;
+    }
+
+    .shots figure{
+      margin:0;
+      background:#fff;
+      border-radius:12px;
+      padding:10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    }
+
+    .shots img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .shots figcaption{
+      margin-top:8px;
+    }
+
+    @media (max-width: 720px){
+      .shots{ grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 900px){
+      .shots{
+        justify-items: center;
+      }
+      .shots figure{
+        max-width: 280px;
+        width: 100%;
+      }
+    }
+
 
 
     .small { color: #444; font-size: .95rem; }
@@ -271,6 +313,12 @@
       <strong>mõõta telefoni kaameraga (AR)</strong>.
     </p>
 
+    <p class="small">
+      Arendaja on <strong><a href="https://aplicacionesherrbri.com/" target="_blank" rel="noopener noreferrer">AplicacionesHerrbri</a></strong>,
+      sõltumatu stuudio, mis on spetsialiseerunud praktilistele tööriistadele transpordi- ja logistika spetsialistidele.
+    </p>
+
+
     <div class="note">
       <strong>Oluline:</strong> see <strong>ei ole</strong> lihtne mahu (CBM) kalkulaator.
       Sa näed <strong>kuidas kastid päriselt paigutatakse</strong> ja kas need
@@ -323,11 +371,43 @@
       </ul>
     </div>
 
-    <p>
-      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
-        Laadi VolumTransport alla Google Playst
-      </a>
+    <h2>Rakenduse ekraanipildid</h2>
+
+    <div class="shots">
+      <figure>
+        <img src="/assets/screens/et-presentacion-web.png"
+             alt="VolumTransporti avaleht"
+             loading="lazy">
+        <figcaption class="small">
+          Avaleht: kiire juurdepääs arvutustele, koormuse tasakaalustamisele ja liitreaalsusele.
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="/assets/screens/et-3d-web.png"
+             alt="VolumTransporti 3D koormuse visualiseerimine"
+             loading="lazy">
+        <figcaption class="small">
+          Tulemus: reaalne 3D paigutus, et kontrollida, kas kõik tõesti mahub ära.
+        </figcaption>
+      </figure>
+    </div>
+
+
+    <p class="small" style="margin-bottom:6px;">
+      Laadi alla:
     </p>
+
+    <p style="margin-top:10px;">
+          <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
+             target="_blank"
+             rel="noopener noreferrer">
+            <img src="/assets/screens/Badge-Estonian-web.png"
+                 alt="Laadi alla Google Playst"
+                 style="height:60px; max-width:100%; border-radius:8px;">
+          </a>
+    </p>
+
 
     <p class="small">
       Nipp: lisa see leht järjehoidjatesse ja kasuta seda, kui valmistad ette päris koormat.
@@ -382,6 +462,23 @@
     <h3>Kas see on tasuta?</h3>
     <p>See sõltub Google Plays saadaolevast versioonist. Vaata täpsemalt poes.</p>
 </section>
+
+    <hr style="margin:28px 0; border:none; border-top:1px solid #ddd;">
+
+    <p class="small">
+      Viimati uuendatud: 16. veebruar 2026.
+    </p>
+
+    <p class="small">
+      <a href="https://aplicacionesherrbri.com/"
+         target="_blank"
+         rel="noopener noreferrer">AplicacionesHerrbri</a>
+  ·
+      <a href="https://aplicacionesherrbri.com/privacy_policy.html"
+         target="_blank"
+         rel="noopener noreferrer">Privaatsuspoliitika</a>
+    </p>
+
 
   </main>
 </body>
