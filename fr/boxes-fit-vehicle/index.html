@@ -183,6 +183,50 @@
       gap:10px 12px;
     }
 
+    .shots{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:16px;
+      margin:12px 0 6px;
+      align-items:start;
+    }
+
+    .shots figure{
+      margin:0;
+      background:#fff;
+      border-radius:12px;
+      padding:10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    }
+
+    .shots img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .shots figcaption{
+      margin-top:8px;
+    }
+
+    @media (max-width: 720px){
+      .shots{ grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 900px){
+      .shots{
+        justify-items: center;
+      }
+      .shots figure{
+        max-width: 280px;
+        width: 100%;
+      }
+    }
+
+
+
     .small { color: #444; font-size: .95rem; }
   </style>
 
@@ -270,6 +314,12 @@
       <strong>mesurer avec la caméra du téléphone (AR)</strong>.
     </p>
 
+    <p class="small">
+      Développé par <strong><a href="https://aplicacionesherrbri.com/" target="_blank" rel="noopener noreferrer">AplicacionesHerrbri</a></strong>,
+      un studio indépendant spécialisé dans les outils pratiques pour les professionnels du transport et de la logistique.
+    </p>
+
+
     <div class="note">
       <strong>Important :</strong> ce <strong>n’est pas</strong> une simple calculatrice de volume (CBM).
       Vous voyez <strong>comment les cartons sont réellement placés</strong> et s’ils
@@ -322,11 +372,43 @@
       </ul>
     </div>
 
-    <p>
-      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
-        Télécharger VolumTransport sur Google Play
-      </a>
+    <h2>Captures d’écran de l’application</h2>
+
+    <div class="shots">
+      <figure>
+        <img src="/assets/screens/fr-presentacion-web.png"
+             alt="Écran principal de VolumTransport"
+             loading="lazy">
+        <figcaption class="small">
+          Écran principal : accès rapide aux calculs, à l’équilibrage des charges et à la réalité augmentée.
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="/assets/screens/fr-3d-web.png"
+             alt="Visualisation 3D du chargement dans VolumTransport"
+             loading="lazy">
+        <figcaption class="small">
+          Résultat : placement réel en 3D pour vérifier si tout rentre réellement.
+        </figcaption>
+      </figure>
+    </div>
+
+
+    <p class="small" style="margin-bottom:6px;">
+      Disponible sur :
     </p>
+
+    <p style="margin-top:10px;">
+          <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
+             target="_blank"
+             rel="noopener noreferrer">
+            <img src="/assets/screens/Badge-French-web.png"
+                 alt="Disponible sur Google Play"
+                 style="height:60px; max-width:100%; border-radius:8px;">
+          </a>
+    </p>
+
 
     <p class="small">
       Astuce : ajoutez cette page à vos favoris et utilisez-la lors de la préparation d’un vrai chargement.
@@ -381,6 +463,23 @@
     <h3>L’application est-elle gratuite ?</h3>
     <p>Cela dépend de la version disponible sur Google Play. Consultez les détails dans la boutique.</p>
 </section>
+
+    <hr style="margin:28px 0; border:none; border-top:1px solid #ddd;">
+
+    <p class="small">
+      Dernière mise à jour : 16 février 2026.
+    </p>
+
+    <p class="small">
+      <a href="https://aplicacionesherrbri.com/"
+         target="_blank"
+         rel="noopener noreferrer">AplicacionesHerrbri</a>
+  ·
+      <a href="https://aplicacionesherrbri.com/privacy_policy.html"
+         target="_blank"
+         rel="noopener noreferrer">Politique de confidentialité</a>
+    </p>
+
 
 
   </main>
