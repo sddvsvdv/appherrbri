@@ -122,6 +122,110 @@
       margin-top: 18px;
     }
 
+    .langbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      padding:14px 16px;
+      background:#f3fbf6;
+      border-radius:14px;
+      border:1px solid rgba(46,125,50,.2);
+      margin-bottom:18px;
+    }
+
+    .lang-title{
+      font-weight:700;
+      color:#1b5e20;
+      margin-right:12px;
+    }
+
+    .lang-main{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .lang-main a{
+      text-decoration:none;
+      font-weight:600;
+      color:#1b5e20;
+      padding:6px 10px;
+      border-radius:8px;
+      transition:.2s ease;
+    }
+
+    .lang-main a:hover{
+      background:#e0f2e9;
+    }
+
+    .lang-active{
+      background:#1b5e20;
+      color:#fff;
+      padding:6px 12px;
+      border-radius:8px;
+      font-weight:700;
+    }
+
+    .lang-right select{
+      padding:8px 12px;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.2);
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    .lang-left{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:10px 12px;
+    }
+
+    .shots{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:16px;
+      margin:12px 0 6px;
+      align-items:start;
+    }
+
+    .shots figure{
+      margin:0;
+      background:#fff;
+      border-radius:12px;
+      padding:10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    }
+
+    .shots img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .shots figcaption{
+      margin-top:8px;
+    }
+
+    @media (max-width: 720px){
+      .shots{ grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 900px){
+      .shots{
+        justify-items: center;
+      }
+      .shots figure{
+        max-width: 280px;
+        width: 100%;
+      }
+    }
+
+
     .small { color: #444; font-size: .95rem; }
   </style>
 
@@ -143,6 +247,64 @@
 <body>
   <main class="wrap">
 
+   <nav class="langbar" aria-label="언어 선택">
+      <div class="lang-left">
+        <span class="lang-title">🌍 언어</span>
+    
+        <div class="lang-main">
+          <a href="/boxes-fit-vehicle/" hreflang="en">English</a>
+          <a href="/es/boxes-fit-vehicle/" hreflang="es">Español</a>
+          <a href="/fr/boxes-fit-vehicle/" hreflang="fr">Français</a>
+          <a href="/de/boxes-fit-vehicle/" hreflang="de">Deutsch</a>
+          <span class="lang-active">한국어</span>
+          <a href="/zh-hans/boxes-fit-vehicle/" hreflang="zh-Hans">中文</a>
+        </div>
+      </div>
+
+
+      <div class="lang-right">
+        <select onchange="if(this.value) window.location.href=this.value;">
+          <option value="">다른 언어…</option>
+          <option value="/bg/boxes-fit-vehicle/">Български</option>
+          <option value="/bn/boxes-fit-vehicle/">বাংলা</option>
+          <option value="/cs/boxes-fit-vehicle/">Čeština</option>
+          <option value="/ko/boxes-fit-vehicle/">한국어</option>
+          <option value="/hr/boxes-fit-vehicle/">Hrvatski</option>
+          <option value="/sk/boxes-fit-vehicle/">Slovenčina</option>
+          <option value="/sl/boxes-fit-vehicle/">Slovenščina</option>
+          <option value="/et/boxes-fit-vehicle/">Eesti</option>
+          <option value="/da/boxes-fit-vehicle/">Dansk</option>
+          <option value="/fi/boxes-fit-vehicle/">Suomi</option>
+          <option value="/el/boxes-fit-vehicle/">Ελληνικά</option>
+          <option value="/he/boxes-fit-vehicle/">עברית</option>
+          <option value="/hi/boxes-fit-vehicle/">हिन्दी</option>
+          <option value="/hu/boxes-fit-vehicle/">Magyar</option>
+          <option value="/id/boxes-fit-vehicle/">Bahasa Indonesia</option>
+          <option value="/it/boxes-fit-vehicle/">Italiano</option>
+          <option value="/ja/boxes-fit-vehicle/">日本語</option>
+          <option value="/lo/boxes-fit-vehicle/">ລາວ</option>
+          <option value="/lv/boxes-fit-vehicle/">Latviešu</option>
+          <option value="/lt/boxes-fit-vehicle/">Lietuvių</option>
+          <option value="/nl/boxes-fit-vehicle/">Nederlands</option>
+          <option value="/ne/boxes-fit-vehicle/">नेपाली</option>
+          <option value="/no/boxes-fit-vehicle/">Norsk</option>
+          <option value="/fa/boxes-fit-vehicle/">فارسی</option>
+          <option value="/pl/boxes-fit-vehicle/">Polski</option>
+          <option value="/pt/boxes-fit-vehicle/">Português</option>
+          <option value="/pa-pk/boxes-fit-vehicle/">ਪੰਜਾਬੀ</option>
+          <option value="/ro/boxes-fit-vehicle/">Română</option>
+          <option value="/ru/boxes-fit-vehicle/">Русский</option>
+          <option value="/sv/boxes-fit-vehicle/">Svenska</option>
+          <option value="/th/boxes-fit-vehicle/">ไทย</option>
+          <option value="/tr/boxes-fit-vehicle/">Türkçe</option>
+          <option value="/uk/boxes-fit-vehicle/">Українська</option>
+          <option value="/ur/boxes-fit-vehicle/">اردو</option>
+          <option value="/vi/boxes-fit-vehicle/">Tiếng Việt</option>
+          <option value="/ar/boxes-fit-vehicle/">العربية</option>
+        </select>
+      </div>
+    </nav>
+
     <h1>차량 또는 실제 공간에 박스가 얼마나 들어가는지 계산하는 앱 (Android)</h1>
 
     <p>
@@ -150,6 +312,12 @@
       <strong>밴, 승용차 또는 실제 공간에 몇 개의 박스가 들어가는지</strong> 계산하도록 설계된 Android 앱입니다.
       <strong>실제 3D 배치</strong>를 보여주고, <strong>휴대폰 카메라로 AR 측정</strong>도 할 수 있습니다.
     </p>
+
+    <p class="small">
+      <strong><a href="https://aplicacionesherrbri.com/" target="_blank" rel="noopener noreferrer">AplicacionesHerrbri</a></strong>에서 개발한,
+      운송 및 물류 전문가를 위한 실용적인 도구에 특화된 독립 스튜디오입니다.
+    </p>
+
 
     <div class="note">
       <strong>중요:</strong> 이 앱은 <strong>단순한</strong> 부피(CBM) 계산기가 아닙니다.
@@ -204,11 +372,43 @@
       </ul>
     </div>
 
-    <p>
-      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
-        Google Play에서 VolumTransport 다운로드
-      </a>
+    <h2>앱 스크린샷</h2>
+
+    <div class="shots">
+      <figure>
+        <img src="/assets/screens/ko-presentacion-web.png"
+             alt="VolumTransport 메인 화면"
+             loading="lazy">
+        <figcaption class="small">
+          메인 화면: 계산, 적재 균형, 증강 현실 기능에 빠르게 접근할 수 있습니다.
+        </figcaption>
+      </figure>
+    
+      <figure>
+        <img src="/assets/screens/ko-3d-web.png"
+             alt="VolumTransport의 3D 적재 시각화"
+             loading="lazy">
+        <figcaption class="small">
+          결과: 실제 3D 배치를 통해 모든 박스가 실제로 들어가는지 확인할 수 있습니다.
+        </figcaption>
+      </figure>
+    </div>
+
+
+    <p class="small" style="margin-bottom:6px;">
+          Google Play에서 다운로드:
     </p>
+    
+    <p style="margin-top:10px;">
+          <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
+             target="_blank"
+             rel="noopener noreferrer">
+            <img src="/assets/screens/GetItOnGooglePlay_Badge_Web_color_Korean.png"
+                 alt="Google Play에서 다운로드"
+                 style="height:60px; max-width:100%; border-radius:8px;">
+          </a>
+    </p>
+
 
     <p class="small">
       팁: 실제 적재를 준비할 때 참고할 수 있도록 이 페이지를 북마크해 두세요.
@@ -217,34 +417,71 @@
     <section class="faq">
       <h2>자주 묻는 질문</h2>
 
-      <h3>트럭에 몇 개의 상자가 들어가는지 어떻게 계산하나요?</h3>
-      <p>
-      VolumTransport를 사용하면 차량 정보와 화물의 치수를 입력하여 트럭에 적재할 수 있는 상자 수를 계산할 수 있습니다.
-      치수를 입력하고 계산을 누르면, 앱이 적재 가능한 상자 수와 적재 계획에 필요한 기타 정보를 표시합니다.
-      </p>
-
-      <h3>차량이나 공간 안에서 상자를 쌓는 가장 좋은 방법은 무엇인가요?</h3>
-      <p>
-      VolumTransport를 사용하면 계산 후 앱에서 상자의 총 개수와 위치를 표시합니다.
-      또한 <strong>이미 배치된 상자의 3D 시각화</strong>를 제공하여 올바른 적재 방식과 적재 순서를 안내합니다.
-      이를 통해 차량이나 사용 가능한 공간 내부에서 효율적으로 적재할 수 있습니다.
-      </p>
-
-      <h3>밴에서만 사용할 수 있나요?</h3>
-      <p>아니요. 밴, 승용차, 트럭, 혼합 차량에서 모두 사용할 수 있습니다.</p>
-
-      <h3>단순한 부피(CBM) 계산기인가요?</h3>
-      <p>아니요. <strong>실제 3D 배치</strong>를 보여주어 박스가 정말 들어가는지 확인할 수 있습니다.</p>
-
-      <h3>휴대폰으로 측정할 수 있나요?</h3>
-      <p>네. <strong>증강현실(AR)</strong> 측정을 지원합니다.</p>
-
-      <h3>방이나 보관 공간에도 사용할 수 있나요?</h3>
-      <p>네. <strong>유니버설 공간 모드</strong>에서 사용자 정의 치수를 설정하면 됩니다.</p>
-
-      <h3>무료인가요?</h3>
-      <p>Google Play에 제공되는 버전에 따라 다릅니다. 스토어에서 상세 정보를 확인하세요.</p>
-    </section>
+      <h3>트럭에 몇 개의 박스를 실을 수 있는지 어떻게 계산하나요?</h3>
+    <p>
+        VolumTransport를 사용하면 차량 정보와 화물의 크기를 입력하여
+        트럭이 몇 개의 박스를 운반할 수 있는지 계산할 수 있습니다.
+        치수를 입력하고 계산 버튼을 누르기만 하면 됩니다:
+        앱이 적재 가능한 박스 수와 적재 계획에 필요한 기타 관련 정보를 보여줍니다.
+    </p>
+    
+    <h3>차량이나 공간 내부에 박스를 쌓는 가장 좋은 방법은 무엇인가요?</h3>
+    <p>
+        VolumTransport에서 계산을 수행하면 전체 박스 수와 각 박스의 위치가 표시됩니다.
+        또한 <strong>이미 배치된 박스의 3D 시각화</strong>를 제공하여
+        차량이나 사용 가능한 공간 내부에서 올바른 적재 순서와 배치를 안내합니다.
+    </p>
+    
+    <h3>이 앱은 밴 차량 전용인가요?</h3>
+    <p>아니요. 밴, 승용차, 트럭 및 혼합 차량 모두에서 사용할 수 있습니다.</p>
+    
+    <h3>개인 승용차에서도 사용할 수 있나요?</h3>
+    <p>
+        네. VolumTransport는 개인 차량에서도 사용할 수 있습니다.
+        트렁크의 크기와 운반할 물품의 치수를 입력하면
+        실제로 적재가 가능한지 계산해 줍니다.
+        또한 <strong>뒷좌석 접기</strong>와 같은 구성을 시뮬레이션하여
+        추가 공간을 활용할 수 있습니다.
+    </p>
+    
+    <h3>개인 사용자입니다. 이 도구가 저에게도 도움이 될까요?</h3>
+    <p>
+      <strong>네.</strong> VolumTransport는 개인 사용자도 사용할 수 있습니다.
+      사용하려는 <strong>차량 또는 공간</strong>
+      (예: 자동차 트렁크, <strong>창고</strong>, 방 또는 기타 공간)을 설정하고
+      물품의 치수를 입력하기만 하면 됩니다.
+      앱은 <strong>가구, 가전제품, 박스 또는 대형 물품</strong>이
+      운반 또는 보관 전에 실제로 들어가는지 확인할 수 있도록 도와주며,
+      3D 배치를 통해 시각적으로 보여줍니다.
+    </p>
+    
+    <h3>단순한 부피(CBM) 계산기인가요?</h3>
+    <p>아니요. <strong>실제 3D 배치</strong>를 보여 주어 박스가 실제로 들어가는지 확인할 수 있습니다.</p>
+    
+    <h3>휴대폰으로 측정할 수 있나요?</h3>
+    <p>네. <strong>증강 현실(AR)</strong> 측정 기능이 포함되어 있습니다.</p>
+    
+    <h3>방이나 저장 공간에도 사용할 수 있나요?</h3>
+    <p>네. <strong>유니버설 공간 모드</strong>를 사용하여 사용자 지정 치수를 설정할 수 있습니다.</p>
+    
+    <h3>무료인가요?</h3>
+    <p>Google Play에서 제공되는 버전에 따라 다릅니다. 자세한 내용은 스토어에서 확인하세요.</p>
+    
+    <hr style="margin:28px 0; border:none; border-top:1px solid #ddd;">
+    
+    <p class="small">
+      최종 업데이트: 2026년 2월 17일.
+    </p>
+    
+    <p class="small">
+      <a href="https://aplicacionesherrbri.com/"
+         target="_blank"
+         rel="noopener noreferrer">AplicacionesHerrbri</a>
+      ·
+      <a href="https://aplicacionesherrbri.com/privacy_policy.html"
+         target="_blank"
+         rel="noopener noreferrer">개인정보 처리방침</a>
+    </p>
 
   </main>
 </body>
