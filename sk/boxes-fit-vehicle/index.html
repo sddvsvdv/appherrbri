@@ -122,6 +122,108 @@
       margin-top: 18px;
     }
 
+    .langbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      padding:14px 16px;
+      background:#f3fbf6;
+      border-radius:14px;
+      border:1px solid rgba(46,125,50,.2);
+      margin-bottom:18px;
+    }
+
+    .lang-title{
+      font-weight:700;
+      color:#1b5e20;
+      margin-right:12px;
+    }
+
+    .lang-main{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .lang-main a{
+      text-decoration:none;
+      font-weight:600;
+      color:#1b5e20;
+      padding:6px 10px;
+      border-radius:8px;
+      transition:.2s ease;
+    }
+
+    .lang-main a:hover{
+      background:#e0f2e9;
+    }
+
+    .lang-active{
+      background:#1b5e20;
+      color:#fff;
+      padding:6px 12px;
+      border-radius:8px;
+      font-weight:700;
+    }
+
+    .lang-right select{
+      padding:8px 12px;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.2);
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    .lang-left{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:10px 12px;
+    }
+
+    .shots{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:16px;
+      margin:12px 0 6px;
+      align-items:start;
+    }
+
+    .shots figure{
+      margin:0;
+      background:#fff;
+      border-radius:12px;
+      padding:10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    }
+
+    .shots img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .shots figcaption{
+      margin-top:8px;
+    }
+
+    @media (max-width: 720px){
+      .shots{ grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 900px){
+      .shots{
+        justify-items: center;
+      }
+      .shots figure{
+        max-width: 280px;
+        width: 100%;
+      }
+    }
     .small { color: #444; font-size: .95rem; }
   </style>
 
@@ -143,6 +245,62 @@
 <body>
   <main class="wrap">
 
+    <nav class="langbar" aria-label="Výber jazyka">
+      <div class="lang-left">
+        <span class="lang-title">🌍 Jazyk</span>
+    
+        <div class="lang-main">
+          <a href="/boxes-fit-vehicle/" hreflang="en">English</a>
+          <a href="/es/boxes-fit-vehicle/" hreflang="es">Español</a>
+          <a href="/fr/boxes-fit-vehicle/" hreflang="fr">Français</a>
+          <a href="/de/boxes-fit-vehicle/" hreflang="de">Deutsch</a>
+          <span class="lang-active">Slovenčina</span>
+          <a href="/zh-hans/boxes-fit-vehicle/" hreflang="zh-Hans">中文</a>
+        </div>
+      </div>
+
+      <div class="lang-right">
+        <select onchange="if(this.value) window.location.href=this.value;">
+          <option value="">Viac jazykov…</option>
+          <option value="/bg/boxes-fit-vehicle/">Български</option>
+          <option value="/bn/boxes-fit-vehicle/">বাংলা</option>
+          <option value="/cs/boxes-fit-vehicle/">Čeština</option>
+          <option value="/ko/boxes-fit-vehicle/">한국어</option>
+          <option value="/hr/boxes-fit-vehicle/">Hrvatski</option>
+          <option value="/sl/boxes-fit-vehicle/">Slovenščina</option>
+          <option value="/et/boxes-fit-vehicle/">Eesti</option>
+          <option value="/da/boxes-fit-vehicle/">Dansk</option>
+          <option value="/fi/boxes-fit-vehicle/">Suomi</option>
+          <option value="/el/boxes-fit-vehicle/">Ελληνικά</option>
+          <option value="/he/boxes-fit-vehicle/">עברית</option>
+          <option value="/hi/boxes-fit-vehicle/">हिन्दी</option>
+          <option value="/hu/boxes-fit-vehicle/">Magyar</option>
+          <option value="/id/boxes-fit-vehicle/">Bahasa Indonesia</option>
+          <option value="/it/boxes-fit-vehicle/">Italiano</option>
+          <option value="/ja/boxes-fit-vehicle/">日本語</option>
+          <option value="/lo/boxes-fit-vehicle/">ລາວ</option>
+          <option value="/lv/boxes-fit-vehicle/">Latviešu</option>
+          <option value="/lt/boxes-fit-vehicle/">Lietuvių</option>
+          <option value="/nl/boxes-fit-vehicle/">Nederlands</option>
+          <option value="/ne/boxes-fit-vehicle/">नेपाली</option>
+          <option value="/no/boxes-fit-vehicle/">Norsk</option>
+          <option value="/fa/boxes-fit-vehicle/">فارسی</option>
+          <option value="/pl/boxes-fit-vehicle/">Polski</option>
+          <option value="/pt/boxes-fit-vehicle/">Português</option>
+          <option value="/pa-pk/boxes-fit-vehicle/">ਪੰਜਾਬੀ</option>
+          <option value="/ro/boxes-fit-vehicle/">Română</option>
+          <option value="/ru/boxes-fit-vehicle/">Русский</option>
+          <option value="/sv/boxes-fit-vehicle/">Svenska</option>
+          <option value="/th/boxes-fit-vehicle/">ไทย</option>
+          <option value="/tr/boxes-fit-vehicle/">Türkçe</option>
+          <option value="/uk/boxes-fit-vehicle/">Українська</option>
+          <option value="/ur/boxes-fit-vehicle/">اردو</option>
+          <option value="/vi/boxes-fit-vehicle/">Tiếng Việt</option>
+          <option value="/ar/boxes-fit-vehicle/">العربية</option>
+        </select>
+      </div>
+    </nav>
+
     <h1>Aplikácia na výpočet, koľko krabíc sa zmestí do vozidla alebo reálneho priestoru (Android)</h1>
 
     <p>
@@ -151,6 +309,12 @@
       ktorá zobrazuje <strong>skutočné 3D rozloženie</strong> a umožňuje
       <strong>meranie pomocou kamery mobilného telefónu (AR)</strong>.
     </p>
+
+    <p class="small">
+      Vyvinuté spoločnosťou <strong><a href="https://aplicacionesherrbri.com/" target="_blank" rel="noopener noreferrer">AplicacionesHerrbri</a></strong>,
+      nezávislým štúdiom špecializujúcim sa na praktické nástroje pre profesionálov v doprave a logistike.
+    </p>
+
 
     <div class="note">
       <strong>Dôležité:</strong> toto <strong>nie je</strong> jednoduchá kalkulačka objemu (CBM).
@@ -204,11 +368,42 @@
       </ul>
     </div>
 
-    <p>
-      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
-        Stiahnuť VolumTransport z Google Play
+    <h2>Snímky obrazovky aplikácie</h2>
+
+    <div class="shots">
+      <figure>
+        <img src="/assets/screens/sk-presentacion-web.png"
+             alt="Hlavná obrazovka VolumTransport"
+             loading="lazy">
+        <figcaption class="small">
+          Hlavná obrazovka: rýchly prístup k výpočtom, vyváženiu nákladu a rozšírenej realite.
+        </figcaption>
+      </figure>
+    
+      <figure>
+        <img src="/assets/screens/sk-3d-web.png"
+             alt="3D vizualizácia nákladu vo VolumTransport"
+             loading="lazy">
+        <figcaption class="small">
+          Výsledok: skutočné 3D rozmiestnenie na overenie, či sa všetko naozaj zmestí.
+        </figcaption>
+      </figure>
+    </div>
+    
+    <p class="small" style="margin-bottom:6px;">
+      Získajte na:
+    </p>
+    
+    <p style="margin-top:10px;">
+      <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
+         target="_blank"
+         rel="noopener noreferrer">
+        <img src="/assets/screens/Badge-Slovak-web.png"
+             alt="Získajte na Google Play"
+             style="height:60px; max-width:100%; border-radius:8px;">
       </a>
     </p>
+
 
     <p class="small">
       Tip: uložte si túto stránku do záložiek a použite ju pri príprave skutočnej nakládky.
@@ -216,35 +411,67 @@
 
     <section class="faq">
       <h2>Často kladené otázky</h2>
-
-      <h3>Ako vypočítať, koľko krabíc sa zmestí do nákladného auta?</h3>
+    
+      <h3>Ako vypočítať, koľko krabíc sa zmestí do nákladného vozidla?</h3>
       <p>
-      Pomocou VolumTransport môžete vypočítať, koľko krabíc dokáže nákladné auto prepraviť zadaním údajov o vozidle a rozmerov nákladu.
-      Stačí zadať rozmery a spustiť výpočet: aplikácia zobrazí počet krabíc a ďalšie dôležité údaje na plánovanie nakládky.
+        Pomocou VolumTransport môžete vypočítať, koľko krabíc môže nákladné vozidlo prepraviť zadaním údajov o vozidle a rozmerov tovaru.
+        Stačí zadať rozmery a spustiť výpočet: aplikácia zobrazí počet krabíc, ktoré sa zmestia, a ďalšie dôležité údaje na plánovanie nákladu.
       </p>
-
-      <h3>Aký je najlepší spôsob ukladania krabíc do vozidla alebo priestoru?</h3>
+    
+      <h3>Aký je najlepší spôsob ukladania krabíc vo vozidle alebo priestore?</h3>
       <p>
-      Pomocou VolumTransport aplikácia po vykonaní výpočtu zobrazí celkový počet krabíc a ich umiestnenie.
-      Poskytuje tiež <strong>3D vizualizáciu už umiestnených krabíc</strong>, ktorá pomáha pri správnom ukladaní a poradí nakladania
-      vo vozidle alebo v dostupnom priestore.
+        Po vykonaní výpočtu aplikácia VolumTransport zobrazí celkový počet krabíc a ich umiestnenie.
+        Poskytuje tiež <strong>3D vizualizáciu už umiestnených krabíc</strong>, ktorá pomáha so správnym ukladaním a poradím nakladania
+        vo vozidle alebo dostupnom priestore.
       </p>
-
-      <h3>Je aplikácia určená len pre dodávky?</h3>
-      <p>Nie. Funguje pre dodávky, autá, nákladné vozidlá aj kombinované vozidlá.</p>
-
+    
+      <h3>Je určená iba pre dodávky?</h3>
+      <p>Nie. Funguje s dodávkami, osobnými autami, nákladnými vozidlami aj kombinovanými vozidlami.</p>
+    
+      <h3>Je kompatibilná s osobným autom?</h3>
+      <p>
+        Áno. VolumTransport je možné používať aj s osobnými autami.
+        Po zadaní rozmerov kufra a rozmerov prepravovaných predmetov aplikácia vypočíta, či sa zmestia.
+        Umožňuje tiež simulovať konfigurácie, ako napríklad <strong>sklopené zadné sedadlá</strong>, aby ste využili dodatočný priestor.
+      </p>
+    
+      <h3>Som súkromný používateľ. Je tento nástroj vhodný aj pre mňa?</h3>
+      <p>
+        <strong>Áno.</strong> VolumTransport môžu používať aj súkromní používatelia.
+        Stačí nastaviť <strong>vozidlo alebo priestor</strong>, ktorý chcete použiť (napríklad kufor auta, <strong>skladový priestor</strong>,
+        miestnosť alebo akýkoľvek iný priestor) a zadať rozmery predmetov.
+        Aplikácia vám pomôže overiť, či sa <strong>nábytok, spotrebiče, krabice alebo veľké predmety</strong> skutočne zmestia pred prepravou alebo uskladnením,
+        pričom zobrazí ich 3D umiestnenie.
+      </p>
+    
       <h3>Je to len kalkulačka objemu (CBM)?</h3>
-      <p>Nie. Zobrazuje <strong>skutočné 3D rozloženie</strong>, aby ste overili, či sa krabice naozaj zmestia.</p>
-
+      <p>Nie. Zobrazuje <strong>skutočné 3D rozmiestnenie</strong>, aby ste overili, či sa krabice naozaj zmestia.</p>
+    
       <h3>Môžem merať pomocou telefónu?</h3>
-      <p>Áno. Aplikácia obsahuje <strong>meranie pomocou rozšírenej reality (AR)</strong>.</p>
-
+      <p>Áno. Obsahuje meranie pomocou <strong>rozšírenej reality (AR)</strong>.</p>
+    
       <h3>Môžem ju použiť pre miestnosti alebo skladové priestory?</h3>
       <p>Áno. Použite <strong>univerzálny režim priestoru</strong> a nastavte vlastné rozmery.</p>
-
+    
       <h3>Je aplikácia bezplatná?</h3>
-      <p>Závisí od verzie dostupnej v obchode Google Play. Podrobnosti nájdete v obchode.</p>
+      <p>Závisí to od verzie dostupnej na Google Play. Podrobnosti nájdete v obchode.</p>
     </section>
+    
+    <hr style="margin:28px 0; border:none; border-top:1px solid #ddd;">
+    
+    <p class="small">
+      Posledná aktualizácia: 18. februára 2026.
+    </p>
+    
+    <p class="small">
+      <a href="https://aplicacionesherrbri.com/"
+         target="_blank"
+         rel="noopener noreferrer">AplicacionesHerrbri</a>
+      ·
+      <a href="https://aplicacionesherrbri.com/privacy_policy.html"
+         target="_blank"
+         rel="noopener noreferrer">Zásady ochrany osobných údajov</a>
+    </p>
 
   </main>
 </body>
