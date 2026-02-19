@@ -122,6 +122,110 @@
       margin-top: 18px;
     }
 
+    .langbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      padding:14px 16px;
+      background:#f3fbf6;
+      border-radius:14px;
+      border:1px solid rgba(46,125,50,.2);
+      margin-bottom:18px;
+    }
+
+    .lang-title{
+      font-weight:700;
+      color:#1b5e20;
+      margin-right:12px;
+    }
+
+    .lang-main{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .lang-main a{
+      text-decoration:none;
+      font-weight:600;
+      color:#1b5e20;
+      padding:6px 10px;
+      border-radius:8px;
+      transition:.2s ease;
+    }
+
+    .lang-main a:hover{
+      background:#e0f2e9;
+    }
+
+    .lang-active{
+      background:#1b5e20;
+      color:#fff;
+      padding:6px 12px;
+      border-radius:8px;
+      font-weight:700;
+    }
+
+    .lang-right select{
+      padding:8px 12px;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.2);
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    .lang-left{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:10px 12px;
+    }
+
+    .shots{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:16px;
+      margin:12px 0 6px;
+      align-items:start;
+    }
+
+    .shots figure{
+      margin:0;
+      background:#fff;
+      border-radius:12px;
+      padding:10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    }
+
+    .shots img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .shots figcaption{
+      margin-top:8px;
+    }
+
+    @media (max-width: 720px){
+      .shots{ grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 900px){
+      .shots{
+        justify-items: center;
+      }
+      .shots figure{
+        max-width: 280px;
+        width: 100%;
+      }
+    }
+
+
     .small { color: #444; font-size: .95rem; }
   </style>
 
@@ -143,6 +247,63 @@
 <body>
   <main class="wrap">
 
+    <nav class="langbar" aria-label="Izbirnik jezika">
+      <div class="lang-left">
+        <span class="lang-title">🌍 Jezik</span>
+    
+        <div class="lang-main">
+          <a href="/boxes-fit-vehicle/" hreflang="en">English</a>
+          <a href="/es/boxes-fit-vehicle/" hreflang="es">Español</a>
+          <a href="/fr/boxes-fit-vehicle/" hreflang="fr">Français</a>
+          <a href="/de/boxes-fit-vehicle/" hreflang="de">Deutsch</a>
+          <span class="lang-active">Slovenščina</span>
+          <a href="/zh-hans/boxes-fit-vehicle/" hreflang="zh-Hans">中文</a>
+        </div>
+      </div>
+      
+      <div class="lang-right">
+        <select onchange="if(this.value) window.location.href=this.value;">
+          <option value="">Več jezikov…</option>
+          <option value="/bg/boxes-fit-vehicle/">Български</option>
+          <option value="/bn/boxes-fit-vehicle/">বাংলা</option>
+          <option value="/cs/boxes-fit-vehicle/">Čeština</option>
+          <option value="/ko/boxes-fit-vehicle/">한국어</option>
+          <option value="/hr/boxes-fit-vehicle/">Hrvatski</option>
+          <option value="/sk/boxes-fit-vehicle/">Slovenčina</option>
+          <option value="/et/boxes-fit-vehicle/">Eesti</option>
+          <option value="/da/boxes-fit-vehicle/">Dansk</option>
+          <option value="/fi/boxes-fit-vehicle/">Suomi</option>
+          <option value="/el/boxes-fit-vehicle/">Ελληνικά</option>
+          <option value="/he/boxes-fit-vehicle/">עברית</option>
+          <option value="/hi/boxes-fit-vehicle/">हिन्दी</option>
+          <option value="/hu/boxes-fit-vehicle/">Magyar</option>
+          <option value="/id/boxes-fit-vehicle/">Bahasa Indonesia</option>
+          <option value="/it/boxes-fit-vehicle/">Italiano</option>
+          <option value="/ja/boxes-fit-vehicle/">日本語</option>
+          <option value="/lo/boxes-fit-vehicle/">ລາວ</option>
+          <option value="/lv/boxes-fit-vehicle/">Latviešu</option>
+          <option value="/lt/boxes-fit-vehicle/">Lietuvių</option>
+          <option value="/nl/boxes-fit-vehicle/">Nederlands</option>
+          <option value="/ne/boxes-fit-vehicle/">नेपाली</option>
+          <option value="/no/boxes-fit-vehicle/">Norsk</option>
+          <option value="/fa/boxes-fit-vehicle/">فارسی</option>
+          <option value="/pl/boxes-fit-vehicle/">Polski</option>
+          <option value="/pt/boxes-fit-vehicle/">Português</option>
+          <option value="/pa-pk/boxes-fit-vehicle/">ਪੰਜਾਬੀ</option>
+          <option value="/ro/boxes-fit-vehicle/">Română</option>
+          <option value="/ru/boxes-fit-vehicle/">Русский</option>
+          <option value="/sv/boxes-fit-vehicle/">Svenska</option>
+          <option value="/th/boxes-fit-vehicle/">ไทย</option>
+          <option value="/tr/boxes-fit-vehicle/">Türkçe</option>
+          <option value="/uk/boxes-fit-vehicle/">Українська</option>
+          <option value="/ur/boxes-fit-vehicle/">اردو</option>
+          <option value="/vi/boxes-fit-vehicle/">Tiếng Việt</option>
+          <option value="/ar/boxes-fit-vehicle/">العربية</option>
+        </select>
+      </div>
+    </nav>
+
+
     <h1>Aplikacija za izračun, koliko škatel gre v vozilo ali realen prostor (Android)</h1>
 
     <p>
@@ -151,6 +312,12 @@
       ki prikazuje <strong>dejansko 3D postavitev</strong> in omogoča
       <strong>merjenje s kamero telefona (AR)</strong>.
     </p>
+
+    <p class="small">
+      Razvil <strong><a href="https://aplicacionesherrbri.com/" target="_blank" rel="noopener noreferrer">AplicacionesHerrbri</a></strong>,
+      neodvisni studio, specializiran za praktična orodja za strokovnjake na področju prevoza in logistike.
+    </p>
+
 
     <div class="note">
       <strong>Pomembno:</strong> to <strong>ni</strong> preprost kalkulator prostornine (CBM).
@@ -204,47 +371,111 @@
       </ul>
     </div>
 
-    <p>
-      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
-        Prenesite VolumTransport v Google Play
+    <h2>Posnetki zaslona aplikacije</h2>
+
+    <div class="shots">
+      <figure>
+        <img src="/assets/screens/sl-presentacion-web.png"
+             alt="Glavni zaslon aplikacije VolumTransport"
+             loading="lazy">
+        <figcaption class="small">
+          Glavni zaslon: hiter dostop do izračunov, uravnoteženja tovora in obogatene resničnosti.
+        </figcaption>
+      </figure>
+    
+      <figure>
+        <img src="/assets/screens/sl-3d-web.png"
+             alt="3D vizualizacija tovora v aplikaciji VolumTransport"
+             loading="lazy">
+        <figcaption class="small">
+          Rezultat: dejanska 3D postavitev za preverjanje, ali se vse resnično prilega.
+        </figcaption>
+      </figure>
+    </div>
+    
+    <p class="small" style="margin-bottom:6px;">
+      Prenesite na:
+    </p>
+    
+    <p style="margin-top:10px;">
+      <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
+         target="_blank"
+         rel="noopener noreferrer">
+        <img src="/assets/screens/Badge-Slovenian-web.png"
+             alt="Prenesite v trgovini Google Play"
+             style="height:60px; max-width:100%; border-radius:8px;">
       </a>
     </p>
+
 
     <p class="small">
       Nasvet: shranite to stran med zaznamke in jo uporabite, ko pripravljate dejansko nalaganje.
     </p>
 
     <section class="faq">
-      <h2>Pogosta vprašanja</h2>
+    <h2>Pogosto zastavljena vprašanja</h2>
 
-      <h3>Kako izračunati, koliko škatel gre v tovornjak?</h3>
-      <p>
-      Z aplikacijo VolumTransport lahko izračunate, koliko škatel lahko tovornjak prevaža z vnosom podatkov o vozilu in dimenzij tovora.
-      Preprosto vnesite mere in pritisnite izračunaj: aplikacija prikaže število škatel in druge pomembne podatke za načrtovanje naklada.
-      </p>
+    <h3>Kako izračunati, koliko škatel se prilega v tovornjak?</h3>
+    <p>
+        Z aplikacijo VolumTransport lahko izračunate, koliko škatel lahko prepelje tovornjak, tako da vnesete podatke o vozilu in mere blaga.
+        Preprosto vnesite mere in tapnite izračun: aplikacija prikaže, koliko škatel se prilega, ter druge pomembne podatke za načrtovanje tovora.
+    </p>
 
-      <h3>Kateri je najboljši način za zlaganje škatel v vozilu ali prostoru?</h3>
-      <p>
-      Z aplikacijo VolumTransport se po opravljenem izračunu prikaže skupno število škatel in njihove pozicije.
-      Na voljo je tudi <strong>3D-vizualizacija že nameščenih škatel</strong>, ki pomaga pri pravilnem zlaganju in zaporedju nalaganja
-      v vozilu ali razpoložljivem prostoru.
-      </p>
+    <h3>Kateri je najboljši način za zlaganje škatel v vozilo ali prostor?</h3>
+    <p>
+        Po izvedenem izračunu aplikacija VolumTransport prikaže skupno število škatel in njihov položaj.
+        Prav tako ponuja <strong>3D vizualizacijo že postavljenih škatel</strong>, ki pomaga pri pravilnem zlaganju in vrstnem redu nakladanja
+        znotraj vozila ali razpoložljivega prostora.
+    </p>
 
-      <h3>Ali je aplikacija samo za kombije?</h3>
-      <p>Ne. Deluje za kombije, avtomobile, tovornjake in mešana vozila.</p>
+    <h3>Ali je namenjena samo kombijem?</h3>
+    <p>Ne. Deluje s kombiji, avtomobili, tovornjaki in mešanimi vozili.</p>
 
-      <h3>Ali je to samo kalkulator prostornine (CBM)?</h3>
-      <p>Ne. Prikazuje <strong>dejansko 3D postavitev</strong>, da preverite, ali se škatle res prilegajo.</p>
+    <h3>Ali je združljiva z osebnim avtomobilom?</h3>
+    <p>
+        Da. VolumTransport se lahko uporablja tudi z osebnimi avtomobili.
+        Z vnosom mer prtljažnika in mer predmetov za prevoz aplikacija izračuna, ali se prilegajo.
+        Omogoča tudi simulacijo konfiguracij, kot so <strong>zloženi zadnji sedeži</strong>, da izkoristite dodaten prostor.
+    </p>
+    
+    <h3>Sem zasebni uporabnik. Ali mi lahko to orodje koristi?</h3>
+    <p>
+      <strong>Da.</strong> VolumTransport je primeren tudi za zasebne uporabnike.
+      Nastaviti morate le <strong>vozilo ali prostor</strong>, ki ga želite uporabiti (na primer prtljažnik avtomobila, <strong>shrambo</strong>,
+      sobo ali kateri koli drug prostor) in vnesti mere predmetov.
+      Aplikacija vam pomaga preveriti, ali se <strong>pohištvo, gospodinjski aparati, škatle ali večji predmeti</strong> dejansko prilegajo
+      pred prevozom ali shranjevanjem, ter prikaže njihovo postavitev v 3D.
+    </p>
 
-      <h3>Ali lahko merim s telefonom?</h3>
-      <p>Da. Vključuje merjenje z <strong>obogateno resničnostjo (AR)</strong>.</p>
+    <h3>Ali je to samo kalkulator prostornine (CBM)?</h3>
+    <p>Ne. Prikazuje <strong>dejansko 3D postavitev</strong>, da preverite, ali se škatle resnično prilegajo.</p>
 
-      <h3>Ali jo lahko uporabim za sobe ali shrambe?</h3>
-      <p>Da. Uporabite <strong>univerzalni način prostora</strong> in nastavite poljubne dimenzije.</p>
+    <h3>Ali lahko merim s telefonom?</h3>
+    <p>Da. Vključuje merjenje z uporabo <strong>obogatene resničnosti (AR)</strong>.</p>
 
-      <h3>Ali je aplikacija brezplačna?</h3>
-      <p>Odvisno od različice, ki je na voljo v Google Play. Preverite podrobnosti v trgovini.</p>
+    <h3>Ali ga lahko uporabljam za sobe ali skladiščne prostore?</h3>
+    <p>Da. Uporabite <strong>univerzalni način prostora</strong> in določite prilagojene dimenzije.</p>
+
+    <h3>Ali je brezplačna?</h3>
+    <p>Odvisno od različice, ki je na voljo v trgovini Google Play. Preverite podrobnosti v trgovini.</p>
     </section>
+
+    <hr style="margin:28px 0; border:none; border-top:1px solid #ddd;">
+    
+    <p class="small">
+      Zadnja posodobitev: 19. februar 2026.
+    </p>
+    
+    <p class="small">
+      <a href="https://aplicacionesherrbri.com/"
+         target="_blank"
+         rel="noopener noreferrer">AplicacionesHerrbri</a>
+      ·
+      <a href="https://aplicacionesherrbri.com/privacy_policy.html"
+         target="_blank"
+         rel="noopener noreferrer">Politika zasebnosti</a>
+    </p>
+
 
   </main>
 </body>
