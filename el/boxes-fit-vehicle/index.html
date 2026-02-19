@@ -122,6 +122,111 @@
       margin-top: 18px;
     }
 
+    .langbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      padding:14px 16px;
+      background:#f3fbf6;
+      border-radius:14px;
+      border:1px solid rgba(46,125,50,.2);
+      margin-bottom:18px;
+    }
+
+    .lang-title{
+      font-weight:700;
+      color:#1b5e20;
+      margin-right:12px;
+    }
+
+    .lang-main{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .lang-main a{
+      text-decoration:none;
+      font-weight:600;
+      color:#1b5e20;
+      padding:6px 10px;
+      border-radius:8px;
+      transition:.2s ease;
+    }
+
+    .lang-main a:hover{
+      background:#e0f2e9;
+    }
+
+    .lang-active{
+      background:#1b5e20;
+      color:#fff;
+      padding:6px 12px;
+      border-radius:8px;
+      font-weight:700;
+    }
+
+    .lang-right select{
+      padding:8px 12px;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.2);
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    .lang-left{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:10px 12px;
+    }
+
+    .shots{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:16px;
+      margin:12px 0 6px;
+      align-items:start;
+    }
+
+    .shots figure{
+      margin:0;
+      background:#fff;
+      border-radius:12px;
+      padding:10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    }
+
+    .shots img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .shots figcaption{
+      margin-top:8px;
+    }
+
+    @media (max-width: 720px){
+      .shots{ grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 900px){
+      .shots{
+        justify-items: center;
+      }
+      .shots figure{
+        max-width: 280px;
+        width: 100%;
+      }
+    }
+
+
+
     .small { color: #444; font-size: .95rem; }
   </style>
 
@@ -143,6 +248,63 @@
 <body>
   <main class="wrap">
 
+    <nav class="langbar" aria-label="Επιλογέας γλώσσας">
+      <div class="lang-left">
+        <span class="lang-title">🌍 Γλώσσα</span>
+    
+        <div class="lang-main">
+          <a href="/boxes-fit-vehicle/" hreflang="en">English</a>
+          <a href="/es/boxes-fit-vehicle/" hreflang="es">Español</a>
+          <a href="/fr/boxes-fit-vehicle/" hreflang="fr">Français</a>
+          <a href="/de/boxes-fit-vehicle/" hreflang="de">Deutsch</a>
+          <span class="lang-active">Ελληνικά</span>
+          <a href="/zh-hans/boxes-fit-vehicle/" hreflang="zh-Hans">中文</a>
+        </div>
+      </div>
+
+      <div class="lang-right">
+        <select onchange="if(this.value) window.location.href=this.value;">
+          <option value="">Περισσότερες γλώσσες…</option>
+          <option value="/bg/boxes-fit-vehicle/">Български</option>
+          <option value="/bn/boxes-fit-vehicle/">বাংলা</option>
+          <option value="/cs/boxes-fit-vehicle/">Čeština</option>
+          <option value="/ko/boxes-fit-vehicle/">한국어</option>
+          <option value="/hr/boxes-fit-vehicle/">Hrvatski</option>
+          <option value="/sk/boxes-fit-vehicle/">Slovenčina</option>
+          <option value="/sl/boxes-fit-vehicle/">Slovenščina</option>
+          <option value="/et/boxes-fit-vehicle/">Eesti</option>
+          <option value="/da/boxes-fit-vehicle/">Dansk</option>
+          <option value="/fi/boxes-fit-vehicle/">Suomi</option>
+          <option value="/el/boxes-fit-vehicle/">Ελληνικά</option>
+          <option value="/he/boxes-fit-vehicle/">עברית</option>
+          <option value="/hi/boxes-fit-vehicle/">हिन्दी</option>
+          <option value="/hu/boxes-fit-vehicle/">Magyar</option>
+          <option value="/id/boxes-fit-vehicle/">Bahasa Indonesia</option>
+          <option value="/it/boxes-fit-vehicle/">Italiano</option>
+          <option value="/ja/boxes-fit-vehicle/">日本語</option>
+          <option value="/lo/boxes-fit-vehicle/">ລາວ</option>
+          <option value="/lv/boxes-fit-vehicle/">Latviešu</option>
+          <option value="/lt/boxes-fit-vehicle/">Lietuvių</option>
+          <option value="/nl/boxes-fit-vehicle/">Nederlands</option>
+          <option value="/ne/boxes-fit-vehicle/">नेपाली</option>
+          <option value="/no/boxes-fit-vehicle/">Norsk</option>
+          <option value="/fa/boxes-fit-vehicle/">فارسی</option>
+          <option value="/pl/boxes-fit-vehicle/">Polski</option>
+          <option value="/pt/boxes-fit-vehicle/">Português</option>
+          <option value="/pa-pk/boxes-fit-vehicle/">ਪੰਜਾਬੀ</option>
+          <option value="/ro/boxes-fit-vehicle/">Română</option>
+          <option value="/ru/boxes-fit-vehicle/">Русский</option>
+          <option value="/sv/boxes-fit-vehicle/">Svenska</option>
+          <option value="/th/boxes-fit-vehicle/">ไทย</option>
+          <option value="/tr/boxes-fit-vehicle/">Türkçe</option>
+          <option value="/uk/boxes-fit-vehicle/">Українська</option>
+          <option value="/ur/boxes-fit-vehicle/">اردو</option>
+          <option value="/vi/boxes-fit-vehicle/">Tiếng Việt</option>
+          <option value="/ar/boxes-fit-vehicle/">العربية</option>
+        </select>
+      </div>
+    </nav>
+
     <h1>Εφαρμογή για τον υπολογισμό του πόσα κουτιά χωράνε σε ένα όχημα ή πραγματικό χώρο (Android)</h1>
 
     <p>
@@ -150,6 +312,11 @@
       <strong>να υπολογίζει πόσα κουτιά χωράνε σε φορτηγάκι, αυτοκίνητο ή οποιονδήποτε πραγματικό χώρο</strong>,
       προβάλλοντας την <strong>πραγματική τοποθέτηση σε 3D</strong> και επιτρέποντας
       <strong>μέτρηση με την κάμερα του κινητού (AR)</strong>.
+    </p>
+
+    <p class="small">
+      Αναπτύχθηκε από <strong><a href="https://aplicacionesherrbri.com/" target="_blank" rel="noopener noreferrer">AplicacionesHerrbri</a></strong>,
+      ένα ανεξάρτητο στούντιο που ειδικεύεται σε πρακτικά εργαλεία για επαγγελματίες μεταφορών και logistics.
     </p>
 
     <div class="note">
@@ -204,11 +371,42 @@
       </ul>
     </div>
 
-    <p>
-      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
-        Λήψη του VolumTransport στο Google Play
+    <h2>Στιγμιότυπα οθόνης της εφαρμογής</h2>
+
+    <div class="shots">
+      <figure>
+        <img src="/assets/screens/el-presentacion-web.png"
+             alt="Κύρια οθόνη του VolumTransport"
+             loading="lazy">
+        <figcaption class="small">
+          Κύρια οθόνη: γρήγορη πρόσβαση σε υπολογισμούς, εξισορρόπηση φορτίου και επαυξημένη πραγματικότητα.
+        </figcaption>
+      </figure>
+    
+      <figure>
+        <img src="/assets/screens/el-3d-web.png"
+             alt="3D οπτικοποίηση φορτίου στο VolumTransport"
+             loading="lazy">
+        <figcaption class="small">
+          Αποτέλεσμα: πραγματική 3D τοποθέτηση για να επαληθεύσετε αν όλα χωρούν πραγματικά.
+        </figcaption>
+      </figure>
+    </div>
+    
+    <p class="small" style="margin-bottom:6px;">
+      Διαθέσιμο στο:
+    </p>
+    
+    <p style="margin-top:10px;">
+      <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
+         target="_blank"
+         rel="noopener noreferrer">
+        <img src="/assets/screens/Badge-Greek-web.png"
+             alt="Κατεβάστε το στο Google Play"
+             style="height:60px; max-width:100%; border-radius:8px;">
       </a>
     </p>
+
 
     <p class="small">
       Συμβουλή: αποθηκεύστε αυτή τη σελίδα στα αγαπημένα και χρησιμοποιήστε τη όταν προετοιμάζετε μια πραγματική φόρτωση.
@@ -216,35 +414,76 @@
 
     <section class="faq">
       <h2>Συχνές ερωτήσεις</h2>
-
-      <h3>Πώς να υπολογίσετε πόσα κουτιά χωρούν σε ένα φορτηγό;</h3>
+    
+      <h3>Πώς να υπολογίσω πόσα κιβώτια χωρούν σε ένα φορτηγό;</h3>
       <p>
-      Με το VolumTransport μπορείτε να υπολογίσετε πόσα κουτιά μπορεί να μεταφέρει ένα φορτηγό εισάγοντας τα στοιχεία του οχήματος και τις διαστάσεις των εμπορευμάτων.
-      Απλώς εισάγετε τις μετρήσεις και πατήστε υπολογισμός: η εφαρμογή εμφανίζει πόσα κουτιά χωρούν και άλλα χρήσιμα δεδομένα για τον σχεδιασμό του φορτίου.
+        Με το VolumTransport μπορείτε να υπολογίσετε πόσα κιβώτια μπορεί να μεταφέρει ένα φορτηγό,
+        εισάγοντας τα στοιχεία του οχήματος και τις διαστάσεις του φορτίου.
+        Απλώς εισαγάγετε τις μετρήσεις και πατήστε υπολογισμό:
+        η εφαρμογή εμφανίζει πόσα κιβώτια χωρούν και άλλα σημαντικά δεδομένα για τον προγραμματισμό της φόρτωσης.
       </p>
-
-      <h3>Ποιος είναι ο καλύτερος τρόπος στοίβαξης κιβωτίων μέσα σε ένα όχημα ή έναν χώρο;</h3>
+    
+      <h3>Ποιος είναι ο καλύτερος τρόπος στοίβαξης κιβωτίων μέσα σε όχημα ή χώρο;</h3>
       <p>
-      Με το VolumTransport, μετά την ολοκλήρωση του υπολογισμού, η εφαρμογή εμφανίζει τον συνολικό αριθμό κιβωτίων και τις θέσεις τους.
-      Παρέχει επίσης μια <strong>τρισδιάστατη απεικόνιση των κιβωτίων που έχουν ήδη τοποθετηθεί</strong>, βοηθώντας στη σωστή στοίβαξη και στη σειρά φόρτωσης
-      μέσα στο όχημα ή στον διαθέσιμο χώρο.
+        Με το VolumTransport, μετά τον υπολογισμό, η εφαρμογή εμφανίζει τον συνολικό αριθμό κιβωτίων
+        και τις θέσεις τους.
+        Παρέχει επίσης <strong>3D απεικόνιση των ήδη τοποθετημένων κιβωτίων</strong>,
+        βοηθώντας στη σωστή στοίβαξη και στη σειρά φόρτωσης
+        μέσα στο όχημα ή στον διαθέσιμο χώρο.
       </p>
-      
-      <h3>Είναι μόνο για φορτηγάκια;</h3>
-      <p>Όχι. Λειτουργεί για φορτηγάκια, αυτοκίνητα, φορτηγά και μικτά οχήματα.</p>
-
+    
+      <h3>Είναι μόνο για βαν;</h3>
+      <p>Όχι. Λειτουργεί με βαν, αυτοκίνητα, φορτηγά και μικτά οχήματα.</p>
+    
+      <h3>Είναι συμβατό με ιδιωτικό αυτοκίνητο;</h3>
+      <p>
+        Ναι. Το VolumTransport μπορεί να χρησιμοποιηθεί και με ιδιωτικά αυτοκίνητα.
+        Εισάγοντας τις διαστάσεις του πορτμπαγκάζ και των αντικειμένων προς μεταφορά,
+        η εφαρμογή υπολογίζει αν χωρούν.
+        Επιτρέπει επίσης την προσομοίωση διαμορφώσεων όπως <strong>αναδιπλωμένα πίσω καθίσματα</strong>
+        για αξιοποίηση επιπλέον χώρου.
+      </p>
+    
+      <h3>Είμαι ιδιώτης χρήστης. Μπορεί να μου φανεί χρήσιμο αυτό το εργαλείο;</h3>
+      <p>
+        <strong>Ναι.</strong> Το VolumTransport μπορεί να χρησιμοποιηθεί και από ιδιώτες.
+        Απλώς ρυθμίστε το <strong>όχημα ή τον χώρο</strong> που θέλετε να χρησιμοποιήσετε
+        (για παράδειγμα, πορτμπαγκάζ αυτοκινήτου, <strong>αποθηκευτικό χώρο</strong>,
+        δωμάτιο ή οποιονδήποτε άλλο χώρο) και εισαγάγετε τις διαστάσεις των αντικειμένων.
+        Η εφαρμογή σας βοηθά να ελέγξετε αν <strong>έπιπλα, ηλεκτρικές συσκευές, κιβώτια ή μεγάλα αντικείμενα</strong>
+        χωρούν πραγματικά πριν τα μεταφέρετε ή τα αποθηκεύσετε,
+        εμφανίζοντας τη διάταξή τους σε 3D.
+      </p>
+    
       <h3>Είναι απλώς ένας υπολογιστής όγκου (CBM);</h3>
-      <p>Όχι. Εμφανίζει την <strong>πραγματική τοποθέτηση σε 3D</strong> για να επιβεβαιώσετε αν τα κουτιά χωράνε.</p>
-
-      <h3>Μπορώ να μετρήσω με το κινητό μου;</h3>
+      <p>Όχι. Εμφανίζει την <strong>πραγματική 3D τοποθέτηση</strong> για να επαληθεύσετε αν τα κιβώτια χωρούν πράγματι.</p>
+    
+      <h3>Μπορώ να μετρήσω με το τηλέφωνό μου;</h3>
       <p>Ναι. Περιλαμβάνει μέτρηση με <strong>Επαυξημένη Πραγματικότητα (AR)</strong>.</p>
-
+    
       <h3>Μπορώ να το χρησιμοποιήσω για δωμάτια ή αποθηκευτικούς χώρους;</h3>
-      <p>Ναι. Χρησιμοποιήστε την <strong>καθολική λειτουργία χώρου</strong> και ορίστε προσαρμοσμένες διαστάσεις.</p>
-
+      <p>Ναι. Χρησιμοποιήστε τη <strong>λειτουργία καθολικού χώρου</strong> και ορίστε προσαρμοσμένες διαστάσεις.</p>
+    
       <h3>Είναι δωρεάν;</h3>
       <p>Εξαρτάται από την έκδοση που είναι διαθέσιμη στο Google Play. Δείτε τις λεπτομέρειες στο κατάστημα.</p>
     </section>
+    
+    <hr style="margin:28px 0; border:none; border-top:1px solid #ddd;">
+    
+    <p class="small">
+      Τελευταία ενημέρωση: 19 Φεβρουαρίου 2026.
+    </p>
+    
+    <p class="small">
+      <a href="https://aplicacionesherrbri.com/"
+         target="_blank"
+         rel="noopener noreferrer">AplicacionesHerrbri</a>
+      ·
+      <a href="https://aplicacionesherrbri.com/privacy_policy.html"
+         target="_blank"
+         rel="noopener noreferrer">Πολιτική Απορρήτου</a>
+    </p>
+
 
   </main>
 </body>
