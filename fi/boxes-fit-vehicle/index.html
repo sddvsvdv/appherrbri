@@ -122,6 +122,110 @@
       margin-top: 18px;
     }
 
+    .langbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      padding:14px 16px;
+      background:#f3fbf6;
+      border-radius:14px;
+      border:1px solid rgba(46,125,50,.2);
+      margin-bottom:18px;
+    }
+
+    .lang-title{
+      font-weight:700;
+      color:#1b5e20;
+      margin-right:12px;
+    }
+
+    .lang-main{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .lang-main a{
+      text-decoration:none;
+      font-weight:600;
+      color:#1b5e20;
+      padding:6px 10px;
+      border-radius:8px;
+      transition:.2s ease;
+    }
+
+    .lang-main a:hover{
+      background:#e0f2e9;
+    }
+
+    .lang-active{
+      background:#1b5e20;
+      color:#fff;
+      padding:6px 12px;
+      border-radius:8px;
+      font-weight:700;
+    }
+
+    .lang-right select{
+      padding:8px 12px;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.2);
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    .lang-left{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:10px 12px;
+    }
+
+    .shots{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:16px;
+      margin:12px 0 6px;
+      align-items:start;
+    }
+
+    .shots figure{
+      margin:0;
+      background:#fff;
+      border-radius:12px;
+      padding:10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    }
+
+    .shots img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .shots figcaption{
+      margin-top:8px;
+    }
+
+    @media (max-width: 720px){
+      .shots{ grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 900px){
+      .shots{
+        justify-items: center;
+      }
+      .shots figure{
+        max-width: 280px;
+        width: 100%;
+      }
+    }
+
+
     .small { color: #444; font-size: .95rem; }
   </style>
 
@@ -143,6 +247,64 @@
 <body>
   <main class="wrap">
 
+    <nav class="langbar" aria-label="Kielivalinta">
+      <div class="lang-left">
+        <span class="lang-title">🌍 Kieli</span>
+    
+        <div class="lang-main">
+          <a href="/boxes-fit-vehicle/" hreflang="en">English</a>
+          <a href="/es/boxes-fit-vehicle/" hreflang="es">Español</a>
+          <a href="/fr/boxes-fit-vehicle/" hreflang="fr">Français</a>
+          <a href="/de/boxes-fit-vehicle/" hreflang="de">Deutsch</a>
+          <span class="lang-active">Suomi</span>
+          <a href="/zh-hans/boxes-fit-vehicle/" hreflang="zh-Hans">中文</a>
+        </div>
+      </div>
+    
+
+      <div class="lang-right">
+        <select onchange="if(this.value) window.location.href=this.value;">
+          <option value="">Lisää kieliä…</option>
+          <option value="/bg/boxes-fit-vehicle/">Български</option>
+          <option value="/bn/boxes-fit-vehicle/">বাংলা</option>
+          <option value="/cs/boxes-fit-vehicle/">Čeština</option>
+          <option value="/ko/boxes-fit-vehicle/">한국어</option>
+          <option value="/hr/boxes-fit-vehicle/">Hrvatski</option>
+          <option value="/sk/boxes-fit-vehicle/">Slovenčina</option>
+          <option value="/sl/boxes-fit-vehicle/">Slovenščina</option>
+          <option value="/et/boxes-fit-vehicle/">Eesti</option>
+          <option value="/da/boxes-fit-vehicle/">Dansk</option>
+          <option value="/el/boxes-fit-vehicle/">Ελληνικά</option>
+          <option value="/he/boxes-fit-vehicle/">עברית</option>
+          <option value="/hi/boxes-fit-vehicle/">हिन्दी</option>
+          <option value="/hu/boxes-fit-vehicle/">Magyar</option>
+          <option value="/id/boxes-fit-vehicle/">Bahasa Indonesia</option>
+          <option value="/it/boxes-fit-vehicle/">Italiano</option>
+          <option value="/ja/boxes-fit-vehicle/">日本語</option>
+          <option value="/lo/boxes-fit-vehicle/">ລາວ</option>
+          <option value="/lv/boxes-fit-vehicle/">Latviešu</option>
+          <option value="/lt/boxes-fit-vehicle/">Lietuvių</option>
+          <option value="/nl/boxes-fit-vehicle/">Nederlands</option>
+          <option value="/ne/boxes-fit-vehicle/">नेपाली</option>
+          <option value="/no/boxes-fit-vehicle/">Norsk</option>
+          <option value="/fa/boxes-fit-vehicle/">فارسی</option>
+          <option value="/pl/boxes-fit-vehicle/">Polski</option>
+          <option value="/pt/boxes-fit-vehicle/">Português</option>
+          <option value="/pa-pk/boxes-fit-vehicle/">ਪੰਜਾਬੀ</option>
+          <option value="/ro/boxes-fit-vehicle/">Română</option>
+          <option value="/ru/boxes-fit-vehicle/">Русский</option>
+          <option value="/sv/boxes-fit-vehicle/">Svenska</option>
+          <option value="/th/boxes-fit-vehicle/">ไทย</option>
+          <option value="/tr/boxes-fit-vehicle/">Türkçe</option>
+          <option value="/uk/boxes-fit-vehicle/">Українська</option>
+          <option value="/ur/boxes-fit-vehicle/">اردو</option>
+          <option value="/vi/boxes-fit-vehicle/">Tiếng Việt</option>
+          <option value="/ar/boxes-fit-vehicle/">العربية</option>
+        </select>
+      </div>
+    </nav>
+
+
     <h1>Sovellus, joka laskee kuinka monta laatikkoa mahtuu ajoneuvoon tai todelliseen tilaan (Android)</h1>
 
     <p>
@@ -151,6 +313,12 @@
       Se näyttää <strong>todellisen 3D-sijoittelun</strong> ja mahdollistaa
       <strong>mittaamisen puhelimen kameralla (AR)</strong>.
     </p>
+
+    <p class="small">
+      Kehittänyt <strong><a href="https://aplicacionesherrbri.com/" target="_blank" rel="noopener noreferrer">AplicacionesHerrbri</a></strong>,
+      itsenäinen studio, joka on erikoistunut käytännöllisiin työkaluihin kuljetus- ja logistiikka-alan ammattilaisille.
+    </p>
+
 
     <div class="note">
       <strong>Tärkeää:</strong> tämä <strong>ei ole</strong> pelkkä tilavuuslaskuri (CBM).
@@ -204,11 +372,42 @@
       </ul>
     </div>
 
-    <p>
-      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
-        Lataa VolumTransport Google Playsta
+    <h2>Sovelluksen kuvakaappaukset</h2>
+
+    <div class="shots">
+      <figure>
+        <img src="/assets/screens/fi-presentacion-web.png"
+             alt="VolumTransportin päänäyttö"
+             loading="lazy">
+        <figcaption class="small">
+          Päänäyttö: nopea pääsy laskelmiin, kuorman tasapainotukseen ja lisättyyn todellisuuteen.
+        </figcaption>
+      </figure>
+    
+      <figure>
+        <img src="/assets/screens/fi-3d-web.png"
+             alt="3D-kuorman visualisointi VolumTransportissa"
+             loading="lazy">
+        <figcaption class="small">
+          Tulos: todellinen 3D-sijoittelu, jolla voit varmistaa, että kaikki todella mahtuu.
+        </figcaption>
+      </figure>
+    </div>
+    
+    <p class="small" style="margin-bottom:6px;">
+      Lataa:
+    </p>
+    
+    <p style="margin-top:10px;">
+      <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
+         target="_blank"
+         rel="noopener noreferrer">
+        <img src="/assets/screens/Badge-Finnish-web.png"
+             alt="Lataa Google Playsta"
+             style="height:60px; max-width:100%; border-radius:8px;">
       </a>
     </p>
+
 
     <p class="small">
       Vinkki: lisää tämä sivu kirjanmerkkeihin ja käytä sitä, kun valmistelet oikeaa kuormaa.
@@ -216,35 +415,69 @@
 
     <section class="faq">
       <h2>Usein kysytyt kysymykset</h2>
-
-      <h3>Miten laskea, kuinka monta laatikkoa mahtuu kuorma-autoon?</h3>
+    
+      <h3>Miten lasketaan, kuinka monta laatikkoa mahtuu kuorma-autoon?</h3>
       <p>
-      VolumTransportin avulla voit laskea, kuinka monta laatikkoa kuorma-auto voi kuljettaa syöttämällä ajoneuvon tiedot ja tavaran mitat.
-      Syötä mitat ja paina laske: sovellus näyttää, kuinka monta laatikkoa mahtuu sekä muita kuorman suunnitteluun liittyviä tietoja.
+        VolumTransportilla voit laskea, kuinka monta laatikkoa kuorma-auto voi kuljettaa syöttämällä ajoneuvon tiedot ja tavaroiden mitat.
+        Syötä mitat ja paina laske: sovellus näyttää, kuinka monta laatikkoa mahtuu sekä muut kuorman suunnitteluun liittyvät tiedot.
       </p>
-
-      <h3>Mikä on paras tapa pinota laatikot ajoneuvon tai tilan sisällä?</h3>
+    
+      <h3>Mikä on paras tapa pinota laatikot ajoneuvoon tai tilaan?</h3>
       <p>
-      VolumTransport-sovelluksessa laskennan jälkeen näytetään laatikoiden kokonaismäärä ja niiden sijainnit.
-      Sovellus tarjoaa myös <strong>3D-visualisoinnin jo sijoitetuista laatikoista</strong>, mikä auttaa oikean pinoamis- ja lastausjärjestyksen määrittämisessä
-      ajoneuvon tai käytettävissä olevan tilan sisällä.
+        Laskennan jälkeen VolumTransport näyttää laatikoiden kokonaismäärän ja niiden sijainnit.
+        Se tarjoaa myös <strong>3D-visualisoinnin jo sijoitetuista laatikoista</strong>, joka auttaa oikeassa pinoamisessa ja lastausjärjestyksessä
+        ajoneuvon tai käytettävissä olevan tilan sisällä.
       </p>
-      
-      <h3>Onko se vain pakettiautoille?</h3>
-      <p>Ei. Se toimii pakettiautoille, autoille, kuorma-autoille ja yhdistelmäajoneuvoille.</p>
-
-      <h3>Onko se vain tilavuuslaskuri (CBM)?</h3>
-      <p>Ei. Se näyttää <strong>todellisen 3D-sijoittelun</strong>, jotta voit varmistaa, mahtuuko kaikki oikeasti.</p>
-
-      <h3>Voinko mitata puhelimella?</h3>
+    
+      <h3>Onko se tarkoitettu vain pakettiautoille?</h3>
+      <p>Ei. Se toimii pakettiautoissa, henkilöautoissa, kuorma-autoissa ja yhdistelmäajoneuvoissa.</p>
+    
+      <h3>Onko se yhteensopiva henkilöauton kanssa?</h3>
+      <p>
+        Kyllä. VolumTransportia voi käyttää myös henkilöautoissa.
+        Syöttämällä tavaratilan mitat ja kuljetettavien esineiden mitat
+        sovellus laskee, mahtuvatko ne.
+        Voit myös simuloida kokoonpanoja, kuten <strong>takaistuimet kaadettuina</strong>, hyödyntääksesi lisätilaa.
+      </p>
+    
+      <h3>Olen yksityiskäyttäjä. Voiko tästä työkalusta olla minulle hyötyä?</h3>
+      <p>
+        <strong>Kyllä.</strong> VolumTransport sopii myös yksityiskäyttäjille.
+        Määritä vain <strong>ajoneuvo tai tila</strong>, jota haluat käyttää (esimerkiksi auton tavaratila, <strong>varasto</strong>,
+        huone tai muu tila) ja syötä esineiden mitat.
+        Sovellus auttaa tarkistamaan, mahtuvatko <strong>huonekalut, kodinkoneet, laatikot tai suuret esineet</strong> ennen kuljetusta tai varastointia,
+        näyttäen niiden sijoittelun 3D-näkymässä.
+      </p>
+    
+      <h3>Onko se pelkkä tilavuuslaskuri (CBM)?</h3>
+      <p>Ei. Se näyttää <strong>todellisen 3D-sijoittelun</strong>, jotta voit varmistaa, että laatikot todella mahtuvat.</p>
+    
+      <h3>Voinko mitata puhelimellani?</h3>
       <p>Kyllä. Se sisältää <strong>lisätyn todellisuuden (AR)</strong> mittauksen.</p>
-
+    
       <h3>Voinko käyttää sitä huoneisiin tai varastotiloihin?</h3>
       <p>Kyllä. Käytä <strong>yleistilan tilaa</strong> ja määritä omat mitat.</p>
-
-      <h3>Onko sovellus ilmainen?</h3>
-      <p>Se riippuu Google Playssa saatavilla olevasta versiosta. Tarkista tiedot kaupasta.</p>
+    
+      <h3>Onko se ilmainen?</h3>
+      <p>Se riippuu Google Playssa saatavilla olevasta versiosta. Tarkista tiedot sovelluskaupasta.</p>
     </section>
+    
+    <hr style="margin:28px 0; border:none; border-top:1px solid #ddd;">
+    
+    <p class="small">
+      Last updated: February 19, 2026.
+    </p>
+    
+    <p class="small">
+      <a href="https://aplicacionesherrbri.com/"
+         target="_blank"
+         rel="noopener noreferrer">AplicacionesHerrbri</a>
+      ·
+      <a href="https://aplicacionesherrbri.com/privacy_policy.html"
+         target="_blank"
+         rel="noopener noreferrer">Tietosuojakäytäntö</a>
+    </p>
+
 
   </main>
 </body>
