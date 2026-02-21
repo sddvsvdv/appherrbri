@@ -143,6 +143,64 @@
 <body>
   <main class="wrap">
 
+    <nav class="langbar" aria-label="言語選択">
+      <div class="lang-left">
+        <span class="lang-title">🌍 言語</span>
+    
+        <div class="lang-main">
+          <a href="/boxes-fit-vehicle/" hreflang="en">English</a>
+          <a href="/es/boxes-fit-vehicle/" hreflang="es">Español</a>
+          <a href="/fr/boxes-fit-vehicle/" hreflang="fr">Français</a>
+          <a href="/de/boxes-fit-vehicle/" hreflang="de">Deutsch</a>
+          <span class="lang-active">日本語</span>
+          <a href="/zh-hans/boxes-fit-vehicle/" hreflang="zh-Hans">中文</a>
+        </div>
+      </div>
+    
+
+      <div class="lang-right">
+        <select onchange="if(this.value) window.location.href=this.value;">
+          <option value="">その他の言語…</option>
+          <option value="/bg/boxes-fit-vehicle/">Български</option>
+          <option value="/bn/boxes-fit-vehicle/">বাংলা</option>
+          <option value="/cs/boxes-fit-vehicle/">Čeština</option>
+          <option value="/ko/boxes-fit-vehicle/">한국어</option>
+          <option value="/hr/boxes-fit-vehicle/">Hrvatski</option>
+          <option value="/sk/boxes-fit-vehicle/">Slovenčina</option>
+          <option value="/sl/boxes-fit-vehicle/">Slovenščina</option>
+          <option value="/et/boxes-fit-vehicle/">Eesti</option>
+          <option value="/da/boxes-fit-vehicle/">Dansk</option>
+          <option value="/fi/boxes-fit-vehicle/">Suomi</option>
+          <option value="/el/boxes-fit-vehicle/">Ελληνικά</option>
+          <option value="/he/boxes-fit-vehicle/">עברית</option>
+          <option value="/hi/boxes-fit-vehicle/">हिन्दी</option>
+          <option value="/hu/boxes-fit-vehicle/">Magyar</option>
+          <option value="/id/boxes-fit-vehicle/">Bahasa Indonesia</option>
+          <option value="/it/boxes-fit-vehicle/">Italiano</option>
+          <option value="/ja/boxes-fit-vehicle/">日本語</option>
+          <option value="/lo/boxes-fit-vehicle/">ລາວ</option>
+          <option value="/lv/boxes-fit-vehicle/">Latviešu</option>
+          <option value="/lt/boxes-fit-vehicle/">Lietuvių</option>
+          <option value="/nl/boxes-fit-vehicle/">Nederlands</option>
+          <option value="/ne/boxes-fit-vehicle/">नेपाली</option>
+          <option value="/no/boxes-fit-vehicle/">Norsk</option>
+          <option value="/fa/boxes-fit-vehicle/">فارسی</option>
+          <option value="/pl/boxes-fit-vehicle/">Polski</option>
+          <option value="/pt/boxes-fit-vehicle/">Português</option>
+          <option value="/pa-pk/boxes-fit-vehicle/">ਪੰਜਾਬੀ</option>
+          <option value="/ro/boxes-fit-vehicle/">Română</option>
+          <option value="/ru/boxes-fit-vehicle/">Русский</option>
+          <option value="/sv/boxes-fit-vehicle/">Svenska</option>
+          <option value="/th/boxes-fit-vehicle/">ไทย</option>
+          <option value="/tr/boxes-fit-vehicle/">Türkçe</option>
+          <option value="/uk/boxes-fit-vehicle/">Українська</option>
+          <option value="/ur/boxes-fit-vehicle/">اردو</option>
+          <option value="/vi/boxes-fit-vehicle/">Tiếng Việt</option>
+          <option value="/ar/boxes-fit-vehicle/">العربية</option>
+        </select>
+      </div>
+    </nav>
+
     <h1>車両や実際の空間に何箱入るか計算できるアプリ（Android）</h1>
 
     <p>
@@ -150,6 +208,11 @@
       <strong>バン・車・トラック、または実際の空間に何箱入るかを計算</strong>できる Android アプリです。
       <strong>3Dで実際の配置</strong>を確認でき、さらに
       <strong>スマホのカメラで計測（AR）</strong>も可能です。
+    </p>
+
+    <p class="small">
+      <strong><a href="https://aplicacionesherrbri.com/" target="_blank" rel="noopener noreferrer">AplicacionesHerrbri</a></strong> によって開発されました。
+      当スタジオは、輸送および物流の専門家向けの実用的なツールを専門とする独立系スタジオです。
     </p>
 
     <div class="note">
@@ -204,9 +267,39 @@
       </ul>
     </div>
 
-    <p>
-      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
-        Google Play で VolumTransport をダウンロード
+    <h2>アプリのスクリーンショット</h2>
+
+    <div class="shots">
+      <figure>
+        <img src="/assets/screens/ja-presentacion-web.png"
+             alt="VolumTransportのメイン画面"
+             loading="lazy">
+        <figcaption class="small">
+          メイン画面：計算、積載バランス、拡張現実へのクイックアクセス。
+        </figcaption>
+      </figure>
+    
+      <figure>
+        <img src="/assets/screens/ja-3d-web.png"
+             alt="VolumTransportの3D積載表示"
+             loading="lazy">
+        <figcaption class="small">
+          結果：すべてが実際に収まるかを確認するためのリアルな3D配置。
+        </figcaption>
+      </figure>
+    </div>
+    
+    <p class="small" style="margin-bottom:6px;">
+      入手先：
+    </p>
+    
+    <p style="margin-top:10px;">
+      <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
+         target="_blank"
+         rel="noopener noreferrer">
+        <img src="/assets/screens/Badge-Japanese-web.png"
+             alt="Google Playで入手"
+             style="height:60px; max-width:100%; border-radius:8px;">
       </a>
     </p>
 
@@ -216,36 +309,71 @@
 
     <section class="faq">
       <h2>よくある質問</h2>
-
-      <h3>トラックに何箱積めるかを計算する方法は？</h3>
+    
+      <h3>トラックに何箱入るかをどのように計算できますか？</h3>
       <p>
-      VolumTransport を使えば、車両情報と荷物の寸法を入力することで、トラックに積める箱の数を計算できます。
-      寸法を入力して計算をタップするだけで、積載可能な箱の数や積載計画に役立つその他のデータが表示されます。
+        VolumTransportを使用すると、トラックの詳細情報と荷物の寸法を入力することで、
+        トラックに積載できる箱の数を計算できます。
+        寸法を入力して計算をタップするだけで、アプリが入る箱の数や
+        積載計画に役立つ関連データを表示します。
       </p>
-
+    
       <h3>車両やスペース内で箱を積み重ねる最適な方法は何ですか？</h3>
       <p>
-      VolumTransportでは、計算を行った後、アプリが箱の総数とその配置を表示します。
-      さらに、<strong>すでに配置された箱の3Dビジュアル表示</strong>を提供し、正しい積み重ね方や積載順を把握するのに役立ちます。
-      車両や利用可能なスペース内での積載を効率的に行えます。
+        VolumTransportでは、計算後に箱の合計数とその配置位置が表示されます。
+        さらに、<strong>すでに配置された箱の3Dビジュアライゼーション</strong>を提供し、
+        車両や利用可能なスペース内での正しい積み重ね順序や積載順をガイドします。
       </p>
-
+    
       <h3>バン専用ですか？</h3>
-      <p>いいえ。バン、車、トラック、混載車両で利用できます。</p>
-
-      <h3>体積（CBM）の計算だけですか？</h3>
-      <p>いいえ。<strong>実際の3D配置</strong>を表示して、本当に入るか確認できます。</p>
-
-      <h3>スマホで計測できますか？</h3>
-      <p>はい。<strong>AR（拡張現実）</strong>による計測に対応しています。</p>
-
-      <h3>部屋や物置にも使えますか？</h3>
-      <p>はい。<strong>ユニバーサル空間モード</strong>で自由に寸法を設定できます。</p>
-
+      <p>いいえ。バン、乗用車、トラック、混合車両で使用できます。</p>
+    
+      <h3>自家用車にも対応していますか？</h3>
+      <p>
+        はい。VolumTransportは自家用車でも使用できます。
+        トランクの寸法と運搬する荷物のサイズを入力することで、
+        それらが収まるかどうかを計算します。
+        また、<strong>後部座席を倒した状態</strong>などの構成をシミュレーションし、
+        追加スペースを活用することも可能です。
+      </p>
+      
+      <h3>私は個人ユーザーです。このツールは役立ちますか？</h3>
+      <p>
+        <strong>はい。</strong>VolumTransportは個人ユーザーにもご利用いただけます。
+        使用したい<strong>車両またはスペース</strong>（例：車のトランク、<strong>収納スペース</strong>、
+        部屋、その他のスペース）を設定し、荷物の寸法を入力するだけです。
+        <strong>家具、家電、箱、大型物品</strong>が実際に収まるかどうかを、
+        運搬や保管の前に3D表示で確認できます。
+      </p>
+    
+      <h3>単なる体積（CBM）計算機ですか？</h3>
+      <p>いいえ。<strong>実際の3D配置</strong>を表示し、箱が本当に収まるかを確認できます。</p>
+    
+      <h3>スマートフォンで測定できますか？</h3>
+      <p>はい。<strong>拡張現実（AR）</strong>による測定機能が含まれています。</p>
+    
+      <h3>部屋や収納スペースにも使用できますか？</h3>
+      <p>はい。<strong>ユニバーサルスペースモード</strong>を使用して、カスタム寸法を設定できます。</p>
+    
       <h3>無料ですか？</h3>
-      <p>Google Play の提供形態によります。詳細はストアで確認してください。</p>
+      <p>Google Playで提供されているバージョンによります。詳細はストアをご確認ください。</p>
     </section>
-
+    
+    <hr style="margin:28px 0; border:none; border-top:1px solid #ddd;">
+    
+    <p class="small">
+      最終更新日：2026年2月21日。
+    </p>
+    
+    <p class="small">
+      <a href="https://aplicacionesherrbri.com/"
+         target="_blank"
+         rel="noopener noreferrer">AplicacionesHerrbri</a>
+      ·
+      <a href="https://aplicacionesherrbri.com/privacy_policy.html"
+         target="_blank"
+         rel="noopener noreferrer">プライバシーポリシー</a>
+    </p>
   </main>
 </body>
 </html>
