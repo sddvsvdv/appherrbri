@@ -122,6 +122,110 @@
       margin-top: 18px;
     }
 
+    .langbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      padding:14px 16px;
+      background:#f3fbf6;
+      border-radius:14px;
+      border:1px solid rgba(46,125,50,.2);
+      margin-bottom:18px;
+    }
+
+    .lang-title{
+      font-weight:700;
+      color:#1b5e20;
+      margin-right:12px;
+    }
+
+    .lang-main{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .lang-main a{
+      text-decoration:none;
+      font-weight:600;
+      color:#1b5e20;
+      padding:6px 10px;
+      border-radius:8px;
+      transition:.2s ease;
+    }
+
+    .lang-main a:hover{
+      background:#e0f2e9;
+    }
+
+    .lang-active{
+      background:#1b5e20;
+      color:#fff;
+      padding:6px 12px;
+      border-radius:8px;
+      font-weight:700;
+    }
+
+    .lang-right select{
+      padding:8px 12px;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.2);
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    .lang-left{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:10px 12px;
+    }
+
+    .shots{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:16px;
+      margin:12px 0 6px;
+      align-items:start;
+    }
+
+    .shots figure{
+      margin:0;
+      background:#fff;
+      border-radius:12px;
+      padding:10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    }
+
+    .shots img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .shots figcaption{
+      margin-top:8px;
+    }
+
+    @media (max-width: 720px){
+      .shots{ grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 900px){
+      .shots{
+        justify-items: center;
+      }
+      .shots figure{
+        max-width: 280px;
+        width: 100%;
+      }
+    }
+
+
     .small { color: #444; font-size: .95rem; }
   </style>
 
@@ -143,6 +247,64 @@
 <body>
   <main class="wrap">
 
+    <nav class="langbar" aria-label="Pemilih bahasa">
+      <div class="lang-left">
+        <span class="lang-title">🌍 Bahasa</span>
+    
+        <div class="lang-main">
+          <a href="/boxes-fit-vehicle/" hreflang="en">English</a>
+          <a href="/es/boxes-fit-vehicle/" hreflang="es">Español</a>
+          <a href="/fr/boxes-fit-vehicle/" hreflang="fr">Français</a>
+          <a href="/de/boxes-fit-vehicle/" hreflang="de">Deutsch</a>
+          <span class="lang-active">Indonesia</span>
+          <a href="/zh-hans/boxes-fit-vehicle/" hreflang="zh-Hans">中文</a>
+        </div>
+      </div>
+
+
+      <div class="lang-right">
+        <select onchange="if(this.value) window.location.href=this.value;">
+          <option value="">Bahasa lainnya…</option>
+          <option value="/bg/boxes-fit-vehicle/">Български</option>
+          <option value="/bn/boxes-fit-vehicle/">বাংলা</option>
+          <option value="/cs/boxes-fit-vehicle/">Čeština</option>
+          <option value="/ko/boxes-fit-vehicle/">한국어</option>
+          <option value="/hr/boxes-fit-vehicle/">Hrvatski</option>
+          <option value="/sk/boxes-fit-vehicle/">Slovenčina</option>
+          <option value="/sl/boxes-fit-vehicle/">Slovenščina</option>
+          <option value="/et/boxes-fit-vehicle/">Eesti</option>
+          <option value="/da/boxes-fit-vehicle/">Dansk</option>
+          <option value="/fi/boxes-fit-vehicle/">Suomi</option>
+          <option value="/el/boxes-fit-vehicle/">Ελληνικά</option>
+          <option value="/he/boxes-fit-vehicle/">עברית</option>
+          <option value="/hi/boxes-fit-vehicle/">हिन्दी</option>
+          <option value="/hu/boxes-fit-vehicle/">Magyar</option>
+          <option value="/it/boxes-fit-vehicle/">Italiano</option>
+          <option value="/ja/boxes-fit-vehicle/">日本語</option>
+          <option value="/lo/boxes-fit-vehicle/">ລາວ</option>
+          <option value="/lv/boxes-fit-vehicle/">Latviešu</option>
+          <option value="/lt/boxes-fit-vehicle/">Lietuvių</option>
+          <option value="/nl/boxes-fit-vehicle/">Nederlands</option>
+          <option value="/ne/boxes-fit-vehicle/">नेपाली</option>
+          <option value="/no/boxes-fit-vehicle/">Norsk</option>
+          <option value="/fa/boxes-fit-vehicle/">فارسی</option>
+          <option value="/pl/boxes-fit-vehicle/">Polski</option>
+          <option value="/pt/boxes-fit-vehicle/">Português</option>
+          <option value="/pa-pk/boxes-fit-vehicle/">ਪੰਜਾਬੀ</option>
+          <option value="/ro/boxes-fit-vehicle/">Română</option>
+          <option value="/ru/boxes-fit-vehicle/">Русский</option>
+          <option value="/sv/boxes-fit-vehicle/">Svenska</option>
+          <option value="/th/boxes-fit-vehicle/">ไทย</option>
+          <option value="/tr/boxes-fit-vehicle/">Türkçe</option>
+          <option value="/uk/boxes-fit-vehicle/">Українська</option>
+          <option value="/ur/boxes-fit-vehicle/">اردو</option>
+          <option value="/vi/boxes-fit-vehicle/">Tiếng Việt</option>
+          <option value="/ar/boxes-fit-vehicle/">العربية</option>
+        </select>
+      </div>
+    </nav>
+
+
     <h1>Aplikasi untuk menghitung berapa banyak kotak yang muat di kendaraan atau ruang nyata (Android)</h1>
 
     <p>
@@ -150,6 +312,11 @@
       <strong>menghitung berapa banyak kotak yang muat di kendaraan, van, atau ruang nyata</strong>,
       dengan menampilkan <strong>penempatan 3D yang sebenarnya</strong> dan memungkinkan
       <strong>pengukuran menggunakan kamera ponsel (AR)</strong>.
+    </p>
+
+    <p class="small">
+      Dikembangkan oleh <strong><a href="https://aplicacionesherrbri.com/" target="_blank" rel="noopener noreferrer">AplicacionesHerrbri</a></strong>,
+      sebuah studio independen yang mengkhususkan diri dalam alat praktis untuk para profesional transportasi dan logistik.
     </p>
 
     <div class="note">
@@ -205,9 +372,39 @@
       </ul>
     </div>
 
-    <p>
-      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
-        Unduh VolumTransport di Google Play
+    <h2>Tangkapan layar aplikasi</h2>
+
+    <div class="shots">
+      <figure>
+        <img src="/assets/screens/id-presentacion-web.png"
+             alt="Layar utama VolumTransport"
+             loading="lazy">
+        <figcaption class="small">
+          Layar utama: akses cepat ke perhitungan, penyeimbangan muatan, dan realitas tertambah.
+        </figcaption>
+      </figure>
+    
+      <figure>
+        <img src="/assets/screens/id-3d-web.png"
+             alt="Visualisasi muatan 3D di VolumTransport"
+             loading="lazy">
+        <figcaption class="small">
+          Hasil: penempatan 3D nyata untuk memastikan semuanya benar-benar muat.
+        </figcaption>
+      </figure>
+    </div>
+    
+    <p class="small" style="margin-bottom:6px;">
+      Dapatkan di:
+    </p>
+    
+    <p style="margin-top:10px;">
+      <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
+         target="_blank"
+         rel="noopener noreferrer">
+        <img src="/assets/screens/Badge-Indonesian-web.png"
+             alt="Dapatkan di Google Play"
+             style="height:60px; max-width:100%; border-radius:8px;">
       </a>
     </p>
 
@@ -217,35 +414,74 @@
 
     <section class="faq">
       <h2>Pertanyaan yang sering diajukan</h2>
-
+    
       <h3>Bagaimana cara menghitung berapa banyak kotak yang muat di dalam truk?</h3>
       <p>
-      Dengan VolumTransport, Anda dapat menghitung berapa banyak kotak yang dapat dibawa truk dengan memasukkan detail kendaraan dan dimensi barang.
-      Cukup masukkan ukuran dan tekan hitung: aplikasi akan menampilkan jumlah kotak yang muat serta data penting lainnya untuk perencanaan muatan.
+        Dengan VolumTransport, Anda dapat menghitung berapa banyak kotak yang dapat dibawa oleh truk
+        dengan memasukkan detail truk dan dimensi barang.
+        Cukup masukkan ukuran dan tekan hitung: aplikasi akan menampilkan jumlah kotak yang muat
+        serta data relevan lainnya untuk merencanakan muatan.
       </p>
-
+    
       <h3>Apa cara terbaik untuk menyusun kotak di dalam kendaraan atau ruang?</h3>
       <p>
-      Dengan VolumTransport, setelah perhitungan dilakukan, aplikasi menampilkan jumlah total kotak dan mencantumkan posisinya.
-      Aplikasi ini juga menyediakan <strong>visualisasi 3D dari kotak yang sudah ditempatkan</strong>, yang membantu memandu urutan penyusunan dan pemuatan yang benar
-      di dalam kendaraan atau ruang yang tersedia.
+        Dengan VolumTransport, setelah melakukan perhitungan, aplikasi menampilkan jumlah total kotak
+        dan daftar posisinya.
+        Aplikasi juga menyediakan <strong>visualisasi 3D dari kotak yang sudah ditempatkan</strong>,
+        membantu Anda menentukan urutan penyusunan dan pemuatan yang benar
+        di dalam kendaraan atau ruang yang tersedia.
       </p>
-
+    
       <h3>Apakah hanya untuk van?</h3>
-      <p>Tidak. Aplikasi ini bekerja dengan van, mobil, truk, dan kendaraan campuran.</p>
-
+      <p>Tidak. Aplikasi ini dapat digunakan untuk van, mobil, truk, dan kendaraan campuran.</p>
+    
+      <h3>Apakah kompatibel dengan mobil pribadi?</h3>
+      <p>
+        Ya. VolumTransport juga dapat digunakan dengan mobil pribadi.
+        Dengan memasukkan dimensi bagasi dan ukuran barang yang akan diangkut,
+        aplikasi akan menghitung apakah barang tersebut muat.
+        Aplikasi juga memungkinkan simulasi konfigurasi seperti <strong>kursi belakang yang dilipat</strong>
+        untuk memanfaatkan ruang tambahan.
+      </p>
+      
+      <h3>Saya pengguna pribadi. Apakah alat ini berguna untuk saya?</h3>
+      <p>
+        <strong>Ya.</strong> VolumTransport juga dapat digunakan oleh pengguna pribadi.
+        Anda hanya perlu mengatur <strong>kendaraan atau ruang</strong> yang ingin digunakan
+        (misalnya bagasi mobil, <strong>ruang penyimpanan</strong>, ruangan, atau ruang lainnya)
+        dan memasukkan dimensi barang.
+        Aplikasi membantu Anda memeriksa apakah <strong>furnitur, peralatan rumah tangga, kotak, atau benda besar</strong>
+        benar-benar muat sebelum dipindahkan atau disimpan, dengan menampilkan penempatannya dalam 3D.
+      </p>
+    
       <h3>Apakah ini hanya kalkulator volume (CBM)?</h3>
-      <p>Tidak. Aplikasi ini menampilkan <strong>penempatan 3D yang nyata</strong>.</p>
-
-      <h3>Bisakah saya mengukur dengan ponsel?</h3>
-      <p>Ya. Termasuk pengukuran <strong>Augmented Reality (AR)</strong>.</p>
-
-      <h3>Bisakah digunakan untuk ruangan atau gudang kecil?</h3>
-      <p>Ya. Gunakan <strong>mode ruang universal</strong> dan atur dimensinya.</p>
-
-      <h3>Apakah aplikasinya gratis?</h3>
-      <p>Tergantung pada versi yang tersedia di Google Play. Lihat detail di toko.</p>
+      <p>Tidak. Aplikasi ini menampilkan <strong>penempatan 3D yang nyata</strong> untuk memastikan apakah kotak benar-benar muat.</p>
+    
+      <h3>Bisakah saya mengukur menggunakan ponsel?</h3>
+      <p>Ya. Aplikasi ini menyertakan fitur <strong>pengukuran Realitas Tertambah (AR)</strong>.</p>
+    
+      <h3>Bisakah digunakan untuk ruangan atau ruang penyimpanan?</h3>
+      <p>Ya. Gunakan <strong>mode ruang universal</strong> dan tentukan dimensi khusus.</p>
+    
+      <h3>Apakah gratis?</h3>
+      <p>Tergantung pada versi yang tersedia di Google Play. Periksa toko untuk detailnya.</p>
     </section>
+    
+    <hr style="margin:28px 0; border:none; border-top:1px solid #ddd;">
+    
+    <p class="small">
+      Terakhir diperbarui: 21 Februari 2026.
+    </p>
+    
+    <p class="small">
+      <a href="https://aplicacionesherrbri.com/"
+         target="_blank"
+         rel="noopener noreferrer">AplicacionesHerrbri</a>
+      ·
+      <a href="https://aplicacionesherrbri.com/privacy_policy.html"
+         target="_blank"
+         rel="noopener noreferrer">Kebijakan Privasi</a>
+    </p>
 
   </main>
 </body>
