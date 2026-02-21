@@ -122,6 +122,110 @@
       margin-top: 18px;
     }
 
+    .langbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      padding:14px 16px;
+      background:#f3fbf6;
+      border-radius:14px;
+      border:1px solid rgba(46,125,50,.2);
+      margin-bottom:18px;
+    }
+
+    .lang-title{
+      font-weight:700;
+      color:#1b5e20;
+      margin-right:12px;
+    }
+
+    .lang-main{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .lang-main a{
+      text-decoration:none;
+      font-weight:600;
+      color:#1b5e20;
+      padding:6px 10px;
+      border-radius:8px;
+      transition:.2s ease;
+    }
+
+    .lang-main a:hover{
+      background:#e0f2e9;
+    }
+
+    .lang-active{
+      background:#1b5e20;
+      color:#fff;
+      padding:6px 12px;
+      border-radius:8px;
+      font-weight:700;
+    }
+
+    .lang-right select{
+      padding:8px 12px;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.2);
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    .lang-left{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:10px 12px;
+    }
+
+    .shots{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:16px;
+      margin:12px 0 6px;
+      align-items:start;
+    }
+
+    .shots figure{
+      margin:0;
+      background:#fff;
+      border-radius:12px;
+      padding:10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    }
+
+    .shots img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .shots figcaption{
+      margin-top:8px;
+    }
+
+    @media (max-width: 720px){
+      .shots{ grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 900px){
+      .shots{
+        justify-items: center;
+      }
+      .shots figure{
+        max-width: 280px;
+        width: 100%;
+      }
+    }
+
+
     .small { color: #444; font-size: .95rem; }
   </style>
 
