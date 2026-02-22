@@ -122,6 +122,110 @@
       margin-top: 18px;
     }
 
+    .langbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      padding:14px 16px;
+      background:#f3fbf6;
+      border-radius:14px;
+      border:1px solid rgba(46,125,50,.2);
+      margin-bottom:18px;
+    }
+
+    .lang-title{
+      font-weight:700;
+      color:#1b5e20;
+      margin-right:12px;
+    }
+
+    .lang-main{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .lang-main a{
+      text-decoration:none;
+      font-weight:600;
+      color:#1b5e20;
+      padding:6px 10px;
+      border-radius:8px;
+      transition:.2s ease;
+    }
+
+    .lang-main a:hover{
+      background:#e0f2e9;
+    }
+
+    .lang-active{
+      background:#1b5e20;
+      color:#fff;
+      padding:6px 12px;
+      border-radius:8px;
+      font-weight:700;
+    }
+
+    .lang-right select{
+      padding:8px 12px;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.2);
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    .lang-left{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:10px 12px;
+    }
+
+    .shots{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:16px;
+      margin:12px 0 6px;
+      align-items:start;
+    }
+
+    .shots figure{
+      margin:0;
+      background:#fff;
+      border-radius:12px;
+      padding:10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    }
+
+    .shots img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .shots figcaption{
+      margin-top:8px;
+    }
+
+    @media (max-width: 720px){
+      .shots{ grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 900px){
+      .shots{
+        justify-items: center;
+      }
+      .shots figure{
+        max-width: 280px;
+        width: 100%;
+      }
+    }
+
+
     .small { color: #444; font-size: .95rem; }
   </style>
 
@@ -143,12 +247,73 @@
 <body>
   <main class="wrap">
 
+    <nav class="langbar" aria-label="Valodas izvēle">
+      <div class="lang-left">
+        <span class="lang-title">🌍 Valoda</span>
+    
+        <div class="lang-main">
+          <a href="/boxes-fit-vehicle/" hreflang="en">English</a>
+          <a href="/es/boxes-fit-vehicle/" hreflang="es">Español</a>
+          <a href="/fr/boxes-fit-vehicle/" hreflang="fr">Français</a>
+          <a href="/de/boxes-fit-vehicle/" hreflang="de">Deutsch</a>
+          <span class="lang-active">Latviešu</span>
+          <a href="/zh-hans/boxes-fit-vehicle/" hreflang="zh-Hans">中文</a>
+        </div>
+      </div>
+
+      <div class="lang-right">
+        <select onchange="if(this.value) window.location.href=this.value;">
+          <option value="">Vairāk valodu…</option>
+          <option value="/bg/boxes-fit-vehicle/">Български</option>
+          <option value="/bn/boxes-fit-vehicle/">বাংলা</option>
+          <option value="/cs/boxes-fit-vehicle/">Čeština</option>
+          <option value="/ko/boxes-fit-vehicle/">한국어</option>
+          <option value="/hr/boxes-fit-vehicle/">Hrvatski</option>
+          <option value="/sk/boxes-fit-vehicle/">Slovenčina</option>
+          <option value="/sl/boxes-fit-vehicle/">Slovenščina</option>
+          <option value="/et/boxes-fit-vehicle/">Eesti</option>
+          <option value="/da/boxes-fit-vehicle/">Dansk</option>
+          <option value="/fi/boxes-fit-vehicle/">Suomi</option>
+          <option value="/el/boxes-fit-vehicle/">Ελληνικά</option>
+          <option value="/he/boxes-fit-vehicle/">עברית</option>
+          <option value="/hi/boxes-fit-vehicle/">हिन्दी</option>
+          <option value="/hu/boxes-fit-vehicle/">Magyar</option>
+          <option value="/id/boxes-fit-vehicle/">Bahasa Indonesia</option>
+          <option value="/it/boxes-fit-vehicle/">Italiano</option>
+          <option value="/ja/boxes-fit-vehicle/">日本語</option>
+          <option value="/lo/boxes-fit-vehicle/">ລາວ</option>
+          <option value="/lt/boxes-fit-vehicle/">Lietuvių</option>
+          <option value="/nl/boxes-fit-vehicle/">Nederlands</option>
+          <option value="/ne/boxes-fit-vehicle/">नेपाली</option>
+          <option value="/no/boxes-fit-vehicle/">Norsk</option>
+          <option value="/fa/boxes-fit-vehicle/">فارسی</option>
+          <option value="/pl/boxes-fit-vehicle/">Polski</option>
+          <option value="/pt/boxes-fit-vehicle/">Português</option>
+          <option value="/pa-pk/boxes-fit-vehicle/">ਪੰਜਾਬੀ</option>
+          <option value="/ro/boxes-fit-vehicle/">Română</option>
+          <option value="/ru/boxes-fit-vehicle/">Русский</option>
+          <option value="/sv/boxes-fit-vehicle/">Svenska</option>
+          <option value="/th/boxes-fit-vehicle/">ไทย</option>
+          <option value="/tr/boxes-fit-vehicle/">Türkçe</option>
+          <option value="/uk/boxes-fit-vehicle/">Українська</option>
+          <option value="/ur/boxes-fit-vehicle/">اردو</option>
+          <option value="/vi/boxes-fit-vehicle/">Tiếng Việt</option>
+          <option value="/ar/boxes-fit-vehicle/">العربية</option>
+        </select>
+      </div>
+    </nav>
+
     <h1>Lietotne, lai aprēķinātu, cik kastes ietilpst transportlīdzeklī vai reālā telpā (Android)</h1>
 
     <p>
       <strong>VolumTransport</strong> ir Android lietotne, kas paredzēta, lai
       <strong>aprēķinātu, cik kastes ietilpst furgonā, automašīnā vai jebkurā reālā telpā</strong>,
       parādot <strong>reālo izvietojumu 3D</strong> un ļaujot <strong>mērīt ar telefona kameru (AR)</strong>.
+    </p>
+
+    <p class="small">
+      Izstrādājis <strong><a href="https://aplicacionesherrbri.com/" target="_blank" rel="noopener noreferrer">AplicacionesHerrbri</a></strong>,
+      neatkarīga studija, kas specializējas praktiskos rīkos transporta un loģistikas profesionāļiem.
     </p>
 
     <div class="note">
@@ -203,9 +368,39 @@
       </ul>
     </div>
 
-    <p>
-      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
-        Lejupielādēt VolumTransport Google Play
+    <h2>Lietotnes ekrānuzņēmumi</h2>
+
+    <div class="shots">
+      <figure>
+        <img src="/assets/screens/lv-presentacion-web.png"
+             alt="VolumTransport galvenais ekrāns"
+             loading="lazy">
+        <figcaption class="small">
+          Galvenais ekrāns: ātra piekļuve aprēķiniem, kravas līdzsvarošanai un paplašinātajai realitātei.
+        </figcaption>
+      </figure>
+    
+      <figure>
+        <img src="/assets/screens/lv-3d-web.png"
+             alt="VolumTransport 3D kravas vizualizācija"
+             loading="lazy">
+        <figcaption class="small">
+          Rezultāts: reāls 3D izvietojums, lai pārbaudītu, vai viss patiešām ietilpst.
+        </figcaption>
+      </figure>
+    </div>
+    
+    <p class="small" style="margin-bottom:6px;">
+      Lejupielādēt vietnē:
+    </p>
+    
+    <p style="margin-top:10px;">
+      <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
+         target="_blank"
+         rel="noopener noreferrer">
+        <img src="/assets/screens/Badge-Latvian-web.png"
+             alt="Lejupielādēt vietnē Google Play"
+             style="height:60px; max-width:100%; border-radius:8px;">
       </a>
     </p>
 
@@ -215,35 +410,74 @@
 
     <section class="faq">
       <h2>Biežāk uzdotie jautājumi</h2>
-
-      <h3>Kā aprēķināt, cik kastes ietilpst kravas automašīnā?</h3>
+    
+      <h3>Kā aprēķināt, cik daudz kastes ietilps kravas automašīnā?</h3>
       <p>
-      Izmantojot VolumTransport, jūs varat aprēķināt, cik kastes var pārvadāt kravas automašīna, ievadot transportlīdzekļa datus un kravas izmērus.
-      Vienkārši ievadiet izmērus un nospiediet aprēķināt: lietotne parāda, cik kastes ietilpst, kā arī citus svarīgus datus kravas plānošanai.
+        Ar VolumTransport jūs varat aprēķināt, cik daudz kastes kravas automašīna var pārvadāt,
+        ievadot transportlīdzekļa datus un preču izmērus.
+        Vienkārši ievadiet izmērus un nospiediet aprēķināt – lietotne parādīs,
+        cik kastes ietilpst un citus svarīgus datus kravas plānošanai.
       </p>
-
-      <h3>Kāds ir labākais veids, kā sakraut kastes transportlīdzeklī vai telpā?</h3>
+    
+      <h3>Kā vislabāk sakraut kastes transportlīdzeklī vai telpā?</h3>
       <p>
-      Izmantojot VolumTransport, pēc aprēķina veikšanas lietotne parāda kopējo kastu skaitu un uzskaita to novietojumu.
-      Tāpat tiek nodrošināta <strong>jau novietoto kastu 3D vizualizācija</strong>, kas palīdz noteikt pareizo kraušanas un iekraušanas secību
-      transportlīdzeklī vai pieejamajā telpā.
+        Pēc aprēķina veikšanas VolumTransport parāda kopējo kastu skaitu un to novietojumu.
+        Tā arī nodrošina <strong>jau novietoto kastu 3D vizualizāciju</strong>,
+        palīdzot noteikt pareizu kraušanas un iekraušanas secību
+        transportlīdzeklī vai pieejamajā telpā.
       </p>
-
-      <h3>Vai tā ir tikai furgoniem?</h3>
-      <p>Nē. Tā darbojas ar furgoniem, automašīnām, kravas auto un jauktiem transportlīdzekļiem.</p>
-
-      <h3>Vai tā ir tikai tilpuma (CBM) kalkulatora lietotne?</h3>
-      <p>Nē. Tā parāda <strong>reālo 3D izvietojumu</strong>, lai pārbaudītu, vai kastes patiešām ietilpst.</p>
-
-      <h3>Vai es varu mērīt ar telefonu?</h3>
-      <p>Jā. Lietotne ietver <strong>paplašinātās realitātes (AR)</strong> mērīšanu.</p>
-
-      <h3>Vai to var izmantot istabām vai noliktavas telpām?</h3>
-      <p>Jā. Izmantojiet <strong>universālās telpas režīmu</strong> un ievadiet pielāgotus izmērus.</p>
-
-      <h3>Vai tā ir bez maksas?</h3>
-      <p>Tas ir atkarīgs no Google Play pieejamās versijas. Detalizētu informāciju skatiet veikalā.</p>
+    
+      <h3>Vai tā paredzēta tikai furgoniem?</h3>
+      <p>Nē. Tā darbojas ar furgoniem, vieglajām automašīnām, kravas automašīnām un jaukta tipa transportlīdzekļiem.</p>
+    
+      <h3>Vai tā ir saderīga ar privāto automašīnu?</h3>
+      <p>
+        Jā. VolumTransport var izmantot arī ar privātajām automašīnām.
+        Ievadot bagāžnieka izmērus un pārvadājamo priekšmetu izmērus,
+        lietotne aprēķina, vai tie ietilps.
+        Tā arī ļauj simulēt konfigurācijas, piemēram, <strong>nolocītus aizmugurējos sēdekļus</strong>,
+        lai izmantotu papildu vietu.
+      </p>
+      
+      <h3>Esmu privāts lietotājs. Vai šis rīks man būs noderīgs?</h3>
+      <p>
+        <strong>Jā.</strong> VolumTransport ir piemērota arī privātiem lietotājiem.
+        Jums tikai jāiestata <strong>transportlīdzeklis vai telpa</strong>, kuru vēlaties izmantot
+        (piemēram, automašīnas bagāžnieks, <strong>noliktava</strong>, istaba vai cita telpa)
+        un jāievada priekšmetu izmēri.
+        Lietotne palīdz pārbaudīt, vai <strong>mēbeles, sadzīves tehnika, kastes vai lieli priekšmeti</strong>
+        patiešām ietilpst pirms to pārvietošanas vai uzglabāšanas,
+        parādot to novietojumu 3D formātā.
+      </p>
+    
+      <h3>Vai tas ir tikai tilpuma (CBM) kalkulators?</h3>
+      <p>Nē. Tā parāda <strong>reālu 3D novietojumu</strong>, lai pārbaudītu, vai kastes patiešām ietilpst.</p>
+    
+      <h3>Vai varu mērīt ar savu tālruni?</h3>
+      <p>Jā. Tajā ir iekļauta <strong>paplašinātās realitātes (AR)</strong> mērīšana.</p>
+    
+      <h3>Vai varu to izmantot telpām vai noliktavām?</h3>
+      <p>Jā. Izmantojiet <strong>universālās telpas režīmu</strong> un definējiet pielāgotus izmērus.</p>
+    
+      <h3>Vai tā ir bezmaksas?</h3>
+      <p>Tas ir atkarīgs no versijas, kas pieejama Google Play. Pārbaudiet veikalu, lai iegūtu sīkāku informāciju.</p>
     </section>
+    
+    <hr style="margin:28px 0; border:none; border-top:1px solid #ddd;">
+    
+    <p class="small">
+      Pēdējoreiz atjaunināts: 2026. gada 22. februārī.
+    </p>
+    
+    <p class="small">
+      <a href="https://aplicacionesherrbri.com/"
+         target="_blank"
+         rel="noopener noreferrer">AplicacionesHerrbri</a>
+      ·
+      <a href="https://aplicacionesherrbri.com/privacy_policy.html"
+         target="_blank"
+         rel="noopener noreferrer">Privātuma politika</a>
+    </p>
 
   </main>
 </body>
