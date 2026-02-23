@@ -122,6 +122,110 @@
       margin-top: 18px;
     }
 
+    .langbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      padding:14px 16px;
+      background:#f3fbf6;
+      border-radius:14px;
+      border:1px solid rgba(46,125,50,.2);
+      margin-bottom:18px;
+    }
+
+    .lang-title{
+      font-weight:700;
+      color:#1b5e20;
+      margin-right:12px;
+    }
+
+    .lang-main{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .lang-main a{
+      text-decoration:none;
+      font-weight:600;
+      color:#1b5e20;
+      padding:6px 10px;
+      border-radius:8px;
+      transition:.2s ease;
+    }
+
+    .lang-main a:hover{
+      background:#e0f2e9;
+    }
+
+    .lang-active{
+      background:#1b5e20;
+      color:#fff;
+      padding:6px 12px;
+      border-radius:8px;
+      font-weight:700;
+    }
+
+    .lang-right select{
+      padding:8px 12px;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.2);
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    .lang-left{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:10px 12px;
+    }
+
+    .shots{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:16px;
+      margin:12px 0 6px;
+      align-items:start;
+    }
+
+    .shots figure{
+      margin:0;
+      background:#fff;
+      border-radius:12px;
+      padding:10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    }
+
+    .shots img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .shots figcaption{
+      margin-top:8px;
+    }
+
+    @media (max-width: 720px){
+      .shots{ grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 900px){
+      .shots{
+        justify-items: center;
+      }
+      .shots figure{
+        max-width: 280px;
+        width: 100%;
+      }
+    }
+
+
     .small { color: #444; font-size: .95rem; }
   </style>
 
@@ -143,12 +247,73 @@
 <body>
   <main class="wrap">
 
+    <nav class="langbar" aria-label="भाषा चयन">
+      <div class="lang-left">
+        <span class="lang-title">🌍 भाषा</span>
+    
+        <div class="lang-main">
+          <a href="/boxes-fit-vehicle/" hreflang="en">English</a>
+          <a href="/es/boxes-fit-vehicle/" hreflang="es">Español</a>
+          <a href="/fr/boxes-fit-vehicle/" hreflang="fr">Français</a>
+          <a href="/de/boxes-fit-vehicle/" hreflang="de">Deutsch</a>
+          <span class="lang-active">नेपाली</span>
+          <a href="/zh-hans/boxes-fit-vehicle/" hreflang="zh-Hans">中文</a>
+        </div>
+      </div>
+    
+      <div class="lang-right">
+        <select onchange="if(this.value) window.location.href=this.value;">
+          <option value="">थप भाषाहरू…</option>
+          <option value="/bg/boxes-fit-vehicle/">Български</option>
+          <option value="/bn/boxes-fit-vehicle/">বাংলা</option>
+          <option value="/cs/boxes-fit-vehicle/">Čeština</option>
+          <option value="/ko/boxes-fit-vehicle/">한국어</option>
+          <option value="/hr/boxes-fit-vehicle/">Hrvatski</option>
+          <option value="/sk/boxes-fit-vehicle/">Slovenčina</option>
+          <option value="/sl/boxes-fit-vehicle/">Slovenščina</option>
+          <option value="/et/boxes-fit-vehicle/">Eesti</option>
+          <option value="/da/boxes-fit-vehicle/">Dansk</option>
+          <option value="/fi/boxes-fit-vehicle/">Suomi</option>
+          <option value="/el/boxes-fit-vehicle/">Ελληνικά</option>
+          <option value="/he/boxes-fit-vehicle/">עברית</option>
+          <option value="/hi/boxes-fit-vehicle/">हिन्दी</option>
+          <option value="/hu/boxes-fit-vehicle/">Magyar</option>
+          <option value="/id/boxes-fit-vehicle/">Bahasa Indonesia</option>
+          <option value="/it/boxes-fit-vehicle/">Italiano</option>
+          <option value="/ja/boxes-fit-vehicle/">日本語</option>
+          <option value="/lo/boxes-fit-vehicle/">ລາວ</option>
+          <option value="/lv/boxes-fit-vehicle/">Latviešu</option>
+          <option value="/lt/boxes-fit-vehicle/">Lietuvių</option>
+          <option value="/nl/boxes-fit-vehicle/">Nederlands</option>
+          <option value="/no/boxes-fit-vehicle/">Norsk</option>
+          <option value="/fa/boxes-fit-vehicle/">فارسی</option>
+          <option value="/pl/boxes-fit-vehicle/">Polski</option>
+          <option value="/pt/boxes-fit-vehicle/">Português</option>
+          <option value="/pa-pk/boxes-fit-vehicle/">ਪੰਜਾਬੀ</option>
+          <option value="/ro/boxes-fit-vehicle/">Română</option>
+          <option value="/ru/boxes-fit-vehicle/">Русский</option>
+          <option value="/sv/boxes-fit-vehicle/">Svenska</option>
+          <option value="/th/boxes-fit-vehicle/">ไทย</option>
+          <option value="/tr/boxes-fit-vehicle/">Türkçe</option>
+          <option value="/uk/boxes-fit-vehicle/">Українська</option>
+          <option value="/ur/boxes-fit-vehicle/">اردو</option>
+          <option value="/vi/boxes-fit-vehicle/">Tiếng Việt</option>
+          <option value="/ar/boxes-fit-vehicle/">العربية</option>
+        </select>
+      </div>
+    </nav>
+
     <h1>सवारी साधन वा वास्तविक ठाउँमा कति बक्स/डिब्बा अट्छन् भनेर गणना गर्ने एप (Android)</h1>
 
     <p>
       <strong>VolumTransport</strong> एउटा Android एप हो जसले
       <strong>भ्यान, कार वा कुनै पनि वास्तविक ठाउँमा कति बक्स/डिब्बा अट्छन्</strong> भनेर गणना गर्छ,
       <strong>वास्तविक 3D राखाइ</strong> देखाउँछ र <strong>फोनको क्यामेराबाट (AR) मापन</strong> गर्न दिन्छ।
+    </p>
+
+    <p class="small">
+      <strong><a href="https://aplicacionesherrbri.com/" target="_blank" rel="noopener noreferrer">AplicacionesHerrbri</a></strong> द्वारा विकसित,
+      यातायात र लोजिस्टिक्स पेशेवरहरूका लागि व्यावहारिक उपकरणहरूमा विशेषज्ञता प्राप्त एक स्वतन्त्र स्टुडियो।
     </p>
 
     <div class="note">
@@ -204,9 +369,39 @@
       </ul>
     </div>
 
-    <p>
-      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
-        Google Play मा VolumTransport डाउनलोड गर्नुहोस्
+    <h2>एपका स्क्रिनसटहरू</h2>
+
+    <div class="shots">
+      <figure>
+        <img src="/assets/screens/ne-presentacion-web.png"
+             alt="VolumTransport को मुख्य स्क्रिन"
+             loading="lazy">
+        <figcaption class="small">
+          मुख्य स्क्रिन: गणना, लोड सन्तुलन र संवर्धित वास्तविकतामा द्रुत पहुँच।
+        </figcaption>
+      </figure>
+    
+      <figure>
+        <img src="/assets/screens/ne-3d-web.png"
+             alt="VolumTransport मा 3D लोड दृश्य"
+             loading="lazy">
+        <figcaption class="small">
+          परिणाम: सबै कुरा साँच्चै अट्छ कि छैन जाँच गर्न वास्तविक 3D स्थान।
+        </figcaption>
+      </figure>
+    </div>
+    
+    <p class="small" style="margin-bottom:6px;">
+      यहाँ प्राप्त गर्नुहोस्:
+    </p>
+    
+    <p style="margin-top:10px;">
+      <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
+         target="_blank"
+         rel="noopener noreferrer">
+        <img src="/assets/screens/Badge-Nepali-web.png"
+             alt="Google Play मा प्राप्त गर्नुहोस्"
+             style="height:60px; max-width:100%; border-radius:8px;">
       </a>
     </p>
 
@@ -217,35 +412,73 @@
     <section class="faq">
       <h2>बारम्बार सोधिने प्रश्नहरू</h2>
 
-      <h3>ट्रकमा कति वटा बक्स अट्छन् भनेर कसरी गणना गर्ने?</h3>
-      <p>
-      VolumTransport प्रयोग गरेर तपाईं सवारी साधनको विवरण र सामानको आयाम प्रविष्ट गरी ट्रकले कति बक्स बोक्न सक्छ भनेर गणना गर्न सक्नुहुन्छ।
-      मापनहरू प्रविष्ट गरेर गणना थिच्नुहोस्: एपले अट्ने बक्सको संख्या र लोड योजना बनाउन आवश्यक अन्य जानकारी देखाउँछ।
-      </p>
-
-      <h3>सवारी साधन वा कुनै स्थानभित्र बाकसहरू राख्ने सबैभन्दा राम्रो तरिका के हो?</h3>
-      <p>
-      VolumTransport प्रयोग गर्दा, गणना पूरा भएपछि एपले बाकसहरूको कुल संख्या र तिनको स्थान देखाउँछ।
-      यसले <strong>पहिले नै राखिएका बाकसहरूको 3D दृश्य</strong> पनि प्रदान गर्छ, जसले सही तरिकाले थुपार्ने र लोड गर्ने क्रम बुझ्न सहयोग गर्छ
-      सवारी साधन वा उपलब्ध स्थानभित्र।
-      </p>
-
-      <h3>के यो केवल भ्यानका लागि मात्र हो?</h3>
-      <p>होइन। यो भ्यान, कार, ट्रक र मिश्रित सवारी साधनसँग पनि काम गर्छ।</p>
-
-      <h3>के यो केवल भोल्युम (CBM) क्याल्कुलेटर हो?</h3>
-      <p>होइन। यसले <strong>वास्तविक 3D राखाइ</strong> देखाउँछ ताकि बक्सहरू साँच्चै अट्छन् कि छैनन् भनेर पुष्टि गर्न सकियोस्।</p>
-
-      <h3>के म फोनबाट मापन गर्न सक्छु?</h3>
-      <p>हो। यसमा <strong>Augmented Reality (AR)</strong> मार्फत मापन सुविधा छ।</p>
-
-      <h3>के म यसलाई कोठा वा स्टोररुमका लागि प्रयोग गर्न सक्छु?</h3>
-      <p>हो। <strong>युनिभर्सल स्पेस मोड</strong> प्रयोग गरेर आफूले चाहेको मापन राख्न सक्नुहुन्छ।</p>
-
-      <h3>के यो निःशुल्क हो?</h3>
-      <p>यो Google Play मा उपलब्ध संस्करणमा निर्भर गर्छ। विवरणका लागि स्टोरमा हेर्नुहोस्।</p>
+    <h3>ट्रकमा कति बाकस अट्छन् भनेर कसरी गणना गर्ने?</h3>
+    <p>
+      VolumTransport को साथ, तपाईंले ट्रकका विवरण र सामानका मापनहरू प्रविष्ट गरेर
+      ट्रकले कति बाकस बोक्न सक्छ भन्ने गणना गर्न सक्नुहुन्छ।
+      केवल मापनहरू प्रविष्ट गर्नुहोस् र “गणना” थिच्नुहोस्:
+      एपले कति बाकस अट्छन् र लोड योजना बनाउन आवश्यक अन्य जानकारी देखाउँछ।
+    </p>
+    
+    <h3>सवारी साधन वा स्थान भित्र बाकसहरू कसरी राख्ने उत्तम तरिका के हो?</h3>
+    <p>
+      गणना पूरा भएपछि, VolumTransport ले कुल बाकसहरूको संख्या र तिनीहरूको स्थान देखाउँछ।
+      यसले <strong>पहिले नै राखिएका बाकसहरूको 3D दृश्य</strong> पनि प्रदान गर्दछ,
+      जसले सवारी साधन वा उपलब्ध स्थान भित्र सही तरिकाले राख्ने र लोड गर्ने क्रममा मार्गदर्शन गर्छ।
+    </p>
+    
+    <h3>के यो केवल भ्यानका लागि मात्र हो?</h3>
+    <p>होइन। यो भ्यान, कार, ट्रक र मिश्रित सवारी साधनहरूमा काम गर्छ।</p>
+    
+    <h3>के यो निजी कारसँग मिल्छ?</h3>
+    <p>
+      हो। VolumTransport निजी कारहरूसँग पनि प्रयोग गर्न सकिन्छ।
+      ट्रंकको मापन र बोक्नुपर्ने वस्तुहरूको मापन प्रविष्ट गरेपछि,
+      एपले ती अट्छन् कि अट्दैनन् भनेर गणना गर्छ।
+      यसले <strong>पछाडिका सिट फोल्ड गरिएको</strong> जस्ता सेटअपहरू पनि सिमुलेट गर्न दिन्छ,
+      ताकि थप स्थान प्रयोग गर्न सकियोस्।
+    </p>
+    
+    <h3>म निजी प्रयोगकर्ता हुँ। के यो उपकरण मेरो लागि उपयोगी छ?</h3>
+    <p>
+      <strong>हो।</strong> VolumTransport निजी प्रयोगकर्ताहरूले पनि प्रयोग गर्न सक्छन्।
+      तपाईंले केवल प्रयोग गर्न चाहेको <strong>सवारी साधन वा स्थान</strong>
+      (जस्तै कारको ट्रंक, <strong>भण्डारण कोठा</strong>, कोठा वा अन्य कुनै स्थान)
+      सेटअप गर्नुपर्छ र वस्तुहरूको मापन प्रविष्ट गर्नुपर्छ।
+      एपले <strong>फर्निचर, घरेलु उपकरण, बाकस वा ठूला वस्तुहरू</strong>
+      सार्न वा भण्डारण गर्नुअघि वास्तवमै अट्छन् कि अट्दैनन् भनेर जाँच गर्न मद्दत गर्छ,
+      र तिनीहरूको 3D स्थान देखाउँछ।
+    </p>
+    
+    <h3>के यो केवल भोल्युम (CBM) क्याल्कुलेटर हो?</h3>
+    <p>होइन। यसले बाकसहरू साँच्चै अट्छन् कि अट्दैनन् भनेर जाँच गर्न <strong>वास्तविक 3D स्थान</strong> देखाउँछ।</p>
+    
+    <h3>के म आफ्नो फोनबाट मापन गर्न सक्छु?</h3>
+    <p>हो। यसमा <strong>संवर्धित वास्तविकता (AR)</strong> मापन सुविधा समावेश छ।</p>
+    
+    <h3>के म यसलाई कोठा वा भण्डारण स्थानका लागि प्रयोग गर्न सक्छु?</h3>
+    <p>हो। <strong>युनिभर्सल स्पेस मोड</strong> प्रयोग गर्नुहोस् र आफ्नै मापनहरू निर्धारण गर्नुहोस्।</p>
+    
+    <h3>के यो निःशुल्क छ?</h3>
+    <p>यो Google Play मा उपलब्ध संस्करणमा निर्भर गर्दछ। विवरणका लागि स्टोर जाँच गर्नुहोस्।</p>
+    
     </section>
-
+    
+    <hr style="margin:28px 0; border:none; border-top:1px solid #ddd;">
+    
+    <p class="small">
+      अन्तिम अपडेट: 23 फेब्रुअरी 2026।
+    </p>
+    
+    <p class="small">
+      <a href="https://aplicacionesherrbri.com/"
+         target="_blank"
+         rel="noopener noreferrer">AplicacionesHerrbri</a>
+      ·
+      <a href="https://aplicacionesherrbri.com/privacy_policy.html"
+         target="_blank"
+         rel="noopener noreferrer">गोपनीयता नीति</a>
+    </p>
   </main>
 </body>
 </html>
