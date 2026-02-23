@@ -122,6 +122,109 @@
       margin-top: 18px;
     }
 
+    .langbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      padding:14px 16px;
+      background:#f3fbf6;
+      border-radius:14px;
+      border:1px solid rgba(46,125,50,.2);
+      margin-bottom:18px;
+    }
+
+    .lang-title{
+      font-weight:700;
+      color:#1b5e20;
+      margin-right:12px;
+    }
+
+    .lang-main{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .lang-main a{
+      text-decoration:none;
+      font-weight:600;
+      color:#1b5e20;
+      padding:6px 10px;
+      border-radius:8px;
+      transition:.2s ease;
+    }
+
+    .lang-main a:hover{
+      background:#e0f2e9;
+    }
+
+    .lang-active{
+      background:#1b5e20;
+      color:#fff;
+      padding:6px 12px;
+      border-radius:8px;
+      font-weight:700;
+    }
+
+    .lang-right select{
+      padding:8px 12px;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.2);
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    .lang-left{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:10px 12px;
+    }
+
+    .shots{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:16px;
+      margin:12px 0 6px;
+      align-items:start;
+    }
+
+    .shots figure{
+      margin:0;
+      background:#fff;
+      border-radius:12px;
+      padding:10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    }
+
+    .shots img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .shots figcaption{
+      margin-top:8px;
+    }
+
+    @media (max-width: 720px){
+      .shots{ grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 900px){
+      .shots{
+        justify-items: center;
+      }
+      .shots figure{
+        max-width: 280px;
+        width: 100%;
+      }
+    }
+
     .small { color: #444; font-size: .95rem; }
   </style>
 
@@ -143,12 +246,74 @@
 <body>
   <main class="wrap">
 
+    <nav class="langbar" aria-label="Språkvalg">
+      <div class="lang-left">
+        <span class="lang-title">🌍 Språk</span>
+    
+        <div class="lang-main">
+          <a href="/boxes-fit-vehicle/" hreflang="en">English</a>
+          <a href="/es/boxes-fit-vehicle/" hreflang="es">Español</a>
+          <a href="/fr/boxes-fit-vehicle/" hreflang="fr">Français</a>
+          <a href="/de/boxes-fit-vehicle/" hreflang="de">Deutsch</a>
+          <span class="lang-active">Norsk</span>
+          <a href="/zh-hans/boxes-fit-vehicle/" hreflang="zh-Hans">中文</a>
+        </div>
+      </div>
+
+      <div class="lang-right">
+        <select onchange="if(this.value) window.location.href=this.value;">
+          <option value="">Flere språk…</option>
+          <option value="/bg/boxes-fit-vehicle/">Български</option>
+          <option value="/bn/boxes-fit-vehicle/">বাংলা</option>
+          <option value="/cs/boxes-fit-vehicle/">Čeština</option>
+          <option value="/ko/boxes-fit-vehicle/">한국어</option>
+          <option value="/hr/boxes-fit-vehicle/">Hrvatski</option>
+          <option value="/sk/boxes-fit-vehicle/">Slovenčina</option>
+          <option value="/sl/boxes-fit-vehicle/">Slovenščina</option>
+          <option value="/et/boxes-fit-vehicle/">Eesti</option>
+          <option value="/da/boxes-fit-vehicle/">Dansk</option>
+          <option value="/fi/boxes-fit-vehicle/">Suomi</option>
+          <option value="/el/boxes-fit-vehicle/">Ελληνικά</option>
+          <option value="/he/boxes-fit-vehicle/">עברית</option>
+          <option value="/hi/boxes-fit-vehicle/">हिन्दी</option>
+          <option value="/hu/boxes-fit-vehicle/">Magyar</option>
+          <option value="/id/boxes-fit-vehicle/">Bahasa Indonesia</option>
+          <option value="/it/boxes-fit-vehicle/">Italiano</option>
+          <option value="/ja/boxes-fit-vehicle/">日本語</option>
+          <option value="/lo/boxes-fit-vehicle/">ລາວ</option>
+          <option value="/lv/boxes-fit-vehicle/">Latviešu</option>
+          <option value="/lt/boxes-fit-vehicle/">Lietuvių</option>
+          <option value="/nl/boxes-fit-vehicle/">Nederlands</option>
+          <option value="/ne/boxes-fit-vehicle/">नेपाली</option>
+          <option value="/fa/boxes-fit-vehicle/">فارسی</option>
+          <option value="/pl/boxes-fit-vehicle/">Polski</option>
+          <option value="/pt/boxes-fit-vehicle/">Português</option>
+          <option value="/pa-pk/boxes-fit-vehicle/">ਪੰਜਾਬੀ</option>
+          <option value="/ro/boxes-fit-vehicle/">Română</option>
+          <option value="/ru/boxes-fit-vehicle/">Русский</option>
+          <option value="/sv/boxes-fit-vehicle/">Svenska</option>
+          <option value="/th/boxes-fit-vehicle/">ไทย</option>
+          <option value="/tr/boxes-fit-vehicle/">Türkçe</option>
+          <option value="/uk/boxes-fit-vehicle/">Українська</option>
+          <option value="/ur/boxes-fit-vehicle/">اردو</option>
+          <option value="/vi/boxes-fit-vehicle/">Tiếng Việt</option>
+          <option value="/ar/boxes-fit-vehicle/">العربية</option>
+        </select>
+      </div>
+    </nav>
+
+
     <h1>App for å beregne hvor mange esker som får plass i et kjøretøy eller et virkelig rom (Android)</h1>
 
     <p>
       <strong>VolumTransport</strong> er en Android-app som er laget for å
       <strong>beregne hvor mange esker som får plass i en varebil, bil eller et virkelig rom</strong>,
       med <strong>faktisk plassering i 3D</strong> og mulighet til å <strong>måle med mobilkamera (AR)</strong>.
+    </p>
+
+    <p class="small">
+      Utviklet av <strong><a href="https://aplicacionesherrbri.com/" target="_blank" rel="noopener noreferrer">AplicacionesHerrbri</a></strong>,
+      et uavhengig studio spesialisert på praktiske verktøy for transport- og logistikkprofesjonelle.
     </p>
 
     <div class="note">
@@ -203,9 +368,39 @@
       </ul>
     </div>
 
-    <p>
-      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
-        Last ned VolumTransport på Google Play
+    <h2>Skjermbilder av appen</h2>
+
+    <div class="shots">
+      <figure>
+        <img src="/assets/screens/no-presentacion-web.png"
+             alt="VolumTransport hovedskjerm"
+             loading="lazy">
+        <figcaption class="small">
+          Hovedskjerm: rask tilgang til beregninger, lastbalansering og utvidet virkelighet.
+        </figcaption>
+      </figure>
+    
+      <figure>
+        <img src="/assets/screens/no-3d-web.png"
+             alt="3D lastvisualisering i VolumTransport"
+             loading="lazy">
+        <figcaption class="small">
+          Resultat: reell 3D-plassering for å kontrollere om alt faktisk får plass.
+        </figcaption>
+      </figure>
+    </div>
+    
+    <p class="small" style="margin-bottom:6px;">
+      Last ned på:
+    </p>
+    
+    <p style="margin-top:10px;">
+      <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
+         target="_blank"
+         rel="noopener noreferrer">
+        <img src="/assets/screens/Badge-Norwegian-web.png"
+             alt="Last ned på Google Play"
+             style="height:60px; max-width:100%; border-radius:8px;">
       </a>
     </p>
 
@@ -215,36 +410,68 @@
 
     <section class="faq">
       <h2>Ofte stilte spørsmål</h2>
-
+    
       <h3>Hvordan beregne hvor mange esker som får plass i en lastebil?</h3>
       <p>
-      Med VolumTransport kan du beregne hvor mange esker en lastebil kan frakte ved å legge inn kjøretøyets detaljer og varenes dimensjoner.
-      Bare skriv inn målene og trykk beregn: appen viser hvor mange esker som får plass og annen relevant informasjon for planlegging av lasten.
+        Med VolumTransport kan du beregne hvor mange esker en lastebil kan frakte ved å legge inn kjøretøyets detaljer og målene på varene.
+        Skriv inn målene og trykk beregn: appen viser hvor mange esker som får plass og annen relevant informasjon for å planlegge lasten.
       </p>
-
-      <h3>Hva er den beste måten å stable esker inne i et kjøretøy eller et rom?</h3>
+    
+      <h3>Hva er den beste måten å stable esker i et kjøretøy eller et rom?</h3>
       <p>
-      Med VolumTransport viser appen etter beregningen det totale antallet esker og lister opp plasseringene deres.
-      Den gir også en <strong>3D-visualisering av allerede plasserte esker</strong>, som hjelper med riktig stabling og laste­rekkefølge
-      inne i kjøretøyet eller det tilgjengelige rommet.
+        Etter at beregningen er utført, viser appen totalt antall esker og deres plassering.
+        Den gir også en <strong>3D-visualisering av eskene som er plassert</strong>, som hjelper deg med riktig stabling og laste-rekkefølge
+        i kjøretøyet eller det tilgjengelige rommet.
       </p>
-
-      <h3>Er den bare for varebiler?</h3>
-      <p>Nei. Den fungerer med varebil, bil, lastebil og blandede kjøretøy.</p>
-
+    
+      <h3>Er den kun for varebiler?</h3>
+      <p>Nei. Den fungerer med varebiler, personbiler, lastebiler og kombinerte kjøretøy.</p>
+    
+      <h3>Er den kompatibel med privatbil?</h3>
+      <p>
+        Ja. VolumTransport kan også brukes med privatbiler.
+        Ved å legge inn bagasjerommets mål og dimensjonene på gjenstandene som skal transporteres,
+        beregner appen om de får plass.
+        Den lar deg også simulere konfigurasjoner som <strong>nedfelte bakseter</strong> for å utnytte ekstra plass.
+      </p>
+    
+      <h3>Er jeg privatbruker? Kan dette verktøyet være nyttig for meg?</h3>
+      <p>
+        <strong>Ja.</strong> VolumTransport kan også brukes av privatpersoner.
+        Du trenger bare å konfigurere <strong>kjøretøyet eller rommet</strong> du vil bruke (for eksempel et bagasjerom,
+        et <strong>lagerrom</strong>, et rom eller annet område) og legge inn målene på gjenstandene.
+        Appen hjelper deg med å sjekke om <strong>møbler, hvitevarer, esker eller store objekter</strong> faktisk får plass før transport eller lagring,
+        og viser plasseringen i 3D.
+      </p>
+    
       <h3>Er det bare en volumkalkulator (CBM)?</h3>
-      <p>Nei. Den viser <strong>faktisk 3D-plassering</strong> for å bekrefte om eskene virkelig får plass.</p>
-
+      <p>Nei. Den viser <strong>reell 3D-plassering</strong> for å bekrefte at eskene faktisk får plass.</p>
+    
       <h3>Kan jeg måle med mobilen?</h3>
-      <p>Ja. Den har <strong>Augmented Reality (AR)</strong>-måling.</p>
-
-      <h3>Kan jeg bruke den for rom eller lagringsplass?</h3>
-      <p>Ja. Bruk <strong>universell rommodus</strong> og legg inn egne mål.</p>
-
+      <p>Ja. Den inkluderer måling med <strong>utvidet virkelighet (AR)</strong>.</p>
+    
+      <h3>Kan jeg bruke den for rom eller lagerplasser?</h3>
+      <p>Ja. Bruk <strong>universell rom-modus</strong> og definer egendefinerte mål.</p>
+    
       <h3>Er den gratis?</h3>
-      <p>Det avhenger av versjonen som er tilgjengelig på Google Play. Se detaljer i butikken.</p>
+      <p>Det avhenger av versjonen som er tilgjengelig på Google Play. Sjekk butikken for detaljer.</p>
     </section>
-
+    
+    <hr style="margin:28px 0; border:none; border-top:1px solid #ddd;">
+    
+    <p class="small">
+      Sist oppdatert: 23. februar 2026.
+    </p>
+    
+    <p class="small">
+      <a href="https://aplicacionesherrbri.com/"
+         target="_blank"
+         rel="noopener noreferrer">AplicacionesHerrbri</a>
+      ·
+      <a href="https://aplicacionesherrbri.com/privacy_policy.html"
+         target="_blank"
+         rel="noopener noreferrer">Personvernerklæring</a>
+    </p>
   </main>
 </body>
 </html>
