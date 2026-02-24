@@ -68,7 +68,6 @@
       padding: 24px 16px;
       line-height: 1.55;
       background: var(--green-bg);
-      text-align: right;
     }
 
     .wrap {
@@ -85,14 +84,11 @@
     h3 { margin-top: 18px; font-size: 1.05rem; }
 
     p { margin: 0 0 12px; }
-
-    /* RTL list spacing */
-    ul { margin: 10px 18px 16px 0; padding: 0 18px 0 0; }
+    ul { margin: 10px 0 16px 18px; }
 
     .note {
       background: var(--green-soft);
-      border-right: 5px solid var(--green-border);
-      border-left: 0;
+      border-left: 5px solid var(--green-border);
       padding: 14px;
       margin: 16px 0;
       border-radius: 6px;
@@ -126,6 +122,109 @@
       margin-top: 18px;
     }
 
+    .langbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      padding:14px 16px;
+      background:#f3fbf6;
+      border-radius:14px;
+      border:1px solid rgba(46,125,50,.2);
+      margin-bottom:18px;
+    }
+
+    .lang-title{
+      font-weight:700;
+      color:#1b5e20;
+      margin-right:12px;
+    }
+
+    .lang-main{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .lang-main a{
+      text-decoration:none;
+      font-weight:600;
+      color:#1b5e20;
+      padding:6px 10px;
+      border-radius:8px;
+      transition:.2s ease;
+    }
+
+    .lang-main a:hover{
+      background:#e0f2e9;
+    }
+
+    .lang-active{
+      background:#1b5e20;
+      color:#fff;
+      padding:6px 12px;
+      border-radius:8px;
+      font-weight:700;
+    }
+
+    .lang-right select{
+      padding:8px 12px;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.2);
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    .lang-left{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:10px 12px;
+    }
+
+    .shots{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:16px;
+      margin:12px 0 6px;
+      align-items:start;
+    }
+
+    .shots figure{
+      margin:0;
+      background:#fff;
+      border-radius:12px;
+      padding:10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    }
+
+    .shots img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .shots figcaption{
+      margin-top:8px;
+    }
+
+    @media (max-width: 720px){
+      .shots{ grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 900px){
+      .shots{
+        justify-items: center;
+      }
+      .shots figure{
+        max-width: 280px;
+        width: 100%;
+      }
+    }
+
     .small { color: #444; font-size: .95rem; }
   </style>
 
@@ -147,12 +246,73 @@
 <body>
   <main class="wrap">
 
+    <nav class="langbar" aria-label="انتخاب زبان">
+      <div class="lang-left">
+        <span class="lang-title">🌍 زبان</span>
+    
+        <div class="lang-main">
+          <a href="/boxes-fit-vehicle/" hreflang="en">English</a>
+          <a href="/es/boxes-fit-vehicle/" hreflang="es">Español</a>
+          <a href="/fr/boxes-fit-vehicle/" hreflang="fr">Français</a>
+          <a href="/de/boxes-fit-vehicle/" hreflang="de">Deutsch</a>
+          <span class="lang-active">فارسی</span>
+          <a href="/zh-hans/boxes-fit-vehicle/" hreflang="zh-Hans">中文</a>
+        </div>
+      </div>
+
+      <div class="lang-right">
+        <select onchange="if(this.value) window.location.href=this.value;">
+          <option value="">زبان‌های بیشتر…</option>
+          <option value="/bg/boxes-fit-vehicle/">Български</option>
+          <option value="/bn/boxes-fit-vehicle/">বাংলা</option>
+          <option value="/cs/boxes-fit-vehicle/">Čeština</option>
+          <option value="/ko/boxes-fit-vehicle/">한국어</option>
+          <option value="/hr/boxes-fit-vehicle/">Hrvatski</option>
+          <option value="/sk/boxes-fit-vehicle/">Slovenčina</option>
+          <option value="/sl/boxes-fit-vehicle/">Slovenščina</option>
+          <option value="/et/boxes-fit-vehicle/">Eesti</option>
+          <option value="/da/boxes-fit-vehicle/">Dansk</option>
+          <option value="/fi/boxes-fit-vehicle/">Suomi</option>
+          <option value="/el/boxes-fit-vehicle/">Ελληνικά</option>
+          <option value="/he/boxes-fit-vehicle/">עברית</option>
+          <option value="/hi/boxes-fit-vehicle/">हिन्दी</option>
+          <option value="/hu/boxes-fit-vehicle/">Magyar</option>
+          <option value="/id/boxes-fit-vehicle/">Bahasa Indonesia</option>
+          <option value="/it/boxes-fit-vehicle/">Italiano</option>
+          <option value="/ja/boxes-fit-vehicle/">日本語</option>
+          <option value="/lo/boxes-fit-vehicle/">ລາວ</option>
+          <option value="/lv/boxes-fit-vehicle/">Latviešu</option>
+          <option value="/lt/boxes-fit-vehicle/">Lietuvių</option>
+          <option value="/nl/boxes-fit-vehicle/">Nederlands</option>
+          <option value="/ne/boxes-fit-vehicle/">नेपाली</option>
+          <option value="/no/boxes-fit-vehicle/">Norsk</option>
+          <option value="/pl/boxes-fit-vehicle/">Polski</option>
+          <option value="/pt/boxes-fit-vehicle/">Português</option>
+          <option value="/pa-pk/boxes-fit-vehicle/">ਪੰਜਾਬੀ</option>
+          <option value="/ro/boxes-fit-vehicle/">Română</option>
+          <option value="/ru/boxes-fit-vehicle/">Русский</option>
+          <option value="/sv/boxes-fit-vehicle/">Svenska</option>
+          <option value="/th/boxes-fit-vehicle/">ไทย</option>
+          <option value="/tr/boxes-fit-vehicle/">Türkçe</option>
+          <option value="/uk/boxes-fit-vehicle/">Українська</option>
+          <option value="/ur/boxes-fit-vehicle/">اردو</option>
+          <option value="/vi/boxes-fit-vehicle/">Tiếng Việt</option>
+          <option value="/ar/boxes-fit-vehicle/">العربية</option>
+        </select>
+      </div>
+    </nav>
+
     <h1>اپ برای محاسبه اینکه چند جعبه داخل وسیله نقلیه یا فضای واقعی جا می‌شود (Android)</h1>
 
     <p>
       <strong>VolumTransport</strong> یک اپ اندروید است که برای
       <strong>محاسبه اینکه چند جعبه داخل ون، خودرو یا هر فضای واقعی جا می‌شود</strong> طراحی شده،
       <strong>چیدمان واقعی را به صورت سه‌بعدی</strong> نشان می‌دهد و امکان <strong>اندازه‌گیری با دوربین گوشی (AR)</strong> را فراهم می‌کند.
+    </p>
+
+    <p class="small">
+      توسعه‌یافته توسط <strong><a href="https://aplicacionesherrbri.com/" target="_blank" rel="noopener noreferrer">AplicacionesHerrbri</a></strong>،
+      یک استودیوی مستقل متخصص در ابزارهای کاربردی برای حرفه‌ای‌های حمل‌ونقل و لجستیک.
     </p>
 
     <div class="note">
@@ -207,9 +367,39 @@
       </ul>
     </div>
 
-    <p>
-      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
-        دانلود VolumTransport از Google Play
+    <h2>تصاویر برنامه</h2>
+
+    <div class="shots">
+      <figure>
+        <img src="/assets/screens/fa-presentacion-web.png"
+             alt="صفحه اصلی VolumTransport"
+             loading="lazy">
+        <figcaption class="small">
+          صفحه اصلی: دسترسی سریع به محاسبات، تعادل بار و واقعیت افزوده.
+        </figcaption>
+      </figure>
+    
+      <figure>
+        <img src="/assets/screens/fa-3d-web.png"
+             alt="نمایش سه‌بعدی بار در VolumTransport"
+             loading="lazy">
+        <figcaption class="small">
+          نتیجه: چیدمان واقعی سه‌بعدی برای بررسی اینکه آیا همه چیز واقعاً جا می‌شود.
+        </figcaption>
+      </figure>
+    </div>
+    
+    <p class="small" style="margin-bottom:6px;">
+      دریافت از:
+    </p>
+    
+    <p style="margin-top:10px;">
+      <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
+         target="_blank"
+         rel="noopener noreferrer">
+        <img src="/assets/screens/Badge-Persian-web.png"
+             alt="دریافت از Google Play"
+             style="height:60px; max-width:100%; border-radius:8px;">
       </a>
     </p>
 
@@ -219,36 +409,68 @@
 
     <section class="faq">
       <h2>سؤالات متداول</h2>
-
+    
       <h3>چگونه محاسبه کنیم چند جعبه در یک کامیون جا می‌شود؟</h3>
       <p>
-      با استفاده از VolumTransport می‌توانید با وارد کردن مشخصات وسیله نقلیه و ابعاد کالا محاسبه کنید که یک کامیون چه تعداد جعبه می‌تواند حمل کند.
-      کافی است اندازه‌ها را وارد کرده و محاسبه را بزنید: برنامه تعداد جعبه‌های قابل جای‌گیری و سایر داده‌های مهم برای برنامه‌ریزی بار را نمایش می‌دهد.
+        با VolumTransport می‌توانید محاسبه کنید یک کامیون چه تعداد جعبه می‌تواند حمل کند، با وارد کردن مشخصات وسیله نقلیه و ابعاد کالاها.
+        کافی است اندازه‌ها را وارد کرده و روی محاسبه ضربه بزنید: برنامه نشان می‌دهد چند جعبه جا می‌شود و اطلاعات مرتبط دیگری برای برنامه‌ریزی بار ارائه می‌دهد.
       </p>
-
-      <h3>بهترین روش برای چیدن جعبه‌ها در داخل یک وسیله نقلیه یا فضا چیست؟</h3>
-<p>
-با استفاده از VolumTransport، پس از انجام محاسبه، برنامه تعداد کل جعبه‌ها و موقعیت آن‌ها را نمایش می‌دهد.
-همچنین <strong>نمایش سه‌بعدی جعبه‌های از قبل چیده‌شده</strong> را ارائه می‌کند که به هدایت چیدمان صحیح و ترتیب بارگیری
-در داخل وسیله نقلیه یا فضای موجود کمک می‌کند.
-</p>
-
-
-      <h3>آیا فقط برای ون است؟</h3>
-      <p>خیر. با ون، خودرو، کامیون و خودروهای ترکیبی کار می‌کند.</p>
-
-      <h3>آیا فقط ماشین‌حساب حجم (CBM) است؟</h3>
-      <p>خیر. <strong>چیدمان واقعی سه‌بعدی</strong> را نشان می‌دهد تا مطمئن شوید جعبه‌ها واقعاً جا می‌شوند.</p>
-
-      <h3>آیا می‌توانم با گوشی اندازه‌گیری کنم؟</h3>
-      <p>بله. اندازه‌گیری با <strong>واقعیت افزوده (AR)</strong> را دارد.</p>
-
-      <h3>آیا برای اتاق یا انباری هم قابل استفاده است؟</h3>
-      <p>بله. از <strong>حالت فضای عمومی</strong> استفاده کنید و ابعاد دلخواه را وارد کنید.</p>
-
+    
+      <h3>بهترین روش برای چیدن جعبه‌ها داخل یک وسیله نقلیه یا فضا چیست؟</h3>
+      <p>
+        پس از انجام محاسبه، برنامه تعداد کل جعبه‌ها و موقعیت آن‌ها را نمایش می‌دهد.
+        همچنین یک <strong>نمایش سه‌بعدی از جعبه‌های قرارگرفته</strong> ارائه می‌کند که به چیدمان صحیح و ترتیب بارگیری
+        در وسیله نقلیه یا فضای موجود کمک می‌کند.
+      </p>
+    
+      <h3>آیا فقط برای ون‌ها است؟</h3>
+      <p>خیر. با ون‌ها، خودروهای سواری، کامیون‌ها و وسایل نقلیه ترکیبی کار می‌کند.</p>
+    
+      <h3>آیا با خودروی شخصی سازگار است؟</h3>
+      <p>
+        بله. VolumTransport می‌تواند با خودروهای شخصی نیز استفاده شود.
+        با وارد کردن ابعاد صندوق عقب و اندازه اقلامی که قرار است حمل شوند،
+        برنامه محاسبه می‌کند که آیا جا می‌شوند یا خیر.
+        همچنین امکان شبیه‌سازی تنظیماتی مانند <strong>تا کردن صندلی‌های عقب</strong> برای استفاده از فضای اضافی را فراهم می‌کند.
+      </p>
+    
+      <h3>من کاربر شخصی هستم. آیا این ابزار برای من مفید است؟</h3>
+      <p>
+        <strong>بله.</strong> VolumTransport می‌تواند توسط کاربران شخصی نیز استفاده شود.
+        کافی است <strong>وسیله نقلیه یا فضا</strong>ی مورد نظر خود را تنظیم کنید (برای مثال صندوق عقب خودرو،
+        یک <strong>انباری</strong>، یک اتاق یا هر فضای دیگر) و ابعاد اقلام را وارد کنید.
+        برنامه به شما کمک می‌کند بررسی کنید آیا <strong>مبلمان، لوازم خانگی، جعبه‌ها یا اشیای بزرگ</strong> پیش از حمل یا ذخیره‌سازی واقعاً جا می‌شوند یا خیر،
+        و چیدمان آن‌ها را به صورت سه‌بعدی نشان می‌دهد.
+      </p>
+    
+      <h3>آیا فقط یک ماشین‌حساب حجم (CBM) است؟</h3>
+      <p>خیر. <strong>چیدمان واقعی سه‌بعدی</strong> را نشان می‌دهد تا تأیید شود جعبه‌ها واقعاً جا می‌شوند.</p>
+    
+      <h3>آیا می‌توانم با تلفن همراه اندازه‌گیری کنم؟</h3>
+      <p>بله. شامل اندازه‌گیری با <strong>واقعیت افزوده (AR)</strong> است.</p>
+    
+      <h3>آیا می‌توانم از آن برای اتاق‌ها یا فضاهای ذخیره‌سازی استفاده کنم؟</h3>
+      <p>بله. از <strong>حالت فضای عمومی</strong> استفاده کنید و ابعاد دلخواه را تعریف کنید.</p>
+    
       <h3>آیا رایگان است؟</h3>
-      <p>بستگی به نسخه‌ای دارد که در Google Play موجود است. جزئیات را در فروشگاه ببینید.</p>
+      <p>بستگی به نسخه موجود در Google Play دارد. برای جزئیات، فروشگاه را بررسی کنید.</p>
     </section>
+    
+    <hr style="margin:28px 0; border:none; border-top:1px solid #ddd;">
+    
+    <p class="small">
+      آخرین به‌روزرسانی: 24 فوریه 2026.
+    </p>
+    
+    <p class="small">
+      <a href="https://aplicacionesherrbri.com/"
+         target="_blank"
+         rel="noopener noreferrer">AplicacionesHerrbri</a>
+      ·
+      <a href="https://aplicacionesherrbri.com/privacy_policy.html"
+         target="_blank"
+         rel="noopener noreferrer">سیاست حفظ حریم خصوصی</a>
+    </p>
 
   </main>
 </body>
