@@ -122,6 +122,109 @@
       margin-top: 18px;
     }
 
+    .langbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      padding:14px 16px;
+      background:#f3fbf6;
+      border-radius:14px;
+      border:1px solid rgba(46,125,50,.2);
+      margin-bottom:18px;
+    }
+
+    .lang-title{
+      font-weight:700;
+      color:#1b5e20;
+      margin-right:12px;
+    }
+
+    .lang-main{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .lang-main a{
+      text-decoration:none;
+      font-weight:600;
+      color:#1b5e20;
+      padding:6px 10px;
+      border-radius:8px;
+      transition:.2s ease;
+    }
+
+    .lang-main a:hover{
+      background:#e0f2e9;
+    }
+
+    .lang-active{
+      background:#1b5e20;
+      color:#fff;
+      padding:6px 12px;
+      border-radius:8px;
+      font-weight:700;
+    }
+
+    .lang-right select{
+      padding:8px 12px;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.2);
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    .lang-left{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:10px 12px;
+    }
+
+    .shots{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:16px;
+      margin:12px 0 6px;
+      align-items:start;
+    }
+
+    .shots figure{
+      margin:0;
+      background:#fff;
+      border-radius:12px;
+      padding:10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    }
+
+    .shots img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .shots figcaption{
+      margin-top:8px;
+    }
+
+    @media (max-width: 720px){
+      .shots{ grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 900px){
+      .shots{
+        justify-items: center;
+      }
+      .shots figure{
+        max-width: 280px;
+        width: 100%;
+      }
+    }
+
     .small { color: #444; font-size: .95rem; }
   </style>
 
@@ -143,12 +246,74 @@
 <body>
   <main class="wrap">
 
+    <nav class="langbar" aria-label="Wybór języka">
+      <div class="lang-left">
+        <span class="lang-title">🌍 Język</span>
+    
+        <div class="lang-main">
+          <a href="/boxes-fit-vehicle/" hreflang="en">English</a>
+          <a href="/es/boxes-fit-vehicle/" hreflang="es">Español</a>
+          <a href="/fr/boxes-fit-vehicle/" hreflang="fr">Français</a>
+          <a href="/de/boxes-fit-vehicle/" hreflang="de">Deutsch</a>
+          <span class="lang-active">Polski</span>
+          <a href="/zh-hans/boxes-fit-vehicle/" hreflang="zh-Hans">中文</a>
+        </div>
+      </div>
+
+      <div class="lang-right">
+        <select onchange="if(this.value) window.location.href=this.value;">
+          <option value="">Więcej języków…</option>
+          <option value="/bg/boxes-fit-vehicle/">Български</option>
+          <option value="/bn/boxes-fit-vehicle/">বাংলা</option>
+          <option value="/cs/boxes-fit-vehicle/">Čeština</option>
+          <option value="/ko/boxes-fit-vehicle/">한국어</option>
+          <option value="/hr/boxes-fit-vehicle/">Hrvatski</option>
+          <option value="/sk/boxes-fit-vehicle/">Slovenčina</option>
+          <option value="/sl/boxes-fit-vehicle/">Slovenščina</option>
+          <option value="/et/boxes-fit-vehicle/">Eesti</option>
+          <option value="/da/boxes-fit-vehicle/">Dansk</option>
+          <option value="/fi/boxes-fit-vehicle/">Suomi</option>
+          <option value="/el/boxes-fit-vehicle/">Ελληνικά</option>
+          <option value="/he/boxes-fit-vehicle/">עברית</option>
+          <option value="/hi/boxes-fit-vehicle/">हिन्दी</option>
+          <option value="/hu/boxes-fit-vehicle/">Magyar</option>
+          <option value="/id/boxes-fit-vehicle/">Bahasa Indonesia</option>
+          <option value="/it/boxes-fit-vehicle/">Italiano</option>
+          <option value="/ja/boxes-fit-vehicle/">日本語</option>
+          <option value="/lo/boxes-fit-vehicle/">ລາວ</option>
+          <option value="/lv/boxes-fit-vehicle/">Latviešu</option>
+          <option value="/lt/boxes-fit-vehicle/">Lietuvių</option>
+          <option value="/nl/boxes-fit-vehicle/">Nederlands</option>
+          <option value="/ne/boxes-fit-vehicle/">नेपाली</option>
+          <option value="/no/boxes-fit-vehicle/">Norsk</option>
+          <option value="/fa/boxes-fit-vehicle/">فارسی</option>
+          <option value="/pt/boxes-fit-vehicle/">Português</option>
+          <option value="/pa-pk/boxes-fit-vehicle/">ਪੰਜਾਬੀ</option>
+          <option value="/ro/boxes-fit-vehicle/">Română</option>
+          <option value="/ru/boxes-fit-vehicle/">Русский</option>
+          <option value="/sv/boxes-fit-vehicle/">Svenska</option>
+          <option value="/th/boxes-fit-vehicle/">ไทย</option>
+          <option value="/tr/boxes-fit-vehicle/">Türkçe</option>
+          <option value="/uk/boxes-fit-vehicle/">Українська</option>
+          <option value="/ur/boxes-fit-vehicle/">اردو</option>
+          <option value="/vi/boxes-fit-vehicle/">Tiếng Việt</option>
+          <option value="/ar/boxes-fit-vehicle/">العربية</option>
+        </select>
+      </div>
+    </nav>
+
+
     <h1>Aplikacja do obliczania, ile pudełek zmieści się w pojeździe lub realnej przestrzeni (Android)</h1>
 
     <p>
       <strong>VolumTransport</strong> to aplikacja na Androida zaprojektowana do
       <strong>obliczania, ile pudełek zmieści się w furgonie, samochodzie lub realnej przestrzeni</strong>,
       pokazująca <strong>rzeczywiste ułożenie w 3D</strong> i pozwalająca <strong>mierzyć kamerą telefonu (AR)</strong>.
+    </p>
+
+    <p class="small">
+      Opracowane przez <strong><a href="https://aplicacionesherrbri.com/" target="_blank" rel="noopener noreferrer">AplicacionesHerrbri</a></strong>,
+      niezależne studio specjalizujące się w praktycznych narzędziach dla profesjonalistów z branży transportu i logistyki.
     </p>
 
     <div class="note">
@@ -203,9 +368,39 @@
       </ul>
     </div>
 
-    <p>
-      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
-        Pobierz VolumTransport w Google Play
+    <h2>Zrzuty ekranu aplikacji</h2>
+
+    <div class="shots">
+      <figure>
+        <img src="/assets/screens/pl-presentacion-web.png"
+             alt="Ekran główny VolumTransport"
+             loading="lazy">
+        <figcaption class="small">
+          Ekran główny: szybki dostęp do obliczeń, równoważenia ładunku i rzeczywistości rozszerzonej.
+        </figcaption>
+      </figure>
+    
+      <figure>
+        <img src="/assets/screens/pl-3d-web.png"
+             alt="Wizualizacja ładunku 3D w VolumTransport"
+             loading="lazy">
+        <figcaption class="small">
+          Wynik: rzeczywiste rozmieszczenie 3D, aby sprawdzić, czy wszystko naprawdę się mieści.
+        </figcaption>
+      </figure>
+    </div>
+    
+    <p class="small" style="margin-bottom:6px;">
+      Pobierz w:
+    </p>
+    
+    <p style="margin-top:10px;">
+      <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
+         target="_blank"
+         rel="noopener noreferrer">
+        <img src="/assets/screens/Badge-Polish-web.png"
+             alt="Pobierz w Google Play"
+             style="height:60px; max-width:100%; border-radius:8px;">
       </a>
     </p>
 
@@ -215,36 +410,69 @@
 
     <section class="faq">
       <h2>Najczęściej zadawane pytania</h2>
-
-      <h3>Jak obliczyć, ile kartonów zmieści się w ciężarówce?</h3>
+    
+      <h3>Jak obliczyć, ile pudeł zmieści się w ciężarówce?</h3>
       <p>
-      Dzięki VolumTransport możesz obliczyć, ile kartonów może przewieźć ciężarówka, wprowadzając dane pojazdu oraz wymiary ładunku.
-      Wystarczy wpisać wymiary i nacisnąć oblicz: aplikacja pokaże liczbę kartonów oraz inne istotne dane do planowania załadunku.
+        Dzięki VolumTransport możesz obliczyć, ile pudeł może przewieźć ciężarówka, wprowadzając dane pojazdu oraz wymiary towaru.
+        Wystarczy wpisać wymiary i nacisnąć „oblicz”: aplikacja pokaże, ile pudeł się zmieści oraz inne istotne dane pomocne w planowaniu załadunku.
       </p>
-
-      <h3>Jaki jest najlepszy sposób układania kartonów w pojeździe lub przestrzeni?</h3>
+    
+      <h3>Jaki jest najlepszy sposób układania pudeł w pojeździe lub przestrzeni?</h3>
       <p>
-      Dzięki VolumTransport, po wykonaniu obliczeń aplikacja pokazuje całkowitą liczbę kartonów oraz ich pozycje.
-      Udostępnia również <strong>wizualizację 3D już rozmieszczonych kartonów</strong>, która pomaga w prawidłowym układaniu i kolejności załadunku
-      wewnątrz pojazdu lub dostępnej przestrzeni.
+        Po wykonaniu obliczeń aplikacja pokazuje łączną liczbę pudeł oraz ich rozmieszczenie.
+        Udostępnia również <strong>wizualizację 3D już rozmieszczonych pudeł</strong>, pomagając w prawidłowym układaniu i kolejności załadunku
+        w pojeździe lub dostępnej przestrzeni.
       </p>
-
-      <h3>Czy to tylko do furgonów?</h3>
-      <p>Nie. Działa z furgonami, samochodami, ciężarówkami i pojazdami mieszanymi.</p>
-
+    
+      <h3>Czy aplikacja jest tylko do vanów?</h3>
+      <p>Nie. Działa z vanami, samochodami osobowymi, ciężarówkami oraz pojazdami mieszanymi.</p>
+    
+      <h3>Czy jest kompatybilna z samochodem prywatnym?</h3>
+      <p>
+        Tak. VolumTransport może być używany również z samochodami prywatnymi.
+        Po wprowadzeniu wymiarów bagażnika oraz przedmiotów do przewiezienia,
+        aplikacja oblicza, czy się zmieszczą.
+        Umożliwia także symulowanie konfiguracji, takich jak <strong>złożone tylne siedzenia</strong>, aby wykorzystać dodatkową przestrzeń.
+      </p>
+      
+      <h3>Jestem użytkownikiem prywatnym. Czy to narzędzie może być dla mnie przydatne?</h3>
+      <p>
+        <strong>Tak.</strong> VolumTransport może być również używany przez osoby prywatne.
+        Wystarczy skonfigurować <strong>pojazd lub przestrzeń</strong>, której chcesz użyć (na przykład bagażnik samochodu,
+        <strong>komórkę lokatorską</strong>, pokój lub inną przestrzeń) i wprowadzić wymiary przedmiotów.
+        Aplikacja pomaga sprawdzić, czy <strong>meble, sprzęt AGD, pudełka lub duże przedmioty</strong> rzeczywiście się zmieszczą przed transportem lub przechowywaniem,
+        pokazując ich rozmieszczenie w 3D.
+      </p>
+    
       <h3>Czy to tylko kalkulator objętości (CBM)?</h3>
-      <p>Nie. Pokazuje <strong>rzeczywiste ułożenie w 3D</strong>, aby potwierdzić, czy pudełka naprawdę się mieszczą.</p>
-
+      <p>Nie. Pokazuje <strong>rzeczywiste rozmieszczenie 3D</strong>, aby potwierdzić, że pudełka naprawdę się mieszczą.</p>
+    
       <h3>Czy mogę mierzyć telefonem?</h3>
-      <p>Tak. Aplikacja zawiera pomiar w <strong>Rzeczywistości Rozszerzonej (AR)</strong>.</p>
-
-      <h3>Czy mogę używać do pomieszczeń lub magazynków?</h3>
-      <p>Tak. Skorzystaj z <strong>trybu uniwersalnej przestrzeni</strong> i ustaw własne wymiary.</p>
-
-      <h3>Czy jest darmowa?</h3>
+      <p>Tak. Zawiera pomiar z użyciem <strong>rzeczywistości rozszerzonej (AR)</strong>.</p>
+    
+      <h3>Czy mogę używać aplikacji do pomieszczeń lub przestrzeni magazynowych?</h3>
+      <p>Tak. Użyj <strong>trybu przestrzeni uniwersalnej</strong> i zdefiniuj własne wymiary.</p>
+    
+      <h3>Czy aplikacja jest darmowa?</h3>
       <p>To zależy od wersji dostępnej w Google Play. Sprawdź szczegóły w sklepie.</p>
     </section>
-
+    
+    <hr style="margin:28px 0; border:none; border-top:1px solid #ddd;">
+    
+    <p class="small">
+      Ostatnia aktualizacja: 24 lutego 2026.
+    </p>
+    
+    <p class="small">
+      <a href="https://aplicacionesherrbri.com/"
+         target="_blank"
+         rel="noopener noreferrer">AplicacionesHerrbri</a>
+      ·
+      <a href="https://aplicacionesherrbri.com/privacy_policy.html"
+         target="_blank"
+         rel="noopener noreferrer">Polityka prywatności</a>
+    </p>
+    
   </main>
 </body>
 </html>
