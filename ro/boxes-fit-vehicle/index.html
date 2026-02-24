@@ -122,6 +122,109 @@
       margin-top: 18px;
     }
 
+    .langbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      padding:14px 16px;
+      background:#f3fbf6;
+      border-radius:14px;
+      border:1px solid rgba(46,125,50,.2);
+      margin-bottom:18px;
+    }
+
+    .lang-title{
+      font-weight:700;
+      color:#1b5e20;
+      margin-right:12px;
+    }
+
+    .lang-main{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .lang-main a{
+      text-decoration:none;
+      font-weight:600;
+      color:#1b5e20;
+      padding:6px 10px;
+      border-radius:8px;
+      transition:.2s ease;
+    }
+
+    .lang-main a:hover{
+      background:#e0f2e9;
+    }
+
+    .lang-active{
+      background:#1b5e20;
+      color:#fff;
+      padding:6px 12px;
+      border-radius:8px;
+      font-weight:700;
+    }
+
+    .lang-right select{
+      padding:8px 12px;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.2);
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    .lang-left{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:10px 12px;
+    }
+
+    .shots{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:16px;
+      margin:12px 0 6px;
+      align-items:start;
+    }
+
+    .shots figure{
+      margin:0;
+      background:#fff;
+      border-radius:12px;
+      padding:10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    }
+
+    .shots img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .shots figcaption{
+      margin-top:8px;
+    }
+
+    @media (max-width: 720px){
+      .shots{ grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 900px){
+      .shots{
+        justify-items: center;
+      }
+      .shots figure{
+        max-width: 280px;
+        width: 100%;
+      }
+    }
+
     .small { color: #444; font-size: .95rem; }
   </style>
 
@@ -143,12 +246,74 @@
 <body>
   <main class="wrap">
 
+    <nav class="langbar" aria-label="Selector de limbă">
+      <div class="lang-left">
+        <span class="lang-title">🌍 Limbă</span>
+    
+        <div class="lang-main">
+          <a href="/boxes-fit-vehicle/" hreflang="en">English</a>
+          <a href="/es/boxes-fit-vehicle/" hreflang="es">Español</a>
+          <a href="/fr/boxes-fit-vehicle/" hreflang="fr">Français</a>
+          <a href="/de/boxes-fit-vehicle/" hreflang="de">Deutsch</a>
+          <span class="lang-active">Română</span>
+          <a href="/zh-hans/boxes-fit-vehicle/" hreflang="zh-Hans">中文</a>
+        </div>
+      </div>
+
+      <div class="lang-right">
+        <select onchange="if(this.value) window.location.href=this.value;">
+          <option value="">Mai multe limbi…</option>
+          <option value="/bg/boxes-fit-vehicle/">Български</option>
+          <option value="/bn/boxes-fit-vehicle/">বাংলা</option>
+          <option value="/cs/boxes-fit-vehicle/">Čeština</option>
+          <option value="/ko/boxes-fit-vehicle/">한국어</option>
+          <option value="/hr/boxes-fit-vehicle/">Hrvatski</option>
+          <option value="/sk/boxes-fit-vehicle/">Slovenčina</option>
+          <option value="/sl/boxes-fit-vehicle/">Slovenščina</option>
+          <option value="/et/boxes-fit-vehicle/">Eesti</option>
+          <option value="/da/boxes-fit-vehicle/">Dansk</option>
+          <option value="/fi/boxes-fit-vehicle/">Suomi</option>
+          <option value="/el/boxes-fit-vehicle/">Ελληνικά</option>
+          <option value="/he/boxes-fit-vehicle/">עברית</option>
+          <option value="/hi/boxes-fit-vehicle/">हिन्दी</option>
+          <option value="/hu/boxes-fit-vehicle/">Magyar</option>
+          <option value="/id/boxes-fit-vehicle/">Bahasa Indonesia</option>
+          <option value="/it/boxes-fit-vehicle/">Italiano</option>
+          <option value="/ja/boxes-fit-vehicle/">日本語</option>
+          <option value="/lo/boxes-fit-vehicle/">ລາວ</option>
+          <option value="/lv/boxes-fit-vehicle/">Latviešu</option>
+          <option value="/lt/boxes-fit-vehicle/">Lietuvių</option>
+          <option value="/nl/boxes-fit-vehicle/">Nederlands</option>
+          <option value="/ne/boxes-fit-vehicle/">नेपाली</option>
+          <option value="/no/boxes-fit-vehicle/">Norsk</option>
+          <option value="/fa/boxes-fit-vehicle/">فارسی</option>
+          <option value="/pl/boxes-fit-vehicle/">Polski</option>
+          <option value="/pt/boxes-fit-vehicle/">Português</option>
+          <option value="/pa-pk/boxes-fit-vehicle/">ਪੰਜਾਬੀ</option>
+          <option value="/ro/boxes-fit-vehicle/">Română</option>
+          <option value="/ru/boxes-fit-vehicle/">Русский</option>
+          <option value="/sv/boxes-fit-vehicle/">Svenska</option>
+          <option value="/th/boxes-fit-vehicle/">ไทย</option>
+          <option value="/tr/boxes-fit-vehicle/">Türkçe</option>
+          <option value="/uk/boxes-fit-vehicle/">Українська</option>
+          <option value="/ur/boxes-fit-vehicle/">اردو</option>
+          <option value="/vi/boxes-fit-vehicle/">Tiếng Việt</option>
+          <option value="/ar/boxes-fit-vehicle/">العربية</option>
+        </select>
+      </div>
+    </nav>
+
     <h1>Aplicație pentru a calcula câte cutii încap într-un vehicul sau într-un spațiu real (Android)</h1>
 
     <p>
       <strong>VolumTransport</strong> este o aplicație Android creată pentru a
       <strong>calcula câte cutii încap într-o dubă, o mașină sau într-un spațiu real</strong>,
       afișând <strong>aranjarea reală în 3D</strong> și permițând <strong>măsurarea cu camera telefonului (AR)</strong>.
+    </p>
+
+    <p class="small">
+      Dezvoltată de <strong><a href="https://aplicacionesherrbri.com/" target="_blank" rel="noopener noreferrer">AplicacionesHerrbri</a></strong>,
+      un studio independent specializat în instrumente practice pentru profesioniștii din transport și logistică.
     </p>
 
     <div class="note">
@@ -203,9 +368,39 @@
       </ul>
     </div>
 
-    <p>
-      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
-        Descarcă VolumTransport din Google Play
+    <h2>Capturi de ecran ale aplicației</h2>
+
+    <div class="shots">
+      <figure>
+        <img src="/assets/screens/ro-presentacion-web.png"
+             alt="Ecranul principal VolumTransport"
+             loading="lazy">
+        <figcaption class="small">
+          Ecran principal: acces rapid la calcule, echilibrarea încărcăturii și realitate augmentată.
+        </figcaption>
+      </figure>
+    
+      <figure>
+        <img src="/assets/screens/ro-3d-web.png"
+             alt="Vizualizare 3D a încărcăturii în VolumTransport"
+             loading="lazy">
+        <figcaption class="small">
+          Rezultat: poziționare reală în 3D pentru a verifica dacă totul încape cu adevărat.
+        </figcaption>
+      </figure>
+    </div>
+    
+    <p class="small" style="margin-bottom:6px;">
+      Descarcă de pe:
+    </p>
+    
+    <p style="margin-top:10px;">
+      <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
+         target="_blank"
+         rel="noopener noreferrer">
+        <img src="/assets/screens/Badge-Romanian-web.png"
+             alt="Disponibil pe Google Play"
+             style="height:60px; max-width:100%; border-radius:8px;">
       </a>
     </p>
 
@@ -214,36 +409,69 @@
     </p>
 
     <section class="faq">
-      <h2>Întrebări frecvente</h2>
-
-      <h3>Cum se calculează câte cutii încap într-un camion?</h3>
-      <p>
-      Cu VolumTransport poți calcula câte cutii poate transporta un camion introducând datele vehiculului și dimensiunile mărfii.
-      Introdu dimensiunile și apasă pe calculare: aplicația afișează numărul de cutii și alte date importante pentru planificarea încărcăturii.
-      </p>
-
-      <h3>Care este cea mai bună metodă de a stivui cutii într-un vehicul sau într-un spațiu?</h3>
-      <p>
-      Cu VolumTransport, după efectuarea calculului, aplicația afișează numărul total de cutii și pozițiile acestora.
-      De asemenea, oferă o <strong>vizualizare 3D a cutiilor deja amplasate</strong>, care ajută la ghidarea stivuirii corecte și a ordinii de încărcare
-      în interiorul vehiculului sau al spațiului disponibil.
-      </p>
-
-      <h3>Este doar pentru dube?</h3>
-      <p>Nu. Funcționează cu dube, mașini, camioane și vehicule mixte.</p>
-
-      <h3>Este doar un calculator de volum (CBM)?</h3>
-      <p>Nu. Arată <strong>aranjarea reală în 3D</strong> ca să verifici dacă cutiile încap cu adevărat.</p>
-
-      <h3>Pot măsura cu telefonul?</h3>
-      <p>Da. Include măsurare prin <strong>Realitate Augmentată (AR)</strong>.</p>
-
-      <h3>Pot să o folosesc pentru camere sau spații de depozitare?</h3>
-      <p>Da. Folosește <strong>modul „spațiu universal”</strong> și setează dimensiuni personalizate.</p>
-
-      <h3>Este gratuită?</h3>
-      <p>Depinde de versiunea disponibilă pe Google Play. Verifică detaliile în magazin.</p>
+        <h2>Întrebări frecvente</h2>
+    
+        <h3>Cum pot calcula câte cutii încap într-un camion?</h3>
+        <p>
+            Cu VolumTransport, poți calcula câte cutii poate transporta un camion introducând detaliile camionului și dimensiunile mărfii.
+            Introdu măsurătorile și apasă pe calcul: aplicația arată câte cutii încap și alte date relevante pentru planificarea încărcăturii.
+        </p>
+    
+        <h3>Care este cea mai bună metodă de a stivui cutiile într-un vehicul sau într-un spațiu?</h3>
+        <p>
+            Cu VolumTransport, după efectuarea calculului, aplicația afișează numărul total de cutii și pozițiile acestora.
+            De asemenea, oferă o <strong>vizualizare 3D a cutiilor deja plasate</strong>, ajutând la ghidarea corectă a stivuirii și a ordinii de încărcare
+            în interiorul vehiculului sau al spațiului disponibil.
+        </p>
+    
+        <h3>Este doar pentru furgonete?</h3>
+        <p>Nu. Funcționează cu furgonete, autoturisme, camioane și vehicule mixte.</p>
+    
+        <h3>Este compatibilă cu un autoturism personal?</h3>
+        <p>
+            Da. VolumTransport poate fi utilizată și cu autoturisme personale.
+            Introducând dimensiunile portbagajului și măsurile obiectelor de transportat,
+            aplicația calculează dacă acestea încap.
+            De asemenea, permite simularea unor configurații precum <strong>rabatarea scaunelor din spate</strong> pentru a utiliza spațiul suplimentar.
+        </p>
+        
+        <h3>Sunt utilizator privat. Poate fi util acest instrument pentru mine?</h3>
+        <p>
+          <strong>Da.</strong> VolumTransport poate fi utilizată și de utilizatori privați.
+          Trebuie doar să configurezi <strong>vehiculul sau spațiul</strong> pe care vrei să îl folosești (de exemplu, portbagajul unei mașini, un <strong>depozit</strong>,
+          o cameră sau orice alt spațiu) și să introduci dimensiunile obiectelor.
+          Aplicația te ajută să verifici dacă <strong>mobilierul, electrocasnicele, cutiile sau obiectele voluminoase</strong> încap cu adevărat înainte de transport sau depozitare,
+          afișând amplasarea lor în 3D.
+        </p>
+    
+        <h3>Este doar un calculator de volum (CBM)?</h3>
+        <p>Nu. Afișează <strong>plasarea reală în 3D</strong> pentru a verifica dacă cutiile încap cu adevărat.</p>
+    
+        <h3>Pot măsura cu telefonul?</h3>
+        <p>Da. Include măsurare prin <strong>Realitate Augmentată (AR)</strong>.</p>
+    
+        <h3>O pot folosi pentru camere sau spații de depozitare?</h3>
+        <p>Da. Folosește <strong>modul spațiu universal</strong> și definește dimensiuni personalizate.</p>
+    
+        <h3>Este gratuită?</h3>
+        <p>Depinde de versiunea disponibilă pe Google Play. Verifică magazinul pentru detalii.</p>
     </section>
+    
+    <hr style="margin:28px 0; border:none; border-top:1px solid #ddd;">
+    
+    <p class="small">
+      Ultima actualizare: 24 februarie 2026.
+    </p>
+    
+    <p class="small">
+      <a href="https://aplicacionesherrbri.com/"
+         target="_blank"
+         rel="noopener noreferrer">AplicacionesHerrbri</a>
+      ·
+      <a href="https://aplicacionesherrbri.com/privacy_policy.html"
+         target="_blank"
+         rel="noopener noreferrer">Politica de confidențialitate</a>
+    </p>
 
   </main>
 </body>
