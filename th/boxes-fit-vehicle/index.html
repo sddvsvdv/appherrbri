@@ -122,6 +122,111 @@
       margin-top: 18px;
     }
 
+    .langbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      padding:14px 16px;
+      background:#f3fbf6;
+      border-radius:14px;
+      border:1px solid rgba(46,125,50,.2);
+      margin-bottom:18px;
+    }
+
+    .lang-title{
+      font-weight:700;
+      color:#1b5e20;
+      margin-right:12px;
+    }
+
+    .lang-main{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .lang-main a{
+      text-decoration:none;
+      font-weight:600;
+      color:#1b5e20;
+      padding:6px 10px;
+      border-radius:8px;
+      transition:.2s ease;
+    }
+
+    .lang-main a:hover{
+      background:#e0f2e9;
+    }
+
+    .lang-active{
+      background:#1b5e20;
+      color:#fff;
+      padding:6px 12px;
+      border-radius:8px;
+      font-weight:700;
+    }
+
+    .lang-right select{
+      padding:8px 12px;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.2);
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    .lang-left{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:10px 12px;
+    }
+
+    .shots{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:16px;
+      margin:12px 0 6px;
+      align-items:start;
+    }
+
+    .shots figure{
+      margin:0;
+      background:#fff;
+      border-radius:12px;
+      padding:10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    }
+
+    .shots img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .shots figcaption{
+      margin-top:8px;
+    }
+
+    @media (max-width: 720px){
+      .shots{ grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 900px){
+      .shots{
+        justify-items: center;
+      }
+      .shots figure{
+        max-width: 280px;
+        width: 100%;
+      }
+    }
+
+
+
     .small { color: #444; font-size: .95rem; }
   </style>
 
@@ -143,12 +248,74 @@
 <body>
   <main class="wrap">
 
+    <nav class="langbar" aria-label="ตัวเลือกภาษา">
+      <div class="lang-left">
+        <span class="lang-title">🌍 ภาษา</span>
+    
+        <div class="lang-main">
+          <a href="boxes-fit-vehicle/" hreflang="en">English</a>
+          <a href="/es/boxes-fit-vehicle/" hreflang="es">Español</a>
+          <a href="/fr/boxes-fit-vehicle/" hreflang="fr">Français</a>
+          <a href="/de/boxes-fit-vehicle/" hreflang="de">Deutsch</a>
+          <span class="lang-active">ไทย</span>
+          <a href="/zh-hans/boxes-fit-vehicle/" hreflang="zh-Hans">中文</a>
+        </div>
+      </div>
+
+      <div class="lang-right">
+        <select onchange="if(this.value) window.location.href=this.value;">
+          <option value="">ภาษาเพิ่มเติม…</option>
+          <option value="/bg/boxes-fit-vehicle/">Български</option>
+          <option value="/bn/boxes-fit-vehicle/">বাংলা</option>
+          <option value="/cs/boxes-fit-vehicle/">Čeština</option>
+          <option value="/ko/boxes-fit-vehicle/">한국어</option>
+          <option value="/hr/boxes-fit-vehicle/">Hrvatski</option>
+          <option value="/sk/boxes-fit-vehicle/">Slovenčina</option>
+          <option value="/sl/boxes-fit-vehicle/">Slovenščina</option>
+          <option value="/et/boxes-fit-vehicle/">Eesti</option>
+          <option value="/da/boxes-fit-vehicle/">Dansk</option>
+          <option value="/fi/boxes-fit-vehicle/">Suomi</option>
+          <option value="/el/boxes-fit-vehicle/">Ελληνικά</option>
+          <option value="/he/boxes-fit-vehicle/">עברית</option>
+          <option value="/hi/boxes-fit-vehicle/">हिन्दी</option>
+          <option value="/hu/boxes-fit-vehicle/">Magyar</option>
+          <option value="/id/boxes-fit-vehicle/">Bahasa Indonesia</option>
+          <option value="/it/boxes-fit-vehicle/">Italiano</option>
+          <option value="/ja/boxes-fit-vehicle/">日本語</option>
+          <option value="/lo/boxes-fit-vehicle/">ລາວ</option>
+          <option value="/lv/boxes-fit-vehicle/">Latviešu</option>
+          <option value="/lt/boxes-fit-vehicle/">Lietuvių</option>
+          <option value="/nl/boxes-fit-vehicle/">Nederlands</option>
+          <option value="/ne/boxes-fit-vehicle/">नेपाली</option>
+          <option value="/no/boxes-fit-vehicle/">Norsk</option>
+          <option value="/fa/boxes-fit-vehicle/">فارسی</option>
+          <option value="/pl/boxes-fit-vehicle/">Polski</option>
+          <option value="/pt/boxes-fit-vehicle/">Português</option>
+          <option value="/pa-pk/boxes-fit-vehicle/">ਪੰਜਾਬੀ</option>
+          <option value="/ro/boxes-fit-vehicle/">Română</option>
+          <option value="/ru/boxes-fit-vehicle/">Русский</option>
+          <option value="/sv/boxes-fit-vehicle/">Svenska</option>
+          <option value="/tr/boxes-fit-vehicle/">Türkçe</option>
+          <option value="/uk/boxes-fit-vehicle/">Українська</option>
+          <option value="/ur/boxes-fit-vehicle/">اردو</option>
+          <option value="/vi/boxes-fit-vehicle/">Tiếng Việt</option>
+          <option value="/ar/boxes-fit-vehicle/">العربية</option>
+        </select>
+      </div>
+    </nav>
+
+
     <h1>แอปคำนวณว่ากล่องกี่ใบใส่ในรถหรือพื้นที่จริงได้ (Android)</h1>
 
     <p>
       <strong>VolumTransport</strong> คือแอป Android ที่ออกแบบมาเพื่อ
       <strong>คำนวณว่ากล่องกี่ใบใส่ในรถตู้ รถยนต์ หรือพื้นที่จริงได้</strong>
       โดยแสดง <strong>การจัดวางแบบ 3D</strong> และให้คุณ <strong>วัดด้วยกล้องมือถือ (AR)</strong>
+    </p>
+
+    <p class="small">
+      พัฒนาโดย <strong><a href="https://aplicacionesherrbri.com/" target="_blank" rel="noopener noreferrer">AplicacionesHerrbri</a></strong>
+      สตูดิโออิสระที่เชี่ยวชาญด้านเครื่องมือที่ใช้งานได้จริงสำหรับผู้เชี่ยวชาญด้านการขนส่งและโลจิสติกส์
     </p>
 
     <div class="note">
@@ -203,9 +370,39 @@
       </ul>
     </div>
 
-    <p>
-      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
-        ดาวน์โหลด VolumTransport บน Google Play
+    <h2>ภาพหน้าจอแอป</h2>
+
+    <div class="shots">
+      <figure>
+        <img src="/assets/screens/th-presentacion-web.png"
+             alt="หน้าจอหลักของ VolumTransport"
+             loading="lazy">
+        <figcaption class="small">
+          หน้าจอหลัก: เข้าถึงการคำนวณ การปรับสมดุลการบรรทุก และเทคโนโลยีความเป็นจริงเสริมได้อย่างรวดเร็ว
+        </figcaption>
+      </figure>
+    
+      <figure>
+        <img src="/assets/screens/th-3d-web.png"
+             alt="การแสดงผลการบรรทุกแบบ 3 มิติใน VolumTransport"
+             loading="lazy">
+        <figcaption class="small">
+          ผลลัพธ์: การจัดวางแบบ 3 มิติจริง เพื่อตรวจสอบว่าทุกอย่างพอดีจริงหรือไม่
+        </figcaption>
+      </figure>
+    </div>
+    
+    <p class="small" style="margin-bottom:6px;">
+      ดาวน์โหลดได้ที่:
+    </p>
+    
+    <p style="margin-top:10px;">
+      <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
+         target="_blank"
+         rel="noopener noreferrer">
+        <img src="/assets/screens/Badge-Thai-web.png"
+             alt="ดาวน์โหลดบน Google Play"
+             style="height:60px; max-width:100%; border-radius:8px;">
       </a>
     </p>
 
@@ -214,37 +411,75 @@
     </p>
 
     <section class="faq">
-      <h2>คำถามที่พบบ่อย</h2>
-
-      <h3>จะคำนวณได้อย่างไรว่ารถบรรทุกบรรจุกล่องได้กี่กล่อง?</h3>
-      <p>
-      ด้วย VolumTransport คุณสามารถคำนวณได้ว่ารถบรรทุกสามารถบรรจุกล่องได้กี่กล่อง โดยกรอกข้อมูลรถและขนาดของสินค้า
-      เพียงกรอกขนาดและกดคำนวณ แอปจะแสดงจำนวนกล่องที่บรรจุได้และข้อมูลสำคัญอื่น ๆ สำหรับการวางแผนการขนส่ง
-      </p>
-
-      <h3>วิธีที่ดีที่สุดในการจัดเรียงกล่องภายในยานพาหนะหรือพื้นที่คืออะไร?</h3>
-      <p>
-      ด้วย VolumTransport หลังจากทำการคำนวณแล้ว แอปจะแสดงจำนวนกล่องทั้งหมดและตำแหน่งของแต่ละกล่อง 
-      นอกจากนี้ยังมี <strong>การแสดงผลแบบ 3 มิติของกล่องที่จัดวางแล้ว</strong> เพื่อช่วยแนะนำการจัดเรียงและลำดับการบรรทุกที่ถูกต้อง
-      ภายในยานพาหนะหรือพื้นที่ที่มีอยู่
-      </p>
-
-      <h3>ใช้ได้เฉพาะรถตู้ไหม?</h3>
-      <p>ไม่ใช่ ใช้ได้กับรถตู้ รถยนต์ รถบรรทุก และรถแบบผสม</p>
-
-      <h3>เป็นแค่เครื่องคำนวณปริมาตร (CBM) หรือเปล่า?</h3>
-      <p>ไม่ใช่ แอปจะแสดง <strong>การจัดวางแบบ 3D จริง</strong> เพื่อเช็กว่ากล่องใส่ได้จริงหรือไม่</p>
-
-      <h3>วัดด้วยมือถือได้ไหม?</h3>
-      <p>ได้ มีการวัดด้วย <strong>Augmented Reality (AR)</strong></p>
-
-      <h3>ใช้กับห้องหรือพื้นที่เก็บของได้ไหม?</h3>
-      <p>ได้ ใช้ <strong>โหมดพื้นที่อเนกประสงค์</strong> และกำหนดขนาดเองได้</p>
-
-      <h3>ฟรีไหม?</h3>
-      <p>ขึ้นอยู่กับเวอร์ชันที่มีใน Google Play โปรดดูรายละเอียดในหน้าร้านค้า</p>
+        <h2>คำถามที่พบบ่อย</h2>
+    
+        <h3>จะคำนวณได้อย่างไรว่ามีกล่องกี่ใบที่ใส่ในรถบรรทุกได้?</h3>
+        <p>
+            ด้วย VolumTransport คุณสามารถคำนวณได้ว่ารถบรรทุกสามารถบรรทุกกล่องได้กี่ใบ
+            โดยกรอกรายละเอียดของรถและขนาดของสินค้า
+            เพียงใส่ขนาดแล้วกดคำนวณ แอปจะแสดงจำนวนกล่องที่พอดี
+            พร้อมข้อมูลอื่น ๆ ที่เกี่ยวข้องสำหรับการวางแผนการบรรทุก
+        </p>
+    
+        <h3>วิธีที่ดีที่สุดในการจัดเรียงกล่องในรถหรือพื้นที่คืออะไร?</h3>
+        <p>
+            หลังจากทำการคำนวณแล้ว VolumTransport จะแสดงจำนวนกล่องทั้งหมดและตำแหน่งของแต่ละใบ
+            นอกจากนี้ยังมี <strong>การแสดงผลแบบ 3 มิติของกล่องที่จัดวางแล้ว</strong>
+            เพื่อช่วยให้คุณจัดเรียงและกำหนดลำดับการบรรทุกได้อย่างถูกต้อง
+            ภายในรถหรือพื้นที่ที่มีอยู่
+        </p>
+    
+        <h3>ใช้ได้เฉพาะรถตู้เท่านั้นหรือไม่?</h3>
+        <p>ไม่ใช่ ใช้ได้กับรถตู้ รถยนต์ รถบรรทุก และยานพาหนะประเภทผสม</p>
+    
+        <h3>สามารถใช้กับรถยนต์ส่วนตัวได้หรือไม่?</h3>
+        <p>
+            ได้ VolumTransport สามารถใช้กับรถยนต์ส่วนตัวได้เช่นกัน
+            โดยกรอกขนาดของห้องเก็บสัมภาระท้ายรถและขนาดของสิ่งของที่จะขนส่ง
+            แอปจะคำนวณว่าสามารถใส่ได้หรือไม่
+            และยังสามารถจำลองการตั้งค่า เช่น <strong>พับเบาะหลัง</strong>
+            เพื่อใช้ประโยชน์จากพื้นที่เพิ่มเติม
+        </p>
+        
+        <h3>ฉันเป็นผู้ใช้ทั่วไป เครื่องมือนี้จะมีประโยชน์สำหรับฉันหรือไม่?</h3>
+        <p>
+          <strong>มีประโยชน์</strong> VolumTransport สามารถใช้โดยผู้ใช้ทั่วไปได้เช่นกัน
+          คุณเพียงตั้งค่า <strong>ยานพาหนะหรือพื้นที่</strong> ที่ต้องการใช้
+          (เช่น ห้องเก็บสัมภาระรถยนต์ <strong>ห้องเก็บของ</strong> ห้องหนึ่งห้อง หรือพื้นที่อื่น ๆ)
+          แล้วกรอกขนาดของสิ่งของ
+          แอปจะช่วยตรวจสอบว่า <strong>เฟอร์นิเจอร์ เครื่องใช้ไฟฟ้า กล่อง หรือวัตถุขนาดใหญ่</strong>
+          สามารถใส่ได้จริงก่อนการขนย้ายหรือจัดเก็บ
+          โดยแสดงตำแหน่งการจัดวางแบบ 3 มิติ
+        </p>
+    
+        <h3>เป็นเพียงเครื่องคำนวณปริมาตร (CBM) เท่านั้นหรือไม่?</h3>
+        <p>ไม่ใช่ แอปจะแสดง <strong>การจัดวางแบบ 3 มิติจริง</strong> เพื่อตรวจสอบว่ากล่องใส่ได้จริงหรือไม่</p>
+    
+        <h3>ฉันวัดขนาดด้วยโทรศัพท์ได้หรือไม่?</h3>
+        <p>ได้ แอปรวมการวัดด้วย <strong>เทคโนโลยีความเป็นจริงเสริม (AR)</strong></p>
+    
+        <h3>สามารถใช้กับห้องหรือพื้นที่เก็บของได้หรือไม่?</h3>
+        <p>ได้ ใช้ <strong>โหมดพื้นที่สากล</strong> และกำหนดขนาดเองได้</p>
+    
+        <h3>ใช้งานฟรีหรือไม่?</h3>
+        <p>ขึ้นอยู่กับเวอร์ชันที่มีใน Google Play กรุณาตรวจสอบรายละเอียดในร้านค้า</p>
     </section>
-
+    
+    <hr style="margin:28px 0; border:none; border-top:1px solid #ddd;">
+    
+    <p class="small">
+      อัปเดตล่าสุด: 27 กุมภาพันธ์ 2026
+    </p>
+    
+    <p class="small">
+      <a href="https://aplicacionesherrbri.com/"
+         target="_blank"
+         rel="noopener noreferrer">AplicacionesHerrbri</a>
+      ·
+      <a href="https://aplicacionesherrbri.com/privacy_policy.html"
+         target="_blank"
+         rel="noopener noreferrer">นโยบายความเป็นส่วนตัว</a>
+    </p>
   </main>
 </body>
 </html>
