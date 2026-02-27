@@ -122,6 +122,111 @@
       margin-top: 18px;
     }
 
+    .langbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      padding:14px 16px;
+      background:#f3fbf6;
+      border-radius:14px;
+      border:1px solid rgba(46,125,50,.2);
+      margin-bottom:18px;
+    }
+
+    .lang-title{
+      font-weight:700;
+      color:#1b5e20;
+      margin-right:12px;
+    }
+
+    .lang-main{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .lang-main a{
+      text-decoration:none;
+      font-weight:600;
+      color:#1b5e20;
+      padding:6px 10px;
+      border-radius:8px;
+      transition:.2s ease;
+    }
+
+    .lang-main a:hover{
+      background:#e0f2e9;
+    }
+
+    .lang-active{
+      background:#1b5e20;
+      color:#fff;
+      padding:6px 12px;
+      border-radius:8px;
+      font-weight:700;
+    }
+
+    .lang-right select{
+      padding:8px 12px;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.2);
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    .lang-left{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:10px 12px;
+    }
+
+    .shots{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:16px;
+      margin:12px 0 6px;
+      align-items:start;
+    }
+
+    .shots figure{
+      margin:0;
+      background:#fff;
+      border-radius:12px;
+      padding:10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    }
+
+    .shots img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .shots figcaption{
+      margin-top:8px;
+    }
+
+    @media (max-width: 720px){
+      .shots{ grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 900px){
+      .shots{
+        justify-items: center;
+      }
+      .shots figure{
+        max-width: 280px;
+        width: 100%;
+      }
+    }
+
+
+
     .small { color: #444; font-size: .95rem; }
   </style>
 
@@ -142,6 +247,62 @@
 
 <body>
   <main class="wrap">
+
+    <nav class="langbar" aria-label="Språkval">
+      <div class="lang-left">
+        <span class="lang-title">🌍 Språk</span>
+    
+        <div class="lang-main">
+          <a href="boxes-fit-vehicle/" hreflang="en">English</a>
+          <a href="/es/boxes-fit-vehicle/" hreflang="es">Español</a>
+          <a href="/fr/boxes-fit-vehicle/" hreflang="fr">Français</a>
+          <a href="/de/boxes-fit-vehicle/" hreflang="de">Deutsch</a>
+          <span class="lang-active">Svenska</span>
+          <a href="/zh-hans/boxes-fit-vehicle/" hreflang="zh-Hans">中文</a>
+        </div>
+      </div>
+
+      <div class="lang-right">
+        <select onchange="if(this.value) window.location.href=this.value;">
+          <option value="">Fler språk…</option>
+          <option value="/bg/boxes-fit-vehicle/">Български</option>
+          <option value="/bn/boxes-fit-vehicle/">বাংলা</option>
+          <option value="/cs/boxes-fit-vehicle/">Čeština</option>
+          <option value="/ko/boxes-fit-vehicle/">한국어</option>
+          <option value="/hr/boxes-fit-vehicle/">Hrvatski</option>
+          <option value="/sk/boxes-fit-vehicle/">Slovenčina</option>
+          <option value="/sl/boxes-fit-vehicle/">Slovenščina</option>
+          <option value="/et/boxes-fit-vehicle/">Eesti</option>
+          <option value="/da/boxes-fit-vehicle/">Dansk</option>
+          <option value="/fi/boxes-fit-vehicle/">Suomi</option>
+          <option value="/el/boxes-fit-vehicle/">Ελληνικά</option>
+          <option value="/he/boxes-fit-vehicle/">עברית</option>
+          <option value="/hi/boxes-fit-vehicle/">हिन्दी</option>
+          <option value="/hu/boxes-fit-vehicle/">Magyar</option>
+          <option value="/id/boxes-fit-vehicle/">Bahasa Indonesia</option>
+          <option value="/it/boxes-fit-vehicle/">Italiano</option>
+          <option value="/ja/boxes-fit-vehicle/">日本語</option>
+          <option value="/lo/boxes-fit-vehicle/">ລາວ</option>
+          <option value="/lv/boxes-fit-vehicle/">Latviešu</option>
+          <option value="/lt/boxes-fit-vehicle/">Lietuvių</option>
+          <option value="/nl/boxes-fit-vehicle/">Nederlands</option>
+          <option value="/ne/boxes-fit-vehicle/">नेपाली</option>
+          <option value="/no/boxes-fit-vehicle/">Norsk</option>
+          <option value="/fa/boxes-fit-vehicle/">فارسی</option>
+          <option value="/pl/boxes-fit-vehicle/">Polski</option>
+          <option value="/pt/boxes-fit-vehicle/">Português</option>
+          <option value="/pa-pk/boxes-fit-vehicle/">ਪੰਜਾਬੀ</option>
+          <option value="/ro/boxes-fit-vehicle/">Română</option>
+          <option value="/ru/boxes-fit-vehicle/">Русский</option>
+          <option value="/th/boxes-fit-vehicle/">ไทย</option>
+          <option value="/tr/boxes-fit-vehicle/">Türkçe</option>
+          <option value="/uk/boxes-fit-vehicle/">Українська</option>
+          <option value="/ur/boxes-fit-vehicle/">اردو</option>
+          <option value="/vi/boxes-fit-vehicle/">Tiếng Việt</option>
+          <option value="/ar/boxes-fit-vehicle/">العربية</option>
+        </select>
+      </div>
+    </nav>
 
     <h1>App för att beräkna hur många lådor som får plats i ett fordon eller verkligt utrymme (Android)</h1>
 
@@ -168,6 +329,11 @@
       <li><strong>Lastbalansering över flera resor</strong>: om allt inte får plats hjälper appen dig att fördela lasten för att undvika överlast och nästan tomma turer.</li>
       <li>Undvik extra resor: kontrollera i förväg om allt får plats och hur du ska lasta.</li>
     </ul>
+
+    <p class="small">
+        Utvecklad av <strong><a href="https://aplicacionesherrbri.com/" target="_blank" rel="noopener noreferrer">AplicacionesHerrbri</a></strong>,
+        en oberoende studio specialiserad på praktiska verktyg för yrkesverksamma inom transport och logistik.
+    </p>
 
     <p class="small">
       Utöver grundläggande lastberäkning innehåller VolumTransport avancerade funktioner för transport- och logistikproffs.
@@ -203,9 +369,39 @@
       </ul>
     </div>
 
-    <p>
-      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
-        Ladda ner VolumTransport på Google Play
+    <h2>Skärmbilder från appen</h2>
+
+    <div class="shots">
+      <figure>
+        <img src="/assets/screens/sv-presentacion-web.png"
+             alt="VolumTransport huvudskärm"
+             loading="lazy">
+        <figcaption class="small">
+          Huvudskärm: snabb åtkomst till beräkningar, lastbalansering och förstärkt verklighet.
+        </figcaption>
+      </figure>
+    
+      <figure>
+        <img src="/assets/screens/sv-3d-web.png"
+             alt="3D-visualisering av last i VolumTransport"
+             loading="lazy">
+        <figcaption class="small">
+          Resultat: verklig 3D-placering för att kontrollera om allt verkligen får plats.
+        </figcaption>
+      </figure>
+    </div>
+    
+    <p class="small" style="margin-bottom:6px;">
+      Hämta på:
+    </p>
+    
+    <p style="margin-top:10px;">
+      <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
+         target="_blank"
+         rel="noopener noreferrer">
+        <img src="/assets/screens/Badge-Swedish-web.png"
+             alt="Hämta på Google Play"
+             style="height:60px; max-width:100%; border-radius:8px;">
       </a>
     </p>
 
@@ -214,36 +410,69 @@
     </p>
 
     <section class="faq">
-      <h2>Vanliga frågor</h2>
-
-      <h3>Hur beräknar man hur många lådor som får plats i en lastbil?</h3>
-      <p>
-      Med VolumTransport kan du beräkna hur många lådor en lastbil kan transportera genom att ange fordonsuppgifter och godsets mått.
-      Ange måtten och tryck på beräkna: appen visar hur många lådor som får plats och annan relevant information för lastplanering.
-      </p>
-
-      <h3>Vad är det bästa sättet att stapla lådor i ett fordon eller ett utrymme?</h3>
-      <p>
-      Med VolumTransport visar appen efter beräkningen det totala antalet lådor och deras positioner.
-      Den erbjuder också en <strong>3D-visualisering av redan placerade lådor</strong>, vilket hjälper till att guida korrekt stapling och lastningsordning
-      i fordonet eller det tillgängliga utrymmet.
-      </p>
-
-      <h3>Är den bara för skåpbilar?</h3>
-      <p>Nej. Den fungerar för skåpbilar, bilar, lastbilar och blandade fordon.</p>
-
-      <h3>Är det bara en volymkalkylator (CBM)?</h3>
-      <p>Nej. Den visar <strong>verklig 3D-placering</strong> för att kontrollera att lådorna verkligen får plats.</p>
-
-      <h3>Kan jag mäta med mobilen?</h3>
-      <p>Ja. Den har mätning med <strong>Augmented Reality (AR)</strong>.</p>
-
-      <h3>Kan jag använda den för rum eller förråd?</h3>
-      <p>Ja. Använd <strong>universellt utrymmesläge</strong> och ange egna mått.</p>
-
-      <h3>Är den gratis?</h3>
-      <p>Det beror på vilken version som finns på Google Play. Se detaljer i butiken.</p>
+        <h2>Vanliga frågor</h2>
+    
+        <h3>Hur beräknar man hur många lådor som får plats i en lastbil?</h3>
+        <p>
+            Med VolumTransport kan du beräkna hur många lådor en lastbil kan transportera genom att ange fordonets uppgifter och godsets mått.
+            Ange måtten och tryck på beräkna: appen visar hur många lådor som får plats samt annan relevant information för att planera lasten.
+        </p>
+    
+        <h3>Vad är det bästa sättet att stapla lådor i ett fordon eller ett utrymme?</h3>
+        <p>
+            Efter att beräkningen har genomförts visar VolumTransport det totala antalet lådor och deras positioner.
+            Den erbjuder även en <strong>3D-visualisering av de redan placerade lådorna</strong>, vilket hjälper dig att organisera korrekt stapling och lastningsordning
+            i fordonet eller det tillgängliga utrymmet.
+        </p>
+    
+        <h3>Är den bara för skåpbilar?</h3>
+        <p>Nej. Den fungerar med skåpbilar, personbilar, lastbilar och blandade fordon.</p>
+    
+        <h3>Är den kompatibel med en privat bil?</h3>
+        <p>
+            Ja. VolumTransport kan även användas med privatbilar.
+            Genom att ange bagageutrymmets mått och måtten på föremålen som ska transporteras
+            beräknar appen om de får plats.
+            Den gör det också möjligt att simulera konfigurationer som <strong>nedfällda baksäten</strong> för att utnyttja extra utrymme.
+        </p>
+        
+        <h3>Jag är privatperson. Kan detta verktyg vara användbart för mig?</h3>
+        <p>
+          <strong>Ja.</strong> VolumTransport kan även användas av privatpersoner.
+          Du behöver bara ställa in det <strong>fordon eller utrymme</strong> du vill använda (till exempel en bils bagageutrymme, ett <strong>förråd</strong>,
+          ett rum eller något annat utrymme) och ange föremålens mått.
+          Appen hjälper dig att kontrollera om <strong>möbler, hushållsapparater, lådor eller stora föremål</strong> verkligen får plats innan transport eller förvaring,
+          genom att visa deras placering i 3D.
+        </p>
+    
+        <h3>Är det bara en volymkalkylator (CBM)?</h3>
+        <p>Nej. Den visar <strong>verklig 3D-placering</strong> för att kontrollera att lådorna verkligen får plats.</p>
+    
+        <h3>Kan jag mäta med min telefon?</h3>
+        <p>Ja. Den innehåller mätning med <strong>förstärkt verklighet (AR)</strong>.</p>
+    
+        <h3>Kan jag använda den för rum eller förvaringsutrymmen?</h3>
+        <p>Ja. Använd <strong>universellt utrymmesläge</strong> och definiera egna mått.</p>
+    
+        <h3>Är den gratis?</h3>
+        <p>Det beror på vilken version som finns tillgänglig på Google Play. Kontrollera butiken för detaljer.</p>
     </section>
+    
+    <hr style="margin:28px 0; border:none; border-top:1px solid #ddd;">
+    
+    <p class="small">
+      Senast uppdaterad: 27 februari 2026.
+    </p>
+    
+    <p class="small">
+      <a href="https://aplicacionesherrbri.com/"
+         target="_blank"
+         rel="noopener noreferrer">AplicacionesHerrbri</a>
+      ·
+      <a href="https://aplicacionesherrbri.com/privacy_policy.html"
+         target="_blank"
+         rel="noopener noreferrer">Integritetspolicy</a>
+    </p>
 
   </main>
 </body>
