@@ -55,74 +55,177 @@
   <link rel="alternate" hreflang="es" href="https://aplicacionesherrbri.com/es/boxes-fit-vehicle/" />
 
   <style>
-    :root{
-      --max:920px;
-      --green-bg:#eaf6ef;
-      --green-soft:#f3fbf6;
-      --green-border:#2e7d32;
+    :root {
+      --max: 920px;
+      --green-bg: #eaf6ef;
+      --green-soft: #f3fbf6;
+      --green-border: #2e7d32;
     }
 
-    body{
+    body {
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      margin:0;
-      padding:24px 16px;
-      line-height:1.55;
-      background:var(--green-bg);
-      direction: rtl;
-      text-align: right;
+      margin: 0;
+      padding: 24px 16px;
+      line-height: 1.55;
+      background: var(--green-bg);
     }
 
-    .wrap{
-      max-width:var(--max);
-      margin:0 auto;
-      background:#ffffff;
-      padding:24px;
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+    }
+
+    h1 { font-size: 1.9rem; margin: 0 0 12px; }
+    h2 { margin-top: 26px; font-size: 1.35rem; }
+    h3 { margin-top: 18px; font-size: 1.05rem; }
+
+    p { margin: 0 0 12px; }
+    ul { margin: 10px 0 16px 18px; }
+
+    .note {
+      background: var(--green-soft);
+      border-left: 5px solid var(--green-border);
+      padding: 14px;
+      margin: 16px 0;
+      border-radius: 6px;
+    }
+
+    .seo-box {
+      background: #f8f9fa;
+      border: 1px dashed #bbb;
+      padding: 14px;
+      margin: 22px 0;
+      border-radius: 10px;
+    }
+
+    .cta {
+      display: inline-block;
+      background: #1b5e20;
+      color: #fff;
+      padding: 13px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 6px;
+    }
+
+    .cta:hover { filter: brightness(1.1); }
+
+    .compare {
+      background: var(--green-soft);
+      padding: 18px;
+      border-radius: 12px;
+      margin-top: 18px;
+    }
+
+    .langbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      padding:14px 16px;
+      background:#f3fbf6;
       border-radius:14px;
-      box-shadow:0 8px 24px rgba(0,0,0,.06);
+      border:1px solid rgba(46,125,50,.2);
+      margin-bottom:18px;
     }
 
-    h1{ font-size:1.9rem; margin:0 0 12px; }
-    h2{ margin-top:26px; font-size:1.35rem; }
-    h3{ margin-top:18px; font-size:1.05rem; }
-
-    p{ margin:0 0 12px; }
-    ul{ margin:10px 0 16px 18px; padding-right: 18px; }
-
-    .note{
-      background:var(--green-soft);
-      border-right:5px solid var(--green-border);
-      padding:14px;
-      margin:16px 0;
-      border-radius:6px;
+    .lang-title{
+      font-weight:700;
+      color:#1b5e20;
+      margin-right:12px;
     }
 
-    .seo-box{
-      background:#f8f9fa;
-      border:1px dashed #bbb;
-      padding:14px;
-      margin:22px 0;
-      border-radius:10px;
+    .lang-main{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
     }
 
-    .cta{
-      display:inline-block;
+    .lang-main a{
+      text-decoration:none;
+      font-weight:600;
+      color:#1b5e20;
+      padding:6px 10px;
+      border-radius:8px;
+      transition:.2s ease;
+    }
+
+    .lang-main a:hover{
+      background:#e0f2e9;
+    }
+
+    .lang-active{
       background:#1b5e20;
       color:#fff;
-      padding:13px 18px;
-      border-radius:12px;
-      text-decoration:none;
+      padding:6px 12px;
+      border-radius:8px;
       font-weight:700;
-      margin-top:6px;
     }
 
-    .cta:hover{ filter:brightness(1.1); }
+    .lang-right select{
+      padding:8px 12px;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.2);
+      font-weight:600;
+      cursor:pointer;
+    }
 
-    .compare{
-      background:var(--green-soft);
-      padding:18px;
+    .lang-left{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:10px 12px;
+    }
+
+    .shots{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:16px;
+      margin:12px 0 6px;
+      align-items:start;
+    }
+
+    .shots figure{
+      margin:0;
+      background:#fff;
       border-radius:12px;
-      margin-top:18px;
+      padding:10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
     }
+
+    .shots img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .shots figcaption{
+      margin-top:8px;
+    }
+
+    @media (max-width: 720px){
+      .shots{ grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 900px){
+      .shots{
+        justify-items: center;
+      }
+      .shots figure{
+        max-width: 280px;
+        width: 100%;
+      }
+    }
+
+
 
     .small{ color:#444; font-size:.95rem; }
   </style>
@@ -145,12 +248,73 @@
 <body>
   <main class="wrap">
 
+    <nav class="langbar" aria-label="زبان کا انتخاب">
+      <div class="lang-left">
+        <span class="lang-title">🌍 زبان</span>
+    
+        <div class="lang-main">
+          <a href="boxes-fit-vehicle/" hreflang="en">English</a>
+          <a href="/es/boxes-fit-vehicle/" hreflang="es">Español</a>
+          <a href="/fr/boxes-fit-vehicle/" hreflang="fr">Français</a>
+          <a href="/de/boxes-fit-vehicle/" hreflang="de">Deutsch</a>
+          <span class="lang-active">اردو</span>
+          <a href="/zh-hans/boxes-fit-vehicle/" hreflang="zh-Hans">中文</a>
+        </div>
+      </div>
+
+      <div class="lang-right">
+        <select onchange="if(this.value) window.location.href=this.value;">
+          <option value="">مزید زبانیں…</option>
+          <option value="/bg/boxes-fit-vehicle/">Български</option>
+          <option value="/bn/boxes-fit-vehicle/">বাংলা</option>
+          <option value="/cs/boxes-fit-vehicle/">Čeština</option>
+          <option value="/ko/boxes-fit-vehicle/">한국어</option>
+          <option value="/hr/boxes-fit-vehicle/">Hrvatski</option>
+          <option value="/sk/boxes-fit-vehicle/">Slovenčina</option>
+          <option value="/sl/boxes-fit-vehicle/">Slovenščina</option>
+          <option value="/et/boxes-fit-vehicle/">Eesti</option>
+          <option value="/da/boxes-fit-vehicle/">Dansk</option>
+          <option value="/fi/boxes-fit-vehicle/">Suomi</option>
+          <option value="/el/boxes-fit-vehicle/">Ελληνικά</option>
+          <option value="/he/boxes-fit-vehicle/">עברית</option>
+          <option value="/hi/boxes-fit-vehicle/">हिन्दी</option>
+          <option value="/hu/boxes-fit-vehicle/">Magyar</option>
+          <option value="/id/boxes-fit-vehicle/">Bahasa Indonesia</option>
+          <option value="/it/boxes-fit-vehicle/">Italiano</option>
+          <option value="/ja/boxes-fit-vehicle/">日本語</option>
+          <option value="/lo/boxes-fit-vehicle/">ລາວ</option>
+          <option value="/lv/boxes-fit-vehicle/">Latviešu</option>
+          <option value="/lt/boxes-fit-vehicle/">Lietuvių</option>
+          <option value="/nl/boxes-fit-vehicle/">Nederlands</option>
+          <option value="/ne/boxes-fit-vehicle/">नेपाली</option>
+          <option value="/no/boxes-fit-vehicle/">Norsk</option>
+          <option value="/fa/boxes-fit-vehicle/">فارسی</option>
+          <option value="/pl/boxes-fit-vehicle/">Polski</option>
+          <option value="/pt/boxes-fit-vehicle/">Português</option>
+          <option value="/pa-pk/boxes-fit-vehicle/">ਪੰਜਾਬੀ</option>
+          <option value="/ro/boxes-fit-vehicle/">Română</option>
+          <option value="/ru/boxes-fit-vehicle/">Русский</option>
+          <option value="/sv/boxes-fit-vehicle/">Svenska</option>
+          <option value="/th/boxes-fit-vehicle/">ไทย</option>
+          <option value="/tr/boxes-fit-vehicle/">Türkçe</option>
+          <option value="/uk/boxes-fit-vehicle/">Українська</option>
+          <option value="/vi/boxes-fit-vehicle/">Tiếng Việt</option>
+          <option value="/ar/boxes-fit-vehicle/">العربية</option>
+        </select>
+      </div>
+    </nav>
+
     <h1>گاڑی یا حقیقی جگہ میں کتنے ڈبّے فِٹ ہوں گے — Android ایپ</h1>
 
     <p>
       <strong>VolumTransport</strong> ایک Android ایپ ہے جو
       <strong>یہ حساب کرتی ہے کہ وین، کار یا حقیقی جگہ میں کتنے ڈبّے فِٹ ہوں گے</strong>،
       اور <strong>حقیقی 3D پلیسمنٹ</strong> دکھاتی ہے، ساتھ ہی آپ کو <strong>فون کے کیمرے سے (AR) پیمائش</strong> کرنے دیتی ہے۔
+    </p>
+
+    <p class="small">
+      تیار کردہ از <strong><a href="https://aplicacionesherrbri.com/" target="_blank" rel="noopener noreferrer">AplicacionesHerrbri</a></strong>،
+      ایک خودمختار اسٹوڈیو جو ٹرانسپورٹ اور لاجسٹکس کے ماہرین کے لیے عملی ٹولز میں مہارت رکھتا ہے۔
     </p>
 
     <div class="note">
@@ -204,48 +368,116 @@
       </ul>
     </div>
 
-    <p>
-      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
-        Google Play پر VolumTransport ڈاؤن لوڈ کریں
+    <h2>ایپ کے اسکرین شاٹس</h2>
+
+    <div class="shots">
+      <figure>
+        <img src="/assets/screens/ur-presentacion-web.png"
+             alt="VolumTransport کی مرکزی اسکرین"
+             loading="lazy">
+        <figcaption class="small">
+          مرکزی اسکرین: حساب کتاب، لوڈ بیلنسنگ اور اگمینٹڈ ریئلٹی تک فوری رسائی۔
+        </figcaption>
+      </figure>
+    
+      <figure>
+        <img src="/assets/screens/ur-3d-web.png"
+             alt="VolumTransport میں 3D لوڈ ویژولائزیشن"
+             loading="lazy">
+        <figcaption class="small">
+          نتیجہ: حقیقی 3D ترتیب تاکہ تصدیق ہو سکے کہ سب کچھ واقعی فِٹ ہوتا ہے۔
+        </figcaption>
+      </figure>
+    </div>
+    
+    <p class="small" style="margin-bottom:6px;">
+      یہاں سے حاصل کریں:
+    </p>
+    
+    <p style="margin-top:10px;">
+      <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
+         target="_blank"
+         rel="noopener noreferrer">
+        <img src="/assets/screens/Badge-Urdu-web.png"
+             alt="Google Play پر حاصل کریں"
+             style="height:60px; max-width:100%; border-radius:8px;">
       </a>
     </p>
 
+    
     <p class="small">
       ٹِپ: اس صفحے کو بُک مارک کریں اور حقیقی لوڈ تیار کرتے وقت استعمال کریں۔
     </p>
 
     <section class="faq">
-      <h2>اکثر پوچھے جانے والے سوالات</h2>
-
-      <h3>ٹرک میں کتنے ڈبے آ سکتے ہیں، اس کا حساب کیسے لگائیں؟</h3>
-      <p>
-      VolumTransport کی مدد سے آپ گاڑی کی تفصیلات اور سامان کے سائز درج کر کے یہ حساب لگا سکتے ہیں کہ ٹرک کتنے ڈبے لے جا سکتا ہے۔
-      بس پیمائشیں درج کریں اور حساب لگائیں پر دبائیں: ایپ دکھاتی ہے کہ کتنے ڈبے فٹ ہوتے ہیں اور لوڈ کی منصوبہ بندی کے لیے دیگر اہم معلومات۔
-      </p>
-
-      <h3>گاڑی یا کسی جگہ کے اندر ڈبوں کو ترتیب دینے کا بہترین طریقہ کیا ہے؟</h3>
-<p>
-VolumTransport کے ذریعے، حساب مکمل ہونے کے بعد ایپ ڈبوں کی کل تعداد اور ان کی جگہیں دکھاتی ہے۔
-یہ <strong>پہلے سے رکھے گئے ڈبوں کی 3D بصری نمائندگی</strong> بھی فراہم کرتی ہے، جو درست ترتیب اور لوڈنگ کے عمل کی رہنمائی کرتی ہے
-گاڑی یا دستیاب جگہ کے اندر۔
-</p>
-
-
-      <h3>کیا یہ صرف وین کے لیے ہے؟</h3>
-      <p>نہیں۔ یہ وین، کار، ٹرک اور مکسڈ گاڑیوں کے ساتھ کام کرتی ہے۔</p>
-
-      <h3>کیا یہ صرف والیوم (CBM) کیلکولیٹر ہے؟</h3>
-      <p>نہیں۔ یہ <strong>حقیقی 3D پلیسمنٹ</strong> دکھاتی ہے تاکہ معلوم ہو سکے کہ ڈبّے واقعی فِٹ ہوتے ہیں یا نہیں۔</p>
-
-      <h3>کیا میں فون سے پیمائش کر سکتا ہوں؟</h3>
-      <p>جی ہاں۔ اس میں <strong>Augmented Reality (AR)</strong> کے ذریعے پیمائش شامل ہے۔</p>
-
-      <h3>کیا میں اسے کمروں یا اسٹور روم کے لیے استعمال کر سکتا ہوں؟</h3>
-      <p>جی ہاں۔ <strong>یونیورسل اسپیس موڈ</strong> استعمال کریں اور اپنی مرضی کے پیمانے درج کریں۔</p>
-
-      <h3>کیا یہ مفت ہے؟</h3>
-      <p>یہ Google Play پر دستیاب ورژن پر منحصر ہے۔ تفصیل کے لیے اسٹور میں دیکھیں۔</p>
+        <h2>اکثر پوچھے جانے والے سوالات</h2>
+    
+        <h3>ٹرک میں کتنے ڈبے سما سکتے ہیں، یہ کیسے حساب کریں؟</h3>
+        <p>
+            VolumTransport کے ذریعے آپ ٹرک کی تفصیلات اور سامان کے سائز درج کر کے حساب لگا سکتے ہیں
+            کہ ایک ٹرک کتنے ڈبے اٹھا سکتا ہے۔
+            صرف پیمائش درج کریں اور کیلکولیٹ دبائیں: ایپ دکھائے گی کہ کتنے ڈبے فِٹ ہوتے ہیں
+            اور لوڈ کی منصوبہ بندی کے لیے دیگر متعلقہ معلومات بھی فراہم کرے گی۔
+        </p>
+    
+        <h3>گاڑی یا کسی جگہ کے اندر ڈبوں کو رکھنے کا بہترین طریقہ کیا ہے؟</h3>
+        <p>
+            حساب مکمل کرنے کے بعد VolumTransport ڈبوں کی کل تعداد اور ان کی پوزیشنز دکھاتا ہے۔
+            یہ <strong>پہلے سے رکھے گئے ڈبوں کی 3D ویژولائزیشن</strong> بھی فراہم کرتا ہے،
+            جو گاڑی یا دستیاب جگہ کے اندر درست ترتیب اور لوڈنگ آرڈر طے کرنے میں مدد دیتا ہے۔
+        </p>
+    
+        <h3>کیا یہ صرف وین کے لیے ہے؟</h3>
+        <p>نہیں۔ یہ وین، کاروں، ٹرکوں اور دیگر مخلوط گاڑیوں کے ساتھ کام کرتا ہے۔</p>
+    
+        <h3>کیا یہ نجی کار کے ساتھ مطابقت رکھتا ہے؟</h3>
+        <p>
+            جی ہاں۔ VolumTransport نجی کاروں کے ساتھ بھی استعمال کیا جا سکتا ہے۔
+            بوٹ (ڈِگی) کے سائز اور منتقل کیے جانے والے سامان کی پیمائش درج کر کے
+            ایپ حساب لگاتی ہے کہ آیا وہ فِٹ ہوتے ہیں یا نہیں۔
+            یہ <strong>پیچھے والی نشستوں کو فولڈ کرنا</strong> جیسی ترتیب بھی سِمیولیٹ کرنے کی اجازت دیتا ہے
+            تاکہ اضافی جگہ استعمال کی جا سکے۔
+        </p>
+        
+        <h3>میں ایک عام صارف ہوں۔ کیا یہ ٹول میرے لیے مفید ہے؟</h3>
+        <p>
+          <strong>جی ہاں۔</strong> VolumTransport عام صارفین کے لیے بھی مفید ہے۔
+          آپ کو صرف وہ <strong>گاڑی یا جگہ</strong> سیٹ کرنی ہے جسے آپ استعمال کرنا چاہتے ہیں
+          (مثلاً کار کی ڈِگی، ایک <strong>اسٹور روم</strong>، کمرہ یا کوئی اور جگہ)
+          اور سامان کے سائز درج کرنے ہیں۔
+          ایپ آپ کو یہ جانچنے میں مدد دیتی ہے کہ آیا <strong>فرنیچر، گھریلو آلات، ڈبے یا بڑے اشیاء</strong>
+          واقعی منتقلی یا ذخیرہ کرنے سے پہلے فِٹ ہوتے ہیں یا نہیں،
+          اور ان کی 3D ترتیب دکھاتی ہے۔
+        </p>
+    
+        <h3>کیا یہ صرف حجم (CBM) کیلکولیٹر ہے؟</h3>
+        <p>نہیں۔ یہ <strong>حقیقی 3D ترتیب</strong> دکھاتا ہے تاکہ تصدیق کی جا سکے کہ ڈبے واقعی فِٹ ہوتے ہیں۔</p>
+    
+        <h3>کیا میں اپنے فون سے پیمائش کر سکتا ہوں؟</h3>
+        <p>جی ہاں۔ اس میں <strong>اگمینٹڈ ریئلٹی (AR)</strong> کے ذریعے پیمائش شامل ہے۔</p>
+    
+        <h3>کیا میں اسے کمروں یا اسٹوریج کی جگہوں کے لیے استعمال کر سکتا ہوں؟</h3>
+        <p>جی ہاں۔ <strong>یونیورسل اسپیس موڈ</strong> استعمال کریں اور اپنی مرضی کے سائز متعین کریں۔</p>
+    
+        <h3>کیا یہ مفت ہے؟</h3>
+        <p>یہ Google Play پر دستیاب ورژن پر منحصر ہے۔ تفصیلات کے لیے اسٹور چیک کریں۔</p>
     </section>
+    
+    <hr style="margin:28px 0; border:none; border-top:1px solid #ddd;">
+    
+    <p class="small">
+      آخری اپڈیٹ: 28 فروری 2026۔
+    </p>
+    
+    <p class="small">
+      <a href="https://aplicacionesherrbri.com/"
+         target="_blank"
+         rel="noopener noreferrer">AplicacionesHerrbri</a>
+      ·
+      <a href="https://aplicacionesherrbri.com/privacy_policy.html"
+         target="_blank"
+         rel="noopener noreferrer">رازداری کی پالیسی</a>
+    </p>
 
   </main>
 </body>
