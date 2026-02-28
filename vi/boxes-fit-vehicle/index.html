@@ -55,73 +55,175 @@
   <link rel="alternate" hreflang="es" href="https://aplicacionesherrbri.com/es/boxes-fit-vehicle/" />
 
   <style>
-    :root{
-      --max:920px;
-      --green-bg:#eaf6ef;
-      --green-soft:#f3fbf6;
-      --green-border:#2e7d32;
+    :root {
+      --max: 920px;
+      --green-bg: #eaf6ef;
+      --green-soft: #f3fbf6;
+      --green-border: #2e7d32;
     }
 
-    body{
+    body {
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      margin:0;
-      padding:24px 16px;
-      line-height:1.55;
-      background:var(--green-bg);
+      margin: 0;
+      padding: 24px 16px;
+      line-height: 1.55;
+      background: var(--green-bg);
     }
 
-    .wrap{
-      max-width:var(--max);
-      margin:0 auto;
-      background:#ffffff;
-      padding:24px;
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+    }
+
+    h1 { font-size: 1.9rem; margin: 0 0 12px; }
+    h2 { margin-top: 26px; font-size: 1.35rem; }
+    h3 { margin-top: 18px; font-size: 1.05rem; }
+
+    p { margin: 0 0 12px; }
+    ul { margin: 10px 0 16px 18px; }
+
+    .note {
+      background: var(--green-soft);
+      border-left: 5px solid var(--green-border);
+      padding: 14px;
+      margin: 16px 0;
+      border-radius: 6px;
+    }
+
+    .seo-box {
+      background: #f8f9fa;
+      border: 1px dashed #bbb;
+      padding: 14px;
+      margin: 22px 0;
+      border-radius: 10px;
+    }
+
+    .cta {
+      display: inline-block;
+      background: #1b5e20;
+      color: #fff;
+      padding: 13px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 6px;
+    }
+
+    .cta:hover { filter: brightness(1.1); }
+
+    .compare {
+      background: var(--green-soft);
+      padding: 18px;
+      border-radius: 12px;
+      margin-top: 18px;
+    }
+
+    .langbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      padding:14px 16px;
+      background:#f3fbf6;
       border-radius:14px;
-      box-shadow:0 8px 24px rgba(0,0,0,.06);
+      border:1px solid rgba(46,125,50,.2);
+      margin-bottom:18px;
     }
 
-    h1{ font-size:1.9rem; margin:0 0 12px; }
-    h2{ margin-top:26px; font-size:1.35rem; }
-    h3{ margin-top:18px; font-size:1.05rem; }
-
-    p{ margin:0 0 12px; }
-    ul{ margin:10px 0 16px 18px; }
-
-    .note{
-      background:var(--green-soft);
-      border-left:5px solid var(--green-border);
-      padding:14px;
-      margin:16px 0;
-      border-radius:6px;
+    .lang-title{
+      font-weight:700;
+      color:#1b5e20;
+      margin-right:12px;
     }
 
-    .seo-box{
-      background:#f8f9fa;
-      border:1px dashed #bbb;
-      padding:14px;
-      margin:22px 0;
-      border-radius:10px;
+    .lang-main{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
     }
 
-    .cta{
-      display:inline-block;
+    .lang-main a{
+      text-decoration:none;
+      font-weight:600;
+      color:#1b5e20;
+      padding:6px 10px;
+      border-radius:8px;
+      transition:.2s ease;
+    }
+
+    .lang-main a:hover{
+      background:#e0f2e9;
+    }
+
+    .lang-active{
       background:#1b5e20;
       color:#fff;
-      padding:13px 18px;
-      border-radius:12px;
-      text-decoration:none;
+      padding:6px 12px;
+      border-radius:8px;
       font-weight:700;
-      margin-top:6px;
     }
 
-    .cta:hover{ filter:brightness(1.1); }
+    .lang-right select{
+      padding:8px 12px;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.2);
+      font-weight:600;
+      cursor:pointer;
+    }
 
-    .compare{
-      background:var(--green-soft);
-      padding:18px;
+    .lang-left{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:10px 12px;
+    }
+
+    .shots{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:16px;
+      margin:12px 0 6px;
+      align-items:start;
+    }
+
+    .shots figure{
+      margin:0;
+      background:#fff;
       border-radius:12px;
-      margin-top:18px;
+      padding:10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
     }
 
+    .shots img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .shots figcaption{
+      margin-top:8px;
+    }
+
+    @media (max-width: 720px){
+      .shots{ grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 900px){
+      .shots{
+        justify-items: center;
+      }
+      .shots figure{
+        max-width: 280px;
+        width: 100%;
+      }
+    }
     .small{ color:#444; font-size:.95rem; }
   </style>
 
@@ -143,12 +245,75 @@
 <body>
   <main class="wrap">
 
+    <nav class="langbar" aria-label="Chọn ngôn ngữ">
+      <div class="lang-left">
+        <span class="lang-title">🌍 Ngôn ngữ</span>
+    
+        <div class="lang-main">
+          <a href="/boxes-fit-vehicle/" hreflang="en">English</a>
+          <a href="/es/boxes-fit-vehicle/" hreflang="es">Español</a>
+          <a href="/fr/boxes-fit-vehicle/" hreflang="fr">Français</a>
+          <a href="/de/boxes-fit-vehicle/" hreflang="de">Deutsch</a>
+          <span class="lang-active">Tiếng Việt</span>
+          <a href="/zh-hans/boxes-fit-vehicle/" hreflang="zh-Hans">中文</a>
+        </div>
+      </div>
+
+      <div class="lang-right">
+        <select onchange="if(this.value) window.location.href=this.value;">
+          <option value="">Thêm ngôn ngữ…</option>
+          <option value="/bg/boxes-fit-vehicle/">Български</option>
+          <option value="/bn/boxes-fit-vehicle/">বাংলা</option>
+          <option value="/cs/boxes-fit-vehicle/">Čeština</option>
+          <option value="/ko/boxes-fit-vehicle/">한국어</option>
+          <option value="/hr/boxes-fit-vehicle/">Hrvatski</option>
+          <option value="/sk/boxes-fit-vehicle/">Slovenčina</option>
+          <option value="/sl/boxes-fit-vehicle/">Slovenščina</option>
+          <option value="/et/boxes-fit-vehicle/">Eesti</option>
+          <option value="/da/boxes-fit-vehicle/">Dansk</option>
+          <option value="/fi/boxes-fit-vehicle/">Suomi</option>
+          <option value="/el/boxes-fit-vehicle/">Ελληνικά</option>
+          <option value="/he/boxes-fit-vehicle/">עברית</option>
+          <option value="/hi/boxes-fit-vehicle/">हिन्दी</option>
+          <option value="/hu/boxes-fit-vehicle/">Magyar</option>
+          <option value="/id/boxes-fit-vehicle/">Bahasa Indonesia</option>
+          <option value="/it/boxes-fit-vehicle/">Italiano</option>
+          <option value="/ja/boxes-fit-vehicle/">日本語</option>
+          <option value="/lo/boxes-fit-vehicle/">ລາວ</option>
+          <option value="/lv/boxes-fit-vehicle/">Latviešu</option>
+          <option value="/lt/boxes-fit-vehicle/">Lietuvių</option>
+          <option value="/nl/boxes-fit-vehicle/">Nederlands</option>
+          <option value="/ne/boxes-fit-vehicle/">नेपाली</option>
+          <option value="/no/boxes-fit-vehicle/">Norsk</option>
+          <option value="/fa/boxes-fit-vehicle/">فارسی</option>
+          <option value="/pl/boxes-fit-vehicle/">Polski</option>
+          <option value="/pt/boxes-fit-vehicle/">Português</option>
+          <option value="/pa-pk/boxes-fit-vehicle/">ਪੰਜਾਬੀ</option>
+          <option value="/ro/boxes-fit-vehicle/">Română</option>
+          <option value="/ru/boxes-fit-vehicle/">Русский</option>
+          <option value="/sv/boxes-fit-vehicle/">Svenska</option>
+          <option value="/th/boxes-fit-vehicle/">ไทย</option>
+          <option value="/tr/boxes-fit-vehicle/">Türkçe</option>
+          <option value="/uk/boxes-fit-vehicle/">Українська</option>
+          <option value="/ur/boxes-fit-vehicle/">اردو</option>
+          <option value="/ar/boxes-fit-vehicle/">العربية</option>
+        </select>
+      </div>
+    </nav>
+
+
+
     <h1>Ứng dụng tính xem bao nhiêu thùng/hộp vừa trong xe hoặc không gian thực (Android)</h1>
 
     <p>
       <strong>VolumTransport</strong> là ứng dụng Android được thiết kế để
       <strong>tính xem bao nhiêu thùng/hộp vừa trong xe van, ô tô, xe tải hoặc không gian thực</strong>,
       hiển thị <strong>cách xếp thật trong 3D</strong> và cho phép bạn <strong>đo bằng camera điện thoại (AR)</strong>.
+    </p>
+
+    <p class="small">
+      Được phát triển bởi <strong><a href="https://aplicacionesherrbri.com/" target="_blank" rel="noopener noreferrer">AplicacionesHerrbri</a></strong>,
+      một studio độc lập chuyên về các công cụ thực tế dành cho chuyên gia trong lĩnh vực vận tải và logistics.
     </p>
 
     <div class="note">
@@ -203,47 +368,117 @@
       </ul>
     </div>
 
-    <p>
-      <a class="cta" href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
-        Tải VolumTransport trên Google Play
+    <h2>Ảnh chụp màn hình ứng dụng</h2>
+
+    <div class="shots">
+      <figure>
+        <img src="/assets/screens/vi-presentacion-web.png"
+             alt="Màn hình chính VolumTransport"
+             loading="lazy">
+        <figcaption class="small">
+          Màn hình chính: truy cập nhanh đến tính toán, cân bằng tải và thực tế tăng cường.
+        </figcaption>
+      </figure>
+    
+      <figure>
+        <img src="/assets/screens/vi-3d-web.png"
+             alt="Hiển thị tải 3D trong VolumTransport"
+             loading="lazy">
+        <figcaption class="small">
+          Kết quả: bố trí 3D thực tế để kiểm tra xem mọi thứ có thực sự vừa hay không.
+        </figcaption>
+      </figure>
+    </div>
+    
+    <p class="small" style="margin-bottom:6px;">
+      Tải trên:
+    </p>
+    
+    <p style="margin-top:10px;">
+      <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
+         target="_blank"
+         rel="noopener noreferrer">
+        <img src="/assets/screens/Badge-Vietnamese-web.png"
+             alt="Tải trên Google Play"
+             style="height:60px; max-width:100%; border-radius:8px;">
       </a>
     </p>
 
+    
     <p class="small">
       Mẹo: hãy đánh dấu trang này và dùng khi bạn chuẩn bị xếp hàng thực tế.
     </p>
 
     <section class="faq">
-      <h2>Câu hỏi thường gặp</h2>
-
-      <h3>Làm thế nào để tính được một xe tải có thể chứa bao nhiêu thùng?</h3>
-      <p>
-      Với VolumTransport, bạn có thể tính được một xe tải có thể chở bao nhiêu thùng bằng cách nhập thông tin xe và kích thước hàng hóa.
-      Chỉ cần nhập các số đo và nhấn tính toán: ứng dụng sẽ hiển thị số thùng phù hợp và các dữ liệu quan trọng khác để lên kế hoạch xếp hàng.
-      </p>
-
-      <h3>Cách tốt nhất để xếp các thùng hàng bên trong phương tiện hoặc không gian là gì?</h3>
-      <p>
-      Với VolumTransport, sau khi thực hiện tính toán, ứng dụng hiển thị tổng số thùng và vị trí của chúng.
-      Ứng dụng cũng cung cấp <strong>hình ảnh 3D của các thùng đã được xếp</strong>, giúp hướng dẫn cách xếp đúng và thứ tự bốc xếp
-      bên trong phương tiện hoặc không gian có sẵn.
-      </p>
-
-      <h3>Chỉ dùng cho xe van thôi à?</h3>
-      <p>Không. Ứng dụng hoạt động với xe van, ô tô, xe tải và xe hỗn hợp.</p>
-
-      <h3>Chỉ là máy tính thể tích (CBM) thôi sao?</h3>
-      <p>Không. Ứng dụng hiển thị <strong>cách xếp thật trong 3D</strong> để kiểm tra thùng/hộp có thật sự vừa hay không.</p>
-
-      <h3>Tôi có thể đo bằng điện thoại không?</h3>
-      <p>Có. Ứng dụng có tính năng đo bằng <strong>Thực tế tăng cường (AR)</strong>.</p>
-
-      <h3>Dùng cho phòng hoặc kho chứa được không?</h3>
-      <p>Có. Hãy dùng <strong>chế độ không gian tuỳ chỉnh</strong> và nhập kích thước mong muốn.</p>
-
-      <h3>Miễn phí không?</h3>
-      <p>Tùy vào phiên bản có trên Google Play. Hãy xem chi tiết trong cửa hàng.</p>
+        <h2>Câu hỏi thường gặp</h2>
+    
+        <h3>Làm thế nào để tính xem có bao nhiêu thùng có thể chứa trong một xe tải?</h3>
+        <p>
+            Với VolumTransport, bạn có thể tính toán số lượng thùng mà một xe tải có thể chở
+            bằng cách nhập thông tin của xe và kích thước của hàng hóa.
+            Chỉ cần nhập các số đo và nhấn tính toán: ứng dụng sẽ hiển thị số thùng có thể chứa
+            cùng các dữ liệu liên quan để lập kế hoạch xếp hàng.
+        </p>
+    
+        <h3>Cách tốt nhất để xếp các thùng trong xe hoặc trong một không gian là gì?</h3>
+        <p>
+            Sau khi thực hiện tính toán, VolumTransport sẽ hiển thị tổng số thùng và vị trí của chúng.
+            Ứng dụng cũng cung cấp <strong>hình ảnh trực quan 3D của các thùng đã được đặt</strong>,
+            giúp hướng dẫn việc xếp và thứ tự chất hàng đúng cách
+            trong xe hoặc không gian có sẵn.
+        </p>
+    
+        <h3>Chỉ dành cho xe van thôi sao?</h3>
+        <p>Không. Ứng dụng hoạt động với xe van, ô tô, xe tải và các loại phương tiện hỗn hợp.</p>
+    
+        <h3>Có tương thích với xe ô tô cá nhân không?</h3>
+        <p>
+            Có. VolumTransport cũng có thể được sử dụng với xe ô tô cá nhân.
+            Bằng cách nhập kích thước cốp xe và kích thước của các vật cần vận chuyển,
+            ứng dụng sẽ tính toán xem chúng có vừa hay không.
+            Ngoài ra, bạn có thể mô phỏng các cấu hình như <strong>gập ghế sau</strong>
+            để tận dụng thêm không gian.
+        </p>
+        
+        <h3>Tôi là người dùng cá nhân. Công cụ này có hữu ích cho tôi không?</h3>
+        <p>
+          <strong>Có.</strong> VolumTransport cũng phù hợp cho người dùng cá nhân.
+          Bạn chỉ cần thiết lập <strong>phương tiện hoặc không gian</strong> bạn muốn sử dụng
+          (ví dụ: cốp xe ô tô, một <strong>phòng kho</strong>, một căn phòng hoặc bất kỳ không gian nào khác)
+          và nhập kích thước của các vật dụng.
+          Ứng dụng giúp bạn kiểm tra xem <strong>đồ nội thất, thiết bị gia dụng, thùng hoặc các vật lớn</strong>
+          có thực sự vừa trước khi vận chuyển hoặc lưu trữ hay không,
+          bằng cách hiển thị vị trí của chúng trong không gian 3D.
+        </p>
+    
+        <h3>Chỉ là công cụ tính thể tích (CBM) thôi sao?</h3>
+        <p>Không. Ứng dụng hiển thị <strong>bố trí 3D thực tế</strong> để xác minh rằng các thùng thực sự vừa.</p>
+    
+        <h3>Tôi có thể đo bằng điện thoại không?</h3>
+        <p>Có. Ứng dụng bao gồm tính năng đo bằng <strong>Thực tế tăng cường (AR)</strong>.</p>
+    
+        <h3>Tôi có thể sử dụng cho phòng hoặc không gian lưu trữ không?</h3>
+        <p>Có. Sử dụng <strong>chế độ không gian chung</strong> và xác định kích thước tùy chỉnh.</p>
+    
+        <h3>Có miễn phí không?</h3>
+        <p>Phụ thuộc vào phiên bản có sẵn trên Google Play. Vui lòng kiểm tra cửa hàng để biết chi tiết.</p>
     </section>
+    
+    <hr style="margin:28px 0; border:none; border-top:1px solid #ddd;">
+    
+    <p class="small">
+      Cập nhật lần cuối: 28 tháng 2 năm 2026.
+    </p>
+    
+    <p class="small">
+      <a href="https://aplicacionesherrbri.com/"
+         target="_blank"
+         rel="noopener noreferrer">AplicacionesHerrbri</a>
+      ·
+      <a href="https://aplicacionesherrbri.com/privacy_policy.html"
+         target="_blank"
+         rel="noopener noreferrer">Chính sách quyền riêng tư</a>
+    </p>
 
   </main>
 </body>
