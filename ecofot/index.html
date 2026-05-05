@@ -239,6 +239,44 @@
         border-radius: 16px;
       }
     }
+
+    .shots {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin: 16px 0 10px;
+      align-items: start;
+    }
+    
+    .shots figure {
+      margin: 0;
+      background: #fff;
+      border-radius: 18px;
+      padding: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+      border: 1px solid rgba(0,0,0,.06);
+    }
+    
+    .shots img {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 14px;
+    }
+    
+    .shots figcaption {
+      margin-top: 10px;
+      text-align: center;
+    }
+    
+    @media (max-width: 760px) {
+      .shots {
+        grid-template-columns: 1fr;
+      }
+    }
+    
   </style>
 
   <script type="application/ld+json">
@@ -328,6 +366,28 @@
       <strong>Resultado rápido:</strong>
       EcoFot IA está pensada para abrir la app, analizar el residuo y recibir una respuesta clara,
       sin pantallas complicadas ni conversaciones largas.
+    </div>
+
+    <h2>Capturas de EcoFot IA</h2>
+
+    <div class="shots">
+      <figure>
+        <img src="/assets/screens/ecofot-camera-web.png"
+             alt="EcoFot IA analizando un residuo con la cámara"
+             loading="lazy">
+        <figcaption class="small">
+          Cámara: encuadra el residuo que quieres analizar.
+        </figcaption>
+      </figure>
+    
+      <figure>
+        <img src="/assets/screens/ecofot-result-web.png"
+             alt="Resultado de EcoFot IA indicando el contenedor correcto para un brik de leche"
+             loading="lazy">
+        <figcaption class="small">
+          Resultado: destino recomendado y explicación breve.
+        </figcaption>
+      </figure>
     </div>
 
     <h2>Una app para saber en qué contenedor va cada cosa</h2>
