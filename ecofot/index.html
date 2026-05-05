@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>App de reciclaje con foto e inteligencia artificial | EcoFot IA</title>
+  <meta name="description" content="EcoFot IA es una app Android para saber dónde tirar un residuo haciendo una foto. Reciclaje con inteligencia artificial, pensado para el sistema de residuos de España." />
+  <link rel="canonical" href="https://aplicacionesherrbri.com/ecofot/" />
+  <meta name="robots" content="index,follow" />
+
+  <style>
+    :root {
+      --max: 940px;
+      --bg: #eaf7ef;
+      --card: #ffffff;
+      --soft: #f3fbf6;
+      --green: #1b5e20;
+      --green-2: #2e7d32;
+      --text: #18201a;
+      --muted: #4f5f52;
+      --border: rgba(46, 125, 50, .22);
+      --shadow: 0 10px 28px rgba(0,0,0,.07);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 24px 16px;
+      line-height: 1.58;
+      background:
+        radial-gradient(circle at top left, #d7f3df 0, transparent 34%),
+        var(--bg);
+      color: var(--text);
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      background: var(--card);
+      padding: 32px;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      padding: 14px 0 10px;
+    }
+
+    .brand {
+      display: inline-block;
+      background: var(--soft);
+      border: 1px solid var(--border);
+      color: var(--green);
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 1.1rem;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.08;
+      margin: 0 0 16px;
+      letter-spacing: -0.035em;
+    }
+
+    h2 {
+      font-size: 1.45rem;
+      margin-top: 34px;
+      margin-bottom: 12px;
+      letter-spacing: -0.015em;
+    }
+
+    h3 {
+      font-size: 1.08rem;
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul {
+      margin: 10px 0 18px 20px;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    a {
+      color: var(--green);
+    }
+
+    .hero-text {
+      font-size: 1.18rem;
+      color: #26372a;
+      max-width: 760px;
+      margin-bottom: 16px;
+    }
+
+    .hero-meta {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: .98rem;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .note {
+      background: var(--soft);
+      border-left: 5px solid var(--green-2);
+      padding: 16px;
+      margin: 24px 0;
+      border-radius: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 18px 0;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid rgba(0,0,0,.07);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.045);
+    }
+
+    .card strong {
+      color: var(--green);
+    }
+
+    .steps {
+      counter-reset: step;
+      display: grid;
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .step {
+      display: flex;
+      gap: 14px;
+      background: var(--soft);
+      border: 1px solid var(--border);
+      padding: 15px;
+      border-radius: 16px;
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      min-width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--green);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+    }
+
+    .seo-box {
+      background: #f8f9fa;
+      border: 1px dashed #b8b8b8;
+      padding: 16px;
+      margin: 24px 0;
+      border-radius: 14px;
+    }
+
+    .highlight {
+      background: linear-gradient(135deg, #f3fbf6, #ffffff);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      margin: 24px 0;
+    }
+
+    .highlight strong {
+      color: var(--green);
+    }
+
+    .download-box {
+      background: var(--soft);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      margin-top: 26px;
+    }
+
+    .download-box p {
+      margin-bottom: 10px;
+    }
+
+    .faq {
+      margin-top: 28px;
+    }
+
+    .footer {
+      margin-top: 30px;
+      padding-top: 22px;
+      border-top: 1px solid #ddd;
+    }
+
+    @media (max-width: 760px) {
+      body {
+        padding: 14px 10px;
+      }
+
+      .wrap {
+        padding: 22px;
+        border-radius: 16px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "EcoFot IA",
+    "operatingSystem": "Android",
+    "applicationCategory": "UtilitiesApplication",
+    "description": "App Android para saber dónde tirar un residuo haciendo una foto. Usa inteligencia artificial y reglas configuradas para orientar el destino correcto del residuo.",
+    "url": "https://aplicacionesherrbri.com/ecofot/",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.aplicacionesherrbri.ecofot",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <main class="wrap">
+
+    <header>
+      <div class="brand">EcoFot IA</div>
+
+      <h1>App de reciclaje con foto e inteligencia artificial</h1>
+
+      <p class="hero-text">
+        <strong>EcoFot IA</strong> te ayuda a saber <strong>dónde tirar un residuo</strong>
+        de forma rápida y sencilla. Haz una foto del residuo y obtén una respuesta clara
+        según el sistema de reciclaje configurado.
+      </p>
+
+      <p class="hero-meta">
+        App Android desarrollada por <strong>AplicacionesHerrbri</strong>.
+      </p>
+    </header>
+
+    <div class="note">
+      <strong>La idea es sencilla:</strong> menos dudas al reciclar, más claridad al decidir.
+      EcoFot IA no funciona como un chatbot: muestra una respuesta directa y fácil de entender.
+    </div>
+
+    <h2>Qué hace EcoFot IA</h2>
+
+    <div class="grid">
+      <div class="card">
+        <strong>Analiza una foto</strong>
+        <p class="small">
+          Apunta al residuo, haz una foto y la app identifica el objeto para orientar su destino.
+        </p>
+      </div>
+
+      <div class="card">
+        <strong>Evita dudas habituales</strong>
+        <p class="small">
+          Ayuda a diferenciar casos que suelen generar confusión, como envases, vidrio, cristal, cartón o residuos especiales.
+        </p>
+      </div>
+
+      <div class="card">
+        <strong>Da un resultado claro</strong>
+        <p class="small">
+          La app muestra el destino final con un color grande y una frase corta.
+        </p>
+      </div>
+    </div>
+
+    <h2>Cómo funciona</h2>
+
+    <div class="steps">
+      <div class="step">
+        <div>
+          <strong>Haz una foto del residuo</strong>
+          <p class="small">
+            Intenta fotografiar un solo objeto, centrado y con buena luz.
+          </p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div>
+          <strong>EcoFot IA analiza el objeto</strong>
+          <p class="small">
+            La imagen se envía a un servicio externo de inteligencia artificial para identificar el residuo.
+          </p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div>
+          <strong>Recibe el destino recomendado</strong>
+          <p class="small">
+            La app muestra si corresponde a envases, papel y cartón, vidrio, orgánico, resto, punto limpio, textil u otro destino configurado.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight">
+      <strong>Resultado rápido:</strong>
+      EcoFot IA está pensada para abrir la app, analizar el residuo y recibir una respuesta clara,
+      sin pantallas complicadas ni conversaciones largas.
+    </div>
+
+    <h2>Una app para saber en qué contenedor va cada cosa</h2>
+
+    <p>
+      Muchas dudas de reciclaje aparecen con objetos cotidianos:
+      envases, cajas, vasos, botes, bolsas, restos pequeños, objetos rotos o productos que no encajan claramente en un contenedor.
+    </p>
+
+    <p>
+      EcoFot IA está pensada para ayudarte en esas situaciones. No se limita a decir “plástico = amarillo”.
+      El objetivo es orientar el resultado según el tipo de residuo y las reglas configuradas para el país o sistema de reciclaje.
+    </p>
+
+    <div class="note">
+      <strong>Ejemplo:</strong> una botella de vidrio no es lo mismo que un vaso de cristal roto.
+      EcoFot IA intenta diferenciar el objeto para dar una respuesta más correcta.
+    </div>
+
+    <h2>Destinos habituales en España</h2>
+
+    <p>
+      En España, EcoFot IA puede orientar el residuo hacia destinos como:
+    </p>
+
+    <ul>
+      <li><strong>Envases</strong>: botellas de plástico, latas, briks y otros envases ligeros.</li>
+      <li><strong>Papel y cartón</strong>: cajas, bolsas de papel, cartón limpio y papel.</li>
+      <li><strong>Vidrio</strong>: botellas, tarros y frascos de vidrio que sean envases.</li>
+      <li><strong>Orgánico</strong>: restos de comida y residuos compostables donde exista este contenedor.</li>
+      <li><strong>Resto</strong>: residuos que no encajan en otros contenedores habituales.</li>
+      <li><strong>Punto limpio</strong>: objetos especiales, voluminosos, electrónicos o potencialmente peligrosos.</li>
+      <li><strong>Textil</strong>: ropa, calzado y textiles cuando haya recogida específica.</li>
+    </ul>
+
+    <div class="seo-box">
+      <strong>Algunas personas buscan este tipo de solución con términos como:</strong>
+      <ul>
+        <li>app de reciclaje con foto</li>
+        <li>app para saber dónde tirar residuos</li>
+        <li>inteligencia artificial para reciclar</li>
+        <li>dónde tirar un residuo</li>
+        <li>en qué contenedor va esto</li>
+        <li>app para reciclar mejor</li>
+        <li>contenedor correcto para cada residuo</li>
+        <li>reciclaje con IA</li>
+        <li>app para saber si algo va al amarillo, azul, verde o gris</li>
+      </ul>
+    </div>
+
+    <h2>Por qué usar EcoFot IA</h2>
+
+    <ul>
+      <li>Evita tener que buscar manualmente cada residuo.</li>
+      <li>Da una respuesta rápida y visual.</li>
+      <li>Funciona mediante análisis de foto.</li>
+      <li>Está pensada para una interfaz simple, sin conversaciones largas.</li>
+      <li>Puede adaptarse a distintos sistemas de recogida mediante configuración interna.</li>
+    </ul>
+
+    <h2>Uso responsable</h2>
+
+    <p>
+      EcoFot IA ayuda a orientar el reciclaje, pero las normas pueden variar según municipio, país o sistema de recogida.
+      En caso de duda importante, especialmente con residuos peligrosos, voluminosos o sanitarios, conviene consultar también la información oficial de tu ayuntamiento o entidad local de residuos.
+    </p>
+
+    <div class="note">
+      <strong>Privacidad:</strong> para analizar una foto, la app necesita conexión a Internet y puede enviar la imagen a un servicio externo de inteligencia artificial.
+    </div>
+
+    <div class="download-box">
+      <p>
+        <strong>Descarga EcoFot IA en Google Play</strong>
+      </p>
+
+      <a href="https://play.google.com/store/apps/details?id=com.aplicacionesherrbri.ecofot"
+         target="_blank"
+         rel="noopener">
+        <img src="https://aplicacionesherrbri.com/GetItOnGooglePlay_Badge_Web_color_Spanish.png"
+             alt="Disponible en Google Play"
+             style="height:60px; max-width:100%; border-radius:8px;">
+      </a>
+    </div>
+
+    <section class="faq">
+      <h2>Preguntas frecuentes</h2>
+
+      <h3>¿EcoFot IA es una app para saber dónde tirar cada residuo?</h3>
+      <p>
+        Sí. La app está pensada para ayudarte a decidir el destino de un residuo usando una foto.
+      </p>
+
+      <h3>¿Funciona como un chatbot?</h3>
+      <p>
+        No. EcoFot IA está diseñada para mostrar un resultado directo: destino, color y una explicación breve.
+      </p>
+
+      <h3>¿Necesita Internet?</h3>
+      <p>
+        Sí. EcoFot IA necesita conexión a Internet para analizar imágenes mediante servicios externos.
+      </p>
+
+      <h3>¿La inteligencia artificial decide directamente el contenedor?</h3>
+      <p>
+        La inteligencia artificial ayuda a identificar el objeto. Después, la app aplica reglas internas para mostrar el destino configurado.
+      </p>
+
+      <h3>¿Sirve para España?</h3>
+      <p>
+        Sí. La primera versión está pensada especialmente para el sistema de reciclaje usado en España.
+      </p>
+
+      <h3>¿Puede equivocarse?</h3>
+      <p>
+        Sí. La inteligencia artificial puede cometer errores, especialmente si la foto es confusa, hay varios objetos o el residuo no se ve bien.
+      </p>
+
+      <h3>¿Qué hago con residuos peligrosos o especiales?</h3>
+      <p>
+        Si el residuo puede ser peligroso, electrónico, sanitario, químico o voluminoso, consulta siempre las indicaciones oficiales de tu municipio o punto limpio.
+      </p>
+
+      <h3>¿Es gratuita?</h3>
+      <p>
+        La app puede incluir usos gratuitos iniciales, anuncios recompensados o suscripción. Consulta las condiciones actualizadas en Google Play.
+      </p>
+    </section>
+
+    <div class="footer">
+      <p class="small">
+        Última actualización de esta página: 5 de mayo de 2026.
+      </p>
+
+      <p class="small">
+        <a href="https://aplicacionesherrbri.com/"
+           target="_blank"
+           rel="noopener noreferrer">AplicacionesHerrbri</a>
+        ·
+        <a href="https://aplicacionesherrbri.com/privacy-policy-ecofot.html"
+           target="_blank"
+           rel="noopener noreferrer">Política de privacidad</a>
+      </p>
+    </div>
+
+  </main>
+</body>
+</html>
