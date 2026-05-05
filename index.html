@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Aplicaciones HerrBri | Apps Android para transporte y logística</title>
+  <title>Aplicaciones HerrBri | Apps Android prácticas para el día a día</title>
 
-  <meta name="description" content="Aplicaciones HerrBri desarrolla aplicaciones Android prácticas para profesionales del transporte, la logística y el trabajo diario.">
+  <meta name="description" content="Aplicaciones HerrBri desarrolla aplicaciones Android prácticas, sencillas y útiles para resolver problemas concretos del trabajo diario y la vida cotidiana.">
   <link rel="canonical" href="https://aplicacionesherrbri.com/">
   <meta name="robots" content="index,follow">
 
   <meta property="og:title" content="Aplicaciones HerrBri">
-  <meta property="og:description" content="Desarrollo de aplicaciones Android orientadas a profesionales del transporte y la logística.">
+  <meta property="og:description" content="Desarrollo de aplicaciones Android prácticas para el trabajo diario y la vida cotidiana.">
   <meta property="og:url" content="https://aplicacionesherrbri.com/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://aplicacionesherrbri.com/log%20volumtransport%20web.png">
@@ -34,12 +34,11 @@
       font-family: 'Open Sans', sans-serif;
       min-height: 100vh;
       overflow-x: hidden;
-      padding: 0; /* 👈 importante */
+      padding: 0;
     }
 
     img{ max-width: 100%; height: auto; }
 
-    /* ✅ Wrapper centrado (arreglo definitivo) */
     .page{
       width: 100%;
       max-width: 1000px;
@@ -90,7 +89,40 @@
       text-align:left;
       margin: 0 0 60px 0;
     }
-    .quote-author{ text-align:right; margin-top:10px; }
+
+    .quote-author{
+      text-align:right;
+      margin-top:10px;
+    }
+
+    .guide-link{
+      margin: 30px 0;
+      text-align:left;
+      background: rgba(0,0,0,0.4);
+      padding: 16px;
+      border-radius: 10px;
+    }
+
+    .guide-title{
+      color:#fff;
+      font-weight:700;
+      font-size:1.35em;
+      margin:0 0 8px 0;
+    }
+
+    .guide-link p{
+      color:#fff;
+      font-size:1.1em;
+      margin:0 0 12px 0;
+      padding: 0;
+      background: transparent;
+    }
+
+    .guide-link a{
+      color:#ffeb3b;
+      font-weight:700;
+      text-decoration:underline;
+    }
 
     .product-container{
       background-color:#ffeb3b;
@@ -104,8 +136,20 @@
       font-weight:700;
       text-align:left;
       color:#000;
-      margin-bottom:20px;
+      margin-bottom:24px;
       font-family:'Anton', sans-serif;
+    }
+
+    .app-card{
+      background: rgba(255,255,255,0.72);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 26px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    .app-card:last-child{
+      margin-bottom: 0;
     }
 
     .product-container-content{
@@ -117,17 +161,8 @@
     .product-container img.app-icon{
       max-width:150px;
       margin-right:20px;
+      border-radius: 16px;
     }
-
-    .google-play-badge{
-      height: 84px;        /* o 78/90, como quieras */
-      width: auto;
-      max-width: 100%;     /* ✅ clave: nunca supera el contenedor */
-      display: block;
-      margin: 18px auto 0;
-    }
-
-
 
     .product-title{
       font-size:2.5em;
@@ -135,6 +170,15 @@
       color:#000;
       font-family:'Anton', sans-serif;
       text-align:left;
+      line-height: 1.05;
+    }
+
+    .product-subtitle{
+      font-size:1.1em;
+      font-weight:700;
+      color:#333;
+      text-align:left;
+      margin-top:6px;
     }
 
     .product-description{
@@ -143,6 +187,14 @@
       color:#000;
       text-align:left;
       margin-bottom:16px;
+    }
+
+    .app-links{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      flex-wrap:wrap;
+      margin-top:14px;
     }
 
     .cta-button{
@@ -156,6 +208,14 @@
       font-size:1.1em;
     }
 
+    .google-play-badge{
+      height: 84px;
+      width: auto;
+      max-width: 100%;
+      display: block;
+      margin: 0;
+    }
+
     .contact-container{
       background-color:#000;
       padding:30px;
@@ -165,6 +225,7 @@
       max-width:800px;
       margin: 30px auto 0;
     }
+
     .contact-link{
       font-size:1.5em;
       color:white;
@@ -175,10 +236,10 @@
       word-break: break-word;
     }
 
-
-   @media (max-width: 768px){
+    @media (max-width: 768px){
       .box-container{ padding: 20px; }
       .product-container{ padding: 20px; }
+      .app-card{ padding: 20px; }
 
       h1{ font-size: 2.2em; }
       p, .quote{ font-size: 1.2em; margin-bottom: 30px; }
@@ -188,24 +249,39 @@
         text-align: center;
       }
 
-      /* ✅ Solo el icono (no el badge) */
       .product-container img.app-icon{
         max-width:110px;
         margin: 0 0 10px 0;
       }
 
-      .footer-text{ font-size:1.9em; text-align:center; }
-      .product-title{ font-size:1.6em; text-align:center; }
-      .product-description{ text-align:center; }
+      .footer-text{
+        font-size:1.9em;
+        text-align:center;
+      }
+
+      .product-title{
+        font-size:1.8em;
+        text-align:center;
+      }
+
+      .product-subtitle{
+        text-align:center;
+      }
+
+      .product-description{
+        text-align:center;
+      }
+
+      .app-links{
+        justify-content:center;
+      }
 
       .google-play-badge{
         height: 84px;
         width: auto;
         max-width: 100%;
       }
-
     }
-
   </style>
 </head>
 
@@ -213,20 +289,34 @@
   <div class="page">
     <div class="box-container">
       <h1>Bienvenido a Aplicaciones HerrBri</h1>
-      <p>Empresa fundada en el año 2024 con la intención de mejorar la calidad de trabajo de los profesionales del transporte mediante el uso de aplicaciones para teléfonos móviles.</p>
 
-      <!-- ✅ Enlace a la guía (mejor antes de la cita) -->
-      <div style="margin: 30px 0; text-align:left; background: rgba(0,0,0,0.4); padding: 16px; border-radius: 10px;">
-        <div style="color:#fff; font-weight:700; font-size:1.35em; margin:0 0 8px 0;">
+      <p>
+        Aplicaciones HerrBri es un proyecto independiente dedicado al desarrollo de aplicaciones Android prácticas,
+        sencillas y útiles para resolver problemas concretos del trabajo diario y la vida cotidiana.
+      </p>
+
+      <div class="guide-link">
+        <div class="guide-title">
           Guía práctica: cómo calcular cuántas cajas caben en un vehículo
         </div>
-        <p style="color:#fff; font-size:1.1em; margin:0 0 12px 0;">
+        <p>
           En esta guía explicamos de forma clara cómo funciona VolumTransport, para qué tipo de vehículos y espacios está pensada,
           y por qué no es solo una calculadora de volumen (CBM).
         </p>
-        <a href="https://aplicacionesherrbri.com/es/boxes-fit-vehicle/"
-           style="color:#ffeb3b; font-weight:700; text-decoration:underline;">
+        <a href="https://aplicacionesherrbri.com/es/boxes-fit-vehicle/">
           Ver la guía completa →
+        </a>
+      </div>
+
+      <div class="guide-link">
+        <div class="guide-title">
+          EcoFot IA: app de reciclaje con foto e inteligencia artificial
+        </div>
+        <p>
+          EcoFot IA ayuda a saber dónde tirar un residuo haciendo una foto, con una respuesta clara y directa según el sistema de reciclaje configurado.
+        </p>
+        <a href="https://aplicacionesherrbri.com/ecofot/">
+          Ver la página de EcoFot IA →
         </a>
       </div>
 
@@ -234,31 +324,68 @@
         "El verdadero progreso es el que pone la tecnología al alcance de todos."
         <div class="quote-author">– Henry Ford</div>
       </div>
-
-      </div>
+    </div>
 
     <div class="product-container">
-      <div class="footer-text">Nuestro producto</div>
+      <div class="footer-text">Nuestras aplicaciones</div>
 
-      <div class="product-container-content">
-        <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
-          <img class="app-icon" src="log volumtransport web.png" alt="Logo VolumTransport">
-        </a>
-        <div class="product-title">VolumTransport (Cajas en el vehículo)</div>
+      <div class="app-card">
+        <div class="product-container-content">
+          <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
+            <img class="app-icon" src="log volumtransport web.png" alt="Logo VolumTransport">
+          </a>
+
+          <div>
+            <div class="product-title">VolumTransport</div>
+            <div class="product-subtitle">Cajas en el vehículo</div>
+          </div>
+        </div>
+
+        <div class="product-description">
+          App Android para calcular cuántas cajas caben en un vehículo o espacio real, con visualización 3D y medición mediante realidad aumentada.
+        </div>
+
+        <div class="app-links">
+          <a class="cta-button" href="https://aplicacionesherrbri.com/es/boxes-fit-vehicle/">
+            Ver guía
+          </a>
+
+          <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
+            <img class="google-play-badge"
+                 src="GetItOnGooglePlay_Badge_Web_color_Spanish.png"
+                 alt="Descargar VolumTransport en Google Play">
+          </a>
+        </div>
       </div>
 
-      <div class="product-description">
-        Con esta aplicación sabrás cuántas cajas puedes cargar en tu vehículo antes de comenzar a trabajar,
-        optimizando tu tiempo y evitando esfuerzos innecesarios.
+      <div class="app-card">
+        <div class="product-container-content">
+          <a href="https://play.google.com/store/apps/details?id=com.aplicacionesherrbri.ecofot" target="_blank" rel="noopener">
+            <img class="app-icon" src="assets/screens/icono_ecofot_2.png" alt="Logo EcoFot IA">
+          </a>
+
+          <div>
+            <div class="product-title">EcoFot IA</div>
+            <div class="product-subtitle">Reciclaje con inteligencia artificial</div>
+          </div>
+        </div>
+
+        <div class="product-description">
+          App Android para saber dónde tirar un residuo haciendo una foto. Ayuda a orientar el destino correcto según el sistema de reciclaje configurado.
+        </div>
+
+        <div class="app-links">
+          <a class="cta-button" href="https://aplicacionesherrbri.com/ecofot/">
+            Ver página
+          </a>
+
+          <a href="https://play.google.com/store/apps/details?id=com.aplicacionesherrbri.ecofot" target="_blank" rel="noopener">
+            <img class="google-play-badge"
+                 src="GetItOnGooglePlay_Badge_Web_color_Spanish.png"
+                 alt="Descargar EcoFot IA en Google Play">
+          </a>
+        </div>
       </div>
-
-      <a href="https://play.google.com/store/apps/details?id=com.herrbri.volumtransport" target="_blank" rel="noopener">
-        <img class="google-play-badge"
-             src="GetItOnGooglePlay_Badge_Web_color_Spanish.png"
-             alt="Descargar en Google Play">
-      </a>
-
-    </div>
     </div>
 
     <div class="contact-container">
@@ -280,11 +407,3 @@
   </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
