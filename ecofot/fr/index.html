@@ -1,1 +1,523 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Application de recyclage avec photo et intelligence artificielle | EcoFot AI</title>
+  <meta name="description" content="EcoFot AI est une application Android pour savoir où jeter un déchet en prenant une photo. Recyclage avec intelligence artificielle, adapté au système de tri des déchets en France." />
+  <link rel="canonical" href="https://aplicacionesherrbri.com/ecofot/fr/" />
+  <meta name="robots" content="index,follow" />
+
+  <link rel="alternate" hreflang="es" href="https://aplicacionesherrbri.com/ecofot/" />
+  <link rel="alternate" hreflang="fr" href="https://aplicacionesherrbri.com/ecofot/fr/" />
+  <link rel="alternate" hreflang="pt" href="https://aplicacionesherrbri.com/ecofot/pt/" />
+  <link rel="alternate" hreflang="x-default" href="https://aplicacionesherrbri.com/ecofot/" />
+
+  <style>
+    :root {
+      --max: 940px;
+      --bg: #eaf7ef;
+      --card: #ffffff;
+      --soft: #f3fbf6;
+      --green: #1b5e20;
+      --green-2: #2e7d32;
+      --text: #18201a;
+      --muted: #4f5f52;
+      --border: rgba(46, 125, 50, .22);
+      --shadow: 0 10px 28px rgba(0,0,0,.07);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 24px 16px;
+      line-height: 1.58;
+      background:
+        radial-gradient(circle at top left, #d7f3df 0, transparent 34%),
+        var(--bg);
+      color: var(--text);
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      background: var(--card);
+      padding: 32px;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      padding: 18px 0 14px;
+      text-align: center;
+    }
+
+    .brand {
+      display: block;
+      color: var(--green);
+      font-weight: 900;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin-bottom: 8px;
+      letter-spacing: -0.035em;
+    }
+
+    .brand-subtitle {
+      display: block;
+      color: var(--muted);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-top: 2px;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.08;
+      margin: 24px auto 16px;
+      letter-spacing: -0.035em;
+      text-align: center;
+      max-width: 820px;
+    }
+
+    h2 {
+      font-size: 1.45rem;
+      margin-top: 34px;
+      margin-bottom: 12px;
+      letter-spacing: -0.015em;
+    }
+
+    h3 {
+      font-size: 1.08rem;
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+
+    p { margin: 0 0 14px; }
+
+    ul {
+      margin: 10px 0 18px 20px;
+      padding: 0;
+    }
+
+    li { margin-bottom: 8px; }
+
+    a { color: var(--green); }
+
+    .hero-text {
+      font-size: 1.18rem;
+      color: #26372a;
+      max-width: 760px;
+      margin: 0 auto 16px;
+      text-align: center;
+    }
+
+    .hero-meta {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: .98rem;
+      text-align: center;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .note {
+      background: var(--soft);
+      border-left: 5px solid var(--green-2);
+      padding: 16px;
+      margin: 24px 0;
+      border-radius: 10px;
+    }
+
+    .steps {
+      counter-reset: step;
+      display: grid;
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .step {
+      display: flex;
+      gap: 14px;
+      background: var(--soft);
+      border: 1px solid var(--border);
+      padding: 15px;
+      border-radius: 16px;
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      min-width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--green);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+    }
+
+    .seo-box {
+      background: #f8f9fa;
+      border: 1px dashed #b8b8b8;
+      padding: 16px;
+      margin: 24px 0;
+      border-radius: 14px;
+    }
+
+    .highlight {
+      background: linear-gradient(135deg, #f3fbf6, #ffffff);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      margin: 24px 0;
+    }
+
+    .highlight strong { color: var(--green); }
+
+    .download-box {
+      background: var(--soft);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      margin-top: 26px;
+    }
+
+    .download-box p { margin-bottom: 10px; }
+
+    .faq { margin-top: 28px; }
+
+    .footer {
+      margin-top: 30px;
+      padding-top: 22px;
+      border-top: 1px solid #ddd;
+    }
+
+    .shots {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin: 12px 0 6px;
+      align-items: start;
+    }
+
+    .shots figure {
+      margin: 0;
+      background: #fff;
+      border-radius: 12px;
+      padding: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    }
+
+    .shots img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      border: 1px solid rgba(0,0,0,.08);
+    }
+
+    .shots figcaption { margin-top: 8px; }
+
+    @media (max-width: 760px) {
+      body { padding: 14px 10px; }
+
+      .wrap {
+        padding: 22px;
+        border-radius: 16px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .shots { grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 900px) {
+      .shots { justify-items: center; }
+
+      .shots figure {
+        max-width: 280px;
+        width: 100%;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "EcoFot AI",
+    "operatingSystem": "Android",
+    "applicationCategory": "UtilitiesApplication",
+    "description": "Application Android pour savoir où jeter un déchet en prenant une photo. Utilise l’intelligence artificielle et des règles configurées pour orienter vers la bonne destination de tri.",
+    "url": "https://aplicacionesherrbri.com/ecofot/fr/",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.aplicacionesherrbri.ecofot",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <main class="wrap">
+
+    <header>
+      <div class="brand">
+        EcoFot AI
+        <span class="brand-subtitle">Recyclage avec intelligence artificielle</span>
+      </div>
+
+      <h1>Application de recyclage avec photo et intelligence artificielle</h1>
+
+      <p class="hero-text">
+        <strong>EcoFot AI</strong> vous aide à savoir <strong>où jeter un déchet</strong>
+        rapidement et simplement. Prenez une photo du déchet et obtenez une réponse claire
+        selon le système de tri configuré.
+      </p>
+
+      <p class="hero-meta">
+        Application Android développée par
+        <strong>
+          <a href="https://aplicacionesherrbri.com/"
+             target="_blank"
+             rel="noopener noreferrer">AplicacionesHerrbri</a>
+        </strong>.
+      </p>
+    </header>
+
+    <div class="note">
+      <strong>L’idée est simple :</strong> moins de doutes pour recycler, plus de clarté pour décider.
+      EcoFot AI ne fonctionne pas comme un chatbot : l’application affiche une réponse directe et facile à comprendre.
+    </div>
+
+    <h2>Comment ça marche</h2>
+
+    <div class="steps">
+      <div class="step">
+        <div>
+          <strong>Prenez une photo du déchet</strong>
+          <p class="small">
+            Essayez de photographier un seul objet, bien centré et avec une bonne lumière.
+          </p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div>
+          <strong>EcoFot AI analyse l’objet</strong>
+          <p class="small">
+            L’image est envoyée à un service externe d’intelligence artificielle pour identifier le déchet.
+          </p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div>
+          <strong>Recevez la destination recommandée</strong>
+          <p class="small">
+            L’application indique si le déchet correspond au bac de tri, au verre, aux biodéchets,
+            aux ordures ménagères, à la déchèterie, au textile ou à une autre destination configurée.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight">
+      <strong>Résultat rapide :</strong>
+      EcoFot AI est conçue pour ouvrir l’application, analyser le déchet et recevoir une réponse claire,
+      sans écrans compliqués ni longues conversations.
+    </div>
+
+    <h2>Captures d’écran d’EcoFot AI</h2>
+
+    <div class="shots">
+      <figure>
+        <img src="/assets/screens/ecofot-fr-camera-web.png"
+             alt="EcoFot AI analyse un déchet avec l’appareil photo"
+             loading="lazy">
+        <figcaption class="small">
+          Appareil photo : cadrez le déchet que vous voulez analyser.
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="/assets/screens/ecofot-fr-result-web.png"
+             alt="Résultat d’EcoFot AI indiquant la bonne destination de tri pour un carton de lait"
+             loading="lazy">
+        <figcaption class="small">
+          Résultat : destination recommandée et explication courte.
+        </figcaption>
+      </figure>
+    </div>
+
+    <h2>Une application pour savoir dans quel bac jeter chaque déchet</h2>
+
+    <p>
+      De nombreuses questions de tri apparaissent avec des objets du quotidien :
+      emballages, boîtes, gobelets, flacons, sacs, petits déchets, objets cassés ou produits
+      qui ne correspondent pas clairement à un bac.
+    </p>
+
+    <p>
+      EcoFot AI est conçue pour vous aider dans ces situations. L’application ne se limite pas à dire
+      « plastique = bac jaune ». L’objectif est d’orienter le résultat selon le type de déchet
+      et les règles configurées pour le pays ou le système de tri.
+    </p>
+
+    <div class="note">
+      <strong>Exemple :</strong> une bouteille en verre n’est pas la même chose qu’un verre cassé.
+      EcoFot AI essaie de distinguer l’objet pour donner une réponse plus correcte.
+    </div>
+
+    <h2>Destinations habituelles en France</h2>
+
+    <p>
+      En France, EcoFot AI peut orienter le déchet vers des destinations comme :
+    </p>
+
+    <ul>
+      <li><strong>Bac de tri</strong> : emballages ménagers, papiers, cartons, plastiques, métaux et briques alimentaires.</li>
+      <li><strong>Verre</strong> : bouteilles, pots et bocaux en verre qui sont des emballages.</li>
+      <li><strong>Biodéchets</strong> : restes alimentaires et déchets organiques compostables lorsque cette collecte existe.</li>
+      <li><strong>Ordures ménagères</strong> : déchets non recyclables et petits objets qui ne relèvent pas d’une autre collecte.</li>
+      <li><strong>Déchèterie / point de recyclage</strong> : objets spéciaux, volumineux, électroniques ou potentiellement dangereux.</li>
+      <li><strong>Textile</strong> : vêtements, chaussures et textiles lorsqu’une collecte spécifique existe.</li>
+    </ul>
+
+    <div class="seo-box">
+      <strong>Certaines personnes recherchent ce type de solution avec des termes comme :</strong>
+      <ul>
+        <li>application de recyclage avec photo</li>
+        <li>application pour savoir où jeter un déchet</li>
+        <li>intelligence artificielle pour recycler</li>
+        <li>où jeter un déchet</li>
+        <li>dans quel bac jeter cet objet</li>
+        <li>application pour mieux recycler</li>
+        <li>bon bac pour chaque déchet</li>
+        <li>recyclage avec IA</li>
+        <li>application pour savoir si un déchet va au bac jaune, au verre ou aux ordures ménagères</li>
+      </ul>
+    </div>
+
+    <h2>Pourquoi utiliser EcoFot AI</h2>
+
+    <ul>
+      <li>Évite de chercher manuellement chaque déchet.</li>
+      <li>Donne une réponse rapide et visuelle.</li>
+      <li>Fonctionne grâce à l’analyse d’une photo.</li>
+      <li>Propose une interface simple, sans longues conversations.</li>
+      <li>Peut s’adapter à différents systèmes de collecte grâce à une configuration interne.</li>
+    </ul>
+
+    <h2>Utilisation responsable</h2>
+
+    <p>
+      EcoFot AI aide à orienter le tri, mais les règles peuvent varier selon la commune,
+      le pays ou le système de collecte. En cas de doute important, notamment avec des déchets
+      dangereux, volumineux ou sanitaires, il est conseillé de consulter aussi les informations
+      officielles de votre commune ou de l’organisme local chargé des déchets.
+    </p>
+
+    <div class="note">
+      <strong>Confidentialité :</strong> pour analyser une photo, l’application a besoin d’une connexion Internet
+      et peut envoyer l’image à un service externe d’intelligence artificielle.
+    </div>
+
+    <div class="download-box">
+      <p>
+        <strong>Téléchargez EcoFot AI sur Google Play</strong>
+      </p>
+
+      <a href="https://play.google.com/store/apps/details?id=com.aplicacionesherrbri.ecofot"
+         target="_blank"
+         rel="noopener">
+        <img src="/assets/screens/Badge-French-web.png"
+             alt="Disponible sur Google Play"
+             style="height:60px; max-width:100%; border-radius:8px;">
+      </a>
+    </div>
+
+    <section class="faq">
+      <h2>Questions fréquentes</h2>
+
+      <h3>EcoFot AI est-elle une application pour savoir où jeter chaque déchet ?</h3>
+      <p>
+        Oui. L’application est conçue pour vous aider à choisir la destination d’un déchet à partir d’une photo.
+      </p>
+
+      <h3>Fonctionne-t-elle comme un chatbot ?</h3>
+      <p>
+        Non. EcoFot AI est conçue pour afficher un résultat direct : destination, couleur et explication courte.
+      </p>
+
+      <h3>A-t-elle besoin d’Internet ?</h3>
+      <p>
+        Oui. EcoFot AI a besoin d’une connexion Internet pour analyser les images avec des services externes.
+      </p>
+
+      <h3>L’intelligence artificielle décide-t-elle directement du bac ?</h3>
+      <p>
+        L’intelligence artificielle aide à identifier l’objet. Ensuite, l’application applique des règles internes
+        pour afficher la destination configurée.
+      </p>
+
+      <h3>L’IA peut-elle toujours savoir de quel matériau est fait un déchet ?</h3>
+      <p>
+        Pas toujours. L’IA interprète l’image de manière approximative, en utilisant des motifs visuels,
+        des informations habituelles sur les objets et des règles de classification.
+        Elle ne peut pas confirmer à 100 % le matériau réel s’il n’est pas clairement visible.
+      </p>
+
+      <h3>Est-ce utile pour la France ?</h3>
+      <p>
+        Oui. Cette version peut être configurée pour le système de tri utilisé en France.
+      </p>
+
+      <h3>Peut-elle se tromper ?</h3>
+      <p>
+        Oui. L’intelligence artificielle peut faire des erreurs, surtout si la photo est confuse,
+        s’il y a plusieurs objets ou si le déchet n’est pas bien visible.
+      </p>
+
+      <h3>Que faire avec des déchets dangereux ou spéciaux ?</h3>
+      <p>
+        Si le déchet peut être dangereux, électronique, sanitaire, chimique ou volumineux,
+        consultez toujours les indications officielles de votre commune ou de votre déchèterie.
+      </p>
+
+      <h3>Est-elle gratuite ?</h3>
+      <p>
+        L’application peut inclure des utilisations gratuites initiales, des publicités récompensées
+        ou un abonnement. Consultez les conditions actualisées sur Google Play.
+      </p>
+    </section>
+
+    <div class="footer">
+      <p class="small">
+        Dernière mise à jour de cette page : 12 mai 2026.
+      </p>
+
+      <p class="small">
+        <a href="https://aplicacionesherrbri.com/"
+           target="_blank"
+           rel="noopener noreferrer">AplicacionesHerrbri</a>
+        ·
+        <a href="https://aplicacionesherrbri.com/privacy-policy-ecofot.html"
+           target="_blank"
+           rel="noopener noreferrer">Politique de confidentialité</a>
+      </p>
+    </div>
+
+  </main>
+</body>
+</html>
