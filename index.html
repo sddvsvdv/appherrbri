@@ -33,7 +33,7 @@
     body {
       background-color: #eaf6ef;
       background-image:
-        linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)),
+        linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.28)),
         url('assets/screens/fondo_aplicaciones_herrbri_web.png');
       background-size: cover;
       background-position: center;
@@ -43,6 +43,7 @@
       min-height: 100vh;
       overflow-x: hidden;
       padding: 0;
+      color: #172018;
     }
 
     img {
@@ -58,9 +59,9 @@
     }
 
     .box-container {
-      background-color: rgba(255,255,255,0.01);
+      background: rgba(255,255,255,0.04);
       padding: 40px;
-      border-radius: 10px;
+      border-radius: 18px;
       text-align: center;
       width: 100%;
       margin: 0;
@@ -71,9 +72,9 @@
       font-weight: 800;
       font-size: 3em;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-      background-color: rgba(0,0,0,0.5);
-      padding: 10px 20px;
-      border-radius: 10px;
+      background-color: rgba(0,0,0,0.52);
+      padding: 14px 20px;
+      border-radius: 14px;
       margin: 0 0 20px 0;
       text-align: left;
       line-height: 1.15;
@@ -85,9 +86,9 @@
       font-size: 1.35em;
       line-height: 1.45;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-      background-color: rgba(0,0,0,0.4);
-      padding: 10px 15px;
-      border-radius: 8px;
+      background-color: rgba(0,0,0,0.42);
+      padding: 12px 16px;
+      border-radius: 12px;
       margin: 0 0 50px 0;
     }
 
@@ -98,8 +99,8 @@
       line-height: 1.35;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
       background-color: rgba(0,0,0,0.45);
-      padding: 16px 18px;
-      border-radius: 10px;
+      padding: 18px 20px;
+      border-radius: 14px;
       text-align: left;
       margin: 0 0 50px 0;
     }
@@ -115,9 +116,10 @@
     .guide-link {
       margin: 30px 0;
       text-align: left;
-      background: rgba(0,0,0,0.4);
-      padding: 16px;
-      border-radius: 10px;
+      background: rgba(0,0,0,0.42);
+      padding: 18px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
     .guide-title {
@@ -140,34 +142,38 @@
     }
 
     .guide-link a {
-      color: #ffeb3b;
+      color: #d8f5dd;
       font-weight: 800;
       text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
     .product-container {
-      background-color: #ffeb3b;
+      background: linear-gradient(135deg, #f3fbf6, #dff3e6);
       padding: 40px;
-      border-radius: 10px;
+      border-radius: 18px;
       width: 100%;
+      border: 1px solid rgba(46, 125, 50, 0.22);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.08);
     }
 
     .footer-text {
       font-size: 2.5em;
       font-weight: 700;
       text-align: left;
-      color: #000;
+      color: #1b5e20;
       margin-bottom: 24px;
       font-family: 'Anton', 'Open Sans', sans-serif;
       letter-spacing: 0.02em;
     }
 
     .app-card {
-      background: rgba(255,255,255,0.76);
-      border-radius: 12px;
+      background: #ffffff;
+      border-radius: 16px;
       padding: 24px;
       margin-bottom: 26px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.06);
     }
 
     .app-card:last-child {
@@ -183,13 +189,14 @@
     .product-container img.app-icon {
       max-width: 150px;
       margin-right: 20px;
-      border-radius: 16px;
+      border-radius: 18px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
     }
 
     .product-title {
       font-size: 2.5em;
       font-weight: 700;
-      color: #000;
+      color: #111;
       font-family: 'Anton', 'Open Sans', sans-serif;
       text-align: left;
       line-height: 1.05;
@@ -199,7 +206,7 @@
     .product-subtitle {
       font-size: 1.1em;
       font-weight: 800;
-      color: #333;
+      color: #2f3b32;
       text-align: left;
       margin-top: 6px;
     }
@@ -209,7 +216,7 @@
       font-family: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
       font-weight: 600;
       line-height: 1.5;
-      color: #000;
+      color: #172018;
       text-align: left;
       margin-bottom: 16px;
     }
@@ -224,13 +231,18 @@
 
     .cta-button {
       display: inline-block;
-      background: #000;
+      background: #1b5e20;
       color: #fff;
       padding: 12px 18px;
-      border-radius: 8px;
+      border-radius: 10px;
       text-decoration: none;
       font-weight: 800;
       font-size: 1.05em;
+      box-shadow: 0 6px 16px rgba(27,94,32,0.25);
+    }
+
+    .cta-button:hover {
+      background: #144718;
     }
 
     .google-play-badge {
@@ -242,23 +254,40 @@
     }
 
     .contact-container {
-      background-color: #000;
+      background: linear-gradient(135deg, #1b5e20, #2e7d32);
       padding: 30px;
-      border-radius: 10px;
+      border-radius: 18px;
       text-align: center;
       width: 100%;
       max-width: 800px;
       margin: 30px auto 0;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+    }
+
+    .contact-title {
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.4em;
+      margin-bottom: 12px;
+    }
+
+    .contact-data {
+      color: #fff;
+      font-size: 1.1em;
+      line-height: 1.5;
+      margin-bottom: 14px;
     }
 
     .contact-link {
       font-size: 1.5em;
-      color: white;
+      color: #ffffff;
       text-decoration: underline;
+      text-underline-offset: 4px;
       display: inline-block;
       max-width: 100%;
       overflow-wrap: anywhere;
       word-break: break-word;
+      font-weight: 700;
     }
 
     @media (max-width: 768px) {
@@ -342,7 +371,7 @@
         justify-content: center;
       }
 
-      .google-play-badge{
+      .google-play-badge {
         width: 260px;
         max-width: 100%;
         height: auto;
@@ -461,11 +490,11 @@
     </div>
 
     <div class="contact-container">
-      <div style="color:#fff; font-weight:700; font-size:1.4em; margin-bottom:12px;">
+      <div class="contact-title">
         Contacto
       </div>
 
-      <div style="color:#fff; font-size:1.1em; line-height:1.5; margin-bottom:14px;">
+      <div class="contact-data">
         Aplicaciones HerrBri<br>
         Mollet del Vallès, Barcelona<br>
         08100, España
