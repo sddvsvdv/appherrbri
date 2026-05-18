@@ -58,6 +58,41 @@
       padding: 18px 0 14px;
       text-align: center;
     }
+
+    .country-selector {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 8px;
+      width: fit-content;
+      max-width: 100%;
+      margin: 0 0 24px;
+      padding: 0;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+    }
+
+    .country-selector label {
+      font-size: .84rem;
+      font-weight: 650;
+      color: var(--muted);
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .country-selector select {
+      width: auto;
+      min-width: 180px;
+      max-width: 260px;
+      padding: 7px 10px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: #ffffff;
+      color: var(--text);
+      font-size: .9rem;
+      font-weight: 600;
+    }
     
     .brand {
       display: block;
@@ -244,6 +279,17 @@
         padding: 22px;
         border-radius: 16px;
       }
+
+      .country-selector {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        margin-bottom: 18px;
+      }
+
+      .country-selector label {
+        white-space: normal;
+      }
     }
 
     .shots {
@@ -313,6 +359,22 @@
 
 <body>
   <main class="wrap">
+
+
+    <div class="country-selector">
+      <label for="ecofot-country-select">
+        Verfügbare Länder:
+      </label>
+
+      <select id="ecofot-country-select" onchange="if (this.value) window.location.href = this.value;">
+        <option value="">Land auswählen</option>
+        <option value="https://aplicacionesherrbri.com/ecofot/">🇪🇸 Spanien</option>
+        <option value="https://aplicacionesherrbri.com/ecofot/fr/">🇫🇷 Frankreich</option>
+        <option value="https://aplicacionesherrbri.com/ecofot/pt/">🇵🇹 Portugal</option>
+        <option value="https://aplicacionesherrbri.com/ecofot/de/" selected>🇩🇪 Deutschland</option>
+        <option value="https://aplicacionesherrbri.com/ecofot/ie/">🇮🇪 Irland</option>
+      </select>
+    </div>
 
     <header>
       <div class="brand">
