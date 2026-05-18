@@ -6,7 +6,7 @@
 
   <title>EcoFot AI | Recycling help with artificial intelligence</title>
   <meta name="description" content="EcoFot AI is an Android app created to help with recycling. Take a photo of a waste item and get a simple recycling suggestion using artificial intelligence. Available only in selected countries." />
-  <link rel="canonical" href="https://aplicacionesherrbri.com/ecofot/en/" />
+  <link rel="canonical" href="https://aplicacionesherrbri.com/ecofot/global/" />
   <meta name="robots" content="index,follow" />
 
   <link rel="alternate" hreflang="es" href="https://aplicacionesherrbri.com/ecofot/" />
@@ -15,7 +15,7 @@
   <link rel="alternate" hreflang="de" href="https://aplicacionesherrbri.com/ecofot/de/" />
   <link rel="alternate" hreflang="en-IE" href="https://aplicacionesherrbri.com/ecofot/ie/" />
   <link rel="alternate" hreflang="en" href="https://aplicacionesherrbri.com/ecofot/global/" />
-  <link rel="alternate" hreflang="x-default" href="https://aplicacionesherrbri.com/ecofot/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://aplicacionesherrbri.com/ecofot/global/" />
 
   <style>
     :root {
@@ -64,9 +64,25 @@
     }
 
     .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
       font-weight: 950;
       font-size: 1.35rem;
       letter-spacing: -0.04em;
+    }
+
+    .logo a {
+      color: var(--lime);
+      font-size: .92rem;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(215,246,163,.45);
+    }
+
+    .logo span {
+      color: #ffffff;
     }
 
     .country-selector {
@@ -173,50 +189,20 @@
       backdrop-filter: blur(8px);
     }
 
-    .mock-phone {
+    .phone-shot {
       background: #101812;
-      border-radius: 28px;
+      border-radius: 30px;
       padding: 14px;
       max-width: 330px;
       margin: 0 auto;
       box-shadow: 0 20px 40px rgba(0,0,0,.32);
     }
 
-    .mock-screen {
-      background: #f8fff9;
-      color: var(--text);
-      border-radius: 22px;
-      padding: 18px;
-      min-height: 450px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .camera-box {
-      border: 2px dashed rgba(46,125,50,.35);
-      border-radius: 20px;
-      min-height: 230px;
-      display: grid;
-      place-items: center;
-      text-align: center;
-      color: var(--muted);
-      padding: 18px;
-      background: linear-gradient(135deg, #eef8f1, #ffffff);
-    }
-
-    .result-pill {
-      background: var(--green);
-      color: #ffffff;
-      border-radius: 18px;
-      padding: 16px;
-      margin-top: 16px;
-    }
-
-    .result-pill strong {
+    .phone-shot img {
       display: block;
-      font-size: 1.15rem;
-      margin-bottom: 4px;
+      width: 100%;
+      height: auto;
+      border-radius: 22px;
     }
 
     .section {
@@ -409,7 +395,7 @@
     "operatingSystem": "Android",
     "applicationCategory": "UtilitiesApplication",
     "description": "EcoFot AI is an Android app created to help with recycling using photo analysis and artificial intelligence. It is available only in selected countries.",
-    "url": "https://aplicacionesherrbri.com/ecofot/en/",
+    "url": "https://aplicacionesherrbri.com/ecofot/global/",
     "downloadUrl": "https://play.google.com/store/apps/details?id=com.aplicacionesherrbri.ecofot",
     "offers": {
       "@type": "Offer",
@@ -424,7 +410,10 @@
 
   <section class="hero">
     <div class="topbar">
-      <div class="logo">EcoFot AI</div>
+      <div class="logo">
+        <a href="https://aplicacionesherrbri.com/" target="_blank" rel="noopener noreferrer">AplicacionesHerrbri</a>
+        <span>EcoFot AI</span>
+      </div>
 
       <div class="country-selector">
         <label for="ecofot-country-select">Available countries:</label>
@@ -460,25 +449,10 @@
       </div>
 
       <div class="phone-card" aria-label="EcoFot AI app preview">
-        <div class="mock-phone">
-          <div class="mock-screen">
-            <div>
-              <strong>EcoFot AI</strong>
-              <p class="small">Photo-based recycling help</p>
-            </div>
-
-            <div class="camera-box">
-              <div>
-                <strong>Take a photo</strong>
-                <p>Frame one waste item clearly.</p>
-              </div>
-            </div>
-
-            <div class="result-pill">
-              <strong>Recommended destination</strong>
-              Short and clear recycling guidance.
-            </div>
-          </div>
+        <div class="phone-shot">
+          <img src="/assets/screens/ecofot-ie-camera-web.png"
+               alt="EcoFot AI camera screen before analysing a waste item"
+               loading="lazy">
         </div>
       </div>
     </div>
@@ -607,4 +581,3 @@
 
 </body>
 </html>
-
