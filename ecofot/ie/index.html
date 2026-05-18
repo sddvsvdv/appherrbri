@@ -1,1 +1,610 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Recycling app for Ireland with photo and AI | EcoFot AI</title>
+  <meta name="description" content="EcoFot AI is an Android recycling app adapted for Ireland. Take a photo of your waste and get a clear disposal suggestion based on the configured Irish waste system." />
+  <link rel="canonical" href="https://aplicacionesherrbri.com/ecofot/ie/" />
+  <meta name="robots" content="index,follow" />
+    
+  <link rel="alternate" hreflang="es" href="https://aplicacionesherrbri.com/ecofot/" />
+  <link rel="alternate" hreflang="fr" href="https://aplicacionesherrbri.com/ecofot/fr/" />
+  <link rel="alternate" hreflang="pt" href="https://aplicacionesherrbri.com/ecofot/pt/" />
+  <link rel="alternate" hreflang="de" href="https://aplicacionesherrbri.com/ecofot/de/" />
+  <link rel="alternate" hreflang="en-IE" href="https://aplicacionesherrbri.com/ecofot/ie/" />
+  <link rel="alternate" hreflang="x-default" href="https://aplicacionesherrbri.com/ecofot/" />
+    
+  <style>
+    :root {
+      --max: 940px;
+      --bg: #eaf7ef;
+      --card: #ffffff;
+      --soft: #f3fbf6;
+      --green: #1b5e20;
+      --green-2: #2e7d32;
+      --text: #18201a;
+      --muted: #4f5f52;
+      --border: rgba(46, 125, 50, .22);
+      --shadow: 0 10px 28px rgba(0,0,0,.07);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 24px 16px;
+      line-height: 1.58;
+      background:
+        radial-gradient(circle at top left, #d7f3df 0, transparent 34%),
+        var(--bg);
+      color: var(--text);
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      background: var(--card);
+      padding: 32px;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      padding: 18px 0 14px;
+      text-align: center;
+    }
+
+    .country-selector {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      margin: 0 auto 22px;
+      padding: 12px 14px;
+      background: var(--soft);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      max-width: 420px;
+    }
+
+    .country-selector label {
+      font-size: .92rem;
+      font-weight: 700;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .country-selector select {
+      width: 100%;
+      max-width: 320px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #ffffff;
+      color: var(--text);
+      font-size: 1rem;
+      font-weight: 650;
+    }
+    
+    .brand {
+      display: block;
+      color: var(--green);
+      font-weight: 900;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin-bottom: 8px;
+      letter-spacing: -0.035em;
+    }
+    
+    .brand-subtitle {
+      display: block;
+      color: var(--muted);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-top: 2px;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.08;
+      margin: 24px auto 16px;
+      letter-spacing: -0.035em;
+      text-align: center;
+      max-width: 820px;
+    }
+
+    h2 {
+      font-size: 1.45rem;
+      margin-top: 34px;
+      margin-bottom: 12px;
+      letter-spacing: -0.015em;
+    }
+
+    h3 {
+      font-size: 1.08rem;
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul {
+      margin: 10px 0 18px 20px;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    a {
+      color: var(--green);
+    }
+
+    .hero-text {
+      font-size: 1.18rem;
+      color: #26372a;
+      max-width: 760px;
+      margin: 0 auto 16px;
+      text-align: center;
+    }
+    
+    .hero-meta {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: .98rem;
+      text-align: center;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .note {
+      background: var(--soft);
+      border-left: 5px solid var(--green-2);
+      padding: 16px;
+      margin: 24px 0;
+      border-radius: 10px;
+    }
+
+    .steps {
+      counter-reset: step;
+      display: grid;
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .step {
+      display: flex;
+      gap: 14px;
+      background: var(--soft);
+      border: 1px solid var(--border);
+      padding: 15px;
+      border-radius: 16px;
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      min-width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--green);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+    }
+
+    .seo-box {
+      background: #f8f9fa;
+      border: 1px dashed #b8b8b8;
+      padding: 16px;
+      margin: 24px 0;
+      border-radius: 14px;
+    }
+
+    .highlight {
+      background: linear-gradient(135deg, #f3fbf6, #ffffff);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      margin: 24px 0;
+    }
+
+    .highlight strong {
+      color: var(--green);
+    }
+
+    .download-box {
+      background: var(--soft);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      margin-top: 26px;
+    }
+
+    .download-box p {
+      margin-bottom: 10px;
+    }
+
+    .faq {
+      margin-top: 28px;
+    }
+
+    .footer {
+      margin-top: 30px;
+      padding-top: 22px;
+      border-top: 1px solid #ddd;
+    }
+
+    @media (max-width: 760px) {
+      body {
+        padding: 14px 10px;
+      }
+
+      .wrap {
+        padding: 22px;
+        border-radius: 16px;
+      }
+    }
+
+    .shots {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin: 12px 0 6px;
+      align-items: start;
+    }
+    
+    .shots figure {
+      margin: 0;
+      background: #fff;
+      border-radius: 12px;
+      padding: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    }
+    
+    .shots img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      border: 1px solid rgba(0,0,0,.08);
+    }
+    
+    .shots figcaption {
+      margin-top: 8px;
+    }
+    
+    @media (max-width: 720px) {
+      .shots {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (min-width: 900px) {
+      .shots {
+        justify-items: center;
+      }
+    
+      .shots figure {
+        max-width: 280px;
+        width: 100%;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "EcoFot AI",
+    "operatingSystem": "Android",
+    "applicationCategory": "UtilitiesApplication",
+    "description": "Android recycling app adapted for Ireland. It uses artificial intelligence and configured rules to show a clear disposal suggestion for waste items.",
+    "url": "https://aplicacionesherrbri.com/ecofot/ie/",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.aplicacionesherrbri.ecofot",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <main class="wrap">
+
+    <header>
+      <div class="country-selector">
+        <label for="ecofot-country-select">
+          EcoFot is available in these countries:
+        </label>
+
+        <select id="ecofot-country-select" onchange="if (this.value) window.location.href = this.value;">
+          <option value="">Select a country</option>
+          <option value="https://aplicacionesherrbri.com/ecofot/">🇪🇸 Spain</option>
+          <option value="https://aplicacionesherrbri.com/ecofot/fr/">🇫🇷 France</option>
+          <option value="https://aplicacionesherrbri.com/ecofot/pt/">🇵🇹 Portugal</option>
+          <option value="https://aplicacionesherrbri.com/ecofot/de/">🇩🇪 Germany</option>
+          <option value="https://aplicacionesherrbri.com/ecofot/ie/">🇮🇪 Ireland</option>
+        </select>
+      </div>
+
+      <div class="brand">
+        EcoFot AI
+        <span class="brand-subtitle">Recycling assistance with artificial intelligence</span>
+      </div>
+
+      <h1>Recycling app for Ireland with photo and AI</h1>
+
+      <p class="hero-text">
+        <strong>EcoFot AI</strong> helps you find <strong>where your waste should go</strong>
+        quickly and easily. Take a photo of the item and get a clear suggestion based on
+        the configured Irish waste system.
+      </p>
+
+      <p class="hero-meta">
+        Android app developed by
+        <strong>
+          <a href="https://aplicacionesherrbri.com/"
+             target="_blank"
+             rel="noopener noreferrer">AplicacionesHerrbri</a>
+        </strong>.
+      </p>
+    </header>
+
+    <div class="note">
+      <strong>Currently adapted for Ireland:</strong> EcoFot AI is configured for the Irish waste system.
+      It is not intended for England, Scotland, Wales or Northern Ireland at this time.
+    </div>
+
+    <div class="note">
+      <strong>The idea is simple:</strong> fewer doubts when recycling, more clarity when deciding.
+      EcoFot AI does not work like a chatbot: it shows a direct and easy-to-understand result.
+    </div>
+
+    <h2>How it works</h2>
+
+    <div class="steps">
+      <div class="step">
+        <div>
+          <strong>Take a photo of the waste</strong>
+          <p class="small">
+            Try to photograph one clear item, centred and with good light.
+          </p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div>
+          <strong>EcoFot AI analyses the item</strong>
+          <p class="small">
+            The image is sent to an external artificial intelligence service to help identify the waste item.
+          </p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div>
+          <strong>Get the recommended destination</strong>
+          <p class="small">
+            The app shows whether the item belongs in the recycling bin, glass bin, brown bin,
+            general waste bin, recycling centre, textile bin, return point or another configured destination.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight">
+      <strong>Fast result:</strong>
+      EcoFot AI is designed so you can open the app, analyse the waste item and get a clear answer,
+      without complicated screens or long conversations.
+    </div>
+
+    <h2>EcoFot AI screenshots</h2>
+
+    <div class="shots">
+      <figure>
+        <img src="/assets/screens/ecofot-ie-camera-web.png"
+             alt="EcoFot AI analysing waste with the camera in Ireland"
+             loading="lazy">
+        <figcaption class="small">
+          Camera: frame the waste item you want to analyse.
+        </figcaption>
+      </figure>
+    
+      <figure>
+        <img src="/assets/screens/ecofot-ie-result-web.png"
+             alt="EcoFot AI result showing the correct waste destination in Ireland"
+             loading="lazy">
+        <figcaption class="small">
+          Result: recommended destination and short explanation.
+        </figcaption>
+      </figure>
+    </div>
+
+    <h2>An app to know which bin or destination to use</h2>
+
+    <p>
+      Many recycling doubts come from everyday objects:
+      packaging, cartons, glass jars, cups, cans, bags, small leftovers, broken items
+      or products that do not clearly fit into one bin.
+    </p>
+
+    <p>
+      EcoFot AI is designed to help in those situations. It does not simply say
+      “plastic = recycling”. The goal is to guide the result according to the type of waste
+      and the rules configured for the Irish waste system.
+    </p>
+
+    <div class="note">
+      <strong>Example:</strong> a glass jar is not the same as a broken drinking glass.
+      EcoFot AI tries to identify the item so it can give a more suitable suggestion.
+    </div>
+
+    <h2>Common waste destinations in Ireland</h2>
+
+    <p>
+      In Ireland, EcoFot AI can guide waste towards destinations such as:
+    </p>
+
+    <ul>
+      <li><strong>Recycling bin</strong>: plastic, metal, paper, cardboard and cartons.</li>
+      <li><strong>Glass bin</strong>: glass bottles and jars.</li>
+      <li><strong>Brown bin</strong>: food scraps and small garden waste.</li>
+      <li><strong>General waste bin</strong>: non-recyclable and non-compostable waste.</li>
+      <li><strong>Recycling centre</strong>: bulky, hazardous, electrical or special waste.</li>
+      <li><strong>Textile bin</strong>: clothes, shoes and household textiles.</li>
+      <li><strong>Return point</strong>: deposit bottles and cans.</li>
+      <li><strong>Pharmacy / authorized point</strong>: unused or expired medicines.</li>
+    </ul>
+
+    <div class="seo-box">
+      <strong>Some people search for this type of solution using terms such as:</strong>
+      <ul>
+        <li>recycling app Ireland</li>
+        <li>Irish waste sorting app</li>
+        <li>app to know which bin to use</li>
+        <li>which bin does this go in Ireland</li>
+        <li>AI recycling app</li>
+        <li>waste sorting with artificial intelligence</li>
+        <li>recycling bin or general waste Ireland</li>
+        <li>brown bin Ireland</li>
+        <li>glass bin Ireland</li>
+        <li>deposit return bottles and cans Ireland</li>
+      </ul>
+    </div>
+
+    <h2>Why use EcoFot AI?</h2>
+
+    <ul>
+      <li>It helps avoid manually searching for every waste item.</li>
+      <li>It gives a fast and visual answer.</li>
+      <li>It works using photo analysis.</li>
+      <li>It is designed around a simple interface, without long conversations.</li>
+      <li>It can be adapted to different waste systems through internal configuration.</li>
+    </ul>
+
+    <h2>Responsible use</h2>
+
+    <p>
+      EcoFot AI helps guide recycling decisions, but waste rules may vary by country,
+      local authority or collection system. If you have an important doubt, especially with
+      hazardous, bulky, electrical, chemical or medical waste, you should also check official
+      information from your local authority or waste operator.
+    </p>
+
+    <div class="note">
+      <strong>Privacy:</strong> to analyse a photo, the app needs an Internet connection
+      and may send the image to an external artificial intelligence service.
+    </div>
+
+    <div class="download-box">
+      <p>
+        <strong>Download EcoFot AI on Google Play</strong>
+      </p>
+
+      <a href="https://play.google.com/store/apps/details?id=com.aplicacionesherrbri.ecofot"
+         target="_blank"
+         rel="noopener">
+        <img src="https://aplicacionesherrbri.com/English-web.png"
+             alt="Get it on Google Play"
+             style="height:60px; max-width:100%; border-radius:8px;">
+      </a>
+    </div>
+
+    <section class="faq">
+      <h2>Frequently asked questions</h2>
+
+      <h3>Is EcoFot AI an app to know where waste should go?</h3>
+      <p>
+        Yes. The app is designed to help you decide the destination of a waste item using a photo.
+      </p>
+
+      <h3>Does it work like a chatbot?</h3>
+      <p>
+        No. EcoFot AI is designed to show a direct result: destination, colour and a short explanation.
+      </p>
+
+      <h3>Does EcoFot AI need Internet?</h3>
+      <p>
+        Yes. EcoFot AI needs an Internet connection to analyse images using external services.
+      </p>
+
+      <h3>Does the artificial intelligence directly decide the bin?</h3>
+      <p>
+        The artificial intelligence helps identify the item. Then the app applies internal rules
+        to show the configured waste destination.
+      </p>
+
+      <h3>Can AI always know what material a waste item is made of?</h3>
+      <p>
+        Not always. AI interprets the image approximately, using visible patterns, common information
+        about objects and classification rules. It cannot confirm the real material with 100% certainty
+        if it is not clearly visible.
+      </p>
+
+      <h3>Is EcoFot AI adapted for Ireland?</h3>
+      <p>
+        Yes. This English version is adapted for Ireland and uses Irish waste destinations such as
+        recycling bin, glass bin, brown bin, general waste bin, recycling centre, textile bin,
+        return point and pharmacy / authorized point.
+      </p>
+
+      <h3>Does EcoFot AI work in England or the UK?</h3>
+      <p>
+        Not at this time. This English version is currently adapted for Ireland. Waste rules can vary
+        in England, Scotland, Wales and Northern Ireland, so EcoFot AI should not be used there as an official guide.
+      </p>
+
+      <h3>Can EcoFot AI make mistakes?</h3>
+      <p>
+        Yes. Artificial intelligence can make mistakes, especially if the photo is unclear,
+        there are several objects visible or the waste item cannot be seen well.
+      </p>
+
+      <h3>What should I do with hazardous or special waste?</h3>
+      <p>
+        If the waste may be hazardous, electrical, medical, chemical or bulky, always check the official
+        instructions from your local authority, recycling centre or authorized collection point.
+      </p>
+
+      <h3>Is the app free?</h3>
+      <p>
+        The app may include initial free uses, rewarded ads or a subscription.
+        Check the latest conditions on Google Play.
+      </p>
+    </section>
+
+    <div class="footer">
+      <p class="small">
+        Last updated: 18 May 2026.
+      </p>
+
+      <p class="small">
+        <a href="https://aplicacionesherrbri.com/"
+           target="_blank"
+           rel="noopener noreferrer">AplicacionesHerrbri</a>
+        ·
+        <a href="https://aplicacionesherrbri.com/privacy-policy-ecofot.html"
+           target="_blank"
+           rel="noopener noreferrer">Privacy policy</a>
+      </p>
+    </div>
+
+  </main>
+</body>
+</html>
