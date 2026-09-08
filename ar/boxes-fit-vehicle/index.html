@@ -95,6 +95,37 @@
       border-radius: 6px;
     }
 
+    /* ChatGPT */
+
+    .ai-summary {
+      text-align: center;
+      margin: 20px 0 26px;
+    }
+
+    .chatgpt-summary-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #202123;
+      color: #ffffff;
+      padding: 11px 17px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: .2s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,.12);
+    }
+
+    .chatgpt-summary-btn:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.12);
+    }
+
+    .ai-summary-text {
+      margin-top: 7px;
+      margin-bottom: 0;
+    }
+
     .seo-box {
       background: #f8f9fa;
       border: 1px dashed #bbb;
@@ -326,6 +357,24 @@
       <strong>وضع المساحة العامة</strong> (أبعاد مخصّصة).
     </div>
 
+    <!-- تلخيص باستخدام ChatGPT -->
+    <div class="ai-summary">
+
+      <a
+        id="chatgpt-summary"
+        class="chatgpt-summary-btn"
+        href="https://chatgpt.com/"
+        target="_blank"
+        rel="noopener noreferrer">
+        ✦ تلخيص باستخدام ChatGPT
+      </a>
+
+      <p class="small ai-summary-text">
+        اكتشف في ثوانٍ ما الذي يمكن أن يقدمه VolumTransport.
+      </p>
+
+    </div>
+
     <h2>ماذا يمكنك أن تفعل باستخدام VolumTransport</h2>
     <ul>
       <li><strong>محاكاة تحميل ثلاثية الأبعاد</strong>: قم بالتدوير ومراجعة استغلال المساحة.</li>
@@ -488,5 +537,29 @@
     </p>
 
   </main>
+
+  <!-- ChatGPT prompt -->
+  <script>
+    (() => {
+
+      const button = document.getElementById('chatgpt-summary');
+
+      if (!button) return;
+
+      const sourceUrl =
+        document.querySelector('link[rel="canonical"]')?.href ||
+        window.location.href;
+
+      const prompt =
+        'حلّل هذه الصفحة واشرح بوضوح ما هو VolumTransport، وما المشكلة التي يحلها، وكيف يعمل، وأهم وظائفه ومزاياه واختلافاته مقارنة بحاسبات CBM أو الحلول الأخرى. ركّز بشكل خاص على كيفية استخدام المحاكاة ثلاثية الأبعاد القائمة على تقنيات bin packing للتحقق مما إذا كانت الحمولة تتسع فعلاً وكيف يمكن ترتيبها. استند في إجابتك فقط إلى المعلومات الواردة في الصفحة واذكر المصدر: ' +
+        sourceUrl;
+
+      button.href =
+        'https://chatgpt.com/?q=' +
+        encodeURIComponent(prompt);
+
+    })();
+  </script>
+
 </body>
 </html>
