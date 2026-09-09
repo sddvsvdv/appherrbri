@@ -1,5 +1,15 @@
 (() => {
   const translations = {
+    en: {
+      button: "Summarize with ChatGPT",
+      description: "Discover in seconds what VolumTransport can do.",
+      prompt: "Analyze this page and clearly explain what VolumTransport is, what problem it solves, how it works, its main features, advantages, and differences compared with CBM calculators or other solutions. Highlight especially how the 3D simulation based on bin-packing techniques makes it possible to verify whether the load actually fits and how it can be arranged. Base the response only on the information on this page and cite the source: "
+    },
+    ar: {
+      button: "تلخيص باستخدام ChatGPT",
+      description: "اكتشف في ثوانٍ ما الذي يمكن أن يقدمه VolumTransport.",
+      prompt: "حلّل هذه الصفحة واشرح بوضوح ما هو VolumTransport، وما المشكلة التي يحلها، وكيف يعمل، وأهم وظائفه ومزاياه واختلافاته مقارنة بحاسبات CBM أو الحلول الأخرى. ركّز بشكل خاص على كيفية استخدام المحاكاة ثلاثية الأبعاد القائمة على تقنيات bin packing للتحقق مما إذا كانت الحمولة تتسع فعلاً وكيف يمكن ترتيبها. استند في إجابتك فقط إلى المعلومات الواردة في الصفحة واذكر المصدر: "
+    },
     es: {
       button: "Resumir con ChatGPT",
       description: "Descubre en segundos qué puede hacer VolumTransport.",
