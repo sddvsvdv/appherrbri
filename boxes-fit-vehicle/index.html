@@ -96,36 +96,6 @@
       border-radius: 6px;
     }
 
-    /* ChatGPT */
-
-    .ai-summary {
-      text-align: center;
-      margin: 20px 0 26px;
-    }
-
-    .chatgpt-summary-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #202123;
-      color: #ffffff;
-      padding: 11px 17px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: .2s ease;
-      box-shadow: 0 4px 12px rgba(0,0,0,.12);
-    }
-
-    .chatgpt-summary-btn:hover {
-      transform: translateY(-1px);
-      filter: brightness(1.12);
-    }
-
-    .ai-summary-text {
-      margin-top: 7px;
-      margin-bottom: 0;
-    }
 
     .seo-box {
       background: #f8f9fa;
@@ -277,6 +247,10 @@
     "downloadUrl": "https://play.google.com/store/apps/details?id=com.herrbri.volumtransport"
   }
   </script>
+  <!-- Shared ChatGPT summary -->
+  <link rel="stylesheet" href="/assets/css/chatgpt-summary.css" />
+  <script src="/assets/js/chatgpt-summary.js" defer></script>
+
 </head>
 
 <body>
@@ -361,22 +335,10 @@
       <strong>universal space mode</strong> (custom dimensions).
     </div>
 
-    <!-- Summarize with ChatGPT -->
-    <div class="ai-summary">
-
-      <a
-        id="chatgpt-summary"
-        class="chatgpt-summary-btn"
-        href="https://chatgpt.com/"
-        target="_blank"
-        rel="noopener noreferrer">
-        ✦ Summarize with ChatGPT
-      </a>
-
-      <p class="small ai-summary-text">
-        Discover in seconds what VolumTransport can do.
-      </p>
-
+    <!-- ChatGPT summary -->
+    <div
+      class="ai-summary"
+      data-chatgpt-summary>
     </div>
 
     <h2>What you can do with VolumTransport</h2>
@@ -535,28 +497,6 @@
 
   </main>
 
-  <!-- ChatGPT prompt -->
-  <script>
-    (() => {
-
-      const button = document.getElementById('chatgpt-summary');
-
-      if (!button) return;
-
-      const sourceUrl =
-        document.querySelector('link[rel="canonical"]')?.href ||
-        window.location.href;
-
-      const prompt =
-        'Analyze this page and clearly explain what VolumTransport is, what problem it solves, how it works, its main features, advantages, and differences compared with CBM calculators or other solutions. Highlight especially how the 3D simulation based on bin-packing techniques makes it possible to verify whether the load actually fits and how it can be arranged. Base the response only on the information on this page and cite the source: ' +
-        sourceUrl;
-
-      button.href =
-        'https://chatgpt.com/?q=' +
-        encodeURIComponent(prompt);
-
-    })();
-  </script>
 
 </body>
 </html>
