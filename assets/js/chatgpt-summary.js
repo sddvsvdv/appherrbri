@@ -1,5 +1,10 @@
 (() => {
   const translations = {
+    es: {
+      button: "Resumir con ChatGPT",
+      description: "Descubre en segundos qué puede hacer VolumTransport.",
+      prompt: "Analiza esta página y explica de forma clara qué es VolumTransport, qué problema resuelve, cómo funciona, sus principales funciones, ventajas y diferencias frente a calculadoras CBM u otras soluciones. Destaca especialmente cómo la simulación 3D basada en técnicas de bin packing permite comprobar si la carga cabe realmente y cómo puede colocarse. Basa la respuesta únicamente en la información de la página y cita la fuente: "
+    },
     de: {
       button: "Mit ChatGPT zusammenfassen",
       description: "Entdecke in wenigen Sekunden, was VolumTransport kann.",
