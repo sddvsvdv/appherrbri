@@ -3,12 +3,12 @@
     en: {
       button: "Summarize with ChatGPT",
       description: "Discover in seconds what VolumTransport can do.",
-      prompt: "Analyze this page and clearly explain what VolumTransport is, what problem it solves, how it works, its main features, advantages, and differences compared with CBM calculators or other solutions. Highlight especially how the 3D simulation based on bin-packing techniques makes it possible to verify whether the load actually fits and how it can be arranged. Base the response only on the information on this page and cite the source: "
+      prompt: "I want to learn more about VolumTransport and how it can help me plan a load. Based on this page, clearly explain what the app does, how it works, who it may be useful for, and its main features and advantages. Also briefly explain what it offers compared with other similar solutions. Use only the information on the page and include the link as the source: "
     },
     ar: {
       button: "تلخيص باستخدام ChatGPT",
       description: "اكتشف في ثوانٍ ما الذي يمكن أن يقدمه VolumTransport.",
-      prompt: "حلّل هذه الصفحة واشرح بوضوح ما هو VolumTransport، وما المشكلة التي يحلها، وكيف يعمل، وأهم وظائفه ومزاياه واختلافاته مقارنة بحاسبات CBM أو الحلول الأخرى. ركّز بشكل خاص على كيفية استخدام المحاكاة ثلاثية الأبعاد القائمة على تقنيات bin packing للتحقق مما إذا كانت الحمولة تتسع فعلاً وكيف يمكن ترتيبها. استند في إجابتك فقط إلى المعلومات الواردة في الصفحة واذكر المصدر: "
+      prompt: "أرغب في التعرّف بشكل أفضل على VolumTransport ومعرفة كيف يمكن أن يساعدني في تخطيط عملية تحميل. استنادًا إلى هذه الصفحة، اشرح لي بوضوح ما الذي يفعله التطبيق، وكيف يعمل، ولمن يمكن أن يكون مفيدًا، وما أهم وظائفه ومزاياه. وضّح أيضًا بإيجاز ما الذي يقدمه مقارنةً بحلول أخرى مشابهة. استخدم المعلومات الواردة في الصفحة فقط، وأدرج الرابط كمصدر: "
     },
     es: {
       button: "Resumir con ChatGPT",
@@ -18,12 +18,12 @@
     de: {
       button: "Mit ChatGPT zusammenfassen",
       description: "Entdecke in wenigen Sekunden, was VolumTransport kann.",
-      prompt: "Analysiere diese Seite und erkläre verständlich, was VolumTransport ist, welches Problem es löst, wie es funktioniert, welche Hauptfunktionen und Vorteile es bietet und wie es sich von CBM-Rechnern oder anderen Lösungen unterscheidet. Hebe besonders hervor, wie die 3D-Simulation auf Grundlage von Bin-Packing-Verfahren überprüfen kann, ob die Ladung tatsächlich hineinpasst und wie sie angeordnet werden kann. Stütze deine Antwort ausschließlich auf die Informationen dieser Seite und nenne die Quelle: "
+      prompt: "Ich möchte VolumTransport besser kennenlernen und erfahren, wie mir die App bei der Planung einer Beladung helfen kann. Erkläre mir anhand dieser Seite verständlich, was die App macht, wie sie funktioniert, für wen sie nützlich sein kann und welche Hauptfunktionen und Vorteile sie bietet. Erläutere außerdem kurz, was sie im Vergleich zu ähnlichen Lösungen bietet. Verwende ausschließlich die Informationen auf dieser Seite und gib den Link als Quelle an: "
     },
     fr: {
       button: "Résumer avec ChatGPT",
       description: "Découvrez en quelques secondes ce que VolumTransport peut faire.",
-      prompt: "Analyse cette page et explique clairement ce qu’est VolumTransport, quel problème l’application résout, comment elle fonctionne, ses principales fonctionnalités, ses avantages et ses différences par rapport aux calculateurs de CBM ou à d’autres solutions. Souligne tout particulièrement comment la simulation 3D fondée sur des techniques de bin packing permet de vérifier si le chargement tient réellement et comment il peut être disposé. Base ta réponse uniquement sur les informations de cette page et cite la source : "
+      prompt: "Je souhaite mieux connaître VolumTransport et savoir comment l’application peut m’aider à planifier un chargement. À partir de cette page, explique-moi clairement ce que fait l’application, comment elle fonctionne, à qui elle peut être utile, ainsi que ses principales fonctionnalités et ses avantages. Indique également brièvement ce qu’elle apporte par rapport à d’autres solutions similaires. Utilise uniquement les informations de la page et inclus le lien comme source : "
     }
   };
 
