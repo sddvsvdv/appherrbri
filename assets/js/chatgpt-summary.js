@@ -1,5 +1,10 @@
 (() => {
   const translations = {
+    ja: {
+      button: "ChatGPTで要約",
+      description: "VolumTransportでできることを数秒で確認できます。",
+      prompt: "VolumTransportについてもっと詳しく知り、荷物の積み込み計画にどのように役立つのかを知りたいです。このページをもとに、アプリで何ができるのか、どのように使うのか、どのような人に役立つのか、主な機能と利点を分かりやすく説明してください。また、他の類似ソリューションと比べてどのような特徴があるのかも簡潔に説明してください。ページに記載されている情報だけを使用し、出典としてリンクを記載してください："
+    },
     en: {
       button: "Summarize with ChatGPT",
       description: "Discover in seconds what VolumTransport can do.",
