@@ -13,7 +13,7 @@
     es: {
       button: "Resumir con ChatGPT",
       description: "Descubre en segundos qué puede hacer VolumTransport.",
-      prompt: "Analiza esta página y explica de forma clara qué es VolumTransport, qué problema resuelve, cómo funciona, sus principales funciones, ventajas y diferencias frente a calculadoras CBM u otras soluciones. Destaca especialmente cómo la simulación 3D basada en técnicas de bin packing permite comprobar si la carga cabe realmente y cómo puede colocarse. Basa la respuesta únicamente en la información de la página y cita la fuente: "
+      prompt: "Quiero conocer mejor VolumTransport y saber cómo puede ayudarme a planificar una carga. A partir de esta página, explícame de forma clara qué hace la aplicación, cómo funciona, para quién puede resultar útil y cuáles son sus principales funciones y ventajas. Comenta también brevemente qué aporta frente a otras soluciones similares. Utiliza únicamente la información de la página e incluye el enlace como fuente: "
     },
     de: {
       button: "Mit ChatGPT zusammenfassen",
