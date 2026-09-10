@@ -25,6 +25,16 @@
       description: "几秒钟了解 VolumTransport 可以做什么。",
       prompt: "我想进一步了解 VolumTransport，并知道它如何帮助我规划装载。请根据此页面，清晰说明这款应用的用途、工作方式、适合哪些人，以及它的主要功能和优势。也请简要说明与其他类似解决方案相比，它能提供哪些不同之处。只使用此页面中的信息，并将链接作为来源："
     },
+    ko: {
+      button: "ChatGPT로 요약",
+      description: "VolumTransport가 무엇을 할 수 있는지 몇 초 만에 확인해 보세요.",
+      prompt: "VolumTransport에 대해 더 자세히 알아보고, 적재 계획에 어떻게 도움이 될 수 있는지 알고 싶습니다. 이 페이지를 바탕으로 앱이 무엇을 하는지, 어떻게 작동하는지, 누구에게 유용한지, 주요 기능과 장점은 무엇인지 명확하게 설명해 주세요. 또한 다른 유사한 솔루션과 비교했을 때 어떤 점을 제공하는지도 간단히 설명해 주세요. 이 페이지의 정보만 사용하고 링크를 출처로 포함해 주세요: "
+    },
+    hr: {
+      button: "Sažmi pomoću ChatGPT-a",
+      description: "U nekoliko sekundi saznajte što VolumTransport može učiniti.",
+      prompt: "Želim bolje upoznati VolumTransport i saznati kako mi može pomoći u planiranju utovara. Na temelju ove stranice jasno mi objasnite što aplikacija radi, kako funkcionira, kome može biti korisna te koje su njezine glavne funkcije i prednosti. Ukratko navedite i što nudi u usporedbi s drugim sličnim rješenjima. Koristite samo informacije s ove stranice i uključite poveznicu kao izvor: "
+    },
     en: {
       button: "Summarize with ChatGPT",
       description: "Discover in seconds what VolumTransport can do.",
