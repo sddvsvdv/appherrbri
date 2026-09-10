@@ -35,6 +35,16 @@
       description: "U nekoliko sekundi saznajte što VolumTransport može učiniti.",
       prompt: "Želim bolje upoznati VolumTransport i saznati kako mi može pomoći u planiranju utovara. Na temelju ove stranice jasno mi objasnite što aplikacija radi, kako funkcionira, kome može biti korisna te koje su njezine glavne funkcije i prednosti. Ukratko navedite i što nudi u usporedbi s drugim sličnim rješenjima. Koristite samo informacije s ove stranice i uključite poveznicu kao izvor: "
     },
+    da: {
+      button: "Opsummer med ChatGPT",
+      description: "Find ud af på få sekunder, hvad VolumTransport kan gøre.",
+      prompt: "Jeg vil gerne lære VolumTransport bedre at kende og forstå, hvordan appen kan hjælpe mig med at planlægge en last. Ud fra denne side skal du tydeligt forklare, hvad appen gør, hvordan den fungerer, hvem den kan være nyttig for, og hvilke vigtigste funktioner og fordele den har. Forklar også kort, hvad den tilbyder sammenlignet med andre lignende løsninger. Brug kun oplysningerne på denne side, og medtag linket som kilde: "
+    },
+    sk: {
+      button: "Zhrnúť pomocou ChatGPT",
+      description: "Za pár sekúnd zistite, čo dokáže VolumTransport.",
+      prompt: "Chcem lepšie spoznať VolumTransport a zistiť, ako mi môže pomôcť pri plánovaní nákladu. Na základe tejto stránky mi jasne vysvetlite, čo aplikácia robí, ako funguje, pre koho môže byť užitočná a aké sú jej hlavné funkcie a výhody. Stručne tiež uveďte, čo ponúka v porovnaní s inými podobnými riešeniami. Použite iba informácie z tejto stránky a uveďte odkaz ako zdroj: "
+    },
     en: {
       button: "Summarize with ChatGPT",
       description: "Discover in seconds what VolumTransport can do.",
