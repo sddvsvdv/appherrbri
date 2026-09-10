@@ -55,6 +55,16 @@
       description: "Vaadake mõne sekundiga, mida VolumTransport suudab.",
       prompt: "Soovin VolumTransporti paremini tundma õppida ja teada saada, kuidas see aitab mul koormat planeerida. Selle lehe põhjal selgitage selgelt, mida rakendus teeb, kuidas see töötab, kellele see võib kasulik olla ning millised on selle peamised funktsioonid ja eelised. Mainige lühidalt ka seda, mida see pakub võrreldes teiste sarnaste lahendustega. Kasutage ainult sellel lehel olevat teavet ja lisage link allikana: "
     },
+    fi: {
+      button: "Tiivistä ChatGPT:llä",
+      description: "Selvitä muutamassa sekunnissa, mitä VolumTransport voi tehdä.",
+      prompt: "Haluan tutustua VolumTransportiin paremmin ja ymmärtää, miten se voi auttaa minua kuorman suunnittelussa. Selitä tämän sivun perusteella selkeästi, mitä sovellus tekee, miten se toimii, kenelle siitä voi olla hyötyä sekä mitkä ovat sen tärkeimmät ominaisuudet ja edut. Kerro myös lyhyesti, mitä se tarjoaa verrattuna muihin vastaaviin ratkaisuihin. Käytä vain tämän sivun tietoja ja lisää linkki lähteeksi: "
+    },
+    el: {
+      button: "Σύνοψη με το ChatGPT",
+      description: "Ανακαλύψτε σε λίγα δευτερόλεπτα τι μπορεί να κάνει το VolumTransport.",
+      prompt: "Θέλω να γνωρίσω καλύτερα το VolumTransport και να μάθω πώς μπορεί να με βοηθήσει στον σχεδιασμό μιας φόρτωσης. Με βάση αυτή τη σελίδα, εξήγησέ μου με σαφήνεια τι κάνει η εφαρμογή, πώς λειτουργεί, σε ποιους μπορεί να είναι χρήσιμη και ποιες είναι οι βασικές λειτουργίες και τα πλεονεκτήματά της. Ανέφερε επίσης σύντομα τι προσφέρει σε σύγκριση με άλλες παρόμοιες λύσεις. Χρησιμοποίησε μόνο τις πληροφορίες αυτής της σελίδας και συμπερίλαβε τον σύνδεσμο ως πηγή: "
+    },
     en: {
       button: "Summarize with ChatGPT",
       description: "Discover in seconds what VolumTransport can do.",
