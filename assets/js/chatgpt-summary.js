@@ -15,6 +15,16 @@
       description: "VolumTransport কী করতে পারে, কয়েক সেকেন্ডেই জেনে নিন।",
       prompt: "আমি VolumTransport সম্পর্কে আরও ভালোভাবে জানতে চাই এবং এটি কীভাবে আমাকে একটি লোড পরিকল্পনা করতে সাহায্য করতে পারে তা বুঝতে চাই। এই পৃষ্ঠার ভিত্তিতে, অ্যাপটি কী করে, কীভাবে কাজ করে, কার জন্য উপকারী হতে পারে এবং এর প্রধান বৈশিষ্ট্য ও সুবিধাগুলো কী—তা পরিষ্কারভাবে ব্যাখ্যা করুন। একই ধরনের অন্যান্য সমাধানের তুলনায় এটি কী অতিরিক্ত সুবিধা দেয়, সেটিও সংক্ষেপে উল্লেখ করুন। শুধু এই পৃষ্ঠায় থাকা তথ্য ব্যবহার করুন এবং উৎস হিসেবে লিঙ্কটি অন্তর্ভুক্ত করুন: "
     },
+    cs: {
+      button: "Shrnout pomocí ChatGPT",
+      description: "Zjistěte během několika sekund, co VolumTransport dokáže.",
+      prompt: "Chci se lépe seznámit s VolumTransport a zjistit, jak mi může pomoci s plánováním nákladu. Na základě této stránky mi jasně vysvětlete, co aplikace dělá, jak funguje, pro koho může být užitečná a jaké jsou její hlavní funkce a výhody. Stručně také uveďte, co nabízí ve srovnání s jinými podobnými řešeními. Použijte pouze informace z této stránky a uveďte odkaz jako zdroj: "
+    },
+    "zh-hans": {
+      button: "使用 ChatGPT 总结",
+      description: "几秒钟了解 VolumTransport 可以做什么。",
+      prompt: "我想进一步了解 VolumTransport，并知道它如何帮助我规划装载。请根据此页面，清晰说明这款应用的用途、工作方式、适合哪些人，以及它的主要功能和优势。也请简要说明与其他类似解决方案相比，它能提供哪些不同之处。只使用此页面中的信息，并将链接作为来源："
+    },
     en: {
       button: "Summarize with ChatGPT",
       description: "Discover in seconds what VolumTransport can do.",
