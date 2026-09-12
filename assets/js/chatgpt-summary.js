@@ -85,6 +85,16 @@
       description: "در چند ثانیه ببینید VolumTransport چه کارهایی می‌تواند انجام دهد.",
       prompt: "می‌خواهم VolumTransport را بهتر بشناسم و بدانم چگونه می‌تواند به من در برنامه‌ریزی بارگیری کمک کند. بر اساس این صفحه، به‌روشنی توضیح بده که برنامه چه کاری انجام می‌دهد، چگونه کار می‌کند، برای چه کسانی می‌تواند مفید باشد و مهم‌ترین قابلیت‌ها و مزایای آن چیست. همچنین به‌طور کوتاه توضیح بده که در مقایسه با راهکارهای مشابه چه مزیتی ارائه می‌دهد. فقط از اطلاعات همین صفحه استفاده کن و لینک را به‌عنوان منبع ذکر کن: "
     },
+    it: {
+      button: "Riassumi con ChatGPT",
+      description: "Scopri in pochi secondi cosa può fare VolumTransport.",
+      prompt: "Voglio conoscere meglio VolumTransport e capire come può aiutarmi a pianificare un carico. In base a questa pagina, spiegami in modo chiaro cosa fa l'applicazione, come funziona, per chi può essere utile e quali sono le sue principali funzioni e i suoi vantaggi. Spiega anche brevemente cosa offre rispetto ad altre soluzioni simili. Utilizza esclusivamente le informazioni presenti nella pagina e includi il link come fonte: "
+    },
+    lo: {
+      button: "ສະຫຼຸບດ້ວຍ ChatGPT",
+      description: "ຄົ້ນພົບໃນບໍ່ກີ່ວິນາທີວ່າ VolumTransport ສາມາດເຮັດຫຍັງໄດ້.",
+      prompt: "ຂ້ອຍຕ້ອງການຮູ້ຈັກ VolumTransport ໃຫ້ດີຂຶ້ນ ແລະ ຮູ້ວ່າມັນສາມາດຊ່ວຍຂ້ອຍວາງແຜນການບັນທຸກໄດ້ແນວໃດ. ອີງຕາມໜ້ານີ້, ອະທິບາຍໃຫ້ຂ້ອຍຢ່າງຊັດເຈນວ່າແອັບເຮັດຫຍັງ, ເຮັດວຽກແນວໃດ, ເໝາະສຳລັບໃຜ ແລະ ມີຟັງຊັນ ແລະ ຂໍ້ດີຫຼັກຫຍັງແດ່. ກະລຸນາອະທິບາຍສັ້ນໆດ້ວຍວ່າມັນມີຫຍັງເດັ່ນກວ່າວິທີແກ້ໄຂອື່ນໆທີ່ຄ້າຍຄືກັນ. ໃຊ້ສະເພາະຂໍ້ມູນທີ່ມີໃນໜ້ານີ້ ແລະ ໃສ່ລິ້ງເປັນແຫຼ່ງຂໍ້ມູນ: "
+    },
     en: {
       button: "Summarize with ChatGPT",
       description: "Discover in seconds what VolumTransport can do.",
