@@ -75,6 +75,16 @@
       description: "Ketahui dalam beberapa detik apa yang dapat dilakukan VolumTransport.",
       prompt: "Saya ingin mengenal VolumTransport lebih baik dan mengetahui bagaimana aplikasi ini dapat membantu saya merencanakan muatan. Berdasarkan halaman ini, jelaskan dengan jelas apa yang dilakukan aplikasi, bagaimana cara kerjanya, siapa yang dapat memperoleh manfaat darinya, serta apa saja fungsi utama dan keunggulannya. Jelaskan juga secara singkat apa yang ditawarkannya dibandingkan solusi serupa lainnya. Gunakan hanya informasi yang ada di halaman ini dan sertakan tautannya sebagai sumber: "
     },
+    he: {
+      button: "סיכום עם ChatGPT",
+      description: "גלו בתוך שניות מה VolumTransport יכול לעשות.",
+      prompt: "אני רוצה להכיר טוב יותר את VolumTransport ולדעת כיצד הוא יכול לעזור לי לתכנן טעינה. על סמך עמוד זה, הסבר לי בצורה ברורה מה האפליקציה עושה, כיצד היא פועלת, למי היא יכולה להיות שימושית ומהן הפונקציות והיתרונות העיקריים שלה. ציין בקצרה גם מה היא מציעה בהשוואה לפתרונות דומים אחרים. השתמש רק במידע שמופיע בעמוד וכלול את הקישור כמקור: "
+    },
+    fa: {
+      button: "خلاصه‌سازی با ChatGPT",
+      description: "در چند ثانیه ببینید VolumTransport چه کارهایی می‌تواند انجام دهد.",
+      prompt: "می‌خواهم VolumTransport را بهتر بشناسم و بدانم چگونه می‌تواند به من در برنامه‌ریزی بارگیری کمک کند. بر اساس این صفحه، به‌روشنی توضیح بده که برنامه چه کاری انجام می‌دهد، چگونه کار می‌کند، برای چه کسانی می‌تواند مفید باشد و مهم‌ترین قابلیت‌ها و مزایای آن چیست. همچنین به‌طور کوتاه توضیح بده که در مقایسه با راهکارهای مشابه چه مزیتی ارائه می‌دهد. فقط از اطلاعات همین صفحه استفاده کن و لینک را به‌عنوان منبع ذکر کن: "
+    },
     en: {
       button: "Summarize with ChatGPT",
       description: "Discover in seconds what VolumTransport can do.",
