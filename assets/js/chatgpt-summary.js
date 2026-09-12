@@ -95,6 +95,16 @@
       description: "ຄົ້ນພົບໃນບໍ່ກີ່ວິນາທີວ່າ VolumTransport ສາມາດເຮັດຫຍັງໄດ້.",
       prompt: "ຂ້ອຍຕ້ອງການຮູ້ຈັກ VolumTransport ໃຫ້ດີຂຶ້ນ ແລະ ຮູ້ວ່າມັນສາມາດຊ່ວຍຂ້ອຍວາງແຜນການບັນທຸກໄດ້ແນວໃດ. ອີງຕາມໜ້ານີ້, ອະທິບາຍໃຫ້ຂ້ອຍຢ່າງຊັດເຈນວ່າແອັບເຮັດຫຍັງ, ເຮັດວຽກແນວໃດ, ເໝາະສຳລັບໃຜ ແລະ ມີຟັງຊັນ ແລະ ຂໍ້ດີຫຼັກຫຍັງແດ່. ກະລຸນາອະທິບາຍສັ້ນໆດ້ວຍວ່າມັນມີຫຍັງເດັ່ນກວ່າວິທີແກ້ໄຂອື່ນໆທີ່ຄ້າຍຄືກັນ. ໃຊ້ສະເພາະຂໍ້ມູນທີ່ມີໃນໜ້ານີ້ ແລະ ໃສ່ລິ້ງເປັນແຫຼ່ງຂໍ້ມູນ: "
     },
+    lv: {
+      button: "Apkopot ar ChatGPT",
+      description: "Dažās sekundēs uzziniet, ko spēj VolumTransport.",
+      prompt: "Vēlos labāk iepazīt VolumTransport un uzzināt, kā tas var palīdzēt man plānot kravu. Balstoties uz šo lapu, skaidri izskaidro, ko lietotne dara, kā tā darbojas, kam tā var būt noderīga un kādas ir tās galvenās funkcijas un priekšrocības. Īsi paskaidro arī, ko tā piedāvā salīdzinājumā ar citiem līdzīgiem risinājumiem. Izmanto tikai šajā lapā pieejamo informāciju un norādi saiti kā avotu: "
+    },
+    lt: {
+      button: "Apibendrinti su ChatGPT",
+      description: "Per kelias sekundes sužinokite, ką gali VolumTransport.",
+      prompt: "Noriu geriau susipažinti su VolumTransport ir sužinoti, kaip ji gali padėti planuoti krovinį. Remdamiesi šiuo puslapiu aiškiai paaiškinkite, ką programėlė daro, kaip ji veikia, kam gali būti naudinga ir kokios yra pagrindinės jos funkcijos bei privalumai. Taip pat trumpai paaiškinkite, ką ji siūlo, palyginti su kitais panašiais sprendimais. Naudokite tik šiame puslapyje pateiktą informaciją ir įtraukite nuorodą kaip šaltinį: "
+    },
     en: {
       button: "Summarize with ChatGPT",
       description: "Discover in seconds what VolumTransport can do.",
