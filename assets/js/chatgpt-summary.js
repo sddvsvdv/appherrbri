@@ -65,6 +65,16 @@
       description: "Ανακαλύψτε σε λίγα δευτερόλεπτα τι μπορεί να κάνει το VolumTransport.",
       prompt: "Θέλω να γνωρίσω καλύτερα το VolumTransport και να μάθω πώς μπορεί να με βοηθήσει στον σχεδιασμό μιας φόρτωσης. Με βάση αυτή τη σελίδα, εξήγησέ μου με σαφήνεια τι κάνει η εφαρμογή, πώς λειτουργεί, σε ποιους μπορεί να είναι χρήσιμη και ποιες είναι οι βασικές λειτουργίες και τα πλεονεκτήματά της. Ανέφερε επίσης σύντομα τι προσφέρει σε σύγκριση με άλλες παρόμοιες λύσεις. Χρησιμοποίησε μόνο τις πληροφορίες αυτής της σελίδας και συμπερίλαβε τον σύνδεσμο ως πηγή: "
     },
+    hu: {
+      button: "Összefoglalás ChatGPT-vel",
+      description: "Néhány másodperc alatt megtudhatja, mire képes a VolumTransport.",
+      prompt: "Szeretném jobban megismerni a VolumTransportot, és megtudni, hogyan segíthet a rakomány megtervezésében. Ezen oldal alapján magyarázd el világosan, mit csinál az alkalmazás, hogyan működik, kiknek lehet hasznos, valamint melyek a fő funkciói és előnyei. Röviden azt is ismertesd, mit kínál más hasonló megoldásokhoz képest. Kizárólag az ezen az oldalon található információkat használd, és a hivatkozást is tüntesd fel forrásként: "
+    },
+    id: {
+      button: "Ringkas dengan ChatGPT",
+      description: "Ketahui dalam beberapa detik apa yang dapat dilakukan VolumTransport.",
+      prompt: "Saya ingin mengenal VolumTransport lebih baik dan mengetahui bagaimana aplikasi ini dapat membantu saya merencanakan muatan. Berdasarkan halaman ini, jelaskan dengan jelas apa yang dilakukan aplikasi, bagaimana cara kerjanya, siapa yang dapat memperoleh manfaat darinya, serta apa saja fungsi utama dan keunggulannya. Jelaskan juga secara singkat apa yang ditawarkannya dibandingkan solusi serupa lainnya. Gunakan hanya informasi yang ada di halaman ini dan sertakan tautannya sebagai sumber: "
+    },
     en: {
       button: "Summarize with ChatGPT",
       description: "Discover in seconds what VolumTransport can do.",
