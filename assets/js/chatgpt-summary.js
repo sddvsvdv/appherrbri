@@ -105,6 +105,16 @@
       description: "Per kelias sekundes sužinokite, ką gali VolumTransport.",
       prompt: "Noriu geriau susipažinti su VolumTransport ir sužinoti, kaip ji gali padėti planuoti krovinį. Remdamiesi šiuo puslapiu aiškiai paaiškinkite, ką programėlė daro, kaip ji veikia, kam gali būti naudinga ir kokios yra pagrindinės jos funkcijos bei privalumai. Taip pat trumpai paaiškinkite, ką ji siūlo, palyginti su kitais panašiais sprendimais. Naudokite tik šiame puslapyje pateiktą informaciją ir įtraukite nuorodą kaip šaltinį: "
     },
+    ne: {
+      button: "ChatGPT मार्फत सारांश",
+      description: "केही सेकेन्डमै VolumTransport ले के गर्न सक्छ भनेर जान्नुहोस्।",
+      prompt: "म VolumTransport बारे अझ राम्रोसँग जान्न चाहन्छु र यसले मलाई लोड योजना बनाउन कसरी मद्दत गर्न सक्छ भनेर बुझ्न चाहन्छु। यस पृष्ठका आधारमा एपले के गर्छ, कसरी काम गर्छ, कसका लागि उपयोगी हुन सक्छ र यसको मुख्य सुविधाहरू तथा फाइदाहरू के हुन् भन्ने कुरा स्पष्ट रूपमा व्याख्या गर्नुहोस्। साथै, अन्य समान समाधानहरूको तुलनामा यसले के फरक वा थप सुविधा दिन्छ भन्ने कुरा छोटकरीमा बताउनुहोस्। यस पृष्ठमा भएको जानकारी मात्र प्रयोग गर्नुहोस् र स्रोतका रूपमा लिंक समावेश गर्नुहोस्: "
+    },
+    no: {
+      button: "Oppsummer med ChatGPT",
+      description: "Finn ut på noen sekunder hva VolumTransport kan gjøre.",
+      prompt: "Jeg vil bli bedre kjent med VolumTransport og finne ut hvordan appen kan hjelpe meg med å planlegge en last. Basert på denne siden, forklar tydelig hva appen gjør, hvordan den fungerer, hvem den kan være nyttig for, og hvilke hovedfunksjoner og fordeler den har. Forklar også kort hva den tilbyr sammenlignet med andre lignende løsninger. Bruk bare informasjonen på denne siden, og inkluder lenken som kilde: "
+    },
     en: {
       button: "Summarize with ChatGPT",
       description: "Discover in seconds what VolumTransport can do.",
