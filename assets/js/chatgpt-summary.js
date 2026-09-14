@@ -125,6 +125,16 @@
       description: "W kilka sekund sprawdź, co potrafi VolumTransport.",
       prompt: "Chcę lepiej poznać VolumTransport i dowiedzieć się, jak może mi pomóc w planowaniu załadunku. Na podstawie tej strony wyjaśnij jasno, co robi aplikacja, jak działa, dla kogo może być przydatna oraz jakie są jej główne funkcje i zalety. Krótko opisz również, co oferuje w porównaniu z innymi podobnymi rozwiązaniami. Korzystaj wyłącznie z informacji znajdujących się na tej stronie i podaj link jako źródło: "
     },
+    ro: {
+      button: "Rezumați cu ChatGPT",
+      description: "Descoperă în câteva secunde ce poate face VolumTransport.",
+      prompt: "Vreau să cunosc mai bine VolumTransport și să aflu cum mă poate ajuta să planific o încărcare. Pe baza acestei pagini, explică-mi clar ce face aplicația, cum funcționează, pentru cine poate fi utilă și care sunt principalele sale funcții și avantaje. Menționează, de asemenea, pe scurt ce oferă în comparație cu alte soluții similare. Folosește doar informațiile de pe această pagină și include linkul ca sursă: "
+    },
+    ru: {
+      button: "Кратко с ChatGPT",
+      description: "За несколько секунд узнайте, что умеет VolumTransport.",
+      prompt: "Я хочу лучше узнать VolumTransport и понять, как приложение может помочь мне спланировать загрузку. На основе этой страницы ясно объясните, что делает приложение, как оно работает, кому оно может быть полезно, а также каковы его основные функции и преимущества. Также кратко расскажите, что оно предлагает по сравнению с другими похожими решениями. Используйте только информацию с этой страницы и укажите ссылку в качестве источника: "
+    },
     en: {
       button: "Summarize with ChatGPT",
       description: "Discover in seconds what VolumTransport can do.",
