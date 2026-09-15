@@ -165,6 +165,26 @@
       description: "Khám phá trong vài giây những gì VolumTransport có thể làm.",
       prompt: "Tôi muốn tìm hiểu rõ hơn về VolumTransport và biết ứng dụng có thể giúp tôi lập kế hoạch xếp hàng như thế nào. Dựa trên trang này, hãy giải thích rõ ứng dụng làm gì, hoạt động ra sao, có thể hữu ích cho những ai, cũng như các chức năng và ưu điểm chính của ứng dụng. Đồng thời, hãy trình bày ngắn gọn ứng dụng mang lại điều gì so với các giải pháp tương tự khác. Chỉ sử dụng thông tin trên trang này và đưa liên kết vào làm nguồn: "
     },
+    hi: {
+      button: "ChatGPT से सारांश पाएँ",
+      description: "कुछ ही सेकंड में जानें कि VolumTransport क्या कर सकता है।",
+      prompt: "मैं VolumTransport के बारे में बेहतर ढंग से जानना चाहता हूँ और समझना चाहता हूँ कि यह लोड की योजना बनाने में मेरी कैसे मदद कर सकता है। इस पेज के आधार पर साफ़ तौर पर समझाएँ कि ऐप क्या करता है, कैसे काम करता है, किन लोगों के लिए उपयोगी हो सकता है और इसकी मुख्य सुविधाएँ व फायदे क्या हैं। यह भी संक्षेप में बताएँ कि यह दूसरे समान समाधानों की तुलना में क्या प्रदान करता है। केवल इस पेज पर दी गई जानकारी का उपयोग करें और लिंक को स्रोत के रूप में शामिल करें: "
+    },
+    pt: {
+      button: "Resumir com o ChatGPT",
+      description: "Descubra em poucos segundos o que o VolumTransport pode fazer.",
+      prompt: "Quero conhecer melhor o VolumTransport e saber como pode ajudar-me a planear uma carga. Com base nesta página, explique-me claramente o que faz a aplicação, como funciona, para quem pode ser útil e quais são as suas principais funções e vantagens. Refira também brevemente o que oferece em comparação com outras soluções semelhantes. Utilize apenas as informações desta página e inclua a ligação como fonte: "
+    },
+    "pa-in": {
+      button: "ChatGPT ਨਾਲ ਸੰਖੇਪ ਕਰੋ",
+      description: "ਕੁਝ ਸਕਿੰਟਾਂ ਵਿੱਚ ਜਾਣੋ ਕਿ VolumTransport ਕੀ ਕਰ ਸਕਦਾ ਹੈ।",
+      prompt: "ਮੈਂ VolumTransport ਬਾਰੇ ਹੋਰ ਚੰਗੀ ਤਰ੍ਹਾਂ ਜਾਣਨਾ ਚਾਹੁੰਦਾ ਹਾਂ ਅਤੇ ਸਮਝਣਾ ਚਾਹੁੰਦਾ ਹਾਂ ਕਿ ਇਹ ਲੋਡ ਦੀ ਯੋਜਨਾ ਬਣਾਉਣ ਵਿੱਚ ਮੇਰੀ ਕਿਵੇਂ ਮਦਦ ਕਰ ਸਕਦਾ ਹੈ। ਇਸ ਪੰਨੇ ਦੇ ਆਧਾਰ 'ਤੇ ਸਪਸ਼ਟ ਤੌਰ 'ਤੇ ਸਮਝਾਓ ਕਿ ਐਪ ਕੀ ਕਰਦੀ ਹੈ, ਕਿਵੇਂ ਕੰਮ ਕਰਦੀ ਹੈ, ਕਿਸ ਲਈ ਲਾਭਦਾਇਕ ਹੋ ਸਕਦੀ ਹੈ ਅਤੇ ਇਸ ਦੀਆਂ ਮੁੱਖ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਤੇ ਫਾਇਦੇ ਕੀ ਹਨ। ਇਹ ਵੀ ਸੰਖੇਪ ਵਿੱਚ ਦੱਸੋ ਕਿ ਇਹ ਹੋਰ ਮਿਲਦੇ-ਜੁਲਦੇ ਹੱਲਾਂ ਦੇ ਮੁਕਾਬਲੇ ਕੀ ਪੇਸ਼ ਕਰਦੀ ਹੈ। ਸਿਰਫ਼ ਇਸ ਪੰਨੇ ਦੀ ਜਾਣਕਾਰੀ ਵਰਤੋ ਅਤੇ ਲਿੰਕ ਨੂੰ ਸਰੋਤ ਵਜੋਂ ਸ਼ਾਮਲ ਕਰੋ: "
+    },
+    "pa-pk": {
+      button: "ChatGPT نال خلاصہ حاصل کرو",
+      description: "چند سیکنڈاں وچ جانو کہ VolumTransport کی کر سکدا اے۔",
+      prompt: "میں VolumTransport بارے ہور چنگی طرح جاننا چاہنا آں تے ایہ سمجھنا چاہنا آں کہ ایہ لوڈ دی منصوبہ بندی وچ میری کیویں مدد کر سکدی اے۔ ایس صفحے دی معلومات دے آدھار اُتے صاف طور تے دسو کہ ایپ کی کردی اے، کیویں کم کردی اے، کنہاں لئی فائدہ مند ہو سکدی اے تے ایس دیاں اہم خصوصیات تے فائدے کی نیں۔ نال ایہ وی مختصر دسو کہ ایہ ہور ملدے جل دے حلّاں دے مقابلے وچ کی پیش کردی اے۔ صرف ایس صفحے دی معلومات استعمال کرو تے لنک نوں ماخذ وجوں شامل کرو: "
+    },
     en: {
       button: "Summarize with ChatGPT",
       description: "Discover in seconds what VolumTransport can do.",
