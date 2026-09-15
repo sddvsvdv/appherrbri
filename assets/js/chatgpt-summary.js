@@ -150,6 +150,21 @@
       description: "VolumTransport'un neler yapabildiğini birkaç saniyede keşfedin.",
       prompt: "VolumTransport'u daha yakından tanımak ve bir yüklemeyi planlamama nasıl yardımcı olabileceğini öğrenmek istiyorum. Bu sayfayı temel alarak uygulamanın ne yaptığını, nasıl çalıştığını, kimler için yararlı olabileceğini ve başlıca işlevleri ile avantajlarını açıkça anlat. Ayrıca benzer çözümlere kıyasla ne sunduğundan da kısaca bahset. Yalnızca bu sayfadaki bilgileri kullan ve bağlantıyı kaynak olarak ekle: "
     },
+    uk: {
+      button: "Підсумувати за допомогою ChatGPT",
+      description: "Дізнайтеся за кілька секунд, що може VolumTransport.",
+      prompt: "Я хочу краще ознайомитися з VolumTransport і дізнатися, як він може допомогти мені спланувати завантаження. На основі цієї сторінки чітко поясни, що робить застосунок, як він працює, кому може бути корисним, а також які його основні функції та переваги. Також коротко розкажи, що він пропонує порівняно з іншими подібними рішеннями. Використовуй лише інформацію з цієї сторінки та додай посилання як джерело: "
+    },
+    ur: {
+      button: "ChatGPT سے خلاصہ حاصل کریں",
+      description: "چند سیکنڈ میں جانیں کہ VolumTransport کیا کر سکتا ہے۔",
+      prompt: "میں VolumTransport کے بارے میں بہتر طور پر جاننا چاہتا ہوں اور یہ سمجھنا چاہتا ہوں کہ یہ سامان لادنے کی منصوبہ بندی میں میری کس طرح مدد کر سکتا ہے۔ اس صفحے کی بنیاد پر واضح طور پر بتائیں کہ یہ ایپ کیا کرتی ہے، کیسے کام کرتی ہے، کن لوگوں کے لیے مفید ہو سکتی ہے، اور اس کی بنیادی خصوصیات اور فوائد کیا ہیں۔ یہ بھی مختصراً بتائیں کہ یہ دیگر ملتے جلتے حلوں کے مقابلے میں کیا پیش کرتی ہے۔ صرف اسی صفحے پر موجود معلومات استعمال کریں اور لنک کو بطور ماخذ شامل کریں: "
+    },
+    vi: {
+      button: "Tóm tắt bằng ChatGPT",
+      description: "Khám phá trong vài giây những gì VolumTransport có thể làm.",
+      prompt: "Tôi muốn tìm hiểu rõ hơn về VolumTransport và biết ứng dụng có thể giúp tôi lập kế hoạch xếp hàng như thế nào. Dựa trên trang này, hãy giải thích rõ ứng dụng làm gì, hoạt động ra sao, có thể hữu ích cho những ai, cũng như các chức năng và ưu điểm chính của ứng dụng. Đồng thời, hãy trình bày ngắn gọn ứng dụng mang lại điều gì so với các giải pháp tương tự khác. Chỉ sử dụng thông tin trên trang này và đưa liên kết vào làm nguồn: "
+    },
     en: {
       button: "Summarize with ChatGPT",
       description: "Discover in seconds what VolumTransport can do.",
