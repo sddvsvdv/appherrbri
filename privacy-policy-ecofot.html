@@ -77,7 +77,7 @@
     <h1>Política de Privacidad de EcoFot IA</h1>
 
     <p class="last-update">
-        <strong>Última actualización:</strong> 21/08/2026
+        <strong>Última actualización:</strong> 22/10/2026
     </p>
 
 
@@ -124,7 +124,8 @@
     </p>
 
 
-    <h2>3. Uso y procesamiento de las fotografías</h2>
+    
+<h2>3. Uso y procesamiento de las fotografías</h2>
 
     <p>
         EcoFot IA permite tomar o seleccionar una fotografía de un objeto
@@ -140,13 +141,15 @@
             por el desarrollador.
         </li>
         <li>
-            El servidor procesa la solicitud y envía la información
-            necesaria al servicio de inteligencia artificial de OpenAI.
+            El servidor procesa la solicitud y remite la fotografía y
+            las instrucciones necesarias a Google Gemini API.
+            Estas instrucciones pueden incluir el idioma, país y región
+            seleccionados, para aplicar las normas de reciclaje correspondientes.
         </li>
         <li>
-            OpenAI analiza la fotografía mediante su plataforma API
-            y genera la información necesaria para determinar el resultado.
-        </li>   
+            Gemini analiza la fotografía y genera la información
+            necesaria para determinar el resultado.
+        </li>
         <li>
             El resultado se devuelve al dispositivo del usuario.
         </li>
@@ -155,20 +158,20 @@
     <p>
         En el servidor de EcoFot IA, la fotografía se procesa únicamente
         durante el tiempo necesario para gestionar la solicitud, enviarla
-        al servicio de OpenAI y devolver el resultado al dispositivo.
+        a Gemini API y devolver el resultado al dispositivo.
     </p>
-    
+
     <p>
         EcoFot IA no guarda deliberadamente las fotografías enviadas para
         análisis en bases de datos ni en archivos permanentes del servidor.
         Una vez completada la solicitud, EcoFot IA deja de conservar la
         fotografía en sus propios sistemas.
     </p>
-    
+
     <p>
-        El tratamiento que posteriormente realice OpenAI se rige por las
-        condiciones, medidas de seguridad, políticas y períodos de conservación
-        aplicables a su plataforma API.
+        El tratamiento y la posible conservación temporal de información
+        por parte de Google se rigen por las condiciones y políticas
+        aplicables a Gemini API, descritas en el apartado siguiente.
     </p>
 
 
@@ -195,42 +198,47 @@
     <h2>5. Servicios de terceros</h2>
 
 
-    <h3>OpenAI - Procesamiento mediante inteligencia artificial</h3>
+    
+<h3>Google Gemini API - Procesamiento mediante inteligencia artificial</h3>
 
     <p>
-        EcoFot IA utiliza servicios de inteligencia artificial proporcionados
-        por OpenAI mediante su plataforma API para analizar las fotografías
-        enviadas voluntariamente por el usuario y generar la información
-        necesaria para ofrecer el resultado solicitado.
+        EcoFot IA utiliza Gemini API, un servicio de inteligencia artificial
+        de Google, para analizar fotografías enviadas voluntariamente por
+        el usuario y generar la información necesaria para ofrecer
+        el resultado solicitado.
     </p>
-    
+
     <p>
         Cuando se realiza un análisis, la fotografía y las instrucciones
         técnicas necesarias para procesarla se envían desde el servidor
-        de EcoFot IA a los servicios de OpenAI.
+        de EcoFot IA a Google a través de Gemini API.
     </p>
-    
+
     <p>
-        EcoFot IA limita la información enviada a OpenAI a la necesaria
+        EcoFot IA limita la información remitida a la necesaria
         para realizar el análisis solicitado y no utiliza las fotografías
         para crear perfiles personales del usuario.
     </p>
-    
+
     <p>
-        Según las condiciones aplicables a la plataforma API de OpenAI,
-        los datos enviados a través de la API no se utilizan de forma
-        predeterminada para entrenar los modelos de OpenAI, salvo que el
-        cliente opte expresamente por compartirlos con ese fin.
+        EcoFot IA utiliza Gemini API mediante un proyecto de Google Cloud
+        con facturación activa. Según las condiciones aplicables a los
+        servicios de pago de Gemini API, Google no utiliza las solicitudes,
+        las imágenes ni las respuestas para mejorar sus productos.
     </p>
-    
+
     <p>
-        OpenAI puede procesar y conservar temporalmente la información
-        recibida de acuerdo con las condiciones, medidas de seguridad,
-        políticas y períodos de conservación aplicables a su plataforma API.
+        Google puede conservar temporalmente datos de las solicitudes
+        y respuestas para supervisar abusos, proteger el servicio
+        o cumplir obligaciones legales. Su documentación de supervisión
+        de abusos establece un período de conservación de 55 días
+        para las instrucciones, el contexto y las respuestas.
+        El tratamiento se rige por las condiciones y garantías
+        aplicables al servicio.
     </p>
-    
+
     <p>
-        El modelo concreto de OpenAI utilizado puede cambiar con el tiempo
+        El modelo concreto de Gemini utilizado puede cambiar con el tiempo
         para mejorar la precisión, velocidad, disponibilidad o eficiencia
         del servicio, sin modificar la finalidad del tratamiento descrita
         en esta política.
@@ -335,14 +343,15 @@
         y habilitar las funciones adquiridas.
     </p>
 
-    <h3>Política de privacidad de Google</h3>
+    
+<h3>Política de privacidad de Google</h3>
 
     <p>
-        Firebase, AdMob, Google User Messaging Platform y Google Play
-        son servicios proporcionados por Google y están sujetos también
-        a sus respectivas condiciones y políticas de privacidad.
+        Google Gemini API, Firebase, AdMob, Google User Messaging Platform
+        y Google Play son servicios proporcionados por Google y están
+        sujetos a las condiciones y políticas que correspondan a cada uno.
     </p>
-    
+
     <p>
         Más información:
         <a
@@ -355,44 +364,49 @@
     </p>
 
 
-    <h3>Privacidad de OpenAI</h3>
+    
+<h3>Privacidad y condiciones de Gemini API</h3>
 
     <p>
-        El servicio de inteligencia artificial utilizado para analizar
-        las fotografías es proporcionado por OpenAI mediante su plataforma API
-        y está sujeto a las condiciones, medidas de seguridad y políticas
-        aplicables a dicho servicio.
+        El análisis de fotografías se realiza mediante Gemini API de Google,
+        con las condiciones aplicables a su modalidad de pago.
+        Conforme a dichas condiciones, las fotografías y respuestas
+        enviadas para el análisis no se utilizan para mejorar los
+        productos de Google. Esto no significa que Google no pueda
+        conservar temporalmente información para fines de seguridad,
+        prevención de abusos o cumplimiento legal.
     </p>
-    
-    <p>
-        OpenAI indica que, de forma predeterminada, los datos enviados y
-        recibidos mediante su plataforma API no se utilizan para entrenar
-        ni mejorar sus modelos, salvo que el cliente opte expresamente
-        por compartirlos con ese fin.
-    </p>
-    
-    <p>
-        Más información:
-    </p>
-    
+
+    <p>Más información sobre las condiciones y el tratamiento de los datos:</p>
+
     <ul>
         <li>
             <a
-                href="https://openai.com/policies/privacy-policy/"
+                href="https://ai.google.dev/gemini-api/terms"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                Política de Privacidad de OpenAI
+                Condiciones del servicio de Gemini API
             </a>
         </li>
-    
+
         <li>
             <a
-                href="https://openai.com/es-ES/enterprise-privacy/"
+                href="https://ai.google.dev/gemini-api/docs/usage-policies"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                Privacidad empresarial y de la plataforma API de OpenAI
+                Supervisión de abusos y conservación de datos en Gemini API
+            </a>
+        </li>
+
+        <li>
+            <a
+                href="https://ai.google.dev/gemini-api/docs/zdr"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Información sobre retención de datos en Gemini API
             </a>
         </li>
     </ul>
@@ -486,7 +500,7 @@
     </p>
 
     <p>
-        Los datos tratados por servicios externos como OpenAI,
+        Los datos tratados por servicios externos como Google Gemini API,
         Firebase, AdMob o Google Play pueden conservarse durante los
         períodos establecidos por dichos proveedores y según la
         configuración y finalidad de cada servicio.
@@ -529,7 +543,7 @@
 
     <p>
         Determinados servicios externos utilizados por EcoFot IA,
-        como OpenAI, Firebase, Google AdMob o Google Play,
+        como Google Gemini API, Firebase, Google AdMob o Google Play,
         pueden tratar y conservar información técnica conforme a
         sus propias políticas y períodos de conservación.
     </p>
