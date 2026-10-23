@@ -1,0 +1,954 @@
+
+<!doctype html>
+<html lang="sv-SE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#127f79">
+
+  <title>Återvinningsapp för Sverige – sortera avfall med foto och AI | EcoFot AI</title>
+  <meta name="description" content="Osäker på var avfallet ska lämnas? Ta ett foto med EcoFot AI och få sorteringshjälp för Sverige: förpackningar, pant, glas, textilier, elavfall och mer.">
+  <link rel="canonical" href="https://aplicacionesherrbri.com/ecofot/se/">
+
+  <link rel="alternate" hreflang="es-ES" href="https://aplicacionesherrbri.com/ecofot/">
+  <link rel="alternate" hreflang="fr-FR" href="https://aplicacionesherrbri.com/ecofot/fr/">
+  <link rel="alternate" hreflang="pt-PT" href="https://aplicacionesherrbri.com/ecofot/pt/">
+  <link rel="alternate" hreflang="en-IE" href="https://aplicacionesherrbri.com/ecofot/ie/">
+  <link rel="alternate" hreflang="de-DE" href="https://aplicacionesherrbri.com/ecofot/de/">
+  <link rel="alternate" hreflang="es-CL" href="https://aplicacionesherrbri.com/ecofot/cl/">
+  <link rel="alternate" hreflang="de-AT" href="https://aplicacionesherrbri.com/ecofot/at/">
+  <link rel="alternate" hreflang="pl-PL" href="https://aplicacionesherrbri.com/ecofot/pl/">
+  <link rel="alternate" hreflang="da-DK" href="https://aplicacionesherrbri.com/ecofot/dk/">
+  <link rel="alternate" hreflang="tr-TR" href="https://aplicacionesherrbri.com/ecofot/tr/">
+  <link rel="alternate" hreflang="sv-SE" href="https://aplicacionesherrbri.com/ecofot/se/">
+  <link rel="alternate" hreflang="en" href="https://aplicacionesherrbri.com/ecofot/global/">
+  <link rel="alternate" hreflang="x-default" href="https://aplicacionesherrbri.com/ecofot/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="sv_SE">
+  <meta property="og:site_name" content="EcoFot AI">
+  <meta property="og:title" content="EcoFot AI – källsortering i Sverige med foto och AI">
+  <meta property="og:description" content="Ta ett foto och få ett tydligt förslag på var avfallet ska lämnas enligt EcoFots svenska sorteringskonfiguration.">
+  <meta property="og:url" content="https://aplicacionesherrbri.com/ecofot/se/">
+  <meta property="og:image" content="https://aplicacionesherrbri.com/assets/screens/ecofot-se-result-web.png">
+
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #152b35;
+      --muted: #526470;
+      --accent: #087e79;
+      --accent-dark: #056861;
+      --bg: #f4f8f8;
+      --line: #dce8e8;
+      --shadow: 0 10px 32px rgba(15,47,49,.07);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+      line-height: 1.65;
+    }
+
+    a { color: var(--accent-dark); }
+    img { display: block; max-width: 100%; height: auto; }
+
+    .wrap {
+      width: min(1100px,calc(100% - 36px));
+      margin-inline: auto;
+    }
+
+    .langbar {
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .lang-inner {
+      display: flex;
+      gap: 16px;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      flex-wrap: wrap;
+    }
+
+    .lang-inner label {
+      font-weight: 650;
+      font-size: .93rem;
+    }
+
+    .lang-inner select {
+      max-width: 100%;
+      padding: 10px 13px;
+      border: 1px solid #b9cecc;
+      border-radius: 9px;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .brand {
+      font-weight: 800;
+      font-size: 1.06rem;
+      text-decoration: none;
+      letter-spacing: .01em;
+    }
+
+    header.hero {
+      padding: 58px 0 44px;
+      background: linear-gradient(120deg,#e1f5ef 0%,#edf9ed 52%,#f9fbfd 100%);
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--accent-dark);
+      font-weight: 750;
+      letter-spacing: .025em;
+    }
+
+    h1 {
+      font-size: clamp(2rem,4.4vw,3.4rem);
+      line-height: 1.13;
+      margin: .2em 0 .38em;
+      letter-spacing: -.03em;
+    }
+
+    h2 {
+      font-size: clamp(1.42rem,2.75vw,2rem);
+      line-height: 1.25;
+      margin: 0 0 18px;
+    }
+
+    h3 {
+      font-size: 1.07rem;
+      margin: 0 0 8px;
+    }
+
+    p { margin: 0 0 15px; }
+
+    .lead {
+      font-size: 1.13rem;
+      max-width: 760px;
+    }
+
+    .muted { color: var(--muted); }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      background: var(--accent);
+      border-radius: 11px;
+      color: white;
+      text-decoration: none;
+      font-weight: 750;
+      transition: background .15s;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      background: var(--accent-dark);
+      color: #fff;
+    }
+
+    .btn-outline {
+      background: #fff;
+      color: var(--accent-dark);
+      border: 1px solid #a9ccc7;
+    }
+
+    .btn-outline:hover,
+    .btn-outline:focus-visible {
+      background: #e7f3f1;
+      color: var(--accent-dark);
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    main section {
+      padding: 48px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .num {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #e5f4ee;
+      color: var(--accent-dark);
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .screens {
+      display: grid;
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 20px;
+    }
+
+    figure {
+      margin: 0;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    figure img {
+      width: 100%;
+      max-height: 550px;
+      object-fit: contain;
+    }
+
+    figcaption {
+      margin-top: 13px;
+      color: var(--muted);
+      font-size: .96rem;
+    }
+
+    .destinations {
+      display: grid;
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 12px;
+    }
+
+    .destination {
+      padding: 15px 18px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+
+    .destination strong {
+      display: block;
+      color: #125952;
+      margin-bottom: 4px;
+    }
+
+    ul {
+      padding-left: 23px;
+      margin: 12px 0 18px;
+    }
+
+    li { margin: 6px 0; }
+
+    .note {
+      background: #e9f5f3;
+      padding: 19px 22px;
+      border-radius: 13px;
+      border-left: 4px solid var(--accent);
+    }
+
+    .seo-terms {
+      font-size: .93rem;
+      color: var(--muted);
+    }
+
+    .download {
+      background: #e9f5ef;
+      text-align: center;
+      border-radius: 18px;
+      padding: 32px 20px;
+    }
+
+    .download img {
+      width: min(230px,100%);
+      margin: 20px auto 0;
+    }
+
+    .faq {
+      display: grid;
+      gap: 12px;
+    }
+
+    details {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px 20px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 750;
+    }
+
+    details p { margin: 12px 0 0; }
+
+    footer {
+      padding: 29px 0 36px;
+      text-align: center;
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    footer a { margin: 0 6px; }
+
+    @media(max-width:760px) {
+      .grid,.screens,.destinations {
+        grid-template-columns: 1fr;
+      }
+
+      header.hero { padding: 38px 0 30px; }
+      main section { padding: 36px 0; }
+      .card { padding: 18px; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "EcoFot AI",
+    "description": "Android-app för källsortering i Sverige med fotoanalys, färgmarkerade avfallskategorier och korta förklaringar.",
+    "operatingSystem": "Android",
+    "applicationCategory": "LifestyleApplication",
+    "inLanguage": "sv-SE",
+    "url": "https://aplicacionesherrbri.com/ecofot/se/",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.aplicacionesherrbri.ecofot",
+    "author": {
+      "@type": "Organization",
+      "name": "AplicacionesHerrbri"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "sv-SE",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Kan EcoFot AI användas i Sverige?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. EcoFot AI har en särskild konfiguration med svenska avfallskategorier och sorteringsregler."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Är EcoFot AI en chattbot?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nej. Appen visar ett direkt resultat: rekommenderad avfallskategori eller insamlingsplats, färg och en kort förklaring."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Vad är skillnaden mellan pappersförpackningar och returpapper?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mjölkkartonger, wellpapp och kartongförpackningar sorteras som pappersförpackningar. Tidningar, reklamblad och skrivpapper sorteras som tidningar och returpapper."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan alla flaskor och burkar pantas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nej. EcoFot AI tar hänsyn till synlig svensk pantmärkning. Flaskor och burkar utan svensk pantmärkning sorteras normalt som förpackningar efter material."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Var lämnar jag gammal elektronik och batterier?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Elektroniska apparater och batterier kan lämnas till godkänd särskild insamling, till exempel en återvinningscentral. Vissa butiker tar också emot elavfall."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Var ska gamla läkemedel lämnas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Överblivna och gamla läkemedel lämnas till apotek. Tomma läkemedelsförpackningar utan läkemedelsrester sorteras efter material enligt lokala anvisningar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Behöver EcoFot AI internet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Fotoanalysen behöver internet eftersom bilden behandlas av en extern AI-tjänst."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan EcoFot AI göra fel?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Analysen är vägledande, och otydliga bilder eller svårbedömda material kan leda till fel resultat. Kontrollera kommunens anvisningar vid osäkerhet."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <div class="langbar">
+    <div class="wrap lang-inner">
+      <a class="brand" href="https://aplicacionesherrbri.com/ecofot/se/">EcoFot AI</a>
+
+      <div>
+        <label for="country-select">Tillgängliga länder:</label>
+        <select id="country-select" aria-label="Välj land" onchange="if(this.value)window.location.href=this.value">
+          <option value="https://aplicacionesherrbri.com/ecofot/global/">🌐 Global (English)</option>
+          <option value="https://aplicacionesherrbri.com/ecofot/">🇪🇸 España</option>
+          <option value="https://aplicacionesherrbri.com/ecofot/fr/">🇫🇷 France</option>
+          <option value="https://aplicacionesherrbri.com/ecofot/pt/">🇵🇹 Portugal</option>
+          <option value="https://aplicacionesherrbri.com/ecofot/ie/">🇮🇪 Ireland</option>
+          <option value="https://aplicacionesherrbri.com/ecofot/de/">🇩🇪 Deutschland</option>
+          <option value="https://aplicacionesherrbri.com/ecofot/cl/">🇨🇱 Chile</option>
+          <option value="https://aplicacionesherrbri.com/ecofot/at/">🇦🇹 Österreich</option>
+          <option value="https://aplicacionesherrbri.com/ecofot/pl/">🇵🇱 Polska</option>
+          <option value="https://aplicacionesherrbri.com/ecofot/dk/">🇩🇰 Danmark</option>
+          <option value="https://aplicacionesherrbri.com/ecofot/tr/">🇹🇷 Türkiye</option>
+          <option value="https://aplicacionesherrbri.com/ecofot/se/" selected>🇸🇪 Sverige</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">EcoFot AI · Källsortering med artificiell intelligens</p>
+
+      <h1>Återvinningsapp för Sverige – ta ett foto och se var avfallet ska lämnas</h1>
+
+      <p class="lead">
+        Osäker på var du ska slänga eller lämna en sak?
+        Med EcoFot AI kan du ta ett foto eller skriva vad det är
+        och få ett tydligt sorteringsförslag baserat på appens
+        svenska avfallskategorier.
+      </p>
+
+      <p class="muted">
+        Android-app utvecklad av
+        <a href="https://aplicacionesherrbri.com/">AplicacionesHerrbri</a>.
+      </p>
+
+      <p>
+        En tydlig rekommendation, en färg och en kort förklaring.
+        EcoFot AI är ingen chattbot och kräver inga långa konversationer.
+      </p>
+
+      <div class="actions">
+        <a class="btn"
+           href="https://play.google.com/store/apps/details?id=com.aplicacionesherrbri.ecofot&amp;hl=sv&amp;gl=SE"
+           target="_blank"
+           rel="noopener noreferrer">
+          Ladda ner på Google Play
+        </a>
+
+        <a class="btn btn-outline" href="#avfallskategorier">
+          Se svenska avfallskategorier
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <section aria-labelledby="sa-fungerar-det">
+      <h2 id="sa-fungerar-det">Så fungerar EcoFot AI</h2>
+
+      <div class="grid">
+        <article class="card">
+          <span class="num">1</span>
+          <h3>Ta ett foto av avfallet</h3>
+          <p>
+            Fotografera gärna ett föremål i taget,
+            med tydlig bild och god belysning.
+            Du kan även beskriva föremålet med text.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="num">2</span>
+          <h3>EcoFot AI analyserar föremålet</h3>
+          <p>
+            En extern AI-tjänst hjälper till att identifiera föremålet.
+            Klassificeringen utgår från de sorteringsregler
+            som har konfigurerats för Sverige.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="num">3</span>
+          <h3>Få ett tydligt sorteringsförslag</h3>
+          <p>
+            Appen visar en rekommenderad avfallskategori
+            eller insamlingsplats, dess färg och en kort förklaring.
+          </p>
+        </article>
+      </div>
+
+      <p class="note">
+        <strong>Snabbt och enkelt:</strong>
+        EcoFot AI är utvecklad för att ge ett direkt resultat
+        utan komplicerade menyer eller långa textsvar.
+      </p>
+    </section>
+
+    <section aria-labelledby="skarmbilder">
+      <h2 id="skarmbilder">Skärmbilder från EcoFot AI</h2>
+
+      <div class="screens">
+        <figure>
+          <img
+            src="/assets/screens/ecofot-se-camera-web.png"
+            alt="EcoFot AI på svenska: kameran används för att fotografera en förpackning"
+            width="540"
+            height="960"
+            loading="lazy"
+            decoding="async">
+
+          <figcaption>
+            <strong>Kamera:</strong>
+            Rikta kameran mot avfallet som du vill analysera.
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="/assets/screens/ecofot-se-result-web.png"
+            alt="EcoFot AI på svenska: sorteringsresultat för en mjölkkartong med destinationen Pappersförpackningar"
+            width="540"
+            height="960"
+            loading="lazy"
+            decoding="async">
+
+          <figcaption>
+            <strong>Resultat:</strong>
+            Rekommenderad avfallskategori, tydlig färg
+            och en kort förklaring.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section aria-labelledby="kallsorteringsapp">
+      <h2 id="kallsorteringsapp">
+        En app som hjälper dig att källsortera rätt i Sverige
+      </h2>
+
+      <p>
+        Förpackningar, burkar, glas, tidningar, hushållsföremål,
+        batterier och läkemedel ska inte alltid lämnas på samma plats.
+        I Sverige skiljer man dessutom mellan förpackningar
+        och andra föremål av samma material.
+      </p>
+
+      <p>
+        EcoFot AI använder inte förenklade regler som
+        ”plast = plastförpackningar”.
+        En plastförpackning och en plastprodukt kan ha olika
+        avfallsdestinationer.
+        Detsamma gäller en glasburk och ett dricksglas.
+      </p>
+
+      <p>
+        <strong>Exempel:</strong>
+        En tom mjölkkartong hör normalt till
+        <em>Pappersförpackningar</em>,
+        medan en tidning hör till
+        <em>Tidningar och returpapper</em>.
+        En PET-flaska med svensk pantmärkning kan i stället
+        tillhöra <em>Pant</em>.
+      </p>
+    </section>
+
+    <section id="avfallskategorier" aria-labelledby="svenska-destinationer">
+      <h2 id="svenska-destinationer">
+        De 13 avfallskategorierna i EcoFot AI för Sverige
+      </h2>
+
+      <p>
+        EcoFot AI använder följande destinationer
+        i sin svenska konfiguration:
+      </p>
+
+      <div class="destinations">
+
+        <div class="destination">
+          <strong>1. Matavfall</strong>
+          Matrester, frukt- och grönsaksskal, äggskal,
+          kaffesump och annat vanligt matavfall.
+        </div>
+
+        <div class="destination">
+          <strong>2. Restavfall</strong>
+          Blöjor, våtservetter, kvitton och små hushållsföremål
+          som inte är förpackningar och saknar särskild insamling.
+        </div>
+
+        <div class="destination">
+          <strong>3. Pappersförpackningar</strong>
+          Kartonger, wellpapp, papperspåsar som är förpackningar,
+          mjölkkartonger och andra dryckeskartonger.
+        </div>
+
+        <div class="destination">
+          <strong>4. Plastförpackningar</strong>
+          Plastflaskor utan svensk pant, förpackningsplast,
+          plastfolie, plastpåsar och skyddande plastemballage.
+        </div>
+
+        <div class="destination">
+          <strong>5. Metallförpackningar</strong>
+          Konservburkar, metallock, aluminiumformar
+          och annan metall som används som förpackning.
+        </div>
+
+        <div class="destination">
+          <strong>6. Ofärgade glasförpackningar</strong>
+          Ofärgade glasflaskor och glasburkar utan pant.
+          Inte dricksglas eller porslin.
+        </div>
+
+        <div class="destination">
+          <strong>7. Färgade glasförpackningar</strong>
+          Bruna, gröna, blå och andra färgade
+          glasförpackningar utan pant.
+        </div>
+
+        <div class="destination">
+          <strong>8. Tidningar och returpapper</strong>
+          Tidningar, tidskrifter, reklamblad, kataloger
+          och vanligt skriv- eller utskriftspapper.
+        </div>
+
+        <div class="destination">
+          <strong>9. Pant / Returstation</strong>
+          Dryckesburkar och PET-flaskor i det svenska pantsystemet
+          samt identifierade returglasflaskor med pant.
+        </div>
+
+        <div class="destination">
+          <strong>10. Textilavfall</strong>
+          Kläder, sängkläder, handdukar och andra textilier
+          som ska lämnas till separat insamling.
+          Vissa undantag gäller.
+        </div>
+
+        <div class="destination">
+          <strong>11. Läkemedel / Apotek</strong>
+          Gamla läkemedel, överblivna tabletter
+          och förpackningar med läkemedelsrester
+          som ska lämnas till apotek.
+        </div>
+
+        <div class="destination">
+          <strong>12. Återvinningscentral (ÅVC)</strong>
+          Elektronik, batterier, farligt avfall, skrot,
+          större föremål och annat avfall
+          som kräver särskild insamling.
+        </div>
+
+        <div class="destination">
+          <strong>13. Inte avfall</strong>
+          När bilden inte visar något tydligt fysiskt föremål
+          att sortera, exempelvis en allmän miljö eller ett landskap.
+        </div>
+
+      </div>
+
+      <p class="muted" style="margin-top:18px">
+        Färgerna i appen är visuella hjälpmedel och kan anpassas.
+        Den faktiska insamlingslösningen kan variera mellan svenska kommuner.
+      </p>
+
+      <h3>Vanliga sökningar om källsortering i Sverige</h3>
+
+      <p class="seo-terms">
+        Var ska jag slänga det här? · Källsortering med foto ·
+        Återvinningsapp med AI · Sortera mjölkkartong ·
+        Vad får läggas i plastförpackningar? ·
+        Färgat eller ofärgat glas? ·
+        Pantamera och svenska pantflaskor ·
+        Elavfall till återvinningscentral ·
+        Lämna gamla läkemedel till apotek ·
+        Textilåtervinning i Sverige
+      </p>
+    </section>
+
+    <section aria-labelledby="varfor-ecofot">
+      <h2 id="varfor-ecofot">Varför använda EcoFot AI?</h2>
+
+      <ul>
+        <li>Du slipper söka efter sorteringsråd för varje föremål.</li>
+        <li>Du får ett snabbt, visuellt svar med destination och färg.</li>
+        <li>Fotoanalys och textbeskrivningar gör appen enkel att använda.</li>
+        <li>Appen skiljer mellan förpackningar och andra föremål av samma material.</li>
+        <li>Den svenska konfigurationen omfattar bland annat Pant, separat glasinsamling, textilier, läkemedel och elavfall.</li>
+        <li>Särskilda varningar kan visas för exempelvis elektriska och elektroniska produkter eller potentiellt farliga ämnen.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="ansvarsfull-anvandning">
+      <h2 id="ansvarsfull-anvandning">
+        Använd EcoFot AI som vägledning
+      </h2>
+
+      <p>
+        EcoFot AI är en oberoende app och ingen officiell
+        kommunal avfallstjänst. Resultatet är ett sorteringsförslag.
+        Lokala insamlingsplatser och anvisningar kan skilja sig
+        mellan kommuner.
+      </p>
+
+      <p>
+        Vid farligt avfall, kemikalier, elektronik, läkemedel,
+        skrymmande föremål eller osäker klassificering bör du
+        även kontrollera kommunens eller ansvarig insamlingsaktörs
+        aktuella information.
+      </p>
+
+      <p>
+        <strong>Integritet:</strong>
+        Fotoanalys kräver internet.
+        Bilder och eventuell text kan skickas till en extern
+        AI-tjänst för analys.
+        Utvecklaren lagrar inte bilderna permanent.
+      </p>
+    </section>
+
+    <section aria-labelledby="ladda-ner">
+      <div class="download">
+        <h2 id="ladda-ner">Ladda ner EcoFot AI på Google Play</h2>
+
+        <p>
+          Ta ett foto, få ett tydligt sorteringsförslag
+          och källsortera med större trygghet.
+        </p>
+
+        <a
+          href="https://play.google.com/store/apps/details?id=com.aplicacionesherrbri.ecofot&amp;hl=sv&amp;gl=SE"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Ladda ner EcoFot AI på Google Play">
+
+          <img
+            src="/assets/screens/Badge-Swedish-web.png"
+            alt="Ladda ner på Google Play"
+            width="230"
+            height="90"
+            loading="lazy"
+            decoding="async">
+        </a>
+      </div>
+    </section>
+
+    <section aria-labelledby="fragor-och-svar">
+      <h2 id="fragor-och-svar">
+        Vanliga frågor om EcoFot AI i Sverige
+      </h2>
+
+      <div class="faq">
+
+        <details>
+          <summary>Är EcoFot AI en app som visar var avfall ska lämnas?</summary>
+          <p>
+            Ja. Du tar ett foto eller beskriver ett föremål
+            och får ett förslag på avfallskategori eller
+            insamlingsplats, en färg och en kort förklaring.
+          </p>
+        </details>
+
+        <details>
+          <summary>Är EcoFot AI en chattbot?</summary>
+          <p>
+            Nej. Appen ger ett direkt sorteringsresultat
+            utan en konversation.
+          </p>
+        </details>
+
+        <details>
+          <summary>Behöver jag internet?</summary>
+          <p>
+            Ja. Bilder analyseras med hjälp av en extern
+            AI-tjänst, vilket kräver internetuppkoppling.
+          </p>
+        </details>
+
+        <details>
+          <summary>Hur bestämmer AI:n vilken avfallskategori som passar?</summary>
+          <p>
+            AI:n tolkar föremålet och synliga egenskaper,
+            bland annat förpackningstyp och material.
+            Resultatet utgår från sorteringsreglerna
+            i EcoFots svenska konfiguration.
+          </p>
+        </details>
+
+        <details>
+          <summary>Kan AI:n alltid se vilket material ett föremål består av?</summary>
+          <p>
+            Nej. En bild kan vara otydlig eller inte visa
+            alla material. EcoFot AI kan därför göra en felaktig bedömning.
+          </p>
+        </details>
+
+        <details>
+          <summary>Kan jag använda EcoFot AI i Sverige?</summary>
+          <p>
+            Ja. Sverige finns som ett eget land i appen med
+            13 särskilt konfigurerade destinationer.
+          </p>
+        </details>
+
+        <details>
+          <summary>Vad är skillnaden mellan pappersförpackningar och returpapper?</summary>
+          <p>
+            Mjölkkartonger, produktkartonger och wellpapp hör
+            till Pappersförpackningar.
+            Tidningar, tidskrifter och skrivpapper hör till
+            Tidningar och returpapper.
+          </p>
+        </details>
+
+        <details>
+          <summary>Får ett dricksglas läggas bland glasförpackningar?</summary>
+          <p>
+            Nej. Insamlingen av färgade och ofärgade glasförpackningar
+            är avsedd för just förpackningar.
+            Dricksglas och porslin sorteras separat
+            enligt kommunens anvisningar.
+          </p>
+        </details>
+
+        <details>
+          <summary>Vad betyder Pant, och kan alla flaskor pantas?</summary>
+          <p>
+            Pant är det svenska systemet för återlämning
+            av vissa dryckesförpackningar.
+            Svenska pantmärken identifierar PET-flaskor
+            och burkar i pantsystemet.
+            Returglas med pant har ett separat retursystem.
+            Utländska flaskor eller burkar ger inte
+            automatiskt svensk pant.
+          </p>
+        </details>
+
+        <details>
+          <summary>Var lämnar jag batterier och gamla elektroniska apparater?</summary>
+          <p>
+            De hör till särskild insamling, till exempel på
+            en återvinningscentral (ÅVC).
+            Vissa butiker och andra godkända insamlingsställen
+            tar också emot elavfall.
+            Lösa batterier och elektroniska apparater
+            identifieras separat av appen.
+          </p>
+        </details>
+
+        <details>
+          <summary>Var lämnar jag gamla läkemedel och tomma läkemedelsförpackningar?</summary>
+          <p>
+            Överblivna eller gamla läkemedel lämnas till apotek.
+            Tomma förpackningar utan läkemedelsrester sorteras
+            normalt efter material.
+            Är du osäker på om läkemedelsrester finns kvar,
+            fråga apoteket.
+          </p>
+        </details>
+
+        <details>
+          <summary>Vad gäller för textilier i Sverige?</summary>
+          <p>
+            Textilavfall ska som huvudregel samlas in separat.
+            Sedan den 1 oktober 2025 finns undantag för
+            bland annat strumpor, underkläder och vissa mycket
+            smutsiga eller skadade textilier.
+            Kommunerna kan ha särskilda anvisningar.
+          </p>
+        </details>
+
+        <details>
+          <summary>Varför får en plastförpackning och en plastprodukt olika resultat?</summary>
+          <p>
+            Plastförpackningar samlas in som förpackningar.
+            Ett vanligt mindre plastföremål som inte är en
+            förpackning kan i stället höra till Restavfall,
+            så länge det inte kräver särskild insamling.
+          </p>
+        </details>
+
+        <details>
+          <summary>Kan jag lita på att resultatet alltid är rätt?</summary>
+          <p>
+            EcoFot AI är ett hjälpmedel, inte ett officiellt beslut.
+            Om föremålet är svåridentifierat eller kräver
+            specialhantering bör du kontrollera de lokala sorteringsråden.
+          </p>
+        </details>
+
+        <details>
+          <summary>Är appen gratis?</summary>
+          <p>
+            EcoFot AI kan erbjuda ett begränsat antal fria analyser,
+            belöningsannonser och andra åtkomstalternativ.
+            Se Google Play för aktuella villkor.
+          </p>
+        </details>
+
+      </div>
+
+      <p class="muted" style="margin-top:22px">
+        För officiell information:
+        <a href="https://www.naturvardsverket.se/" target="_blank" rel="noopener noreferrer">Naturvårdsverket</a>,
+        <a href="https://www.sopor.nu/" target="_blank" rel="noopener noreferrer">Sopor.nu</a>
+        och din kommun.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>
+        EcoFot AI utvecklas av
+        <a href="https://aplicacionesherrbri.com/">AplicacionesHerrbri</a>
+        ·
+        <a href="https://aplicacionesherrbri.com/privacy-policy-ecofot.html">Integritetspolicy</a>
+      </p>
+
+      <p>© 2026 AplicacionesHerrbri</p>
+    </div>
+  </footer>
+
+</body>
+</html>
