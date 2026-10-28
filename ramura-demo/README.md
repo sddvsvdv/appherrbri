@@ -7,12 +7,14 @@ Prototipo diseñado para mostrar cómo podría ser una web moderna de la empresa
 - Portada, logística farmacéutica y hospitalaria, carga aeroportuaria, transporte directo, reparto y gestión de envíos nacionales.
 - Selector interactivo de modalidades de transporte que funciona solamente en el navegador (sin enviar datos).
 - Esquema ilustrativo de conexiones nacionales, sin seguimiento de paquetes ni números de envío inventados.
-- Ilustración original y favicon conceptual (no son el logotipo oficial de la empresa).
+- Cabecera y pie con el distintivo **RB — Powered by SPC**, reconstruido como SVG a partir de la referencia aportada por el usuario (no una extracción exacta del PNG limpio). Es necesario verificar su fidelidad antes de usarlo como imagen corporativa oficial.
+- Ilustración de transporte original y favicon RB adaptado.
 
 ## Archivos
 - `index.html`: contenido y estructura semántica.
 - `styles.css`: identidad visual y estilos adaptables.
 - `script.js`: navegación móvil y selector local.
+- `assets/logo-rb-spc.svg`: reproducción vectorial del logotipo RB/SPC basada en el documento de referencia.
 - `assets/hero.svg` y `assets/favicon.svg`: recursos gráficos del prototipo.
 
 ## Publicación
