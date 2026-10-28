@@ -33,24 +33,8 @@ a:focus-visible, button:focus-visible, select:focus-visible { outline: 3px solid
   backdrop-filter: blur(12px);
 }
 .nav-bar { display: flex; align-items: center; gap: 30px; min-height: 83px; }
-.brand { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 3px;
-  transform: skew(-5deg);
-  color: white;
-  background: var(--blue);
-  padding-right: 5px;
-  font-size: 26px;
-  font-weight: 900;
-  letter-spacing: -.13em;
-}
-.brand-mark span { color: #adcefa; }
-.brand-words { display: grid; gap: 4px; font-size: 16px; letter-spacing: .15em; line-height: 1; }
-.brand-words small { color: #6c8093; font-size: 9px; letter-spacing: .36em; }
+.brand { display: inline-flex; align-items: center; flex-shrink: 0; }
+.brand-logo { display: block; width: clamp(245px, 27vw, 340px); height: auto; }
 .nav-links { display: flex; align-items: center; justify-content: center; gap: 28px; margin-left: auto; }
 .nav-links a { color: #324960; font-size: 12px; font-weight: 720; transition: color .2s; }
 .nav-links a:hover { color: var(--blue); }
@@ -338,8 +322,8 @@ a:focus-visible, button:focus-visible, select:focus-visible { outline: 3px solid
 .footer { padding: 25px 0; background: white; border-top: 1px solid var(--border); }
 .footer-grid { display: flex; align-items: center; justify-content: space-between; gap: 25px; }
 .footer-logo { display: flex; align-items: center; gap: 12px; color: var(--navy); font-size: 13px; letter-spacing: .12em; }
-.footer-logo .brand-mark { width: 32px; height: 32px; font-size: 20px; }
-.footer-logo small { display: block; color: #627991; font-size: 8px; letter-spacing: .3em; }
+.footer-mark { display: block; width: 205px; max-width: 45vw; height: auto; }
+.footer-logo > span { font-size: 10px; font-weight: 800; letter-spacing: .12em; color: #506d8b; }
 .footer-grid p { margin: 0; color: #6b7e90; font-size: 10px; line-height: 1.8; }
 .footer-grid > a { color: var(--blue); font-size: 12px; font-weight: 850; }
 
@@ -355,6 +339,7 @@ a:focus-visible, button:focus-visible, select:focus-visible { outline: 3px solid
 @media (max-width: 780px) {
   .container { width: min(620px, calc(100% - 36px)); }
   .nav-bar { min-height: 69px; }
+  .brand-logo { width: min(240px, calc(100vw - 110px)); }
   .menu-toggle { display: block; margin-left: auto; }
   .nav-links {
     display: none;
@@ -394,6 +379,7 @@ a:focus-visible, button:focus-visible, select:focus-visible { outline: 3px solid
 }
 @media (max-width: 460px) {
   .container { width: calc(100% - 32px); }
+  .brand-logo { width: min(215px, calc(100vw - 105px)); }
   .hero h1 { font-size: clamp(43px, 11vw, 57px); }
   .hero-actions { flex-direction: column; }
   .hero-strip { grid-template-columns: 1fr 1fr; }
