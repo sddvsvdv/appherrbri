@@ -1,11 +1,27 @@
-# Ramura Corporate — demostración no oficial
+# Ramura Corporate — propuesta visual no oficial
 
-Prototipo para enseñar a la dirección posibilidades de una página web moderna. No es una web oficial ni una oferta comercial.
+Prototipo diseñado para mostrar cómo podría ser una web moderna de la empresa, sin presentarse como página oficial.
 
-Contiene portada original, información sobre transporte farmacéutico y aeroportuario, servicios directos, distribución y envíos mediante colaboradores, un simulador local de modalidades de transporte y un seguimiento completamente ficticio.
+## Contenido
+- Diseño blanco y azul corporativo, adaptable a ordenador y móvil.
+- Portada, logística farmacéutica y hospitalaria, carga aeroportuaria, transporte directo, reparto y gestión de envíos nacionales.
+- Selector interactivo de modalidades de transporte que funciona solamente en el navegador (sin enviar datos).
+- Esquema ilustrativo de conexiones nacionales, sin seguimiento de paquetes ni números de envío inventados.
+- Ilustración original y favicon conceptual (no son el logotipo oficial de la empresa).
 
-Estructura: index.html, styles.css, script.js, assets/hero.svg y assets/favicon.svg.
+## Archivos
+- `index.html`: contenido y estructura semántica.
+- `styles.css`: identidad visual y estilos adaptables.
+- `script.js`: navegación móvil y selector local.
+- `assets/hero.svg` y `assets/favicon.svg`: recursos gráficos del prototipo.
 
-Publicación prevista tras revisar y fusionar la solicitud de cambios: https://aplicacionesherrbri.com/ramura-demo/
+## Publicación
+Se aloja en una carpeta independiente del repositorio existente. Tras revisar y fusionar la solicitud de cambios, la dirección es:
+https://aplicacionesherrbri.com/ramura-demo/
 
-Privacidad y límites: no hay analítica, cookies de seguimiento, formularios de contacto ni llamadas de red. No se reciben datos personales ni se envía información a la empresa. Las etiquetas noindex/nofollow solicitan a buscadores no indexar, pero la página pública no es privada. No se anuncian certificaciones, cadena de frío, trámites aduaneros propios ni camiones propios. Para retirar la muestra bastará con eliminar esta carpeta mediante una nueva solicitud de cambios.
+## Alcance, privacidad y retirada
+- En el pie de página se indica que la propuesta es no oficial. No es una oferta comercial.
+- La página conserva `noindex,nofollow` para solicitar que los buscadores no la indexen. Esto **no implica privacidad**.
+- No hay cuentas, backend, analítica, cookies de seguimiento ni envío de información.
+- No se anuncian certificaciones, cadena de frío, aduanas propias o flota pesada sin verificar.
+- Para retirar la web puede eliminarse la carpeta mediante una nueva solicitud de cambios.
