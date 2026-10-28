@@ -16,9 +16,4 @@ const service=document.getElementById("service-select"),destination=document.get
 function renderScenario(){const item=services[service.value];document.getElementById("scenario-title-output").textContent=item.name+" → "+destination.value;document.getElementById("scenario-description").textContent=item.description;item.steps.forEach(function(step,i){document.getElementById("flow-"+(i+1)).textContent=step;});}
 document.getElementById("scenario-form").addEventListener("submit",function(e){e.preventDefault();renderScenario();});
 renderScenario();
-const list=Array.from(document.querySelectorAll("#tracking-list li")),next=document.getElementById("tracking-next"),reset=document.getElementById("tracking-reset"),progress=document.getElementById("progress-fill"),live=document.getElementById("tracking-live");
-let current=0;
-function renderTracking(){list.forEach(function(item,i){item.classList.toggle("current",i===current);item.classList.toggle("done",i<current);if(i===current)item.setAttribute("aria-current","step");else item.removeAttribute("aria-current");});progress.style.width=(current/(list.length-1)*100)+"%";next.disabled=current===list.length-1;live.textContent="Estado ficticio: "+list[current].querySelector("strong").textContent+".";}
-next.addEventListener("click",function(){if(current<list.length-1){current++;renderTracking();}});
-reset.addEventListener("click",function(){current=0;renderTracking();});renderTracking();
 })();
