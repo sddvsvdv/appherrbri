@@ -120,12 +120,16 @@ a:focus-visible, button:focus-visible, select:focus-visible { outline: 3px solid
 .btn-primary:hover { background: var(--blue-strong); box-shadow: 0 7px 18px rgb(22 74 135 / 15%); }
 .btn-outline { background: white; border-color: #b9c9d9; color: var(--blue-strong); }
 .btn-outline:hover { background: var(--pale-blue); }
-.hero-art-wrap { position: relative; margin-left: -86px; margin-right: -78px; }
+.hero-art-wrap { position: relative; margin: 0 0 0 12px; min-width: 0; }
 .hero-art-wrap > img {
   display: block;
   width: 100%;
-  filter: drop-shadow(0 22px 25px rgb(18 62 109 / 14%));
-  animation: float 8s ease-in-out infinite;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  box-shadow: 0 18px 38px rgb(18 62 109 / 16%);
 }
 .art-chip {
   position: absolute;
@@ -333,7 +337,7 @@ a:focus-visible, button:focus-visible, select:focus-visible { outline: 3px solid
   .nav-bar { gap: 20px; }
   .nav-cta { display: none; }
   .hero-grid { grid-template-columns: 55% 45%; }
-  .hero-art-wrap { margin-left: -90px; }
+  .hero-art-wrap { margin-left: 0; }
   .hero h1 { font-size: clamp(52px, 6vw, 75px); }
 }
 @media (max-width: 780px) {
@@ -359,7 +363,8 @@ a:focus-visible, button:focus-visible, select:focus-visible { outline: 3px solid
   .nav-links a { padding: 13px 0; font-size: 14px; }
   .hero-grid { grid-template-columns: 1fr; min-height: 0; padding-top: 55px; padding-bottom: 24px; }
   .hero h1 { font-size: clamp(49px, 10vw, 76px); }
-  .hero-art-wrap { width: min(100%, 525px); margin: 22px auto -12px; }
+  .hero-art-wrap { width: min(100%, 525px); margin: 22px auto 0; }
+  .hero-art-wrap > img { aspect-ratio: 16 / 10; max-height: 300px; object-position: 68% 50%; }
   .hero-strip strong { font-size: 12px; }
   .hero-strip > div { padding: 16px 10px; }
   .hero-strip small { font-size: 8px; letter-spacing: .05em; }
